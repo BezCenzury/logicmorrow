@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogicMorrow — Automatyzacje i Aplikacje Webowe dla Firm</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <meta name="description" content="Automatyzujemy powtarzalne procesy i budujemy dedykowane aplikacje webowe dla małych i średnich firm. Zyskaj czas i pełną własność rozwiązania.">
+
+    <!-- ═══════════════════════════════════════════════════════
+         COOKIE CONSENT + GOOGLE CONSENT MODE V2
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 2000
+        });
+    </script>
+
+    <!-- [2] Pre-inicjalizacja consent dla powracających użytkowników -->
+    <script>
+        (function () {
+            try {
+                var raw = document.cookie.split(';').reduce(function (acc, c) {
+                    var p = c.trim().split('=');
+                    return p[0] === 'cc_cookie' ? decodeURIComponent(p.slice(1).join('=')) : acc;
+                }, null);
+                if (raw) {
+                    var cats = JSON.parse(raw).categories || [];
+                    var analytics = cats.indexOf('analytics') >= 0 ? 'granted' : 'denied';
+                    var marketing = cats.indexOf('marketing') >= 0 ? 'granted' : 'denied';
+                    gtag('consent', 'update', {
+                        'analytics_storage': analytics,
+                        'ad_storage': marketing,
+                        'ad_user_data': marketing,
+                        'ad_personalization': marketing
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <script>(function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+    <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+
+    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <style>
+        :root {
+            --cc-btn-primary-bg: #2563eb;
+            --cc-btn-primary-hover-bg: #1d4ed8;
+            --cc-btn-primary-text: #fff;
+            --cc-btn-secondary-bg: #f1f5f9;
+            --cc-btn-secondary-hover-bg: #e2e8f0;
+            --cc-btn-secondary-text: #475569;
+            --cc-toggle-on-bg: #2563eb;
+            --cc-link-color: #2563eb;
+            --cc-btn-border-radius: 0.75rem;
+            --cc-overlay-bg: rgba(0, 0, 0, 0.55);
+        }
+        #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/badge.css">
+
+    <!-- Section CSS -->
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/tech-stack.css">
+    <link rel="stylesheet" href="css/sections/challenges.css">
+    <link rel="stylesheet" href="css/sections/solutions.css">
+    <link rel="stylesheet" href="css/sections/portfolio-teaser.css">
+    <link rel="stylesheet" href="css/sections/qualifier.css">
+    <link rel="stylesheet" href="css/sections/roi-calculator.css">
+    <link rel="stylesheet" href="css/sections/manifesto.css">
+    <link rel="stylesheet" href="css/sections/consultation.css">
+    <link rel="stylesheet" href="css/sections/safety-standards.css">
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Globalny nagłówek (wstrzykiwany przez loader.js) -->
+    <div id="navbar-placeholder"></div>
+
+    <main>
+
+        <!-- ====================================================
+             SEKCJA 1: HERO
+             Obietnica biznesowa + CTA do kalendarza
+             ==================================================== -->
+        <section class="hero" aria-label="Nagłówek strony głównej">
+            <div class="hero__container">
+
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <span class="badge badge--dark-blue badge--dot">Automatyzacje procesów · Aplikacje webowe</span>
+                    </div>
+
+                    <h1 class="hero__title">
+                        Twoja firma rośnie.<br>
+                        <span class="typewriter" data-text='["Procesy nie nadążają.", "Excel pęka w szwach.", "Błędy kosztują czas."]'></span>
+                    </h1>
+
+                    <p class="hero__subtitle">
+                        Automatyzujemy powtarzalne operacje i budujemy dedykowane narzędzia,
+                        które eliminują manualne błędy i uwalniają roboczogodziny Twojego zespołu.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a href="/konsultacja.html" class="btn btn--primary btn--lg btn--arrow">
+                            Umów bezpłatną konsultację
+                        </a>
+                        <a href="/rozwiazania.html" class="btn btn--outline-white btn--lg">
+                            Zobacz w działaniu
+                        </a>
+                    </div>
+
+                    <div class="hero__trust">
+                        <span class="hero__trust-item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <circle cx="8" cy="8" r="8" fill="#10b981" fill-opacity="0.2"/>
+                                <path d="M5 8l2 2 4-4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Oprogramowanie na własność
+                        </span>
+                        <span class="hero__trust-item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <circle cx="8" cy="8" r="8" fill="#10b981" fill-opacity="0.2"/>
+                                <path d="M5 8l2 2 4-4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Testujesz zanim zainwestujesz
+                        </span>
+                        <span class="hero__trust-item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <circle cx="8" cy="8" r="8" fill="#10b981" fill-opacity="0.2"/>
+                                <path d="M5 8l2 2 4-4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Przejrzyste i bezpieczne systemy
+                        </span>
+                    </div>
+                </div>
+
+                <div class="hero__visual" aria-hidden="true" data-animate="fade-in">
+                    <!-- SVG Animacja "Przed/Po" -->
+                    <svg width="520" height="400" viewBox="0 0 520 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="rectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--color-slate-800)" />
+                                <stop offset="100%" stop-color="var(--color-slate-950)" />
+                            </linearGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="4" result="blur"/>
+                                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                            </filter>
+                        </defs>
+                        <!-- Okno aplikacji -->
+                        <rect x="20" y="20" width="480" height="340" rx="16" fill="url(#rectGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                        <rect x="20" y="20" width="480" height="40" rx="16" fill="rgba(255,255,255,0.03)"/>
+                        <circle cx="45" cy="40" r="4" fill="#ef4444" fill-opacity="0.5"/>
+                        <circle cx="60" cy="40" r="4" fill="#f59e0b" fill-opacity="0.5"/>
+                        <circle cx="75" cy="40" r="4" fill="#10b981" fill-opacity="0.5"/>
+                        
+                        <!-- Elementy "Manualne" (Excel) które znikają -->
+                        <g class="anim-manual">
+                            <rect x="60" y="100" width="120" height="12" rx="2" fill="var(--color-slate-700)" opacity="0.6">
+                                <animate attributeName="opacity" values="0.6;0;0;0.6" dur="6s" repeatCount="indefinite" />
+                            </rect>
+                            <rect x="60" y="125" width="200" height="12" rx="2" fill="var(--color-slate-700)" opacity="0.4">
+                                <animate attributeName="opacity" values="0.4;0;0;0.4" dur="6s" repeatCount="indefinite" />
+                            </rect>
+                            <path d="M400 150 L420 170 M420 150 L400 170" stroke="#ef4444" stroke-width="2" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;0;0;0.8" dur="6s" repeatCount="indefinite" />
+                            </path>
+                        </g>
+
+                        <!-- Elementy "Automatyczne" które się pojawiają -->
+                        <g class="anim-auto">
+                            <rect x="60" y="200" width="300" height="80" rx="8" fill="var(--color-primary)" fill-opacity="0.1" stroke="var(--color-primary)" stroke-width="1" stroke-dasharray="4 4" opacity="0">
+                                <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" />
+                            </rect>
+                            <path d="M300 240 L315 255 L345 225" stroke="var(--color-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0" filter="url(#glow)">
+                                <animate attributeName="opacity" values="0;0;1;0" dur="6s" repeatCount="indefinite" />
+                            </path>
+                            <text x="80" y="245" fill="var(--color-white)" font-family="Inter" font-size="14" font-weight="600" opacity="0">
+                                PROCES ZAUTOMATYZOWANY
+                                <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite" />
+                            </text>
+                        </g>
+
+                        <!-- Łączące linie (n8n style) -->
+                        <path d="M260 180 Q300 180 300 220" stroke="var(--color-primary-light)" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.3" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SEKCJA 1.5: NAJCZĘŚCIEJ AUTOMATYZOWANE PROCESY
+             ==================================================== -->
+        <section class="popular-processes" aria-label="Najczęściej automatyzowane procesy">
+            <div class="popular-processes__container">
+                <p class="popular-processes__label">Najczęściej automatyzowane procesy</p>
+                <div class="popular-processes__track">
+                    <ul class="popular-processes__list">
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Obieg faktur i dokumentów
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Follow-up leadów ze strony
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Onboarding klientów i pracowników
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Raporty sprzedaży i operacji
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Monitoring płatności
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Wysyłka ofert handlowych
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Synchronizacja CRM
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Alerty magazynowe
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Przekazywanie zleceń
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Zbieranie danych z wielu źródeł
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Potwierdzenia spotkań
+                        </li>
+                    </ul>
+                    <!-- Duplicate for seamless loop -->
+                    <ul class="popular-processes__list" aria-hidden="true">
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Obieg faktur i dokumentów
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Follow-up leadów ze strony
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Onboarding klientów i pracowników
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Raporty sprzedaży i operacji
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Monitoring płatności
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Wysyłka ofert handlowych
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Synchronizacja CRM
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Alerty magazynowe
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Przekazywanie zleceń
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Zbieranie danych z wielu źródeł
+                        </li>
+                        <li class="popular-processes__item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Potwierdzenia spotkań
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================
+             SEKCJA 1.7: WYZWANIA (Zamiast "Co robimy")
+             Znasz te wyzwania? (Challenge cards)
+             ==================================== -->
+        <section class="challenges" aria-label="Wyzwania biznesowe które rozwiązujemy">
+            <div class="challenges__container">
+                
+                <div class="challenges__header" data-animate="fade-up">
+                    <span class="section-label">Problemy</span>
+                    <h2>Znasz te wyzwania?</h2>
+                    <p class="lead">Firmy rosnące szybciej niż ich procesy zderzają się z tymi samymi wąskimi gardłami.</p>
+                </div>
+
+                <div class="challenges__grid">
+                    
+                    <!-- Wyzwanie 1 -->
+                    <div class="challenge-card" data-animate="fade-up" data-delay="0">
+                        <span class="challenge-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                            OPERACJE
+                        </span>
+                        <h3>Excel pęka w szwach</h3>
+                        <p>Zamiast zarządzać firmą, Twój zespół zarządza arkuszami. Dane są rozproszone, nieaktualne i trudne do analizy.</p>
+                    </div>
+
+                    <!-- Wyzwanie 2 -->
+                    <div class="challenge-card" data-animate="fade-up" data-delay="100">
+                        <span class="challenge-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                            SPRZEDAŻ
+                        </span>
+                        <h3>Błędy przy przepisywaniu</h3>
+                        <p>Kopiowanie danych między CRM a księgowością generuje pomyłki, które kosztują realne pieniądze i zaufanie klientów.</p>
+                    </div>
+
+                    <!-- Wyzwanie 3 -->
+                    <div class="challenge-card" data-animate="fade-up" data-delay="200">
+                        <span class="challenge-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            KLIENT
+                        </span>
+                        <h3>Zasoby uwięzione w zadaniach</h3>
+                        <p>Twój zespół spędza większość dnia na manualnym odpisywaniu na maile i generowaniu raportów zamiast na merytorycznej pracy.</p>
+                    </div>
+
+                    <!-- Wyzwanie 4 -->
+                    <div class="challenge-card" data-animate="fade-up" data-delay="300">
+                        <span class="challenge-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            TECHNOLOGIA
+                        </span>
+                        <h3>Systemy ze sobą "nie rozmawiają"</h3>
+                        <p>Narzędzia których używacie nie są ze sobą połączone, co zmusza pracowników do ręcznego przepisywania tych samych danych.</p>
+                    </div>
+
+                    <!-- Wyzwanie 5 -->
+                    <div class="challenge-card" data-animate="fade-up" data-delay="400">
+                        <span class="challenge-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                            SKALOWALNOŚĆ
+                        </span>
+                        <h3>Wąskie gardło wzrostu</h3>
+                        <p>Procesy manualne, które działały przy 10 klientach, przy 100 stają się barierą paraliżującą rozwój firmy.</p>
+                    </div>
+
+                    <!-- Wyzwanie 6 -->
+                    <div class="challenge-card" data-animate="fade-up" data-delay="500">
+                        <span class="challenge-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            STANDARD
+                        </span>
+                        <h3>Wiedza rozproszona</h3>
+                        <p>Sposób działania firmy zależy od pamięci i nawyków pracowników, co tworzy ogromne ryzyko operacyjne.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SEKCJA 1.9: ROZWIĄZANIA (Interactive Tabs)
+             Zamiast nudnej listy usług
+             ==================================================== -->
+        <section class="solutions" id="rozwiazania" aria-label="Jakie problemy rozwiązujemy">
+            <div class="solutions__container">
+                
+                <div class="solutions__header" data-animate="fade-up">
+                    <span class="section-label">Nasze kompetencje</span>
+                    <h2>Skupiamy się na tym, co daje zwrot</h2>
+                    <p class="lead">Nie budujemy wszystkiego. Budujemy to, co sprawia, że firma rośnie bez zwiększania chaosu.</p>
+                </div>
+
+                <div class="solutions__layout">
+                    
+                    <!-- Tabs (Pionowe) -->
+                    <div class="solutions__tabs" data-animate="slide-left">
+                        <button class="solutions__tab active" data-solution="1">
+                            <span class="solutions__tab-title">Automatyzacje procesów</span>
+                            <span class="solutions__tab-desc">Łączenie narzędzi w jeden płynny system.</span>
+                        </button>
+                        <button class="solutions__tab" data-solution="2">
+                            <span class="solutions__tab-title">Dedykowane aplikacje</span>
+                            <span class="solutions__tab-desc">Systemy zastępujące Excele i skupiające dane.</span>
+                        </button>
+                        <button class="solutions__tab" data-solution="3">
+                            <span class="solutions__tab-title">Agenci AI</span>
+                            <span class="solutions__tab-desc">Twoja cyfrowa prawa ręka i wirtualny pracownik.</span>
+                        </button>
+                    </div>
+
+                    <!-- Content (Prawa strona) -->
+                    <div class="solutions__content-wrapper" data-animate="fade-in">
+                        
+                        <!-- Solution 1: Automatyzacje -->
+                        <div class="solutions__content active" id="solution-1">
+                            <div class="solutions__text">
+                                <h3>Zautomatyzuj to, co powtarzalne</h3>
+                                <p>Tworzymy integracje i automatyzacje, które sprawiają, że Twoje obecne programy po raz pierwszy zaczynają ze sobą współpracować, bez konieczności ręcznego przenoszenia danych przez pracowników.</p>
+                                <ul class="solutions__features">
+                                    <li class="solutions__feature">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Automatyczny obieg dokumentów i faktur
+                                    </li>
+                                    <li class="solutions__feature">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Synchronizacja danych między systemami
+                                    </li>
+                                    <li class="solutions__feature">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Automatyczne raportowanie (bez Exceli)
+                                    </li>
+                                </ul>
+                                <a href="/automatyzacje.html" class="btn btn--primary btn--outline-white btn--arrow">
+                                    Dowiedz się więcej o automatyzacjach
+                                </a>
+                            </div>
+                            <div class="solutions__visual">
+                                <!-- Ilustracja SVG Obiegu Dokumentów (Animowana) -->
+                                <svg width="240" height="240" viewBox="0 0 240 240" fill="none">
+                                    <!-- Węzły / Działy (z Emoji) -->
+                                    <g class="dept-node" transform="translate(40, 40)">
+                                        <circle r="25" fill="rgba(37, 99, 235, 0.1)" stroke="var(--color-primary-light)" stroke-width="1.5" />
+                                        <text y="8" text-anchor="middle" font-size="20">🤝</text>
+                                        <text y="35" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="bold">SALES (CRM)</text>
+                                    </g>
+                                    <g class="dept-node" transform="translate(200, 40)">
+                                        <circle r="25" fill="rgba(16, 185, 129, 0.1)" stroke="var(--color-success)" stroke-width="1.5" />
+                                        <text y="8" text-anchor="middle" font-size="20">🏦</text>
+                                        <text y="35" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="bold">FINANCE (ERP)</text>
+                                    </g>
+                                    <g class="dept-node" transform="translate(120, 200)">
+                                        <circle r="25" fill="rgba(245, 158, 11, 0.1)" stroke="var(--color-amber)" stroke-width="1.5" />
+                                        <text y="8" text-anchor="middle" font-size="20">👥</text>
+                                        <text y="35" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="bold">HR / ADMIN</text>
+                                    </g>
+
+                                    <!-- Ścieżki połączeń (Linie proste) -->
+                                    <path id="path-sales-finance" d="M65 40 H175" stroke="rgba(255,255,255,0.05)" stroke-width="2" stroke-dasharray="4 4" />
+                                    <path id="path-finance-hr" d="M185 60 L135 175" stroke="rgba(255,255,255,0.05)" stroke-width="2" stroke-dasharray="4 4" />
+                                    <path id="path-hr-sales" d="M105 175 L55 60" stroke="rgba(255,255,255,0.05)" stroke-width="2" stroke-dasharray="4 4" />
+
+                                    <!-- Krążący dokument (Podąża dokładnie po liniach przerywanych) -->
+                                    <g id="moving-doc">
+                                        <rect width="14" height="18" rx="2" fill="var(--color-white)" fill-opacity="0.9" />
+                                        <rect x="3" y="4" width="8" height="1.5" fill="var(--color-slate-800)" />
+                                        <rect x="3" y="8" width="8" height="1.5" fill="var(--color-slate-800)" />
+                                        <rect x="3" y="12" width="5" height="1.5" fill="var(--color-slate-800)" />
+                                        
+                                        <animateMotion 
+                                            dur="10s" 
+                                            repeatCount="indefinite" 
+                                            path="M65 40 H185 L135 175 L105 175 L55 60 Z"
+                                            rotate="auto" 
+                                        />
+                                    </g>
+                                    
+                                    <!-- Pulsujące punkty aktywacji na węzłach -->
+                                    <circle cx="120" cy="40" r="3" fill="var(--color-primary-light)">
+                                        <animate attributeName="r" values="0;5;0" dur="2s" repeatCount="indefinite" />
+                                        <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite" />
+                                    </circle>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Solution 2: Aplikacje -->
+                        <div class="solutions__content" id="solution-2">
+                            <div class="solutions__text">
+                                <h3>Scentralizowany system zamiast arkuszy</h3>
+                                <p>Budujemy aplikacje webowe i systemy, które trwale zastępują ociężałe Excele. Skupiamy całą firmę w jednym miejscu, rozwiązując problem skakania pomiędzy 10 różnymi plikami czy miejscami z danymi. Aplikację można nieustannie rozwijać, usprawniać i budować na niej nowe procesy wraz ze wzrostem Twojej firmy.</p>
+                                <ul class="solutions__features">
+                                    <li class="solutions__feature">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Koniec z kopiowaniem i szukaniem danych w 10 miejscach
+                                    </li>
+                                    <li class="solutions__feature">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Jedno, spójne, centralne źródło prawdy dla zespołu
+                                    </li>
+                                    <li class="solutions__feature">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Pełna swoboda dalszego rozwoju i budowy nowych funkcji
+                                    </li>
+                                </ul>
+                                <a href="/aplikacje.html" class="btn btn--primary btn--outline-white btn--arrow">
+                                    Zobacz nasze podejście
+                                </a>
+                            </div>
+                            <div class="solutions__visual">
+                                <!-- Ilustracja SVG Dashboardu -->
+                                <svg width="280" height="210" viewBox="0 0 280 210" fill="none">
+                                    <!-- Ramka i tło okna -->
+                                    <rect width="280" height="210" rx="12" fill="var(--color-slate-900)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" />
+                                    <rect x="0" y="0" width="280" height="30" rx="12 12 0 0" fill="rgba(255,255,255,0.03)" />
+                                    <circle cx="15" cy="15" r="3" fill="#ef4444" />
+                                    <circle cx="25" cy="15" r="3" fill="#f59e0b" />
+                                    <circle cx="35" cy="15" r="3" fill="#10b981" />
+                                    
+                                    <!-- Sidebar -->
+                                    <rect x="0" y="30" width="60" height="180" fill="rgba(255,255,255,0.02)" />
+                                    <rect x="10" y="45" width="40" height="4" rx="2" fill="var(--color-slate-700)" />
+                                    <rect x="10" y="55" width="40" height="4" rx="2" fill="var(--color-slate-700)" />
+                                    <rect x="10" y="65" width="40" height="4" rx="2" fill="var(--color-slate-700)" />
+
+                                    <!-- Karty metryk -->
+                                    <rect x="70" y="45" width="60" height="35" rx="6" fill="rgba(37, 99, 235, 0.1)" stroke="rgba(37, 99, 235, 0.2)" />
+                                    <rect x="75" y="52" width="20" height="3" rx="1.5" fill="var(--color-primary-light)" />
+                                    <rect x="75" y="62" width="40" height="8" rx="2" fill="var(--color-white)" fill-opacity="0.8" />
+
+                                    <rect x="140" y="45" width="60" height="35" rx="6" fill="rgba(16, 185, 129, 0.1)" stroke="rgba(16, 185, 129, 0.2)" />
+                                    <rect x="145" y="52" width="20" height="3" rx="1.5" fill="var(--color-success)" />
+                                    <rect x="145" y="62" width="40" height="8" rx="2" fill="var(--color-white)" fill-opacity="0.8" />
+                                    
+                                    <rect x="210" y="45" width="60" height="35" rx="6" fill="rgba(255, 255, 255, 0.05)" />
+                                    
+                                    <!-- Wykresy (Uproszczone z animacją) -->
+                                    <rect x="70" y="90" width="200" height="50" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+                                    <path d="M75 130 L110 120 L150 125 L190 105 L230 115 L265 100" stroke="var(--color-primary-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="300" stroke-dashoffset="300">
+                                        <animate attributeName="stroke-dashoffset" values="300;0" dur="3s" repeatCount="indefinite" />
+                                    </path>
+                                    
+                                    <!-- Tabela danych -->
+                                    <rect x="70" y="150" width="200" height="50" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+                                    <g>
+                                        <rect x="80" y="160" width="180" height="2" rx="1" fill="rgba(255,255,255,0.1)" />
+                                        <rect x="80" y="170" width="180" height="2" rx="1" fill="rgba(255,255,255,0.05)" />
+                                        <rect x="80" y="180" width="180" height="2" rx="1" fill="rgba(255,255,255,0.05)" />
+                                        <rect x="80" y="190" width="180" height="2" rx="1" fill="rgba(255,255,255,0.05)" />
+                                        <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="4s" repeatCount="indefinite" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Solution 3: Agenci AI -->
+                        <div class="solutions__content" id="solution-3">
+                            <div class="solutions__text">
+                                <h3>Twój nowy, wirtualny pracownik</h3>
+                                <p>Agenci AI to autonomiczne systemy, które działają jak osobny dział w Twojej firmie. To inteligentni asystenci, którzy wykonują powierzone zadania bez zmęczenia i przerw.</p>
+                                <ul class="solutions__features">
+                                    <li class="solutions__feature">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Zarządzanie kalendarzem, notatki i listy zadań
+                                    </li>
+                                    <li class="solutions__feature">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Automatyczne odpisywanie na maile i podsumowania
+                                    </li>
+                                    <li class="solutions__feature">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        Wyszukiwanie informacji w bazie wiedzy firmy 24/7
+                                    </li>
+                                </ul>
+                                <p class="small text-muted" style="margin-top: var(--space-4); font-style: italic; color: var(--color-slate-400);">
+                                    "To prawa ręka szefa, która uwalnia Twój czas bez konieczności zatrudniania kolejnego pracownika."
+                                </p>
+                                <a href="/konsultacja.html" class="btn btn--primary btn--outline-white btn--arrow">
+                                    Zatrudnij Agenta AI
+                                </a>
+                            </div>
+                            <div class="solutions__visual">
+                                <!-- Ilustracja SVG Agenta AI z animacją -->
+                                <svg width="240" height="240" viewBox="0 0 240 240" fill="none">
+                                    <circle cx="120" cy="120" r="100" fill="rgba(37, 99, 235, 0.05)" stroke="rgba(37, 99, 235, 0.2)" stroke-width="1" stroke-dasharray="10 5">
+                                        <animateTransform attributeName="transform" type="rotate" from="0 120 120" to="360 120 120" dur="20s" repeatCount="indefinite" />
+                                    </circle>
+                                    
+                                    <!-- Robot AI w centrum (zamiast kropki) -->
+                                    <g transform="translate(95, 100)">
+                                        <!-- Poświata procesora -->
+                                        <circle cx="25" cy="20" r="30" fill="var(--color-primary)" fill-opacity="0.1">
+                                            <animate attributeName="r" values="25;35;25" dur="3s" repeatCount="indefinite" />
+                                            <animate attributeName="fill-opacity" values="0.1;0.2;0.1" dur="3s" repeatCount="indefinite" />
+                                        </circle>
+                                        
+                                        <!-- Głowa robota -->
+                                        <rect x="5" y="5" width="40" height="30" rx="6" fill="var(--color-slate-900)" stroke="var(--color-primary-light)" stroke-width="2" />
+                                        
+                                        <!-- Antena -->
+                                        <path d="M25 5 V-2" stroke="var(--color-primary-light)" stroke-width="1.5" />
+                                        <circle cx="25" cy="-4" r="2.5" fill="var(--color-primary-light)">
+                                            <animate attributeName="fill-opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite" />
+                                        </circle>
+
+                                        <!-- Oczy (animowane) -->
+                                        <circle cx="15" cy="18" r="3" fill="var(--color-primary-light)">
+                                            <animate attributeName="fill-opacity" values="1;0;1" dur="4s" repeatCount="indefinite" />
+                                        </circle>
+                                        <circle cx="35" cy="18" r="3" fill="var(--color-primary-light)">
+                                            <animate attributeName="fill-opacity" values="1;0;1" dur="4s" repeatCount="indefinite" />
+                                        </circle>
+
+                                        <!-- Usta/Panel danych -->
+                                        <rect x="15" y="28" width="20" height="2" rx="1" fill="var(--color-primary-light)" fill-opacity="0.4" />
+                                    </g>
+                                    
+                                    <!-- Orbity zadań (Ikony funkcyjne) -->
+                                    <g>
+                                        <!-- Kalendarz -->
+                                        <g transform="translate(120, 50)">
+                                            <circle r="16" fill="var(--color-slate-800)" stroke="var(--color-primary-light)" stroke-width="1" />
+                                            <rect x="-6" y="-6" width="12" height="12" rx="1.5" stroke="var(--color-white)" stroke-width="1.2" />
+                                            <path d="M-6 -2 H6 M-2 -6 V-2 M2 -6 V-2" stroke="var(--color-white)" stroke-width="1.2" />
+                                        </g>
+                                        <!-- Email -->
+                                        <g transform="translate(190, 120)">
+                                            <circle r="16" fill="var(--color-slate-800)" stroke="var(--color-primary-light)" stroke-width="1" />
+                                            <rect x="-7" y="-5" width="14" height="10" rx="1" stroke="var(--color-white)" stroke-width="1.2" />
+                                            <path d="M-7 -5 L0 1 L7 -5" stroke="var(--color-white)" stroke-width="1.2" />
+                                        </g>
+                                        <!-- Szukaj / Magnifier -->
+                                        <g transform="translate(120, 190)">
+                                            <circle r="16" fill="var(--color-slate-800)" stroke="var(--color-primary-light)" stroke-width="1" />
+                                            <circle cx="-1" cy="-1" r="4" stroke="var(--color-white)" stroke-width="1.2" />
+                                            <path d="M2 2 L6 6" stroke="var(--color-white)" stroke-width="1.2" />
+                                        </g>
+                                        <!-- Notatki / Dokument -->
+                                        <g transform="translate(50, 120)">
+                                            <circle r="16" fill="var(--color-slate-800)" stroke="var(--color-primary-light)" stroke-width="1" />
+                                            <rect x="-5" y="-7" width="10" height="14" rx="1" stroke="var(--color-white)" stroke-width="1.2" />
+                                            <path d="M-3 -3 H3 M-3 0 H3 M-3 3 H1" stroke="var(--color-white)" stroke-width="1.2" />
+                                        </g>
+                                        <animateTransform attributeName="transform" type="rotate" from="0 120 120" to="360 120 120" dur="18s" repeatCount="indefinite" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SEKCJA 2: KWALIFIKATOR
+             Dla kogo jest / Dla kogo nie jest LogicMorrow
+             ==================================================== -->
+        <section class="qualifier" aria-label="Dla kogo jest LogicMorrow">
+            <div class="qualifier__container">
+
+                <div class="qualifier__header" data-animate="fade-up">
+                    <span class="section-label">Kwalifikator</span>
+                    <h2>Sprawdź, czy to jest oferta dla Twojej firmy</h2>
+                    <p class="lead">Nie pracujemy z każdym — i to jest nasza przewaga.</p>
+                </div>
+
+                <div class="qualifier__grid">
+
+                    <!-- Tak -->
+                    <div class="qualifier__panel qualifier__panel--yes" data-animate="slide-left">
+                        <p class="qualifier__panel-title">✓ Pasuje do nas, jeśli:</p>
+                        <ul class="qualifier__list">
+                            <li class="qualifier__item">
+                                <svg class="qualifier__item-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <circle cx="10" cy="10" r="10" fill="#10b981" fill-opacity="0.15"/>
+                                    <path d="M6 10l3 3 5-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Twoja firma zatrudnia od 5 do 35 osób i działa ponad rok
+                            </li>
+                            <li class="qualifier__item">
+                                <svg class="qualifier__item-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <circle cx="10" cy="10" r="10" fill="#10b981" fill-opacity="0.15"/>
+                                    <path d="M6 10l3 3 5-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Przeklejasz dane między systemami lub topiecie się w Excelu
+                            </li>
+                            <li class="qualifier__item">
+                                <svg class="qualifier__item-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <circle cx="10" cy="10" r="10" fill="#10b981" fill-opacity="0.15"/>
+                                    <path d="M6 10l3 3 5-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Decyzja leży po stronie CEO lub właściciela — bez wieloosobowego przetargu
+                            </li>
+                            <li class="qualifier__item">
+                                <svg class="qualifier__item-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <circle cx="10" cy="10" r="10" fill="#10b981" fill-opacity="0.15"/>
+                                    <path d="M6 10l3 3 5-5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                Chcesz widzieć zwrot z inwestycji w mniej niż 6 miesięcy
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Nie -->
+                    <div class="qualifier__panel qualifier__panel--no" data-animate="slide-right">
+                        <p class="qualifier__panel-title">✗ Nie możemy Ci pomóc, jeśli:</p>
+                        <ul class="qualifier__list">
+                            <li class="qualifier__item">
+                                <svg class="qualifier__item-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <circle cx="10" cy="10" r="10" fill="#ef4444" fill-opacity="0.1"/>
+                                    <path d="M7 7l6 6M13 7l-6 6" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                Jesteś korporacją wymagającą wieloetapowych przetargów i certyfikacji
+                            </li>
+                            <li class="qualifier__item">
+                                <svg class="qualifier__item-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <circle cx="10" cy="10" r="10" fill="#ef4444" fill-opacity="0.1"/>
+                                    <path d="M7 7l6 6M13 7l-6 6" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                Jesteś startupem 1–4 osobowym bez powtarzalnych procesów
+                            </li>
+                            <li class="qualifier__item">
+                                <svg class="qualifier__item-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <circle cx="10" cy="10" r="10" fill="#ef4444" fill-opacity="0.1"/>
+                                    <path d="M7 7l6 6M13 7l-6 6" stroke="#ef4444" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                Szukasz strony wizytówkowej, sklepu e-commerce lub systemu ERP
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ====================================================
+             STICKY SCROLL WRAPPER
+             Kontener grupujący sekcje nakładające się na siebie
+             ==================================================== -->
+        <div class="sticky-stack-wrapper" style="position: relative; overflow: visible;">
+
+        <!-- ====================================================
+             SEKCJA 3: KALKULATOR ROI
+             Interaktywny — uświadamia ukryte koszty procesu manualnego
+             ==================================================== -->
+        <section class="roi-calculator" aria-label="Kalkulator zwrotu z inwestycji">
+            <div class="roi-calculator__container">
+
+                <div class="roi-calculator__header" data-animate="fade-up">
+                    <span class="section-label" style="color: var(--color-primary-light)">Analiza kosztów manualnych</span>
+                    <h2>Ile pieniędzy "przepala" Twoja firma?</h2>
+                    <p>Podaj parametry jednego powtarzalnego procesu. Zobacz, ile realnie tracisz na manualnej pracy, która mogłaby dziać się sama.</p>
+                </div>
+
+                <div class="roi-calculator__body">
+
+                    <form class="roi-form" id="roi-calculator" aria-label="Formularz kalkulatora ROI" novalidate>
+
+                        <div class="roi-form__group">
+                            <label class="roi-form__label" for="roi-employees">
+                                Liczba pracowników na tym procesie
+                                <span class="roi-form__value" id="roi-employees-display">1</span>
+                            </label>
+                            <input
+                                type="range"
+                                class="roi-form__range"
+                                id="roi-employees"
+                                min="1" max="20" step="1" value="1"
+                                aria-label="Liczba pracowników"
+                                oninput="document.getElementById('roi-employees-display').textContent = this.value"
+                            >
+                        </div>
+
+                        <div class="roi-form__group">
+                            <label class="roi-form__label" for="roi-hours">
+                                Godzin tygodniowo na ten proces
+                                <span class="roi-form__value" id="roi-hours-display">5 h</span>
+                            </label>
+                            <input
+                                type="range"
+                                class="roi-form__range"
+                                id="roi-hours"
+                                min="1" max="40" step="1" value="5"
+                                aria-label="Godziny tygodniowo"
+                                oninput="document.getElementById('roi-hours-display').textContent = this.value + ' h'"
+                            >
+                        </div>
+
+                        <div class="roi-form__group">
+                            <label class="roi-form__label" for="roi-rate">
+                                Średnia stawka godzinowa pracownika (PLN)
+                                <span class="roi-form__value" id="roi-rate-display">50 zł</span>
+                            </label>
+                            <input
+                                type="range"
+                                class="roi-form__range"
+                                id="roi-rate"
+                                min="20" max="200" step="5" value="50"
+                                aria-label="Stawka godzinowa"
+                                oninput="document.getElementById('roi-rate-display').textContent = this.value + ' zł'"
+                            >
+                        </div>
+
+                    </form>
+
+                    <div class="roi-result" id="roi-result" aria-live="polite">
+                        <p class="roi-result__title">Koszt braku automatyzacji</p>
+
+                        <div class="roi-result__row">
+                            <span class="roi-result__label">Miesięczna strata (przepalone PLN)</span>
+                            <span class="roi-result__val roi-result__val--accent" id="roi-monthly-cost">—</span>
+                        </div>
+
+                        <div class="roi-result__row">
+                            <span class="roi-result__label">Roczny koszt tego procesu</span>
+                            <span class="roi-result__val roi-result__val--error" id="roi-annual-cost">—</span>
+                        </div>
+
+                        <div class="roi-result__row">
+                            <span class="roi-result__label">Roboczogodziny marnowane rocznie</span>
+                            <span class="roi-result__val" id="roi-hours-year">—</span>
+                        </div>
+
+                        <div class="roi-result__cta">
+                            <a href="/konsultacja.html" class="btn btn--primary btn--full btn--arrow">
+                                Policz dokładnie na konsultacji
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SEKCJA 3.4: STANDARDY BEZPIECZEŃSTWA
+             Architektura on-premise, RODO i stabilność
+             ==================================================== -->
+        <section class="safety-standards" aria-label="Standardy bezpieczeństwa i stabilności">
+            <div class="safety-standards__container" data-animate="fade-up">
+
+                <div class="safety-standards__header">
+                    <span class="section-label" style="color: var(--color-primary-light)">Stabilność Enterprise</span>
+                    <h2 style="color: var(--color-white)">Bezpieczeństwo i pełna kontrola</h2>
+                </div>
+
+                <div class="safety-standards__grid">
+                    
+                    <!-- Karta 1: On-premise -->
+                    <div class="safety-card">
+                        <div class="safety-card__badge">RODO Ready</div>
+                        <div class="safety-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" />
+                                <rect x="2" y="14" width="20" height="8" rx="2" />
+                                <circle cx="6" cy="6" r="1" fill="currentColor" />
+                                <circle cx="6" cy="18" r="1" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <h3>Dane zostają u Ciebie</h3>
+                        <p>Dane nie wychodzą poza Twoją firmę. Instalujemy systemy bezpiecznie na wewnętrznych maszynach lub w dedykowanej chmurze, dając Ci pełną kontrolę.</p>
+                    </div>
+
+                    <!-- Karta 2: Monitoring -->
+                    <div class="safety-card">
+                        <div class="safety-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                            </svg>
+                        </div>
+                        <h3>Aktywne monitorowanie</h3>
+                        <p>Każdy proces posiada zautomatyzowaną obsługę błędów. W razie awarii zewnętrznego API, otrzymujesz natychmiastowe powiadomienie.</p>
+                    </div>
+
+                    <!-- Karta 3: Shadow Run -->
+                    <div class="safety-card">
+                        <div class="safety-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <h3>Bezpieczne testy na bieżąco</h3>
+                        <p>Nowe rozwiązania uruchamiamy równolegle do starych procesów. Rezygnujemy z dawnych metod dopiero wtedy, gdy nowa aplikacja udowodni swoją niezawodność.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SEKCJA 3.5: ZAJAWKA BIBLIOTEKI PROCESÓW (Portfolio)
+             Show, don't tell — konkretne przykłady i ROI
+             ==================================================== -->
+        <section class="portfolio-teaser" aria-label="Przykłady naszych wdrożeń">
+            <div class="portfolio-teaser__container">
+                
+                <div class="portfolio-teaser__header" data-animate="fade-up">
+                    <div class="portfolio-teaser__header-text">
+                        <span class="section-label" style="color: var(--color-primary-light)">Biblioteka rozwiązań</span>
+                        <h2>Zobacz systemy w działaniu</h2>
+                        <p class="lead">Zamiast opisywać usługi, pokazujemy jak zautomatyzowane procesy realnie oszczędzają czas w firmach.</p>
+                    </div>
+                    <a href="/rozwiazania.html" class="btn btn--outline-white btn--arrow">
+                        Zobacz całą bibliotekę
+                    </a>
+                </div>
+
+                <div class="portfolio-teaser__grid">
+                    
+                    <!-- Proces 1: Skład Drewna -->
+                    <div class="process-card" data-animate="fade-up" data-delay="0">
+                        <div class="process-card__visual">
+                            <!-- SVG Placeholder for Video/Loom -->
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1" />
+                                <path d="M20 18l12 6-12 6V18z" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <div class="process-card__content">
+                            <span class="process-card__tag">System Dedykowany</span>
+                            <h3>System dla składu drewna</h3>
+                            <p>Dedykowany system dla firmy handlującej drewnem i kantówką. Łączy dane magazynowe, postępy zamówień, finanse i logistykę w jednym miejscu.</p>
+                            <div class="process-card__effect">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 8l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Efekt: <strong>wszystkie dane firmy w jednym miejscu</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proces 2: Płatności -->
+                    <div class="process-card" data-animate="fade-up" data-delay="100">
+                        <div class="process-card__visual">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1" />
+                                <path d="M20 18l12 6-12 6V18z" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <div class="process-card__content">
+                            <span class="process-card__tag">Finanse / Automatyzacja</span>
+                            <h3>Automatyczne płatności</h3>
+                            <p>System sam sprawdza Twoje konto bankowe, odczytuje kto już zapłacił i wysyła grzeczne przypomnienia do tych, którzy spóźniają się z przelewem.</p>
+                            <div class="process-card__effect">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 8l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Efekt: <strong>skrócony czas spływu należności</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proces 3: Magazyn -->
+                    <div class="process-card" data-animate="fade-up" data-delay="200">
+                        <div class="process-card__visual">
+                            <svg viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1" />
+                                <path d="M20 18l12 6-12 6V18z" fill="currentColor" />
+                            </svg>
+                        </div>
+                        <div class="process-card__content">
+                            <span class="process-card__tag">Logistyka / Magazyn</span>
+                            <h3>Monitoring stanów magazynowych</h3>
+                            <p>Automatyzacja wyciąga dane z systemu, sprawdza stany i porównuje je z minimum. Wysyła maila do zakupów o konieczności domówienia towaru.</p>
+                            <div class="process-card__effect">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 8l2 2 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Efekt: <strong>brak przestojów przez braki towaru</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        </div> <!-- Koniec sticky-stack-wrapper -->
+
+        <!-- ====================================================
+             SEKCJA 4: MANIFEST (zajawka)
+             Skrót Manifestu Anty-Agencyjnego
+             ==================================================== -->
+        <section class="manifesto" aria-label="Manifest — jak pracujemy">
+            <div class="manifesto__container">
+                
+                <div class="manifesto__header" data-animate="fade-up">
+                    <span class="section-label">Nasz model pracy</span>
+                    <h2>Inżynier zamiast agencji</h2>
+                    <p class="lead">Współpracując z nami, omijasz zbędny "szum IT". Rozmawiasz bezpośrednio z twórcą Twojego rozwiązania.</p>
+                </div>
+
+                <div class="manifesto__cards" data-animate="fade-up">
+                    
+                    <!-- Karta 1: Typowa Agencja -->
+                    <div class="manifesto__card manifesto__card--agency">
+                        <div class="manifesto__card-header">
+                            <h3 class="manifesto__card-title">Typowa Agencja IT</h3>
+                        </div>
+                        <ul class="manifesto__features">
+                            <li class="manifesto__feature manifesto__feature--cross">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/></svg>
+                                Wielomiesięczna analiza i dziesiątki spotkań
+                            </li>
+                            <li class="manifesto__feature manifesto__feature--cross">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/></svg>
+                                Głuchy telefon: Handlowiec → PM → Programista
+                            </li>
+                            <li class="manifesto__feature manifesto__feature--cross">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/></svg>
+                                Uzależnienie od dostawcy (brak dostępu do kodu)
+                            </li>
+                            <li class="manifesto__feature manifesto__feature--cross">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/></svg>
+                                Wykreowana wycena końcowa z ukrytymi kosztami
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Karta 2: Inżynier (LogicMorrow) -->
+                    <div class="manifesto__card manifesto__card--engineer">
+                        <div class="manifesto__card-badge">Nasze podejście</div>
+                        <div class="manifesto__card-header">
+                            <h3 class="manifesto__card-title">LogicMorrow (Inżynier)</h3>
+                        </div>
+                        <ul class="manifesto__features">
+                            <li class="manifesto__feature manifesto__feature--check">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Pierwsze efekty i testy już w 2–3 tygodnie
+                            </li>
+                            <li class="manifesto__feature manifesto__feature--check">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Bezpośredni kontakt i praca 1:1 z inżynierem
+                            </li>
+                            <li class="manifesto__feature manifesto__feature--check">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Rozwiązanie na własność — kod należy do Ciebie
+                            </li>
+                            <li class="manifesto__feature manifesto__feature--check">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Stała i znana przed startem wycena wdrożenia
+                            </li>
+                        </ul>
+                        <div class="manifesto__card-footer">
+                            <a href="/model-pracy.html" class="btn btn--primary btn--full btn--arrow" style="width: 100%; justify-content: center;">Poznaj szczegóły współpracy</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SEKCJA 5: KONSULTACJA (Formularz kontaktowy)
+             ==================================================== -->
+        <section class="consultation" id="konsultacja" aria-label="Umów bezpłatną konsultację">
+            <div class="consultation__container">
+                <div class="consultation__grid">
+                    
+                    <!-- Lewa strona: Formularz -->
+                    <div class="consultation__form-wrapper" data-animate="slide-left">
+                        <form class="consultation__form" id="contact-form">
+                            <div class="form-group">
+                                <label class="form-label" for="form-email">Adres e-mail</label>
+                                <input type="email" id="form-email" class="form-input" placeholder="adres@firma.pl" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="form-phone">Numer telefonu</label>
+                                <input type="tel" id="form-phone" class="form-input" placeholder="+48 000 000 000" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="form-subject">Temat rozmowy</label>
+                                <textarea id="form-subject" class="form-textarea" placeholder="Co chcesz zautomatyzować?" rows="3" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" required></textarea>
+                            </div>
+
+                            <!-- Honeypot (Anty-bot) -->
+                            <div class="form-hp" aria-hidden="true">
+                                <input type="checkbox" id="hp-check" tabindex="-1" autocomplete="off">
+                                <label for="hp-check">Potwierdź, że nie jesteś botem (pozostaw puste)</label>
+                            </div>
+                            
+                            <div class="form-checkbox-group">
+                                <input type="checkbox" id="form-consent" class="form-checkbox" required>
+                                <label for="form-consent" class="form-checkbox-label">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi zgłoszenia. Wyrażam zgodę na otrzymywanie informacji handlowych od LogicMorrow drogą elektroniczną na podany adres e-mail. <a href="/polityka-prywatnosci.html" target="_blank">Polityka Prywatności.</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn--primary btn--lg btn--arrow" style="width: 100%; justify-content: center;">
+                                Umów bezpłatną konsultację
+                            </button>
+                        </form>
+
+                        <!-- Bezpośredni kontakt -->
+                        <div class="consultation__direct" data-animate="fade-up">
+                            <span class="consultation__direct-label">Lub skontaktuj się bezpośrednio</span>
+                            <div class="consultation__direct-links">
+                                <a href="tel:+48537844013" class="consultation__direct-link">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    537 844 013
+                                </a>
+                                <a href="mailto:kontakt@logicmorrow.pl" class="consultation__direct-link">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    kontakt@logicmorrow.pl
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Prawa strona: Treść -->
+                    <div class="consultation__content" data-animate="fade-up">
+                        <span class="section-label" style="color: var(--color-primary-light)">Ostatni krok</span>
+                        <h2>Zacznij od jednej rozmowy</h2>
+                        <p>
+                            20 minut. Zero nacisku sprzedażowego. Policzymy razem, czy automatyzacja ma mierzalny sens w Twojej firmie.
+                        </p>
+                        
+                        <div class="consultation__trust">
+                            <div class="consultation__trust-item">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>Odpowiedź inżyniera w ciągu 24h</span>
+                            </div>
+                            <div class="consultation__trust-item">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>Konkretne wyliczenie ROI na starcie</span>
+                            </div>
+                            <div class="consultation__trust-item">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>Bezpłatna analiza procesów (Audyt)</span>
+                            </div>
+                        </div>
+                    </div>
+
+        </section>
+
+    </main>
+
+    <!-- Globalna stopka (wstrzykiwana przez loader.js) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="js/loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/solutions.js"></script>
+    <script src="js/roi-calculator.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/forms.js"></script>
+
+    <script>
+        // Honeypot Bot Protection
+        document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+            if (document.getElementById('hp-check')?.checked) {
+                e.preventDefault();
+                console.warn('Bot detected via honeypot.');
+                return false;
+            }
+        });
+    </script>
+
+    <!-- [6] Cookie Consent — inicjalizacja -->
+    <script src="/js/cookie-consent.js"></script>
+</body>
+</html>

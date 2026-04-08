@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteka Rozwiązań — Automatyzacje w Działaniu | LogicMorrow</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <meta name="description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych — linki do GitHub.">
+
+    <!-- ═══════════════════════════════════════════════════════
+         COOKIE CONSENT + GOOGLE CONSENT MODE V2
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 2000
+        });
+    </script>
+
+    <!-- [2] Pre-inicjalizacja consent dla powracających użytkowników -->
+    <script>
+        (function () {
+            try {
+                var raw = document.cookie.split(';').reduce(function (acc, c) {
+                    var p = c.trim().split('=');
+                    return p[0] === 'cc_cookie' ? decodeURIComponent(p.slice(1).join('=')) : acc;
+                }, null);
+                if (raw) {
+                    var cats = JSON.parse(raw).categories || [];
+                    var analytics = cats.indexOf('analytics') >= 0 ? 'granted' : 'denied';
+                    var marketing = cats.indexOf('marketing') >= 0 ? 'granted' : 'denied';
+                    gtag('consent', 'update', {
+                        'analytics_storage': analytics,
+                        'ad_storage': marketing,
+                        'ad_user_data': marketing,
+                        'ad_personalization': marketing
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <script>(function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+    <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+
+    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <style>
+        :root {
+            --cc-btn-primary-bg: #2563eb;
+            --cc-btn-primary-hover-bg: #1d4ed8;
+            --cc-btn-primary-text: #fff;
+            --cc-btn-secondary-bg: #f1f5f9;
+            --cc-btn-secondary-hover-bg: #e2e8f0;
+            --cc-btn-secondary-text: #475569;
+            --cc-toggle-on-bg: #2563eb;
+            --cc-link-color: #2563eb;
+            --cc-btn-border-radius: 0.75rem;
+            --cc-overlay-bg: rgba(0, 0, 0, 0.55);
+        }
+        #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/badge.css">
+
+    <!-- Section CSS -->
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/library.css">
+    <link rel="stylesheet" href="css/sections/consultation.css">
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div id="navbar-placeholder"></div>
+
+    <main>
+
+        <!-- ====================================================
+             SEKCJA 1: HERO
+             ==================================================== -->
+        <section class="hero hero--subpage" aria-label="Biblioteka rozwiązań">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <span class="badge badge--dark-blue">Biblioteka Rozwiązań</span>
+                    </div>
+                    <h1 class="hero__title">
+                        Nie słowa.<br>
+                        <span>Działające systemy.</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Zobacz, jak automatyzacja i dedykowane systemy rozwiązują realne problemy biznesowe. 
+                        Od nagrań procesów po konkretne architektury systemowe — twarde dane i realne efekty.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================
+             SEKCJA 2: KATALOG WIDEO
+             ==================================================== -->
+        <section class="library" aria-label="Katalog rozwiązań i procesów">
+            <div class="library__container">
+
+                <div class="library__header" data-animate="fade-up">
+                    <span class="section-label">Rozwiązania w praktyce</span>
+                    <h2>Zastosowania automatyzacji i systemów w firmach</h2>
+                    <p>Poniżej zobaczysz, jak automatyzacja i nasze systemy działają w praktyce. To konkretne rozwiązania, które radzą sobie z codziennymi problemami w firmach.</p>
+                </div>
+
+                <!-- Filtry kategorii -->
+                <div class="library__filters" aria-label="Filtruj po poziomie zaawansowania">
+                    <button class="library__filter-btn active" data-filter="all">Wszystkie</button>
+                    <button class="library__filter-btn" data-filter="proste">Najprostsze rozwiązania</button>
+                    <button class="library__filter-btn" data-filter="srednie">Średniozaawansowane</button>
+                    <button class="library__filter-btn" data-filter="zaawansowane">Zaawansowane</button>
+                </div>
+
+                <!-- Grid wideo — karty procesów -->
+                <div class="library__grid">
+
+                    <!-- Karta 1: Skład drewna -->
+                    <article class="process-card" data-category="zaawansowane" data-animate="fade-up" data-delay="0">
+                        <div class="process-card__video-wrapper" role="button" tabindex="0" aria-label="Odtwórz wideo: System dla składu drewna">
+                            <svg class="process-card__thumbnail" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+                                <rect width="640" height="360" fill="#1e293b"/>
+                                <text x="320" y="180" text-anchor="middle" fill="#334155" font-family="Inter" font-size="16">[Nagranie: Skład drewna]</text>
+                            </svg>
+                            <div class="process-card__play-btn" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
+                                    <path d="M6 4l12 6-12 6V4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="process-card__body">
+                            <p class="process-card__category">Zaawansowane</p>
+                            <h3 class="process-card__title">Dedykowany system dla składu drewna</h3>
+                            <div class="process-card__stats">
+                                <span class="process-card__stat"><strong>Wdrożenie:</strong> 28 dni</span>
+                                <span class="process-card__stat"><strong>Zakres:</strong> Magazyn, zamówienia, finanse</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Karta 2: Płatności -->
+                    <article class="process-card" data-category="proste" data-animate="fade-up" data-delay="100">
+                        <div class="process-card__video-wrapper" role="button" tabindex="0" aria-label="Odtwórz wideo: Automatyzacja płatności">
+                            <svg class="process-card__thumbnail" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+                                <rect width="640" height="360" fill="#1e293b"/>
+                                <text x="320" y="180" text-anchor="middle" fill="#334155" font-family="Inter" font-size="16">[Nagranie: Płatności]</text>
+                            </svg>
+                            <div class="process-card__play-btn" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
+                                    <path d="M6 4l12 6-12 6V4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="process-card__body">
+                            <p class="process-card__category">Najprostsze</p>
+                            <h3 class="process-card__title">Automatyczne powiadomienia o zaległościach</h3>
+                            <div class="process-card__stats">
+                                <span class="process-card__stat"><strong>Wdrożenie:</strong> 12 dni</span>
+                                <span class="process-card__stat"><strong>Narzędzia:</strong> n8n + Bank API</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Karta 3: Magazyn -->
+                    <article class="process-card" data-category="srednie" data-animate="fade-up" data-delay="200">
+                        <div class="process-card__video-wrapper" role="button" tabindex="0" aria-label="Odtwórz wideo: Monitoring stanów magazynowych">
+                            <svg class="process-card__thumbnail" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+                                <rect width="640" height="360" fill="#1e293b"/>
+                                <text x="320" y="180" text-anchor="middle" fill="#334155" font-family="Inter" font-size="16">[Miniatura wideo: Magazyn]</text>
+                            </svg>
+                            <div class="process-card__play-btn" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
+                                    <path d="M6 4l12 6-12 6V4z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="process-card__body">
+                            <p class="process-card__category">Średniozaawansowane</p>
+                            <h3 class="process-card__title">Monitoring stanów i automatyczne domówienia</h3>
+                            <div class="process-card__stats">
+                                <span class="process-card__stat"><strong>Wdrożenie:</strong> 10 dni</span>
+                                <span class="process-card__stat"><strong>Cel:</strong> Brak braków asortymentowych</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Karta 4: Analiza Danych -->
+                    <article class="process-card" data-category="srednie" data-animate="fade-up" data-delay="300">
+                        <div class="process-card__image-wrapper">
+                            <svg class="process-card__thumbnail" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+                                <rect width="640" height="360" fill="#0f172a"/>
+                                <text x="320" y="180" text-anchor="middle" fill="#475569" font-family="Inter" font-size="14">[System Raportowania]</text>
+                            </svg>
+                        </div>
+                        <div class="process-card__body">
+                            <p class="process-card__category">Średniozaawansowane</p>
+                            <h3 class="process-card__title">Centralny System Raportowania Marży</h3>
+                            <div class="process-card__stats">
+                                <span class="process-card__stat"><strong>Efekt:</strong> Raport w 5 sekund (vs 4h manualnie)</span>
+                                <span class="process-card__stat"><strong>Integracja:</strong> ERP + Excel + SQL</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Karta 5: AI Support -->
+                    <article class="process-card" data-category="zaawansowane" data-animate="fade-up" data-delay="400">
+                        <div class="process-card__image-wrapper">
+                            <svg class="process-card__thumbnail" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+                                <rect width="640" height="360" fill="#1e293b"/>
+                                <text x="320" y="180" text-anchor="middle" fill="#475569" font-family="Inter" font-size="14">[System AI]</text>
+                            </svg>
+                        </div>
+                        <div class="process-card__body">
+                            <p class="process-card__category">Zaawansowane</p>
+                            <h3 class="process-card__title">Inteligentna Kwalifikacja Leadów</h3>
+                            <div class="process-card__stats">
+                                <span class="process-card__stat"><strong>Skuteczność:</strong> 92% trafnych ocen</span>
+                                <span class="process-card__stat"><strong>Technologia:</strong> LLM + CRM Sync</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+
+
+            </div>
+        </section>
+
+
+        <section class="consultation" id="konsultacja" aria-label="Wezwanie do działania" style="background: var(--gradient-hero);">
+            <div class="consultation__container">
+                <div class="consultation__grid" style="grid-template-columns: 1fr; max-width: 640px; margin: 0 auto;">
+                    
+                    <div style="text-align: center; margin-bottom: var(--space-10);">
+                        <h2 style="color: var(--color-white); margin-bottom: var(--space-4);" data-animate="fade-up">
+                            Widzisz podobny problem w swojej firmie?
+                        </h2>
+                        <p style="color: var(--color-slate-300); margin: 0 auto;" data-animate="fade-up">
+                            Opisz wyzwanie, a na bezpłatnej konsultacji pokażemy Ci gotowy plan automatyzacji.
+                        </p>
+                    </div>
+
+                    <!-- Lewa strona: Formularz -->
+                    <div class="consultation__form-wrapper" data-animate="fade-up" style="background: var(--color-slate-900); border: 1px solid rgba(255,255,255,0.05); padding: var(--space-8); border-radius: var(--radius-xl);">
+                        <form class="consultation__form" id="contact-form">
+                            <div class="form-group">
+                                <label class="form-label" for="form-email" style="color: var(--color-white);">Adres e-mail</label>
+                                <input type="email" id="form-email" class="form-input" placeholder="adres@firma.pl" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="form-phone" style="color: var(--color-white);">Numer telefonu</label>
+                                <input type="tel" id="form-phone" class="form-input" placeholder="+48 000 000 000" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="form-subject" style="color: var(--color-white);">Temat rozmowy</label>
+                                <textarea id="form-subject" class="form-textarea" placeholder="Co chcesz zautomatyzować?" rows="3" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" required></textarea>
+                            </div>
+
+                            <!-- Honeypot (Anty-bot) -->
+                            <div class="form-hp" aria-hidden="true" style="display: none;">
+                                <input type="checkbox" id="hp-check" tabindex="-1" autocomplete="off">
+                                <label for="hp-check">Potwierdź, że nie jesteś botem (pozostaw puste)</label>
+                            </div>
+                            
+                            <div class="form-checkbox-group">
+                                <input type="checkbox" id="form-consent" class="form-checkbox" required>
+                                <label for="form-consent" class="form-checkbox-label" style="color: var(--color-slate-400); font-size: var(--text-xs);">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi zgłoszenia. Wyrażam zgodę na otrzymywanie informacji handlowych od LogicMorrow drogą elektroniczną na podany adres e-mail. <a href="/polityka-prywatnosci.html" target="_blank" style="color: var(--color-primary-light);">Polityka Prywatności.</a>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn--primary btn--lg btn--arrow" style="width: 100%; justify-content: center;">
+                                Umów bezpłatną konsultację
+                            </button>
+                        </form>
+
+                        <!-- Bezpośredni kontakt -->
+                        <div class="consultation__direct" style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid rgba(255,255,255,0.05);">
+                            <span class="consultation__direct-label" style="display: block; font-size: var(--text-xs); color: var(--color-slate-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-4); text-align: center;">Lub skontaktuj się bezpośrednio</span>
+                            <div class="consultation__direct-links" style="display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-8); justify-content: center;">
+                                <a href="tel:+48537844013" class="consultation__direct-link" style="display: flex; align-items: center; gap: var(--space-2); color: var(--color-white); font-weight: var(--font-semibold); transition: color 0.2s;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary-light);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    537 844 013
+                                </a>
+                                <a href="mailto:kontakt@logicmorrow.pl" class="consultation__direct-link" style="display: flex; align-items: center; gap: var(--space-2); color: var(--color-white); font-weight: var(--font-semibold); transition: color 0.2s;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary-light);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    kontakt@logicmorrow.pl
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/forms.js"></script>
+    <script>
+        // Honeypot Bot Protection
+        document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+            if (document.getElementById('hp-check')?.checked) {
+                e.preventDefault();
+                console.warn('Bot detected via honeypot.');
+                return false;
+            }
+        });
+    </script>
+
+    <!-- Logika filtrów biblioteki -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.library__filter-btn');
+            const cards      = document.querySelectorAll('.process-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.dataset.filter;
+
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    cards.forEach(card => {
+                        const show = filter === 'all' || card.dataset.category === filter;
+                        card.style.display = show ? '' : 'none';
+                    });
+                });
+            });
+        });
+    </script>
+
+    <!-- [6] Cookie Consent — inicjalizacja -->
+    <script src="/js/cookie-consent.js"></script>
+
+</body>
+</html>

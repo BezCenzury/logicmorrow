@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dedykowane Aplikacje Webowe dla Firm | LogicMorrow</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <meta name="description" content="Budujemy nowoczesne i dedykowane aplikacje webowe dla firm, którym gotowe abonamenty już nie wystarczają. Zyskaj pewność i własność systemu.">
+
+    <!-- ═══════════════════════════════════════════════════════
+         COOKIE CONSENT + GOOGLE CONSENT MODE V2
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 2000
+        });
+    </script>
+
+    <!-- [2] Pre-inicjalizacja consent dla powracających użytkowników -->
+    <script>
+        (function () {
+            try {
+                var raw = document.cookie.split(';').reduce(function (acc, c) {
+                    var p = c.trim().split('=');
+                    return p[0] === 'cc_cookie' ? decodeURIComponent(p.slice(1).join('=')) : acc;
+                }, null);
+                if (raw) {
+                    var cats = JSON.parse(raw).categories || [];
+                    var analytics = cats.indexOf('analytics') >= 0 ? 'granted' : 'denied';
+                    var marketing = cats.indexOf('marketing') >= 0 ? 'granted' : 'denied';
+                    gtag('consent', 'update', {
+                        'analytics_storage': analytics,
+                        'ad_storage': marketing,
+                        'ad_user_data': marketing,
+                        'ad_personalization': marketing
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <script>(function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+    <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+
+    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <style>
+        :root {
+            --cc-btn-primary-bg: #2563eb;
+            --cc-btn-primary-hover-bg: #1d4ed8;
+            --cc-btn-primary-text: #fff;
+            --cc-btn-secondary-bg: #f1f5f9;
+            --cc-btn-secondary-hover-bg: #e2e8f0;
+            --cc-btn-secondary-text: #475569;
+            --cc-toggle-on-bg: #2563eb;
+            --cc-link-color: #2563eb;
+            --cc-btn-border-radius: 0.75rem;
+            --cc-overlay-bg: rgba(0, 0, 0, 0.55);
+        }
+        #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/badge.css">
+
+    <!-- Section CSS -->
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/challenges.css">
+    <link rel="stylesheet" href="css/sections/solutions.css">
+    <link rel="stylesheet" href="css/sections/safety-standards.css">
+    <link rel="stylesheet" href="css/sections/roi-calculator.css">
+    <link rel="stylesheet" href="css/sections/faq.css">
+    <link rel="stylesheet" href="css/sections/process.css">
+    <link rel="stylesheet" href="css/sections/consultation.css">
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Globalny nagłówek -->
+    <div id="navbar-placeholder"></div>
+
+    <main>
+
+        <!-- ====================================================
+             SEKCJA 1: HERO
+             2-kolumnowy layout z wizualizacją
+             ==================================================== -->
+        <section class="hero hero--overlap" aria-label="Dedykowane aplikacje webowe">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <span class="badge badge--dark-blue badge--dot">Dedykowane Mikro-Aplikacje</span>
+                    </div>
+                    <h1 class="hero__title">
+                        Excel pęka w szwach.<br>
+                        <span>Czas na system skrojony pod Ciebie.</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Tworzymy lekkie i proste w obsłudze programy, które rozwiązują konkretne problemy Twojej firmy. 
+                        Bez płacenia za zbędne funkcje i bez miesięcznych abonamentów. System, który od początku do końca należy do Ciebie.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="/konsultacja.html" class="btn btn--primary btn--lg btn--arrow">
+                            Umów bezpłatną konsultację
+                        </a>
+                        <a href="#projekty" class="btn btn--outline-white btn--lg">
+                            Zobacz co budujemy
+                        </a>
+                    </div>
+                    <div class="hero__trust">
+                        <span class="hero__trust-item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <circle cx="8" cy="8" r="8" fill="#10b981" fill-opacity="0.2"/>
+                                <path d="M5 8l2 2 4-4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Pełna własność intelektualna
+                        </span>
+                        <span class="hero__trust-item">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <circle cx="8" cy="8" r="8" fill="#10b981" fill-opacity="0.2"/>
+                                <path d="M5 8l2 2 4-4" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Minimalne wdrożenia testowe rynkowe
+                        </span>
+                    </div>
+                </div>
+
+                <div class="hero__visual" aria-hidden="true">
+                    <!-- SVG wizualizacja dedykowanej aplikacji (Dashboard) -->
+                    <svg width="520" height="400" viewBox="0 0 520 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="rectGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="var(--color-slate-800)" />
+                                <stop offset="100%" stop-color="var(--color-slate-950)" />
+                            </linearGradient>
+                            <filter id="cardGlow">
+                                <feGaussianBlur stdDeviation="6" result="blur"/>
+                                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                            </filter>
+                        </defs>
+                        <!-- Ramka okna -->
+                        <rect x="20" y="20" width="480" height="340" rx="16" fill="url(#rectGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
+                        <rect x="20" y="20" width="480" height="40" rx="16 16 0 0" fill="rgba(255,255,255,0.03)"/>
+                        <circle cx="45" cy="40" r="4" fill="#ef4444" />
+                        <circle cx="60" cy="40" r="4" fill="#f59e0b" />
+                        <circle cx="75" cy="40" r="4" fill="#10b981" />
+                        
+                        <!-- Pasek boczny -->
+                        <rect x="20" y="60" width="80" height="300" rx="0" fill="rgba(255,255,255,0.01)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                        <rect x="35" y="80" width="50" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+                        <rect x="35" y="100" width="50" height="6" rx="3" fill="rgba(255,255,255,0.05)"/>
+                        <rect x="35" y="120" width="50" height="6" rx="3" fill="rgba(255,255,255,0.05)"/>
+
+                        <!-- Karty ze statystykami -->
+                        <g filter="url(#cardGlow)">
+                            <rect x="115" y="80" width="110" height="70" rx="8" fill="rgba(37, 99, 235, 0.1)" stroke="var(--color-primary-light)" stroke-width="1" />
+                            <rect x="125" y="95" width="40" height="4" rx="2" fill="var(--color-primary-light)" />
+                            <rect x="125" y="115" width="80" height="16" rx="4" fill="#fff" fill-opacity="0.9" />
+                        </g>
+
+                        <rect x="240" y="80" width="110" height="70" rx="8" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                        <rect x="250" y="95" width="40" height="4" rx="2" fill="var(--color-slate-500)" />
+                        <rect x="250" y="115" width="80" height="16" rx="4" fill="#fff" fill-opacity="0.6" />
+
+                        <rect x="365" y="80" width="110" height="70" rx="8" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+                        <rect x="375" y="95" width="40" height="4" rx="2" fill="var(--color-slate-500)" />
+                        <rect x="375" y="115" width="80" height="16" rx="4" fill="#fff" fill-opacity="0.6" />
+
+                        <!-- Główny obszar danych (Wykres) -->
+                        <rect x="115" y="165" width="360" height="175" rx="12" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+                        <path d="M130 300 Q180 250 230 270 T330 220 T430 200" stroke="var(--color-primary-light)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+                            <animate attributeName="d" values="M130 300 Q180 250 230 270 T330 220 T430 200; M130 310 Q180 240 230 280 T330 210 T430 205; M130 300 Q180 250 230 270 T330 220 T430 200" dur="4s" repeatCount="indefinite" />
+                        </path>
+                        
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================
+             SEKCJA 2: WYZWANIA (Grid kart)
+             Kiedy warto budować dedykowaną aplikację
+             ==================================================== -->
+        <section class="challenges" aria-label="Wyzwania które rozwiązujemy aplikacjami">
+            <div class="challenges__container">
+                
+                <div class="challenges__header" data-animate="fade-up">
+                    <span class="section-label">Problemy z gotowym abonamentem</span>
+                    <h2>Narzędzia z półki mają ograniczenia.<br>Twój biznes nie.</h2>
+                    <p class="lead">Gdy Twój proces jest choć trochę inny niż przewidział dostawca gotowego oprogramowania — zaczynają się problemy.</p>
+                </div>
+
+                <div class="challenges__grid">
+                    
+                    <!-- Wyzwanie 1 -->
+                    <div class="challenge-card" data-animate="fade-up" data-delay="0">
+                        <span class="challenge-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                            NADMIAROWOŚĆ
+                        </span>
+                        <h3>Płacisz za to, czego nie używasz</h3>
+                        <p>Popularne systemy ERP/CRM narzucają mnóstwo funkcji, których Twój zespół nigdy nie użyje — a każda z nich komplikuje codzienną pracę.</p>
+                    </div>
+
+                    <!-- Wyzwanie 2 -->
+                    <div class="challenge-card" data-animate="fade-up" data-delay="100">
+                        <span class="challenge-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            BRAKI
+                        </span>
+                        <h3>Brak kluczowych 10%</h3>
+                        <p>Zawsze brakuje tej jednej, najważniejszej funkcji, która sprawia, że i tak musisz wracać do Excela.</p>
+                    </div>
+
+                    <!-- Wyzwanie 3 -->
+                    <div class="challenge-card" data-animate="fade-up" data-delay="200">
+                        <span class="challenge-card__tag">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L22 22"></path></svg>
+                            UZALEŻNIENIE
+                        </span>
+                        <h3>Uzależnienie od jednego dostawcy</h3>
+                        <p>Twoje dane i procesy są uwięzione w systemie, którego nie jesteś właścicielem. Jeśli dostawca podniesie ceny lub przestanie rozwijać program — nie masz na to wpływu.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================
+             SEKCJA 3: SOLUTIONS (Tabs)
+             Co budujemy najczęściej
+             ==================================================== -->
+        <section class="solutions" id="projekty" aria-label="Rodzaje aplikacji które budujemy">
+            <div class="solutions__container">
+                
+                <div class="solutions__header" data-animate="fade-up">
+                    <span class="section-label">Nasze specjalizacje</span>
+                    <h2>Programy skrojone na miarę</h2>
+                    <p class="lead">Budujemy narzędzia, które ułatwiają pracę, a nie ją utrudniają. Nie dodajemy zbędnych przycisków i skomplikowanych opcji.</p>
+                </div>
+
+                <div class="solutions__layout">
+                    
+                    <!-- Tabs (Poziome na górze) -->
+                    <div class="solutions__tabs" data-animate="slide-left">
+                        <button class="solutions__tab active" data-solution="1">
+                            <span class="solutions__tab-title">Mikro-aplikacje</span>
+                            <span class="solutions__tab-desc">Jedno zadanie, jeden cel.</span>
+                        </button>
+                        <button class="solutions__tab" data-solution="2">
+                            <span class="solutions__tab-title">Średniozaawansowane</span>
+                            <span class="solutions__tab-desc">Optymalizacja działu lub procesu.</span>
+                        </button>
+                        <button class="solutions__tab" data-solution="3">
+                            <span class="solutions__tab-title">Dedykowane systemy</span>
+                            <span class="solutions__tab-desc">Cała firma pod pełną kontrolą.</span>
+                        </button>
+                    </div>
+
+                    <!-- Content (Poniżej) -->
+                    <div class="solutions__content-wrapper" data-animate="fade-in">
+                        
+                        <!-- Solution 1: Mikro-aplikacje -->
+                        <div class="solutions__content active" id="solution-1">
+                            <div class="solutions__main-info">
+                                <div class="solutions__text">
+                                    <h3>Szybkie rozwiązania punktowe</h3>
+                                    <p>Budujemy proste, chirurgiczne narzędzia, które usprawniają jedno konkretne zadanie w firmie. Idealne na start, gdy chcesz szybko poczuć ulgę w codziennych operacjach i wyeliminować najbardziej irytujące, powtarzalne czynności.</p>
+                                    <ul class="solutions__features">
+                                        <li class="solutions__feature">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            Precyzyjne kalkulatory ofertowe i marżowe
+                                        </li>
+                                        <li class="solutions__feature">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            Automatyczne generatory dokumentów i ofert PDF
+                                        </li>
+                                        <li class="solutions__feature">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            Proste panele do zbiórki i walidacji danych
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="solutions__visual">
+                                    <!-- Mikro-aplikacja Mockup -->
+                                    <svg width="240" height="180" viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="60" y="10" width="120" height="160" rx="16" fill="#0f172a" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+                                        <rect x="75" y="25" width="90" height="20" rx="4" fill="rgba(37, 99, 235, 0.1)"/>
+                                        <text x="85" y="38" fill="#3b82f6" font-family="Inter, sans-serif" font-size="7" font-weight="bold">PROSTA WYCENA</text>
+                                        
+                                        <rect x="75" y="55" width="90" height="6" rx="2" fill="rgba(255,255,255,0.05)"/>
+                                        <text x="75" y="52" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="5">ILOŚĆ SZTUK</text>
+                                        
+                                        <rect x="75" y="75" width="90" height="6" rx="2" fill="rgba(255,255,255,0.05)"/>
+                                        <text x="75" y="72" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="5">RABAT (%)</text>
+                                        
+                                        <rect x="75" y="95" width="90" height="40" rx="8" fill="rgba(16, 185, 129, 0.05)" stroke="rgba(16, 185, 129, 0.2)"/>
+                                        <text x="120" y="112" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="6" font-weight="bold">CENA DLA KLIENTA</text>
+                                        <text x="120" y="125" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="10" font-weight="bold">14 280 PLN</text>
+                                        
+                                        <rect x="75" y="145" width="90" height="15" rx="4" fill="#2563eb"/>
+                                        <text x="120" y="155" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="6" font-weight="bold">WYŚLIJ OFERTĘ</text>
+                                        
+                                        <rect x="110" y="14" width="20" height="2" rx="1" fill="rgba(255,255,255,0.1)"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="solutions__examples">
+                                <span class="solutions__example-heading">Znasz te problemy?</span>
+                                
+                                <details class="industry-case">
+                                    <summary class="industry-case__summary">"Klient czeka na ofertę, a handlowiec musi dzwonić do biura"</summary>
+                                    <div class="industry-case__content">
+                                        <strong>Problem:</strong>
+                                        <p>Handlowiec na spotkaniu nie potrafi wycenić niestandardowej części. Musi wrócić do biura lub czekać na maila od technologa. W tym czasie konkurencja może być szybsza.</p>
+                                        <strong>Rozwiązanie:</strong>
+                                        Mobilny kalkulator z automatem PDF. Handlowiec wpisuje parametry i wysyła gotową ofertę jeszcze w trakcie trwania spotkania.
+                                    </div>
+                                </details>
+
+                                <details class="industry-case">
+                                    <summary class="industry-case__summary">"Informacja o wadzie komponentu trafia do biura za późno"</summary>
+                                    <div class="industry-case__content">
+                                        <strong>Problem:</strong>
+                                        <p>Pracownik uszkodził detal rano, ale wpisał to w papierowy raport dopiero po zmianie. Produkcja stoi, bo nie zamówiono nowej sztuki na czas.</p>
+                                        <strong>Rozwiązanie:</strong>
+                                        Przycisk "Zgłoś błąd" na tablecie na hali. Dział zakupów dostaje alert w sekundę i może od razu domówić surowiec.
+                                    </div>
+                                </details>
+
+                                <details class="industry-case">
+                                    <summary class="industry-case__summary">"Cięcie materiału 'na oko' generuje drogi odpad"</summary>
+                                    <div class="industry-case__content">
+                                        <strong>Problem:</strong>
+                                        <p>Bez narzuconego schematu, pracownicy cięcia "na oko" generują znacznie więcej odpadu niż założył kosztorys. Ta różnica bezpośrednio zjada Twoją marżę.</p>
+                                        <strong>Rozwiązanie:</strong>
+                                        Narzędzie do optymalizacji rozkroju. Pracownik wpisuje wymiary płyt, a system pokazuje mu jak ciąć, by stracić jak najmniej materiału.
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- Solution 2: Średniozaawansowane -->
+                        <div class="solutions__content" id="solution-2">
+                            <div class="solutions__main-info">
+                                <div class="solutions__text">
+                                    <h3>Optymalizacja całych procesów</h3>
+                                    <p>Systemy, które łączą kilka kroków w jeden płynny mechanizm. Zastępują rozproszone arkusze w konkretnym dziale, eliminując chaos i błędy przy ręcznym przepisywaniu danych.</p>
+                                    <ul class="solutions__features">
+                                        <li class="solutions__feature">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            Panele zarządzania zleceniami i statusem prac
+                                        </li>
+                                        <li class="solutions__feature">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            Systemy rezerwacji i harmonogramowania zasobów
+                                        </li>
+                                        <li class="solutions__feature">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            Dedykowane portale klienta do wymiany plików
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="solutions__visual">
+                                    <!-- Panel Operacyjny Mockup -->
+                                    <svg width="240" height="180" viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="10" y="20" width="220" height="140" rx="12" fill="#0f172a" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+                                        
+                                        <!-- Sidebar -->
+                                        <rect x="10" y="20" width="50" height="140" rx="12" fill="rgba(255,255,255,0.02)"/>
+                                        <rect x="20" y="40" width="30" height="4" rx="2" fill="#3b82f6"/>
+                                        <rect x="20" y="55" width="30" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+                                        <rect x="20" y="70" width="30" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
+                                        
+                                        <!-- Header -->
+                                        <text x="70" y="45" fill="white" font-family="Inter, sans-serif" font-size="10" font-weight="bold">ZLECENIA</text>
+                                        <rect x="170" y="34" width="50" height="12" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)"/>
+                                        <text x="175" y="42" fill="rgba(255,255,255,0.3)" font-family="Inter, sans-serif" font-size="5">Szukaj...</text>
+                                        
+                                        <!-- List Item 1 -->
+                                        <rect x="70" y="65" width="150" height="25" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)"/>
+                                        <text x="80" y="77" fill="white" font-family="Inter, sans-serif" font-size="6" font-weight="bold">Zlecenie #LM-402</text>
+                                        <text x="80" y="85" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="5">Klient: Nowak & Co.</text>
+                                        <rect x="180" y="72" width="35" height="10" rx="5" fill="rgba(16, 185, 129, 0.1)"/>
+                                        <text x="197.5" y="79" text-anchor="middle" fill="#10b981" font-family="Inter, sans-serif" font-size="4.5" font-weight="bold">GOTOWE</text>
+                                        
+                                        <!-- List Item 2 -->
+                                        <rect x="70" y="100" width="150" height="25" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)"/>
+                                        <text x="80" y="112" fill="white" font-family="Inter, sans-serif" font-size="6" font-weight="bold">Zlecenie #LM-403</text>
+                                        <text x="80" y="120" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="5">Klient: Logistics SA</text>
+                                        <rect x="180" y="107" width="35" height="10" rx="5" fill="rgba(245, 158, 11, 0.1)"/>
+                                        <text x="197.5" y="114" text-anchor="middle" fill="#f59e0b" font-family="Inter, sans-serif" font-size="4.5" font-weight="bold">W TRAKCIE</text>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="solutions__examples">
+                                <span class="solutions__example-heading">Znasz te problemy?</span>
+                                
+                                <details class="industry-case">
+                                    <summary class="industry-case__summary">"Kierownik biura musi iść na halę, by sprawdzić postęp prac"</summary>
+                                    <div class="industry-case__content">
+                                        <strong>Problem:</strong>
+                                        <p>Ciągłe przerywanie pracy operatorom, by dowiedzieć się na jakim etapie jest zlecenie X. Dokumenty z postępów produkcyjnych docierają do biura dobę później.</p>
+                                        <strong>Rozwiązanie:</strong>
+                                        Cyfrowy panel "Postęp Prac". Operator odklika wykonany etap (np. spawanie), a biuro widzi aktualny status zlecenia bez wstawania z fotela.</p>
+                                    </div>
+                                </details>
+
+                                <details class="industry-case">
+                                    <summary class="industry-case__summary">"Stan magazynu w Excelu znowu mija się z prawdą"</summary>
+                                    <div class="industry-case__content">
+                                        <strong>Problem:</strong>
+                                        <p>Handlowiec przyjmuje zamówienie na podstawie arkusza, który jest już nieaktualny. Towar wyjechał rano, a handlowiec musi teraz przepraszać klienta.</p>
+                                        <strong>Rozwiązanie:</strong>
+                                        Panel handlowy z podglądem stanów LIVE. System sam pilnuje rezerwacji towaru w momencie tworzenia oferty lub zamówienia.</p>
+                                    </div>
+                                </details>
+
+                                <details class="industry-case">
+                                    <summary class="industry-case__summary">"Przepisanie godzin z kartek biuru zajmuje całe popołudnie"</summary>
+                                    <div class="industry-case__content">
+                                        <strong>Problem:</strong>
+                                        <p>Błędy w odczytywaniu pisma pracowników i uciążliwe ręczne wprowadzanie danych do zbiorczej tabeli na koniec tygodnia. Masa pomyłek w rozliczeniach.</p>
+                                        <strong>Rozwiązanie:</strong>
+                                        Rejestrator operacji. Pracownik loguje się do konkretnego zlecenia jednym kliknięciem, a raport wydajności na koniec dnia generuje się sam.</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                        <!-- Solution 3: Dedykowane systemy -->
+                        <div class="solutions__content" id="solution-3">
+                            <div class="solutions__main-info">
+                                <div class="solutions__text">
+                                    <h3>Cała firma pod Twoją kontrolą</h3>
+                                    <p>Kompleksowe, dedykowane systemy zastępujące dziesiątki plików na Google Drive i pękające w szwach Excele. Wszystkie dokumenty i projekty w jednym, bezpiecznym miejscu.</p>
+                                    <ul class="solutions__features">
+                                        <li class="solutions__feature">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            Centralne źródło prawdy dla każdego procesu
+                                        </li>
+                                        <li class="solutions__feature">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            Pełna skalowalność bez dodatkowych opłat
+                                        </li>
+                                        <li class="solutions__feature">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            Dostęp z dowolnego miejsca — z biura, hali czy z domu
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="solutions__visual">
+                                    <!-- Full System Mockup -->
+                                    <svg width="240" height="180" viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="5" y="15" width="230" height="150" rx="10" fill="#0f172a" stroke="#2563eb" stroke-opacity="0.3" stroke-width="2"/>
+                                        
+                                        <!-- Top Bar -->
+                                        <rect x="5" y="15" width="230" height="25" rx="10" fill="rgba(37, 99, 235, 0.05)"/>
+                                        <text x="20" y="32" fill="#3b82f6" font-family="Inter, sans-serif" font-size="8" font-weight="bold">SYSTEM FIRMOWY</text>
+                                        <circle cx="215" cy="28" r="6" fill="rgba(255,255,255,0.05)"/>
+                                        
+                                        <!-- Dashboard Grid -->
+                                        <rect x="20" y="55" width="95" height="45" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)"/>
+                                        <text x="30" y="70" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="5" font-weight="bold">PRODUKCJA NA ŻYWO</text>
+                                        <path d="M30 85 Q50 75 70 85 T110 80" stroke="#10b981" stroke-width="2" fill="none"/>
+                                        
+                                        <rect x="125" y="55" width="95" height="45" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)"/>
+                                        <text x="135" y="70" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="5" font-weight="bold">MARŻA PROJEKTU</text>
+                                        <circle cx="172.5" cy="82" r="10" stroke="rgba(255,255,255,0.1)" stroke-width="3" fill="none"/>
+                                        <path d="M172.5 72 A 10 10 0 0 1 182.5 82" stroke="#2563eb" stroke-width="3" fill="none"/>
+                                        <text x="172.5" y="85" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="6" font-weight="bold">82%</text>
+
+                                        <rect x="20" y="110" width="200" height="45" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.05)"/>
+                                        <text x="30" y="125" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="5" font-weight="bold">MODUŁY SYSTEMU</text>
+                                        
+                                        <rect x="30" y="132" width="35" height="15" rx="4" fill="rgba(37, 99, 235, 0.1)"/>
+                                        <text x="47.5" y="141" text-anchor="middle" fill="#3b82f6" font-family="Inter, sans-serif" font-size="4">BIURO</text>
+                                        
+                                        <rect x="75" y="132" width="35" height="15" rx="4" fill="rgba(255,255,255,0.05)"/>
+                                        <text x="92.5" y="141" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="4">LOGISTYKA</text>
+                                        
+                                        <rect x="120" y="132" width="35" height="15" rx="4" fill="rgba(255,255,255,0.05)"/>
+                                        <text x="137.5" y="141" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="4">PRODUKCJA</text>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="solutions__examples">
+                                <span class="solutions__example-heading">Znasz te problemy?</span>
+                                
+                                <details class="industry-case">
+                                    <summary class="industry-case__summary">"Kolejna pomyłka przez nieaktualną wersję rysunku technicznego"</summary>
+                                    <div class="industry-case__content">
+                                        <strong>Problem:</strong>
+                                        <p>Rewizja projektu nr 2 nie dotarła na czas na halę. Element wykonany błędnie na podstawie starego rysunku. Materiał i godziny pracy do kosza.</p>
+                                        <strong>Rozwiązanie:</strong>
+                                        <p>Centralny obieg dokumentów przez tablety. Pracownik ma 100% pewności, że otwiera najnowszą, zatwierdzoną wersję dokumentacji.</p>
+                                    </div>
+                                </details>
+
+                                <details class="industry-case">
+                                    <summary class="industry-case__summary">"Brakuje jednego detalu i cała wysyłka za 100 tys. zł stoi"</summary>
+                                    <div class="industry-case__content">
+                                        <strong>Problem:</strong>
+                                        <p>Zakupy surowca „na wyczucie”. Zapomniano o jednej śrubie lub komponencie, co wstrzymuje terminalny wyjazd gotowego urządzenia do klienta.</p>
+                                        <strong>Rozwiązanie:</strong>
+                                        <p>Moduł planowania potrzeb (MRP). System sam sugeruje listę zakupów na bazie aktywnych zleceń produkcyjnych i aktualnego stanu magazynu.</p>
+                                    </div>
+                                </details>
+
+                                <details class="industry-case">
+                                    <summary class="industry-case__summary">"Nikt nie widzi pełnego obrazu marży w trakcie trwania projektu"</summary>
+                                    <div class="industry-case__content">
+                                        <strong>Problem:</strong>
+                                        <p>Koszty są rozproszone w 5 różnych plikach. O tym, czy projekt był rentowny, dowiadujesz się miesiąc po fakcie, kiedy nie można już nic zmienić.</p>
+                                        <strong>Rozwiązanie:</strong>
+                                        <p>System integrujący dane projektowe. Rezerwacja terminu, koszt materiałów i realna marża dostępne w jednym widoku LIVE.</p>
+                                    </div>
+                                </details>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ====================================================
+             STICKY STACKING SECTIONS
+             ==================================================== -->
+        <div class="sticky-stack-wrapper" style="position: relative; overflow: visible;">
+
+            <!-- ====================================================
+                 SEKCJA 4: BEZPIECZEŃSTWO I STANDARDY (Z index.html)
+                 ==================================================== -->
+            <section class="safety-standards" aria-label="Standardy bezpieczeństwa i stabilności">
+                <div class="safety-standards__container" data-animate="fade-up">
+
+                    <div class="safety-standards__header">
+                        <span class="section-label" style="color: var(--color-primary-light)">Stabilność i bezpieczeństwo</span>
+                        <h2 style="color: var(--color-white)">Twój system, Twoje dane, Twoje zasady</h2>
+                        <p style="color: var(--color-slate-400); max-width: 600px; margin: var(--space-4) auto 0;">Płacisz raz za budowę i wdrożenie, stając się jedynym właścicielem rozwiązania. Żadnych prowizji i limitów na użytkowników z zewnątrz.</p>
+                    </div>
+
+                    <div class="safety-standards__grid">
+                        
+                        <!-- Karta 1: Płacisz raz, posiadasz zawsze -->
+                        <div class="safety-card">
+                            <div class="safety-card__badge">Zero abonamentów</div>
+                            <div class="safety-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                            </div>
+                            <h3>Płacisz raz, posiadasz zawsze</h3>
+                            <p>Zapomnij o comiesięcznych fakturach za dostęp. Po wdrożeniu stajesz się właścicielem kodu w 100%. To inwestycja, która spłaca się od pierwszego dnia.</p>
+                        </div>
+
+                        <!-- Karta 2: Rynkowe standardy i rozwój -->
+                        <div class="safety-card">
+                            <div class="safety-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6" />
+                                    <polyline points="8 6 2 12 8 18" />
+                                </svg>
+                            </div>
+                            <h3>Popularne i bezpieczne technologie</h3>
+                            <p>Tworzymy systemy na bazie technologii, które są standardem na światowych rynkach i u gigantów takich jak Google czy Facebook. Jeśli za kilka lat zechcesz powierzyć system wewnątrz Twojej firmy innemu informatykowi, bez trudu przejmie on obsługę.</p>
+                        </div>
+
+                        <!-- Karta 3: Maksymalne bezpieczeństwo -->
+                        <div class="safety-card">
+                            <div class="safety-card__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                    <circle cx="12" cy="11" r="3" />
+                                </svg>
+                            </div>
+                            <h3>Twoje dane są bezpieczne</h3>
+                            <p>Aplikacja działa wewnątrz Twojej sieci firmowej. Brak ryzyka wycieku danych na zewnątrz oraz gwarantowana, bezpieczna migracja z CRM/Exceli bez utraty danych.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div> <!-- End Sticky Wrapper -->
+
+        <!-- ====================================================
+             SEKCJA: MODEL WSPÓŁPRACY (Roadmap)
+             ==================================================== -->
+        <section class="process-section" id="model-wspolpracy" aria-label="Model współpracy">
+            <div class="process-section__container">
+                <div class="process-section__header" data-animate="fade-up">
+                    <span class="section-label" style="color: var(--color-primary)">Twoja aplikacja krok po kroku</span>
+                    <h2>Model współpracy</h2>
+                </div>
+
+                <div class="process-roadmap">
+                    
+                    <!-- Krok 1: Konsultacja -->
+                    <div class="process-step" data-animate="fade-up" data-delay="0">
+                        <div class="process-step__number">1</div>
+                        <div class="process-step__content">
+                            <h3>Bezpłatna konsultacja</h3>
+                            <p>
+                                Rozmowa, na której wspólnie diagnozujemy Twoje największe wyzwania. Określamy cele projektu, unikalne wymogi Twojego zespołu i szukamy konkretnych punktów, które przyniosą najszybszy zwrot z inwestycji.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Krok 2: Analiza i plan -->
+                    <div class="process-step" data-animate="fade-up" data-delay="100">
+                        <div class="process-step__number">2</div>
+                        <div class="process-step__content">
+                            <h3>Analiza i plan działania</h3>
+                            <p>
+                                Rozbieramy Twoje procesy na czynniki pierwsze. Przedstawiamy dokładną propozycję rozwiązań technicznych, architekturę systemu i mierzalny plan wdrożenia z podziałem na kluczowe etapy.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Krok 3: Budowa i testy -->
+                    <div class="process-step" data-animate="fade-up" data-delay="200">
+                        <div class="process-step__number">3</div>
+                        <div class="process-step__number-line"></div>
+                        <div class="process-step__content">
+                            <h3>Budowa i testy</h3>
+                            <p>
+                                Tworzymy kod w sposób zwinny. Równolegle budujemy i testujemy wszystkie funkcje, na bieżąco korygując ewentualne błędy i dostosowując interface pod kątem maksymalnej ergonomii i wygody Twoich pracowników.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Krok 4: Wdrożenie i oddanie -->
+                    <div class="process-step" data-animate="fade-up" data-delay="300">
+                        <div class="process-step__number">4</div>
+                        <div class="process-step__content">
+                            <h3>Wdrożenie i szkolenie</h3>
+                            <p>
+                                Przenosimy dane i uruchamiamy aplikację w środowisku firmy. Przeprowadzamy pełne szkolenie Twojego zespołu i przedstawiamy każdą opcję. Na koniec oddajemy gotowy system i przekazujemy Ci wszystkie prawa własności.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ====================================================
+             SEKCJA 4: ROZPOCZNIJ ZMIANĘ (Formularz na białym tle)
+             ==================================================== -->
+        <section class="consultation consultation--light" id="konsultacja" aria-label="Umów bezpłatną konsultację">
+            <div class="consultation__container" style="max-width: 800px;">
+
+                <div class="consultation__header">
+                    <span class="section-label" data-animate="fade-up">Rozpocznij zmianę</span>
+                    <h2 data-animate="fade-up">
+                        Przestań walczyć z narzędziami.<br>Zacznij z nich korzystać.
+                    </h2>
+                    <p data-animate="fade-up">
+                        Opowiedz nam o swoim procesie na bezpłatnej konsultacji. Jeśli aplikacja nie jest właściwą odpowiedzią — powiemy Ci o tym szczerze.
+                    </p>
+                </div>
+
+                <div class="consultation__form-wrapper" data-animate="fade-up">
+                    <form class="consultation__form" id="contact-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="form-email">Adres e-mail</label>
+                                <input type="email" id="form-email" class="form-input" placeholder="Twoje imię i adres@firma.pl" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="form-phone">Numer telefonu</label>
+                                <input type="tel" id="form-phone" class="form-input" placeholder="+48 000 000 000" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="form-subject">Temat rozmowy</label>
+                            <textarea id="form-subject" class="form-textarea" placeholder="O jakim rozwiązaniu myślisz? (np. panel handlowy, MRP, kalkulator)" rows="3" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" required></textarea>
+                        </div>
+
+                        <!-- Honeypot (Anty-bot) -->
+                        <div class="form-hp" aria-hidden="true">
+                            <input type="checkbox" id="hp-check" tabindex="-1" autocomplete="off">
+                            <label for="hp-check">Potwierdź, że nie jesteś botem (pozostaw puste)</label>
+                        </div>
+
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="form-consent" class="form-checkbox" required>
+                            <label for="form-consent" class="form-checkbox-label">
+                                Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi zgłoszenia. Wyrażam zgodę na otrzymywanie informacji handlowych od LogicMorrow drogą elektroniczną na podany adres e-mail. <a href="/polityka-prywatnosci.html" target="_blank">Polityka Prywatności.</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--lg btn--arrow" style="width: 100%; justify-content: center;">
+                            Umów bezpłatną konsultację
+                        </button>
+                    </form>
+
+                    <!-- Bezpośredni kontakt -->
+                    <div class="consultation__direct">
+                        <span class="consultation__direct-label">Lub skontaktuj się bezpośrednio</span>
+                        <div class="consultation__direct-links">
+                            <a href="tel:+48537844013" class="consultation__direct-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                537 844 013
+                            </a>
+                            <a href="mailto:kontakt@logicmorrow.pl" class="consultation__direct-link">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                kontakt@logicmorrow.pl
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SEKCJA 5: FAQ (Rozbrajanie obiekcji)
+             ==================================================== -->
+        <section class="faq-section" aria-label="Najczęstsze pytania" style="z-index: 12;">
+            <div class="faq-section__container">
+                <div class="faq-section__header" data-animate="fade-up">
+                    <span class="section-label" style="color: var(--color-primary-light)">FAQ</span>
+                    <h2 style="color: var(--color-white)">Najczęstsze pytania o dedykowany soft</h2>
+                </div>
+
+                <div class="faq-accordion" data-animate="fade-up">
+                    
+                    <!-- Question 1: Koszt -->
+                    <div class="faq-accordion__item">
+                        <button class="faq-accordion__header">
+                            <span>Ile kosztuje stworzenie dedykowanego systemu?</span>
+                            <div class="faq-accordion__icon"></div>
+                        </button>
+                        <div class="faq-accordion__content">
+                            <div class="faq-accordion__answer">
+                                Najprostsze aplikacje zaczynają się od 7 tys. zł. Większość projektów — panel do zarządzania operacjami, system ofertowania czy aplikacja do obsługi zleceń — mieści się w przedziale 20–30 tys. zł. Bardziej rozbudowane systemy integrujące wiele działów to zazwyczaj 50–100 tys. zł. Na bezpłatnej konsultacji analizujemy Twoje potrzeby i podajemy konkretne widełki, zanim zdecydujesz cokolwiek.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2: Czas -->
+                    <div class="faq-accordion__item">
+                        <button class="faq-accordion__header">
+                            <span>Jak długo trwa zaprojektowanie i wdrożenie rozwiązania?</span>
+                            <div class="faq-accordion__icon"></div>
+                        </button>
+                        <div class="faq-accordion__content">
+                            <div class="faq-accordion__answer">
+                                Wszystko zależy od zaawansowania projektu, ale działamy zwinnie. Najprostsze, punktowe narzędzia często wdrażamy w 2-3 tygodnie. Budowanie bardziej rozbudowanych, dedykowanych systemów ERP czy paneli zarządczych zajmuje zazwyczaj od kilku tygodni do kilku miesięcy. Zawsze zaczynamy od priorytetów, które przynoszą najszybszy zwrot z inwestycji.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3: SaaS Comparison -->
+                    <div class="faq-accordion__item">
+                        <button class="faq-accordion__header">
+                            <span>Czym różni się dedykowana aplikacja od gotowych systemów?</span>
+                            <div class="faq-accordion__icon"></div>
+                        </button>
+                        <div class="faq-accordion__content">
+                            <div class="faq-accordion__answer">
+                                Główną różnicą jest brak kompromisów. Gotowe pakiety oprogramowania często mają setki niepotrzebnych funkcji, za które trzeba uiszczać opłaty i licencje, a jednocześnie brakuje im tych kluczowych u Ciebie. Nasze aplikacje są dopasowane pod Twoją firmę – ani jednej zbędnej linii. Co ważne: narzędzie działa bez narzutów i limitów ilości stanowisk, z nielimitowanymi kontami dla Twoich ludzi.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4: Ease of Use -->
+                    <div class="faq-accordion__item">
+                        <button class="faq-accordion__header">
+                            <span>Czy system będzie łatwy w obsłudze dla moich pracowników?</span>
+                            <div class="faq-accordion__icon"></div>
+                        </button>
+                        <div class="faq-accordion__content">
+                            <div class="faq-accordion__answer">
+                                Intuicyjność to nasz priorytet. Nawet jeśli budujemy system o ogromnej liczbie funkcji, projektujemy go w taki sposób, aby obsługa była naturalna dla każdego pracownika i nie wymagała wielogodzinnych szkoleń. Program odwzorowuje Twoje realne kroki w firmie, dzięki czemu zespół od pierwszego dnia wie, jak z niego korzystać.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 5: Security -->
+                    <div class="faq-accordion__item">
+                        <button class="faq-accordion__header">
+                            <span>Jak dbacie o bezpieczeństwo moich danych firmowych?</span>
+                            <div class="faq-accordion__icon"></div>
+                        </button>
+                        <div class="faq-accordion__content">
+                            <div class="faq-accordion__answer">
+                                Bezpieczeństwo danych to fundament, nie idziemy na skróty. Korzystamy z najwyższych rynkowych standardów i dbamy o stabilność systemu. Twoja aplikacja może działać wewnątrz Twojej firmowej sieci lub na prywatnej chmurze, co daje Ci pełną kontrolę i gwarancję, że dane nie wyciekną na zewnątrz. Nie budujemy „na szybko” kosztem stabilności.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/solutions.js"></script>
+    <script src="js/faq.js"></script>
+
+    <!-- [6] Cookie Consent — inicjalizacja -->
+    <script src="/js/cookie-consent.js"></script>
+
+</body>
+</html>
+

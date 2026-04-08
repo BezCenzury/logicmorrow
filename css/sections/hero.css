@@ -1,0 +1,205 @@
+/* ============================================================
+   HERO.CSS — Sekcja hero (strona główna i podstrony)
+   ============================================================ */
+
+/* --- Hero główny (strona główna) --- */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: var(--gradient-hero);
+    padding-top: var(--navbar-height);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtelna siatka w tle */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+}
+
+.hero__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--space-16) var(--container-padding);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Treść hero --- */
+
+
+.hero__badge {
+    margin-bottom: var(--space-6);
+}
+
+.hero__title {
+    font-size: var(--text-6xl);
+    font-weight: var(--font-extrabold);
+    color: var(--color-white);
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+}
+
+.hero__title span {
+    background: var(--gradient-section-header);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero__subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-slate-300);
+    line-height: 1.7;
+    margin-bottom: var(--space-8);
+    max-width: 480px;
+}
+
+.hero__actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-10);
+}
+
+.hero__trust {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.hero__trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-slate-400, #94a3b8);
+}
+
+.hero__trust-item svg {
+    color: var(--color-success);
+    flex-shrink: 0;
+}
+
+/* --- Wizual hero (prawa kolumna) --- */
+
+.hero__visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Hero podstrony (krótszy) --- */
+
+.hero--subpage {
+    min-height: 320px;
+    padding: var(--space-20) 0 var(--space-16);
+}
+
+.hero--subpage .hero__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    max-width: 720px;
+}
+
+.hero--subpage .hero__subtitle {
+    max-width: 100%;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 1024px) {
+    .hero__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero__subtitle {
+        max-width: 100%;
+    }
+
+    .hero__actions {
+        justify-content: center;
+    }
+
+    .hero__trust {
+        justify-content: center;
+    }
+
+    .hero__visual {
+        display: none;
+    }
+}
+
+/* --- Hero Full Width Modifier --- */
+
+.hero--full-width .hero__container {
+    max-width: 100%;
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
+}
+
+/* --- Hero Overlap Modifier (Widok bardziej centralny) --- */
+
+.hero--overlap .hero__container {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 0;
+}
+
+.hero--overlap .hero__content {
+    z-index: 10;
+    padding-left: var(--space-20); /* Pchnięcie napisów bardziej do środka */
+    margin-right: -100px; /* Delikatne nachodzenie na graficzną wizualizację */
+}
+
+.hero--overlap .hero__visual {
+    justify-content: flex-end;
+    transform: translateX(40px); /* Przesunięcie SVG bardziej do prawej */
+}
+
+@media (max-width: 1280px) {
+    .hero--overlap .hero__content {
+        padding-left: var(--space-8);
+        margin-right: -60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero--overlap .hero__container {
+        grid-template-columns: 1fr;
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
+    }
+    .hero--overlap .hero__content {
+        padding-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero__title {
+        font-size: var(--text-4xl);
+    }
+
+    .hero__actions {
+        flex-direction: column;
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+    }
+}

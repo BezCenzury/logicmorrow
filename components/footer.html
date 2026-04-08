@@ -1,0 +1,65 @@
+<!-- ============================================================
+     FOOTER.HTML — Globalna stopka (ładowana przez loader.js)
+     Zmiana tutaj = zmiana na wszystkich podstronach
+     ============================================================ -->
+
+<footer class="footer">
+    <div class="footer__container">
+
+        <!-- Kolumna 1: Logo i opis -->
+        <div class="footer__brand">
+            <a href="/index.html" class="footer__logo" aria-label="LogicMorrow — strona główna">
+                <img src="/assets/images/logo.svg" alt="LogicMorrow" width="148" height="32">
+            </a>
+            <p class="footer__tagline">
+                Automatyzacje i dedykowane aplikacje webowe dla firm, które rosną szybciej niż ich procesy.
+            </p>
+        </div>
+
+        <!-- Kolumna 2: Rozwiązania -->
+        <div class="footer__col">
+            <h4 class="footer__heading">Rozwiązania</h4>
+            <ul class="footer__links">
+                <li><a href="/automatyzacje.html" class="footer__link">Automatyzacje procesów</a></li>
+                <li><a href="/aplikacje.html"     class="footer__link">Dedykowane aplikacje</a></li>
+                <li><a href="/agenci.html"        class="footer__link">Agenci AI</a></li>
+                <li><a href="/rozwiazania.html"    class="footer__link">Biblioteka rozwiązań</a></li>
+            </ul>
+        </div>
+
+        <!-- Kolumna 3: Firma -->
+        <div class="footer__col">
+            <h4 class="footer__heading">Firma</h4>
+            <ul class="footer__links">
+                <li><a href="/konsultacja.html"  class="footer__link">Bezpłatna konsultacja</a></li>
+                <li><a href="/polityka-prywatnosci.html" class="footer__link">Polityka prywatności</a></li>
+            </ul>
+        </div>
+
+        <!-- Kolumna 4: CTA -->
+        <div class="footer__col footer__col--cta">
+            <h4 class="footer__heading">Zacznij od rozmowy</h4>
+            <p class="footer__cta-desc">20-minutowa konsultacja. Zero nacisku. Liczymy wspólnie Twój ROI.</p>
+            <a href="/konsultacja.html" class="btn btn--primary">
+                Umów bezpłatną konsultację
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer__bottom">
+        <div class="footer__bottom-inner">
+            <p class="footer__copy">
+                &copy; <span id="footer-year"></span> LogicMorrow. Wszelkie prawa zastrzeżone.
+            </p>
+            <p class="footer__legal">
+                NIP: 9182192894 &nbsp;|&nbsp; kontakt@logicmorrow.pl &nbsp;|&nbsp; <a href="/polityka-prywatnosci.html" style="color: inherit; text-decoration: none; opacity: 0.8;">Polityka prywatności</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka Prywatności i Cookies | LogicMorrow</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <meta name="description" content="Polityka prywatności i plików cookie serwisu LogicMorrow. Informacje o przetwarzaniu danych osobowych, rodzajach plików cookie i prawach użytkownika.">
+
+    <!-- ═══════════════════════════════════════════════════════
+         COOKIE CONSENT + GOOGLE CONSENT MODE V2
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 2000
+        });
+    </script>
+
+    <!-- [2] Pre-inicjalizacja consent dla powracających użytkowników -->
+    <script>
+        (function () {
+            try {
+                var raw = document.cookie.split(';').reduce(function (acc, c) {
+                    var p = c.trim().split('=');
+                    return p[0] === 'cc_cookie' ? decodeURIComponent(p.slice(1).join('=')) : acc;
+                }, null);
+                if (raw) {
+                    var cats = JSON.parse(raw).categories || [];
+                    var analytics = cats.indexOf('analytics') >= 0 ? 'granted' : 'denied';
+                    var marketing = cats.indexOf('marketing') >= 0 ? 'granted' : 'denied';
+                    gtag('consent', 'update', {
+                        'analytics_storage': analytics,
+                        'ad_storage': marketing,
+                        'ad_user_data': marketing,
+                        'ad_personalization': marketing
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <script>(function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+    <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+
+    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <style>
+        :root {
+            --cc-btn-primary-bg: #2563eb;
+            --cc-btn-primary-hover-bg: #1d4ed8;
+            --cc-btn-primary-text: #fff;
+            --cc-btn-secondary-bg: #f1f5f9;
+            --cc-btn-secondary-hover-bg: #e2e8f0;
+            --cc-btn-secondary-text: #475569;
+            --cc-toggle-on-bg: #2563eb;
+            --cc-link-color: #2563eb;
+            --cc-btn-border-radius: 0.75rem;
+            --cc-overlay-bg: rgba(0, 0, 0, 0.55);
+        }
+        #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+
+        /* Style dla strony prawnej */
+        .legal-page {
+            background-color: var(--color-white);
+            color: var(--color-slate-950);
+        }
+        .legal-content h1 {
+            margin-bottom: var(--space-8);
+            font-size: var(--text-4xl);
+            text-align: left;
+            color: var(--color-slate-950);
+            line-height: 1.1;
+        }
+        .legal-content h2 {
+            margin-top: var(--space-12);
+            margin-bottom: var(--space-5);
+            font-size: var(--text-xl);
+            color: var(--color-slate-900);
+            border-bottom: 1px solid var(--color-slate-100);
+            padding-bottom: var(--space-2);
+        }
+        .legal-content p {
+            margin-bottom: var(--space-4);
+            color: var(--color-slate-700);
+        }
+        .legal-content ul {
+            margin-bottom: var(--space-6);
+            padding-left: var(--space-6);
+        }
+        .legal-content li {
+            margin-bottom: var(--space-3);
+            line-height: 1.6;
+            color: var(--color-slate-700);
+            list-style-type: disc;
+        }
+        .legal-content strong {
+            color: var(--color-slate-900);
+            font-weight: var(--font-semibold);
+        }
+        .legal-content a {
+            color: var(--color-primary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .legal-content a:hover {
+            border-bottom-color: var(--color-primary);
+        }
+        
+        @media (max-width: 768px) {
+            .legal-content h1 { font-size: var(--text-3xl); }
+            .legal-content h2 { font-size: var(--text-lg); }
+        }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/badge.css">
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Globalny nagłówek (wstrzykiwany przez loader.js) -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="legal-page" style="max-width: 850px; margin: 0 auto; padding: 10rem 2rem 8rem;">
+        <div class="legal-content">
+            <h1>Polityka Prywatności i Plików Cookies serwisu logicmorrow.pl</h1>
+            
+            <section>
+                <h2>I. Postanowienia ogólne</h2>
+                <p>Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych przez Użytkowników w związku z korzystaniem z serwisu internetowego <a href="/">logicmorrow.pl</a>.</p>
+                <p>Administratorem danych osobowych jest Mateusz Olesiuk z siedzibą w Tereszpol-Zaorenda ul. Długa 27a, 23-407 Tereszpol, NIP: 9182192894, (dalej: "Administrator").</p>
+                <p>W sprawach związanych z przetwarzaniem danych osobowych można kontaktować się z Administratorem pod adresem e-mail: <a href="mailto:kontakt@logicmorrow.pl">kontakt@logicmorrow.pl</a>.</p>
+                <p>Administrator dokłada szczególnej staranności w celu ochrony interesów osób, których dane dotyczą, a w szczególności zapewnia, że zbierane przez niego dane są przetwarzane zgodnie z prawem, zbierane dla oznaczonych, zgodnych z prawem celów i niepoddawane dalszemu przetwarzaniu niezgodnemu z tymi celami.</p>
+            </section>
+
+            <section>
+                <h2>II. Cele, podstawy prawne i okres przetwarzania danych</h2>
+                <p>Dane osobowe Użytkowników (takie jak: imię, nazwa firmy, adres e-mail, numer telefonu) przetwarzane są w następujących celach:</p>
+                <ul>
+                    <li><strong>Obsługa zapytań z formularza kontaktowego:</strong> Podstawą prawną jest niezbędność przetwarzania do podjęcia działań na żądanie osoby, której dane dotyczą, przed zawarciem umowy (art. 6 ust. 1 lit. b RODO) lub prawnie uzasadniony interes Administratora polegający na udzielaniu odpowiedzi na kierowane do niego zapytania (art. 6 ust. 1 lit. f RODO). Dane przechowywane są przez okres trwania korespondencji oraz do czasu przedawnienia ewentualnych roszczeń.</li>
+                    <li><strong>Wysyłka ofert handlowych i marketing bezpośredni:</strong> Przetwarzanie odbywa się wyłącznie na podstawie dobrowolnej zgody Użytkownika (art. 6 ust. 1 lit. a RODO). Dane będą przetwarzane do momentu cofnięcia zgody przez Użytkownika.</li>
+                    <li><strong>Analiza ruchu i statystyki serwisu:</strong> Podstawą prawną jest zgoda Użytkownika na wykorzystanie analitycznych plików cookies (art. 6 ust. 1 lit. a RODO).</li>
+                    <li><strong>Działania reklamowe i remarketing (Meta Pixel):</strong> Podstawą prawną jest zgoda Użytkownika na wykorzystanie marketingowych plików cookies (art. 6 ust. 1 lit. a RODO).</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>III. Odbiorcy danych</h2>
+                <p>Odbiorcami danych osobowych Użytkowników mogą być podmioty współpracujące z Administratorem w celu zapewnienia funkcjonowania serwisu, m.in.:</p>
+                <ul>
+                    <li>dostawca usług hostingowych i serwerów,</li>
+                    <li>podmioty świadczące usługi informatyczne,</li>
+                    <li>dostawcy narzędzi analitycznych i marketingowych (Google Ireland Limited, Meta Platforms Ireland Limited).</li>
+                </ul>
+                <p>Podmioty te przetwarzają dane na podstawie umów powierzenia przetwarzania danych osobowych i są zobowiązane do stosowania odpowiednich środków bezpieczeństwa.</p>
+            </section>
+
+            <section>
+                <h2>IV. Przekazywanie danych poza Europejski Obszar Gospodarczy (EOG)</h2>
+                <p>Ze względu na korzystanie z usług takich jak Google Analytics oraz Meta Pixel, dane Użytkowników mogą być przekazywane poza EOG, w szczególności do Stanów Zjednoczonych. Transfer ten odbywa się w oparciu o odpowiednie zabezpieczenia prawne, w tym Decyzję Wykonawczą Komisji Europejskiej stwierdzającą odpowiedni stopień ochrony danych (Data Privacy Framework) dla podmiotów certyfikowanych w USA, a w razie jej braku – na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską.</p>
+            </section>
+
+            <section>
+                <h2>V. Prawa Użytkowników</h2>
+                <p>Zgodnie z RODO, każdemu Użytkownikowi przysługuje prawo do:</p>
+                <ul>
+                    <li>dostępu do swoich danych oraz otrzymania ich kopii,</li>
+                    <li>sprostowania (poprawiania) swoich danych,</li>
+                    <li>usunięcia danych (prawo do bycia zapomnianym),</li>
+                    <li>ograniczenia przetwarzania danych,</li>
+                    <li>przenoszenia danych,</li>
+                    <li>wniesienia sprzeciwu wobec przetwarzania danych opartego na prawnie uzasadnionym interesie Administratora,</li>
+                    <li>cofnięcia zgody na przetwarzanie danych w dowolnym momencie (bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem),</li>
+                    <li>wniesienia skargi do organu nadzorczego (Prezesa Urzędu Ochrony Danych Osobowych), jeśli Użytkownik uzna, że przetwarzanie narusza przepisy RODO.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>VI. Polityka Plików Cookies</h2>
+                <p>Serwis <a href="/">logicmorrow.pl</a> wykorzystuje pliki cookies (ciasteczka) – niewielkie informacje tekstowe, przechowywane na urządzeniu końcowym Użytkownika.</p>
+                <p>Wyróżniamy następujące rodzaje plików cookies wykorzystywanych w serwisie:</p>
+                <ul>
+                    <li><strong>Niezbędne:</strong> Kluczowe dla podstawowego funkcjonowania serwisu. Nie wymagają zgody Użytkownika.</li>
+                    <li><strong>Analityczne (Google Analytics):</strong> Służą do analizowania ruchu na stronie, co pomaga optymalizować jej działanie. Zbierają informacje w sposób zanonimizowany. Uruchamiane wyłącznie po wyrażeniu zgody.</li>
+                    <li><strong>Marketingowe (Meta Pixel):</strong> Pozwalają na śledzenie Użytkowników w celu dostosowania wyświetlanych reklam na platformach zewnętrznych (Facebook, Instagram) oraz mierzenia skuteczności kampanii reklamowych. Uruchamiane wyłącznie po wyrażeniu zgody.</li>
+                </ul>
+                <p>Użytkownik może w każdej chwili samodzielnie zmienić ustawienia dotyczące plików cookies z poziomu swojej przeglądarki internetowej lub za pomocą panelu zarządzania cookies na stronie serwisu.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Globalna stopka (wstrzykiwana przez loader.js) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+
+    <!-- [6] Cookie Consent — inicjalizacja -->
+    <script src="/js/cookie-consent.js"></script>
+</body>
+</html>

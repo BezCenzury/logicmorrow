@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Exclude private and legal pages
+Disallow: /polityka-prywatnosci.html
+Disallow: /regulamin.html
+
+# Sitemap location
+Sitemap: https://logicmorrow.pl/sitemap.xml

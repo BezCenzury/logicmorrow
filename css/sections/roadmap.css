@@ -1,0 +1,175 @@
+/* ============================================================
+   ROADMAP.CSS — Interaktywna mapa drogowa
+   ============================================================ */
+
+.roadmap {
+    padding: var(--space-24) 0;
+    background-color: var(--color-white);
+    overflow: hidden;
+}
+
+.roadmap__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.roadmap__header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-20);
+}
+
+.roadmap__track {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-8);
+    counter-reset: step;
+}
+
+/* Linia łącząca */
+.roadmap__track::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(to right, 
+        var(--color-slate-200) 0%, 
+        var(--color-slate-200) 33%, 
+        var(--color-primary-light) 33%, 
+        var(--color-primary-light) 66%, 
+        var(--color-success) 66%, 
+        var(--color-success) 100%
+    );
+    z-index: 1;
+}
+
+.roadmap__step {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: var(--space-10) var(--space-4);
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-slate-100);
+    transition: var(--transition-base);
+}
+
+.roadmap__step:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elevated);
+    border-color: var(--color-slate-200);
+}
+
+/* Kółko z numerem */
+.roadmap__bullet {
+    width: 60px;
+    height: 60px;
+    background: var(--color-white);
+    border: 2px solid var(--color-slate-200);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -60px auto var(--space-6);
+    font-weight: var(--font-black);
+    font-size: var(--text-xl);
+    color: var(--color-slate-400);
+    position: relative;
+    z-index: 3;
+    transition: var(--transition-base);
+}
+
+/* Stylizacja specyficzna dla etapów */
+.roadmap__step--chaos .roadmap__bullet {
+    border-color: var(--color-slate-300);
+    color: var(--color-slate-400);
+    background-color: var(--color-slate-50);
+}
+
+.roadmap__step--audit {
+    border-color: var(--color-primary-light);
+}
+
+.roadmap__step--audit .roadmap__bullet {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.roadmap__step--success {
+    border-color: var(--color-success);
+}
+
+.roadmap__step--success .roadmap__bullet {
+    border-color: var(--color-success);
+    background-color: var(--color-success);
+    color: var(--color-white);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Ikony i Tekst */
+.roadmap__icon {
+    font-size: 40px;
+    margin-bottom: var(--space-4);
+    display: block;
+}
+
+.roadmap__title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-slate-950);
+    margin-bottom: var(--space-3);
+}
+
+.roadmap__desc {
+    font-size: var(--text-sm);
+    color: var(--color-slate-500);
+    line-height: 1.6;
+}
+
+.roadmap__list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-6);
+    text-align: left;
+    display: inline-block;
+}
+
+.roadmap__list-item {
+    font-size: var(--text-xs);
+    color: var(--color-slate-600);
+    margin-bottom: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.roadmap__list-item::before {
+    content: '•';
+    color: var(--color-slate-400);
+}
+
+.roadmap__step--audit .roadmap__list-item::before { color: var(--color-primary); }
+.roadmap__step--success .roadmap__list-item::before { color: var(--color-success); }
+
+/* RWD */
+@media (max-width: 992px) {
+    .roadmap__track {
+        flex-direction: column;
+        gap: var(--space-16);
+    }
+    
+    .roadmap__track::before {
+        display: none;
+    }
+    
+    .roadmap__bullet {
+        margin: -40px auto var(--space-4);
+    }
+}

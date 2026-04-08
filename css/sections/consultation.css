@@ -1,0 +1,358 @@
+/* ============================================================
+   CONSULTATION.CSS — Sekcja formularza kontaktowego
+   ============================================================ */
+
+.consultation {
+    padding: var(--space-24) 0;
+    background: var(--color-slate-950);
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.consultation__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    position: relative;
+    z-index: 2;
+}
+
+/* Background ornament */
+.consultation::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.consultation::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 60%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.consultation__grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+}
+
+/* --- Formularz --- */
+
+.consultation__form-wrapper {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--space-10);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.consultation__form-wrapper::before {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    right: -60px;
+    width: 320px;
+    height: 320px;
+    background-image: url('../../assets/images/logo-mark.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.2;
+    transform: rotate(12deg);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.consultation__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    position: relative;
+    z-index: 2;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.form-label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-slate-300);
+}
+
+.form-input, .form-textarea, .form-select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-5);
+    color: var(--color-white);
+    font-family: inherit;
+    font-size: var(--text-base);
+    transition: var(--transition-base);
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.form-input::placeholder {
+    color: var(--color-slate-500);
+}
+
+.form-textarea {
+    resize: none;
+    min-height: 100px;
+    overflow-y: hidden;
+}
+
+/* Checkbox */
+.form-checkbox-group {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+}
+
+.form-checkbox {
+    margin-top: 4px;
+    cursor: pointer;
+    accent-color: var(--color-primary);
+}
+
+.form-checkbox-label {
+    font-size: 8px; /* Zmniejszone o 4px (z 12px na 8px) */
+    color: var(--color-slate-400);
+    line-height: 1.6;
+}
+
+.form-checkbox-label a {
+    color: var(--color-primary-light);
+    text-decoration: underline;
+}
+
+/* Bezpośredni kontakt */
+.consultation__direct {
+    margin-top: var(--space-8);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: var(--space-6);
+}
+
+.consultation__direct-label {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--color-slate-500);
+    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.consultation__direct-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+}
+
+.consultation__direct-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-slate-300);
+    transition: var(--transition-base);
+    font-weight: var(--font-medium);
+}
+
+.consultation__direct-link:hover {
+    color: var(--color-primary-light);
+    transform: translateY(-1px);
+}
+
+.consultation__direct-link svg {
+    color: var(--color-primary-light);
+}
+
+/* Honeypot (Anty-bot) */
+.form-hp {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+}
+
+/* --- Treść po prawej --- */
+
+.consultation__content h2 {
+    font-size: var(--text-4xl);
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+    color: var(--color-white);
+}
+
+.consultation__content p {
+    font-size: var(--text-lg);
+    color: var(--color-slate-300);
+    margin-bottom: var(--space-8);
+}
+
+.consultation__trust {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.consultation__trust-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-slate-400);
+}
+
+.consultation__trust-item svg {
+    color: var(--color-success);
+}
+
+/* ============================================================
+   LIGHT THEME MODIFIER — dla jasnych sekcji (.consultation--light)
+   ============================================================ */
+
+.consultation--light {
+    background: var(--color-white);
+    color: var(--color-slate-950);
+}
+
+.consultation--light::before,
+.consultation--light::after {
+    display: none;
+}
+
+.consultation--light .consultation__form-wrapper {
+    background: var(--color-slate-50);
+    border: 1px solid var(--color-slate-200);
+    box-shadow: var(--shadow-card);
+}
+
+.consultation--light .form-label {
+    color: var(--color-slate-700);
+}
+
+.consultation--light .form-input,
+.consultation--light .form-textarea {
+    background: var(--color-white);
+    border: 1px solid var(--color-slate-300);
+    color: var(--color-slate-950);
+}
+
+.consultation--light .form-input::placeholder,
+.consultation--light .form-textarea::placeholder {
+    color: var(--color-slate-400);
+}
+
+.consultation--light .form-input:focus,
+.consultation--light .form-textarea:focus {
+    background: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+.consultation--light .form-checkbox-label {
+    color: var(--color-slate-500);
+}
+
+.consultation--light .form-checkbox-label a {
+    color: var(--color-primary);
+}
+
+.consultation--light .consultation__direct {
+    border-top-color: var(--color-slate-200);
+}
+
+.consultation--light .consultation__direct-link {
+    color: var(--color-slate-600);
+}
+
+/* Nagłówek wyśrodkowany (single-column layout) */
+.consultation__header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.consultation--light .consultation__header h2 {
+    font-size: var(--text-4xl);
+    color: var(--color-slate-950);
+    margin: var(--space-4) 0;
+}
+
+.consultation--light .consultation__header p {
+    color: var(--color-slate-500);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Formularz 2-kolumnowy (email + telefon obok siebie) */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+}
+
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .consultation__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+    
+    .consultation__form-wrapper {
+        order: 2;
+        padding: var(--space-6);
+    }
+    
+    .consultation__content {
+        order: 1;
+        text-align: center;
+    }
+    
+    .consultation__content h2 {
+        font-size: var(--text-3xl);
+    }
+
+    .consultation__direct-links {
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: center;
+    }
+}

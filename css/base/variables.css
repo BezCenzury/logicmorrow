@@ -1,0 +1,103 @@
+/* ============================================================
+   VARIABLES.CSS — Globalne zmienne CSS (design tokens)
+   Źródło: brandbook LogicMorrow
+   ============================================================ */
+
+:root {
+
+    /* --- Kolory główne (niebieski) --- */
+    --color-primary:        #2563eb;
+    --color-primary-hover:  #1d4ed8;
+    --color-primary-light:  #3b82f6;
+
+    /* --- Skala Slate --- */
+    --color-slate-950:  #0f172a;
+    --color-slate-800:  #1e293b;
+    --color-slate-700:  #334155;
+    --color-slate-600:  #475569;
+    --color-slate-500:  #64748b;
+    --color-slate-400:  #94a3b8;
+    --color-slate-300:  #cbd5e1;
+    --color-slate-200:  #e2e8f0;
+    --color-slate-100:  #f1f5f9;
+    --color-slate-50:   #f8fafc;
+    --color-white:      #ffffff;
+
+    /* --- Kolory akcentowe --- */
+    --color-success:    #10b981;
+    --color-amber:      #f59e0b;
+    --color-error:      #ef4444;
+
+    /* --- Niebieskie tła (jasne) --- */
+    --color-blue-50:    #eff6ff;
+    --color-blue-100:   #dbeafe;
+
+    /* --- Gradienty brandowe --- */
+    --gradient-hero:           linear-gradient(135deg, #0f172a 0%, #0c1f4a 60%, #1d4ed8 100%);
+    --gradient-section-header: linear-gradient(90deg, #1d4ed8, #2563eb);
+    --gradient-tofu:           linear-gradient(90deg, #1d4ed8, #2563eb);
+    --gradient-mofu:           linear-gradient(90deg, #065f46, #10b981);
+    --gradient-bofu:           linear-gradient(90deg, #991b1b, #ef4444);
+
+    /* --- Typografia --- */
+    --font-primary: 'Inter', sans-serif;
+
+    /* --- Rozmiary tekstu --- */
+    --text-xs:   0.75rem;    /* 12px */
+    --text-sm:   0.875rem;   /* 14px */
+    --text-base: 1rem;       /* 16px */
+    --text-lg:   1.125rem;   /* 18px */
+    --text-xl:   1.25rem;    /* 20px */
+    --text-2xl:  1.5rem;     /* 24px */
+    --text-3xl:  1.875rem;   /* 30px */
+    --text-4xl:  2.25rem;    /* 36px */
+    --text-5xl:  3rem;       /* 48px */
+    --text-6xl:  3.75rem;    /* 60px */
+
+    /* --- Grubości fontów --- */
+    --font-light:      300;
+    --font-regular:    400;
+    --font-medium:     500;
+    --font-semibold:   600;
+    --font-bold:       700;
+    --font-extrabold:  800;
+    --font-black:      900;
+
+    /* --- Spacing --- */
+    --space-1:  0.25rem;   /* 4px  */
+    --space-2:  0.5rem;    /* 8px  */
+    --space-3:  0.75rem;   /* 12px */
+    --space-4:  1rem;      /* 16px */
+    --space-5:  1.25rem;   /* 20px */
+    --space-6:  1.5rem;    /* 24px */
+    --space-8:  2rem;      /* 32px */
+    --space-10: 2.5rem;    /* 40px */
+    --space-12: 3rem;      /* 48px */
+    --space-16: 4rem;      /* 64px */
+    --space-20: 5rem;      /* 80px */
+    --space-24: 6rem;      /* 96px */
+
+    /* --- Border radius --- */
+    --radius-sm:   6px;
+    --radius-base: 10px;
+    --radius-lg:   16px;
+    --radius-xl:   24px;
+    --radius-full: 9999px;
+
+    /* --- Cienie --- */
+    --shadow-card:     0 2px 14px rgba(15, 23, 42, 0.10);
+    --shadow-elevated: 0 8px 32px rgba(15, 23, 42, 0.16);
+    --shadow-strong:   0 16px 48px rgba(15, 23, 42, 0.24);
+
+    /* --- Tranzycje --- */
+    --transition-fast:   150ms ease;
+    --transition-base:   250ms ease;
+    --transition-slow:   400ms ease;
+
+    /* --- Layout --- */
+    --container-max:     1200px;
+    --container-padding: 1.5rem;
+
+    /* --- Navbar height (używane do offset sekcji) --- */
+    --navbar-height: 72px;
+}

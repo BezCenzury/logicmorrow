@@ -1,0 +1,66 @@
+<!-- ============================================================
+     NAVBAR.HTML — Globalny nagłówek (ładowany przez loader.js)
+     Zmiana tutaj = zmiana na wszystkich podstronach
+     ============================================================ -->
+
+<header class="navbar" id="navbar">
+    <div class="navbar__container">
+
+        <!-- Logo -->
+        <a href="/index.html" class="navbar__logo" aria-label="LogicMorrow — strona główna">
+            <img src="/assets/images/logo.svg" alt="LogicMorrow" width="160" height="36">
+        </a>
+
+        <!-- Nawigacja desktop -->
+        <nav class="navbar__nav" aria-label="Nawigacja główna">
+            <ul class="navbar__links">
+                <li class="navbar__dropdown">
+                    <span class="navbar__dropdown-toggle navbar__link">
+                        Rozwiązania
+                        <svg class="navbar__dropdown-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <div class="navbar__dropdown-menu">
+                        <a href="/automatyzacje.html" class="navbar__dropdown-item">Automatyzacje</a>
+                        <a href="/aplikacje.html"     class="navbar__dropdown-item">Aplikacje webowe</a>
+                        <a href="/agenci.html"        class="navbar__dropdown-item">Agenci AI</a>
+                    </div>
+                </li>
+                <li><a href="/rozwiazania.html" class="navbar__link">Biblioteka rozwiązań</a></li>
+                <li><a href="/model-pracy.html" class="navbar__link">Model pracy</a></li>
+            </ul>
+        </nav>
+
+        <!-- CTA + hamburger -->
+        <div class="navbar__actions">
+            <a href="/konsultacja.html" class="btn btn--primary btn--navbar-cta">
+                Bezpłatna konsultacja
+            </a>
+
+            <button class="navbar__hamburger" id="hamburger" aria-label="Otwórz menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="navbar__mobile" id="mobile-menu" aria-hidden="true">
+        <nav aria-label="Nawigacja mobilna">
+            <ul class="navbar__mobile-links">
+                <li><span class="navbar__mobile-sublabel">Rozwiązania</span></li>
+                <li><a href="/automatyzacje.html" class="navbar__mobile-link navbar__mobile-link--sub">Automatyzacje</a></li>
+                <li><a href="/aplikacje.html"     class="navbar__mobile-link navbar__mobile-link--sub">Aplikacje webowe</a></li>
+                <li><a href="/agenci.html"        class="navbar__mobile-link navbar__mobile-link--sub">Agenci AI</a></li>
+                <li><a href="/rozwiazania.html"   class="navbar__mobile-link">Biblioteka rozwiązań</a></li>
+                <li><a href="/model-pracy.html"   class="navbar__mobile-link">Model pracy</a></li>
+            </ul>
+            <a href="/konsultacja.html" class="btn btn--primary btn--full">
+                Bezpłatna konsultacja
+            </a>
+        </nav>
+    </div>
+</header>

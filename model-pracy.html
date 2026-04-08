@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Pracy i Gwarancje — Manifest Anty-Agencyjny | LogicMorrow</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <meta name="description" content="Proof of Concept w 2–3 tygodnie. Stała cena. Pełna własność kodu. Bezpośredni kontakt z inżynierem. Dowiedz się, jak wygląda współpraca z LogicMorrow.">
+
+    <!-- ═══════════════════════════════════════════════════════
+         COOKIE CONSENT + GOOGLE CONSENT MODE V2
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 2000
+        });
+    </script>
+
+    <!-- [2] Pre-inicjalizacja consent dla powracających użytkowników -->
+    <script>
+        (function () {
+            try {
+                var raw = document.cookie.split(';').reduce(function (acc, c) {
+                    var p = c.trim().split('=');
+                    return p[0] === 'cc_cookie' ? decodeURIComponent(p.slice(1).join('=')) : acc;
+                }, null);
+                if (raw) {
+                    var cats = JSON.parse(raw).categories || [];
+                    var analytics = cats.indexOf('analytics') >= 0 ? 'granted' : 'denied';
+                    var marketing = cats.indexOf('marketing') >= 0 ? 'granted' : 'denied';
+                    gtag('consent', 'update', {
+                        'analytics_storage': analytics,
+                        'ad_storage': marketing,
+                        'ad_user_data': marketing,
+                        'ad_personalization': marketing
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <script>(function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+    <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+
+    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <style>
+        :root {
+            --cc-btn-primary-bg: #2563eb;
+            --cc-btn-primary-hover-bg: #1d4ed8;
+            --cc-btn-primary-text: #fff;
+            --cc-btn-secondary-bg: #f1f5f9;
+            --cc-btn-secondary-hover-bg: #e2e8f0;
+            --cc-btn-secondary-text: #475569;
+            --cc-toggle-on-bg: #2563eb;
+            --cc-link-color: #2563eb;
+            --cc-btn-border-radius: 0.75rem;
+            --cc-overlay-bg: rgba(0, 0, 0, 0.55);
+        }
+        #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+    </style>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/badge.css">
+
+    <!-- Section CSS -->
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/process-model.css">
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div id="navbar-placeholder"></div>
+
+    <main>
+
+        <!-- ====================================================
+             SEKCJA 1: HERO
+             ==================================================== -->
+        <section class="hero hero--overlap hero--full-width" aria-label="Model pracy LogicMorrow">
+            <div class="hero__container">
+                <div class="hero__content" data-animate="fade-up">
+                    <div class="hero__badge">
+                        <span class="badge badge--dark-blue">Inżynierskie Podejście</span>
+                    </div>
+                    <h1 class="hero__title">
+                        Przejrzysty model współpracy.<br>
+                        <span>Stała cena, pełna kontrola.</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        Nie sprzedajemy obietnic bez pokrycia. Każdy projekt dzielimy na mierzalne etapy, które pozwalają Ci zweryfikować wartość wdrożenia zanim zaangażujesz większe środki.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="/konsultacja.html" class="btn btn--primary btn--arrow">Umów bezpłatną analizę</a>
+                    </div>
+                </div>
+
+                <div class="hero__visual" data-animate="fade-left">
+                    <!-- Animated Growth SVG -->
+                    <svg width="480" height="360" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <mask id="hero-node-mask">
+                                <rect width="100%" height="100%" fill="white" />
+                                <circle cx="100" cy="280" r="26" fill="black" />
+                                <circle cx="180" cy="220" r="26" fill="black" />
+                                <circle cx="260" cy="160" r="26" fill="black" />
+                                <circle cx="340" cy="100" r="32" fill="black" />
+                            </mask>
+                        </defs>
+
+                        <!-- BG Grid Elements -->
+                        <path d="M60 300 H420 M60 240 H420 M60 180 H420 M60 120 H420 M60 60 H420" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+                        <path d="M60 60 V300 M130 60 V300 M200 60 V300 M270 60 V300 M340 60 V300 M410 60 V300" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+
+                        <!-- Growth Line (Animated with Mask) -->
+                        <path id="hero-growth-line" mask="url(#hero-node-mask)" d="M100 280 L340 100" stroke="var(--color-primary-light)" stroke-width="4" stroke-linecap="round" stroke-dasharray="400" stroke-dashoffset="400">
+                            <animate attributeName="stroke-dashoffset" from="400" to="0" dur="3s" fill="freeze" begin="0.5s" />
+                        </path>
+
+                        <!-- Step 01: Analysis -->
+                        <g opacity="0">
+                            <circle cx="100" cy="280" r="24" fill="var(--color-slate-900)" stroke="var(--color-primary-light)" stroke-width="2" />
+                            <text x="100" y="285" text-anchor="middle" fill="var(--color-white)" font-size="12" font-weight="bold">01</text>
+                            <text x="100" y="325" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="600">ANALIZA</text>
+                            <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5s" fill="freeze" />
+                        </g>
+
+                        <!-- Step 02: Plan -->
+                        <g opacity="0">
+                            <circle cx="180" cy="220" r="24" fill="var(--color-slate-900)" stroke="var(--color-primary-light)" stroke-width="2" />
+                            <text x="180" y="225" text-anchor="middle" fill="var(--color-white)" font-size="12" font-weight="bold">02</text>
+                            <text x="180" y="265" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="600">PLAN / WYCENA</text>
+                            <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.5s" fill="freeze" />
+                        </g>
+
+                        <!-- Step 03: Background Verification -->
+                        <g opacity="0">
+                            <circle cx="260" cy="160" r="24" fill="var(--color-slate-900)" stroke="var(--color-primary-light)" stroke-width="2" />
+                            <text x="260" y="165" text-anchor="middle" fill="var(--color-white)" font-size="12" font-weight="bold">03</text>
+                            <text x="260" y="205" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="600">WERYFIKACJA W TLE</text>
+                            <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="2.5s" fill="freeze" />
+                        </g>
+
+                        <!-- Step 04: Scaling -->
+                        <g opacity="0">
+                            <circle cx="340" cy="100" r="30" fill="var(--color-success)" stroke="var(--color-white)" stroke-width="2" />
+                            <text x="340" y="105" text-anchor="middle" fill="var(--color-white)" font-size="14" font-weight="bold">04</text>
+                            <text x="340" y="155" text-anchor="middle" fill="var(--color-success)" font-size="11" font-weight="bold">SKALOWANIE</text>
+                            <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="3.5s" fill="freeze" />
+                        </g>
+
+                        <!-- Success Glow -->
+                        <circle cx="340" cy="100" r="30" fill="var(--color-success)" opacity="0">
+                            <animate attributeName="r" from="30" to="55" dur="2s" repeatCount="indefinite" begin="4s" />
+                            <animate attributeName="opacity" from="0.4" to="0" dur="2s" repeatCount="indefinite" begin="4s" />
+                        </circle>
+
+                        <!-- Trending Arrow -->
+                        <path d="M370 70 L390 50 M390 50 H375 M390 50 V65" stroke="var(--color-success)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0">
+                            <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="4s" fill="freeze" />
+                            <animateTransform attributeName="transform" type="translate" from="0 0" to="5 -5" dur="1s" repeatCount="indefinite" begin="4s" />
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================
+             SEKCJA 2: KROKI WSPÓŁPRACY (Staircase)
+             ==================================================== -->
+        <section class="poc-section" aria-label="Droga do celu">
+            <div class="poc-section__container">
+
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-label" style="color: var(--color-primary); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">Metodologia</span>
+                    <h2>Twój wzrost w 4 krokach</h2>
+                    <p class="lead">Budujemy fundamenty, które pozwalają bezpiecznie piąć się w górę.</p>
+                </div>
+
+                <div class="poc-stairs">
+                    
+                    <!-- Krok 1: Fundament -->
+                    <div class="poc-stair poc-stair--1" data-animate="fade-up">
+                        <div class="poc-stair__card">
+                            <div class="poc-stair__number">01</div>
+                            <h3>Bezpłatna Konsultacja</h3>
+                            <p>Definiujemy problem i szukamy mierzalnych oszczędności. Szukamy fundamentu pod rentowny projekt.</p>
+                        </div>
+                        <div class="poc-stair__block"></div>
+                    </div>
+
+                    <!-- Krok 2: Projekt -->
+                    <div class="poc-stair poc-stair--2" data-animate="fade-up" data-delay="100">
+                        <div class="poc-stair__card">
+                            <div class="poc-stair__number">02</div>
+                            <h3>Wycena i Plan</h3>
+                            <p>Przygotowuję stałą ofertę na konkretny moduł (PoC). Znasz cenę i termin zanim ruszymy.</p>
+                        </div>
+                        <div class="poc-stair__block"></div>
+                    </div>
+
+                    <!-- Krok 3: Weryfikacja -->
+                    <div class="poc-stair poc-stair--3" data-animate="fade-up" data-delay="200">
+                        <div class="poc-stair__card">
+                            <div class="poc-stair__number">03</div>
+                            <h3>Weryfikacja w Tle</h3>
+                            <p>Uruchamiamy nową automatyzację równolegle do Twojego obecnego procesu. Sprawdzamy działanie bez żadnego ryzyka dla stabilności firmy.</p>
+                        </div>
+                        <div class="poc-stair__block"></div>
+                    </div>
+
+                    <!-- Krok 4: Szczyt -->
+                    <div class="poc-stair poc-stair--4" data-animate="fade-up" data-delay="300">
+                        <div class="poc-stair__card">
+                            <div class="poc-stair__number">04</div>
+                            <h3>Odbiór i Skalowanie</h3>
+                            <p>Sprawdzasz wyniki. Masz gotowy, przetestowany system gotowy do wdrożenia w całej firmie.</p>
+                        </div>
+                        <div class="poc-stair__block"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ====================================================
+             SEKCJA 4: GWARANCJE (Premium Grid)
+             ==================================================== -->
+        <section class="guarantees" aria-label="Gwarancje współpracy">
+            <div class="guarantees__container">
+
+                <div class="section-header" data-animate="fade-up">
+                    <span class="section-label">Poczucie bezpieczeństwa</span>
+                    <h2>Inżynierskie Gwarancje</h2>
+                </div>
+
+                <div class="guarantees__grid">
+
+                    <div class="guarantee-card" data-animate="fade-up">
+                        <div class="guarantee-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                        </div>
+                        <h3>Kod na własność</h3>
+                        <p>Otrzymujesz pełne prawa autorskie i dostęp do repozytorium. Nie jesteś "uwiązany" do wykonawcy — masz klucze do swojego domu.</p>
+                    </div>
+
+                    <div class="guarantee-card" data-animate="fade-up" data-delay="100">
+                        <div class="guarantee-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </div>
+                        <h3>Brak Vendor Lock-in</h3>
+                        <p>Budujemy na otwartych standardach (np. n8n). Każdy inżynier na rynku może przejąć opiekę nad Twoim systemem bez budowy od zera.</p>
+                    </div>
+
+                    <div class="guarantee-card" data-animate="fade-up" data-delay="200">
+                        <div class="guarantee-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <h3>Stała Cena (Fixed Price)</h3>
+                        <p>Podpisujemy umowę na konkretną kwotę. Żadnych niespodziewanych faktur za "dodatkowe godziny", o których nikt nie uprzedzał.</p>
+                    </div>
+
+                    <div class="guarantee-card" data-animate="fade-up">
+                        <div class="guarantee-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3>Bezpośredni Kontakt</h3>
+                        <p>Pomijamy handlowców i PM-ów. Masz bezpośredni numer do inżyniera prowadzącego Twój projekt. Szybka decyzja, konkretna odpowiedź.</p>
+                    </div>
+
+                    <div class="guarantee-card" data-animate="fade-up" data-delay="100">
+                        <div class="guarantee-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        </div>
+                        <h3>Pełna Dokumentacja</h3>
+                        <p>System bez instrukcji to problem w przyszłości. Każde wdrożenie kończymy przekazaniem jasnej dokumentacji operacyjnej dla Twojego zespołu.</p>
+                    </div>
+
+                    <div class="guarantee-card" data-animate="fade-up" data-delay="200">
+                        <div class="guarantee-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        </div>
+                        <h3>Bezpieczny Rozruch</h3>
+                        <p>Wdrożenie nie oznacza rewolucji. System uruchamiamy w tle, dając zespołowi czas na spokojną naukę nowych narzędzi bez przerywania dotychczasowej pracy.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ====================================================
+             SEKCJA 5: DOŚWIADCZENIE (Zaplecze)
+             ==================================================== -->
+        <section class="experience-section" aria-label="Nasze doświadczenie w twardym biznesie">
+            <div class="container">
+                <div class="experience-grid">
+                    <div class="experience-content" data-animate="fade-up">
+                        <span class="section-label">Zaplecze</span>
+                        <h2>Znamy twardy biznes od środka</h2>
+                        <p>Mamy doświadczenie operacyjne w branżach przemysłowych — produkcja, logistyka, utrzymanie ruchu. Znamy specyfikę środowisk, gdzie IT spotyka opór, a każdy przestój kosztuje realne pieniądze.</p>
+                        <p>To nie ogranicza naszej oferty — skutecznie wdrażamy systemy w każdej branży w segmencie 5–35 pracowników. Ale jeśli Twoja firma działa "z butów i kombinezonów", nie musisz nam tłumaczyć swojej rzeczywistości. My ją znamy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================================================
+             SEKCJA 6: FINAL CTA
+             ==================================================== -->
+        <section class="final-cta" aria-label="Zacznij od bezpłatnej analizy">
+            <div class="final-cta__container">
+                <div class="final-cta__content" data-animate="fade-up">
+                    <span class="section-label" style="color: var(--color-primary-light);">Twój ruch</span>
+                    <h2>To nie musi być projekt na pół roku.</h2>
+                    <p>Zróbmy pierwszy krok. Bezpieczny PoC, konkretny wynik, stała cena. Jeśli nie zobaczyś ROI — nie idziemy dalej. Uczciwy biznes, inżynierskie podejście.</p>
+                    <div class="final-cta__actions">
+                        <a href="/konsultacja.html" class="btn btn--primary btn--lg btn--arrow">Umów bezpłatną diagnozę</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/loader.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/forms.js"></script>
+
+    <!-- [6] Cookie Consent — inicjalizacja -->
+    <script src="/js/cookie-consent.js"></script>
+
+</body>
+</html>

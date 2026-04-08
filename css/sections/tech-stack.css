@@ -1,0 +1,115 @@
+/* ============================================================
+   TECH-STACK.CSS — Najczęściej automatyzowane procesy (Marquee)
+   ============================================================ */
+
+.popular-processes {
+    padding: var(--space-8) 0;
+    background: var(--color-slate-950);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Subtle side fades */
+.popular-processes::before,
+.popular-processes::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.popular-processes::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-slate-950), transparent);
+}
+
+.popular-processes::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-slate-950), transparent);
+}
+
+.popular-processes__label {
+    text-align: center;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--color-slate-500);
+    margin-bottom: var(--space-6);
+    position: relative;
+    z-index: 6;
+}
+
+.popular-processes__container {
+    width: 100%;
+}
+
+.popular-processes__track {
+    display: flex;
+    width: max-content;
+    animation: marquee 50s linear infinite;
+}
+
+.popular-processes__track:hover {
+    animation-play-state: paused;
+}
+
+.popular-processes__list {
+    display: flex;
+    gap: var(--space-12);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-right: var(--space-12); /* Essential for seamless gap between copies */
+}
+
+.popular-processes__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--color-slate-300);
+    white-space: nowrap;
+    opacity: 0.7;
+    transition: all var(--transition-base);
+}
+
+.popular-processes__item:hover {
+    opacity: 1;
+    color: var(--color-white);
+    transform: translateY(-1px);
+}
+
+.popular-processes__item svg {
+    flex-shrink: 0;
+    color: var(--color-primary-light);
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+    .popular-processes__track {
+        animation-duration: 35s;
+    }
+
+    .popular-processes__list {
+        gap: var(--space-8);
+        padding-right: var(--space-8);
+    }
+
+    .popular-processes__item {
+        font-size: var(--text-xs);
+    }
+}
+
+

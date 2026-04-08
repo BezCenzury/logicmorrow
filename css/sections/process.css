@@ -1,0 +1,145 @@
+/* ============================================================
+   PROCESS.CSS — Model współpracy (Pionowa z kafelkami)
+   ============================================================ */
+
+.process-section {
+    padding: var(--space-24) 0;
+    background-color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.process-section__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.process-section__header {
+    text-align: center;
+    margin-bottom: var(--space-20);
+}
+
+.process-section__header h2 {
+    color: var(--color-slate-950);
+    font-size: var(--text-4xl);
+    margin-top: var(--space-4);
+}
+
+/* Roadmap Track - Pionowy */
+.process-roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    position: relative;
+    padding-left: 100px;
+}
+
+/* Connecting Line - Pionowa (z boku) */
+.process-roadmap::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 40px;
+    width: 2px;
+    background: linear-gradient(180deg, 
+        rgba(16, 185, 129, 0) 0%, 
+        rgba(16, 185, 129, 0.4) 15%, 
+        rgba(16, 185, 129, 0.4) 85%, 
+        rgba(16, 185, 129, 0) 100%
+    );
+    z-index: 1;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+/* Step Number Circle */
+.process-step__number {
+    position: absolute;
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background: var(--color-white);
+    border: 2px solid var(--color-success);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-slate-950);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
+    z-index: 5;
+}
+
+.process-step:hover .process-step__number {
+    background: var(--color-success);
+    color: var(--color-white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Kafelki z gradientem */
+.process-step__content {
+    flex: 1;
+    background: linear-gradient(135deg, var(--color-slate-800) 0%, var(--color-slate-950) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8) var(--space-10);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-base);
+}
+
+.process-step:hover .process-step__content {
+    transform: translateX(10px);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.process-step__content h3 {
+    color: var(--color-white);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+    font-weight: var(--font-bold);
+}
+
+.process-step__content p {
+    color: var(--color-slate-300);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .process-roadmap {
+        padding-left: 70px;
+    }
+
+    .process-roadmap::before {
+        left: 30px;
+    }
+
+    .process-step__number {
+        left: -85px;
+        width: 60px;
+        height: 60px;
+        font-size: var(--text-xl);
+    }
+    
+    .process-step__content {
+        padding: var(--space-6);
+    }
+    
+    .process-step:hover .process-step__content {
+        transform: none;
+    }
+}
