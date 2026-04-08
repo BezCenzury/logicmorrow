@@ -8,6 +8,9 @@ Baza wiedzy o firmie/
 # Konfiguracja i skille Claude Code
 .claude/
 
+# Instrukcje dla Claude Code
+CLAUDE.md
+
 # ============================================================
 # SYSTEM / OS
 # ============================================================
