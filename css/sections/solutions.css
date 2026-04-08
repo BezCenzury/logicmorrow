@@ -53,6 +53,14 @@
     margin: 0 auto var(--space-16);
 }
 
+.solutions__header > p {
+    margin-top: var(--space-4);
+    color: var(--color-slate-500);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .solutions__layout {
     display: flex;
     flex-direction: column;

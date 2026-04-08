@@ -7,6 +7,20 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
     <meta name="description" content="Automatyzujemy powtarzalne procesy i budujemy dedykowane aplikacje webowe dla małych i średnich firm. Zyskaj czas i pełną własność rozwiązania.">
 
+    <!-- SEO: Canonical + Open Graph + Twitter Card -->
+    <link rel="canonical" href="https://logicmorrow.pl/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logicmorrow.pl/">
+    <meta property="og:title" content="LogicMorrow — Automatyzacje i Aplikacje Webowe dla Firm">
+    <meta property="og:description" content="Automatyzujemy powtarzalne procesy i budujemy dedykowane aplikacje webowe dla firm 5–35 pracowników. Zyskaj czas i pełną własność rozwiązania.">
+    <meta property="og:image" content="https://logicmorrow.pl/assets/images/og-image.jpg"><!-- TODO: stwórz plik og-image.jpg (1200×630px) -->
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="LogicMorrow">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LogicMorrow — Automatyzacje i Aplikacje Webowe dla Firm">
+    <meta name="twitter:description" content="Automatyzujemy powtarzalne procesy i budujemy dedykowane aplikacje webowe dla firm 5–35 pracowników. Zyskaj czas i pełną własność rozwiązania.">
+    <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
+
     <!-- ═══════════════════════════════════════════════════════
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
          ═══════════════════════════════════════════════════════ -->
@@ -76,6 +90,33 @@
         #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
         #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
     </style>
+
+    <!-- Schema: WebSite + ProfessionalService -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://logicmorrow.pl/#website",
+          "url": "https://logicmorrow.pl/",
+          "name": "LogicMorrow",
+          "description": "Automatyzacje procesów biznesowych i dedykowane aplikacje webowe dla firm 5–35 pracowników.",
+          "inLanguage": "pl-PL"
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://logicmorrow.pl/#business",
+          "name": "LogicMorrow",
+          "url": "https://logicmorrow.pl",
+          "description": "Butikowy software house specjalizujący się w automatyzacji procesów biznesowych oraz budowie dedykowanych aplikacji webowych dla małych i średnich firm.",
+          "serviceType": ["Automatyzacja procesów biznesowych", "Dedykowane aplikacje webowe", "Agenci AI"],
+          "areaServed": "PL",
+          "priceRange": "$$"
+        }
+      ]
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -342,11 +383,11 @@
                 <div class="challenges__header" data-animate="fade-up">
                     <span class="section-label">Problemy</span>
                     <h2>Znasz te wyzwania?</h2>
-                    <p class="lead">Firmy rosnące szybciej niż ich procesy zderzają się z tymi samymi wąskimi gardłami.</p>
+                    <p class="lead">Firmy, które szybko rosną, prędzej czy później uderzają w te same bariery.</p>
                 </div>
 
                 <div class="challenges__grid">
-                    
+
                     <!-- Wyzwanie 1 -->
                     <div class="challenge-card" data-animate="fade-up" data-delay="0">
                         <span class="challenge-card__tag">
@@ -364,47 +405,27 @@
                             SPRZEDAŻ
                         </span>
                         <h3>Błędy przy przepisywaniu</h3>
-                        <p>Kopiowanie danych między CRM a księgowością generuje pomyłki, które kosztują realne pieniądze i zaufanie klientów.</p>
+                        <p>Kopiowanie danych między programem sprzedażowym a księgowością generuje pomyłki, które kosztują realne pieniądze i zaufanie klientów.</p>
                     </div>
 
                     <!-- Wyzwanie 3 -->
                     <div class="challenge-card" data-animate="fade-up" data-delay="200">
                         <span class="challenge-card__tag">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                            KLIENT
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                            WZROST
                         </span>
-                        <h3>Zasoby uwięzione w zadaniach</h3>
-                        <p>Twój zespół spędza większość dnia na manualnym odpisywaniu na maile i generowaniu raportów zamiast na merytorycznej pracy.</p>
+                        <h3>Procesy blokują rozwój firmy</h3>
+                        <p>To, co działało przy kilku klientach, zaczyna się sypać gdy firma rośnie. Ręczne procesy nie nadążają za biznesem — i w końcu stają się jego hamulcem.</p>
                     </div>
 
                     <!-- Wyzwanie 4 -->
                     <div class="challenge-card" data-animate="fade-up" data-delay="300">
                         <span class="challenge-card__tag">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                            TECHNOLOGIA
-                        </span>
-                        <h3>Systemy ze sobą "nie rozmawiają"</h3>
-                        <p>Narzędzia których używacie nie są ze sobą połączone, co zmusza pracowników do ręcznego przepisywania tych samych danych.</p>
-                    </div>
-
-                    <!-- Wyzwanie 5 -->
-                    <div class="challenge-card" data-animate="fade-up" data-delay="400">
-                        <span class="challenge-card__tag">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
-                            SKALOWALNOŚĆ
-                        </span>
-                        <h3>Wąskie gardło wzrostu</h3>
-                        <p>Procesy manualne, które działały przy 10 klientach, przy 100 stają się barierą paraliżującą rozwój firmy.</p>
-                    </div>
-
-                    <!-- Wyzwanie 6 -->
-                    <div class="challenge-card" data-animate="fade-up" data-delay="500">
-                        <span class="challenge-card__tag">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                             STANDARD
                         </span>
-                        <h3>Wiedza rozproszona</h3>
-                        <p>Sposób działania firmy zależy od pamięci i nawyków pracowników, co tworzy ogromne ryzyko operacyjne.</p>
+                        <h3>Wiedza tylko w głowach ludzi</h3>
+                        <p>Sposób działania firmy zależy od pamięci i nawyków pracowników. Gdy ktoś odchodzi lub jest chory — procesy stają.</p>
                     </div>
 
                 </div>
@@ -420,7 +441,7 @@
             <div class="solutions__container">
                 
                 <div class="solutions__header" data-animate="fade-up">
-                    <span class="section-label">Nasze kompetencje</span>
+                    <span class="section-label">Co robimy</span>
                     <h2>Skupiamy się na tym, co daje zwrot</h2>
                     <p class="lead">Nie budujemy wszystkiego. Budujemy to, co sprawia, że firma rośnie bez zwiększania chaosu.</p>
                 </div>
@@ -482,17 +503,17 @@
                                     <g class="dept-node" transform="translate(40, 40)">
                                         <circle r="25" fill="rgba(37, 99, 235, 0.1)" stroke="var(--color-primary-light)" stroke-width="1.5" />
                                         <text y="8" text-anchor="middle" font-size="20">🤝</text>
-                                        <text y="35" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="bold">SALES (CRM)</text>
+                                        <text y="35" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="bold">SPRZEDAŻ</text>
                                     </g>
                                     <g class="dept-node" transform="translate(200, 40)">
                                         <circle r="25" fill="rgba(16, 185, 129, 0.1)" stroke="var(--color-success)" stroke-width="1.5" />
                                         <text y="8" text-anchor="middle" font-size="20">🏦</text>
-                                        <text y="35" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="bold">FINANCE (ERP)</text>
+                                        <text y="35" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="bold">FINANSE</text>
                                     </g>
                                     <g class="dept-node" transform="translate(120, 200)">
                                         <circle r="25" fill="rgba(245, 158, 11, 0.1)" stroke="var(--color-amber)" stroke-width="1.5" />
                                         <text y="8" text-anchor="middle" font-size="20">👥</text>
-                                        <text y="35" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="bold">HR / ADMIN</text>
+                                        <text y="35" text-anchor="middle" fill="var(--color-slate-400)" font-size="10" font-weight="bold">KADRY</text>
                                     </g>
 
                                     <!-- Ścieżki połączeń (Linie proste) -->
@@ -714,7 +735,7 @@
             <div class="qualifier__container">
 
                 <div class="qualifier__header" data-animate="fade-up">
-                    <span class="section-label">Kwalifikator</span>
+                    <span class="section-label">Dla kogo?</span>
                     <h2>Sprawdź, czy to jest oferta dla Twojej firmy</h2>
                     <p class="lead">Nie pracujemy z każdym — i to jest nasza przewaga.</p>
                 </div>
@@ -898,7 +919,7 @@
             <div class="safety-standards__container" data-animate="fade-up">
 
                 <div class="safety-standards__header">
-                    <span class="section-label" style="color: var(--color-primary-light)">Stabilność Enterprise</span>
+                    <span class="section-label" style="color: var(--color-primary-light)">Stabilność i kontrola</span>
                     <h2 style="color: var(--color-white)">Bezpieczeństwo i pełna kontrola</h2>
                 </div>
 
@@ -1206,17 +1227,6 @@
     <script src="js/roi-calculator.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/forms.js"></script>
-
-    <script>
-        // Honeypot Bot Protection
-        document.getElementById('contact-form')?.addEventListener('submit', function(e) {
-            if (document.getElementById('hp-check')?.checked) {
-                e.preventDefault();
-                console.warn('Bot detected via honeypot.');
-                return false;
-            }
-        });
-    </script>
 
     <!-- [6] Cookie Consent — inicjalizacja -->
     <script src="/js/cookie-consent.js"></script>

@@ -7,6 +7,20 @@
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
     <meta name="description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych — linki do GitHub.">
 
+    <!-- SEO: Canonical + Open Graph + Twitter Card -->
+    <link rel="canonical" href="https://logicmorrow.pl/rozwiazania.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://logicmorrow.pl/rozwiazania.html">
+    <meta property="og:title" content="Biblioteka Rozwiązań — Automatyzacje w Działaniu | LogicMorrow">
+    <meta property="og:description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych — linki do GitHub.">
+    <meta property="og:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="LogicMorrow">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Biblioteka Rozwiązań — Automatyzacje w Działaniu | LogicMorrow">
+    <meta name="twitter:description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych — linki do GitHub.">
+    <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
+
     <!-- ═══════════════════════════════════════════════════════
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
          ═══════════════════════════════════════════════════════ -->
@@ -341,17 +355,6 @@
     <script src="js/navbar.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/forms.js"></script>
-    <script>
-        // Honeypot Bot Protection
-        document.getElementById('contact-form')?.addEventListener('submit', function(e) {
-            if (document.getElementById('hp-check')?.checked) {
-                e.preventDefault();
-                console.warn('Bot detected via honeypot.');
-                return false;
-            }
-        });
-    </script>
-
     <!-- Logika filtrów biblioteki -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
