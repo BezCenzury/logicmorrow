@@ -52,8 +52,9 @@
 }
 
 .challenges__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: var(--space-6);
 }
 
@@ -64,9 +65,12 @@
     padding: var(--space-8);
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-slate-200);
+    border-top: 3px solid var(--color-primary-light);
     transition: var(--transition-base);
     display: flex;
     flex-direction: column;
+    flex: 1 1 300px;
+    max-width: 420px;
 }
 
 .challenge-card:hover {

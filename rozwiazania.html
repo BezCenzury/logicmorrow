@@ -126,9 +126,9 @@
         <!-- ====================================================
              SEKCJA 1: HERO
              ==================================================== -->
-        <section class="hero hero--subpage" aria-label="Biblioteka rozwiązań">
+        <section class="hero" aria-label="Biblioteka rozwiązań">
             <div class="hero__container">
-                <div class="hero__content">
+                <div class="hero__content" data-animate="fade-right">
                     <div class="hero__badge">
                         <span class="badge badge--dark-blue">Biblioteka Rozwiązań</span>
                     </div>
@@ -137,9 +137,150 @@
                         <span>Działające systemy.</span>
                     </h1>
                     <p class="hero__subtitle">
-                        Zobacz, jak automatyzacja i dedykowane systemy rozwiązują realne problemy biznesowe. 
-                        Od nagrań procesów po konkretne architektury systemowe — twarde dane i realne efekty.
+                        Zobacz działające systemy i automatyzacje, które rozwiązują realne problemy w firmach naszych klientów. Żadnej teorii, same konkrety.
                     </p>
+                    <div class="hero__actions">
+                        <a href="/konsultacja.html" class="btn btn--primary btn--lg btn--arrow">
+                            Umów bezpłatną konsultację
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__visual" data-animate="fade-left">
+                    <div class="interactive-screens">
+                        <!-- Ekran 1: Dashboard (Szczegółowy) -->
+                        <div class="screen screen--dashboard">
+                            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="320" height="200" rx="8" fill="#f1f5f9" />
+                                <rect width="50" height="200" rx="8 0 0 8" fill="#0f172a" /> <!-- Sidebar -->
+                                <g transform="translate(10, 20)">
+                                    <circle r="4" fill="#334155" />
+                                    <circle r="4" cy="15" fill="#334155" />
+                                    <circle r="4" cy="30" fill="#334155" />
+                                    <circle r="4" cy="45" fill="#334155" />
+                                </g>
+                                
+                                <rect x="60" y="10" width="250" height="25" rx="4" fill="white" /> <!-- Top bar -->
+                                <circle cx="300" cy="22.5" r="5" fill="#e2e8f0" /> <!-- Profile -->
+                                
+                                <!-- Detailed Cards -->
+                                <g transform="translate(60, 45)">
+                                    <rect width="55" height="40" rx="4" fill="white" stroke="#e2e8f0" />
+                                    <rect x="5" y="5" width="20" height="4" rx="1" fill="#cbd5e1" />
+                                    <rect x="5" y="15" width="40" height="8" rx="2" fill="#2563eb" fill-opacity="0.8" />
+                                    <path d="M5 35 Q15 25 30 35 T50 25" stroke="#10b981" stroke-width="1.5" fill="none" />
+                                    
+                                    <rect x="65" width="55" height="40" rx="4" fill="white" stroke="#e2e8f0" />
+                                    <rect x="70" y="5" width="20" height="4" rx="1" fill="#cbd5e1" />
+                                    <rect x="70" y="15" width="40" height="8" rx="2" fill="#0f172a" />
+                                    
+                                    <rect x="130" width="55" height="40" rx="4" fill="white" stroke="#e2e8f0" />
+                                    <rect x="195" width="55" height="40" rx="4" fill="white" stroke="#e2e8f0" />
+                                </g>
+
+                                <!-- Table/List View -->
+                                <g transform="translate(60, 95)">
+                                    <rect width="250" height="95" rx="4" fill="white" stroke="#e2e8f0" />
+                                    <line x1="10" y1="25" x2="240" y2="25" stroke="#f1f5f9" />
+                                    <line x1="10" y1="50" x2="240" y2="50" stroke="#f1f5f9" />
+                                    <line x1="10" y1="75" x2="240" y2="75" stroke="#f1f5f9" />
+                                    
+                                    <!-- List items -->
+                                    <rect x="10" y="8" width="80" height="6" rx="2" fill="#e2e8f0" />
+                                    <rect x="180" y="8" width="30" height="8" rx="4" fill="#dcfce7" /> <!-- Status -->
+                                    <rect x="185" y="10" width="20" height="3" rx="1.5" fill="#10b981" />
+                                    
+                                    <rect x="10" y="33" width="60" height="6" rx="2" fill="#e2e8f0" />
+                                    <rect x="180" y="33" width="30" height="8" rx="4" fill="#fee2e2" /> <!-- Status -->
+                                    <rect x="185" y="35" width="20" height="3" rx="1.5" fill="#ef4444" />
+                                </g>
+                            </svg>
+                        </div>
+                        
+                        <!-- Ekran 2: Advanced Sales Workflow -->
+                        <div class="screen screen--workflow-sales">
+                            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="320" height="200" rx="8" fill="#0b0e14" />
+                                <g transform="translate(15, 60)">
+                                    <!-- Workflow start -->
+                                    <rect width="24" height="24" rx="4" fill="#1a1f26" stroke="#333" />
+                                    <path d="M12 6 V18 M6 12 H18" stroke="#ff4d4d" stroke-width="2" />
+                                    <text x="0" y="38" fill="#555" font-size="6">WEBHOOK</text>
+
+                                    <!-- Connecting Lines -->
+                                    <path d="M24 12 H40 M64 12 H80 M104 12 H150" stroke="#333" stroke-width="1" />
+                                    
+                                    <!-- Process nodes -->
+                                    <rect x="40" y="4" width="24" height="24" rx="4" fill="#1a1f26" stroke="#333" />
+                                    <text x="40" y="38" fill="#555" font-size="6">AI CLASIFY</text>
+                                    
+                                    <rect x="80" y="4" width="24" height="24" rx="4" fill="#1a1f26" stroke="#333" />
+                                    
+                                    <!-- Branches -->
+                                    <g transform="translate(120, 12)">
+                                        <path d="M10 0 L30 -30 H60" stroke="#333" stroke-width="1" fill="none" />
+                                        <path d="M10 0 L30 30 H60" stroke="#333" stroke-width="1" fill="none" />
+                                        
+                                        <!-- Top branch -->
+                                        <rect x="60" y="-42" width="24" height="24" rx="4" fill="#1a1f26" stroke="#0088cc" stroke-width="1.5" />
+                                        <text x="60" y="-10" fill="#555" font-size="6">CRM UPDATE</text>
+                                        
+                                        <!-- Bottom branch -->
+                                        <rect x="60" y="18" width="24" height="24" rx="4" fill="#1a1f26" stroke="#10b981" stroke-width="1.5" />
+                                        <text x="60" y="50" fill="#555" font-size="6">NOTIFY TEAM</text>
+                                    </g>
+
+                                    <!-- Animated pulse -->
+                                    <circle r="2" fill="#ff4d4d">
+                                        <animateMotion dur="3s" repeatCount="indefinite" path="M12 12 H52 M52 12 H92 M92 12 L130 12 L150 -18 H200" />
+                                    </circle>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <!-- Ekran 3: Complex ERP Workflow -->
+                        <div class="screen screen--workflow-erp">
+                            <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="320" height="200" rx="8" fill="#09090b" />
+                                <g transform="translate(10, 40)">
+                                    <!-- Large loop structure -->
+                                    <rect width="300" height="130" rx="6" stroke="#222" stroke-dasharray="4 4" fill="rgba(255,255,255,0.02)" />
+                                    <text x="10" y="-10" fill="#444" font-size="7">DAILY LOGISTICS SYNC</text>
+                                    
+                                    <!-- Sequence of nodes -->
+                                    <g transform="translate(20, 20)">
+                                        <rect width="20" height="20" rx="4" fill="#18181b" stroke="#3f3f46" />
+                                        <rect x="40" y="30" width="20" height="20" rx="4" fill="#18181b" stroke="#3f3f46" />
+                                        <rect x="80" y="0" width="20" height="20" rx="4" fill="#18181b" stroke="#3f3f46" />
+                                        <rect x="120" y="30" width="20" height="20" rx="4" fill="#18181b" stroke="#3f3f46" />
+                                        
+                                        <!-- Branches and Loops -->
+                                        <path d="M20 10 H40 V30 M60 40 H80 V10 M100 10 H120 V30" stroke="#27272a" stroke-width="1" fill="none" />
+                                        
+                                        <!-- Complex Logic -->
+                                        <g transform="translate(160, 15)">
+                                            <rect width="25" height="25" rx="12.5" fill="#18181b" stroke="#fbbf24" stroke-width="1.5" />
+                                            <text x="12.5" y="16" text-anchor="middle" fill="#fbbf24" font-size="10">?</text>
+                                            
+                                            <path d="M25 12.5 H50" stroke="#3f3f46" />
+                                            <path d="M12.5 25 V45 H50" stroke="#3f3f46" fill="none" />
+                                            
+                                            <rect x="50" y="2.5" width="20" height="20" rx="4" fill="#1a1f26" stroke="#2563eb" />
+                                            <rect x="50" y="35" width="20" height="20" rx="4" fill="#1a1f26" stroke="#ef4444" />
+                                        </g>
+                                    </g>
+
+                                    <!-- Multiple Pulses -->
+                                    <circle r="1.5" fill="#2563eb">
+                                        <animateMotion dur="5s" repeatCount="indefinite" path="M40 30 H60 V50 M60 50 H80 V40 H100" />
+                                    </circle>
+                                    <circle r="1.5" fill="#10b981">
+                                        <animateMotion dur="4s" repeatCount="indefinite" delay="2s" path="M40 30 H60 V50 M60 50 H80 V40 H100" />
+                                    </circle>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

@@ -141,7 +141,8 @@
     }
 
     .hero__visual {
-        display: none;
+        display: flex;
+        margin-top: var(--space-12);
     }
 }
 
@@ -201,5 +202,139 @@
 
     .hero__actions .btn {
         width: 100%;
+    }
+}
+
+/* --- Interaktywne ekrany (rozwiazania.html) --- */
+
+.interactive-screens {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    height: 460px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+}
+
+.screen {
+    position: absolute;
+    width: 320px;
+    height: 200px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color-white);
+    overflow: hidden;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screen--dashboard {
+    animation: cycle-three-1 18s infinite ease-in-out;
+}
+
+.screen--workflow-sales {
+    animation: cycle-three-2 18s infinite ease-in-out;
+}
+
+.screen--workflow-erp {
+    animation: cycle-three-3 18s infinite ease-in-out;
+}
+
+@keyframes cycle-three-1 {
+    0%, 28% { 
+        transform: translate3d(-40px, -60px, 0) scale(1.1); 
+        z-index: 30; 
+        opacity: 1; 
+        filter: brightness(1) blur(0);
+    }
+    33%, 61% { 
+        transform: translate3d(40px, 40px, -60px) scale(0.9); 
+        z-index: 20; 
+        opacity: 0.6; 
+        filter: brightness(0.7) blur(1px);
+    }
+    66%, 94% { 
+        transform: translate3d(0, 120px, -120px) scale(0.8); 
+        z-index: 10; 
+        opacity: 0.2; 
+        filter: brightness(0.4) blur(4px);
+    }
+    100% { 
+        transform: translate3d(-40px, -60px, 0) scale(1.1); 
+        z-index: 30; 
+        opacity: 1; 
+    }
+}
+
+@keyframes cycle-three-2 {
+    0%, 28% { 
+        transform: translate3d(0, 120px, -120px) scale(0.8); 
+        z-index: 10; 
+        opacity: 0.2; 
+        filter: brightness(0.4) blur(4px);
+    }
+    33%, 61% { 
+        transform: translate3d(-40px, -60px, 0) scale(1.1); 
+        z-index: 30; 
+        opacity: 1; 
+        filter: brightness(1) blur(0);
+    }
+    66%, 94% { 
+        transform: translate3d(40px, 40px, -60px) scale(0.9); 
+        z-index: 20; 
+        opacity: 0.6; 
+        filter: brightness(0.7) blur(1px);
+    }
+    100% { 
+        transform: translate3d(0, 120px, -120px) scale(0.8); 
+        z-index: 10; 
+        opacity: 0.2; 
+    }
+}
+
+@keyframes cycle-three-3 {
+    0%, 28% { 
+        transform: translate3d(40px, 40px, -60px) scale(0.9); 
+        z-index: 20; 
+        opacity: 0.6; 
+        filter: brightness(0.7) blur(1px);
+    }
+    33%, 61% { 
+        transform: translate3d(0, 120px, -120px) scale(0.8); 
+        z-index: 10; 
+        opacity: 0.2; 
+        filter: brightness(0.4) blur(4px);
+    }
+    66%, 94% { 
+        transform: translate3d(-40px, -60px, 0) scale(1.1); 
+        z-index: 30; 
+        opacity: 1; 
+        filter: brightness(1) blur(0);
+    }
+    100% { 
+        transform: translate3d(40px, 40px, -60px) scale(0.9); 
+        z-index: 20; 
+        opacity: 0.6; 
+    }
+}
+
+/* Responsywność dla ekranów hero */
+@media (max-width: 1024px) {
+    .interactive-screens {
+        height: 380px;
+        margin-top: var(--space-8);
+    }
+    .screen {
+        width: 280px;
+        height: 175px;
+    }
+}
+
+@media (max-width: 480px) {
+    .screen {
+        width: 240px;
+        height: 150px;
     }
 }
