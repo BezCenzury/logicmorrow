@@ -1,0 +1,95 @@
+/* ============================================================
+   COOKIE FAB — pływający przycisk ustawień cookies
+   Pojawia się po pierwszej decyzji (akceptuj/odrzuć).
+   Klik → CookieConsent.showPreferences()
+   ============================================================ */
+
+#cc-fab {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 9998;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    background: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+#cc-fab.cc-fab--visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#cc-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+}
+
+#cc-fab:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+#cc-fab svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+/* Tooltip */
+#cc-fab::before {
+    content: 'Ustawienia cookies';
+    position: absolute;
+    left: calc(100% + 0.6rem);
+    bottom: 50%;
+    transform: translateY(50%);
+    white-space: nowrap;
+    background: var(--color-slate-800, #1e293b);
+    color: #fff;
+    font-size: 0.75rem;
+    font-family: inherit;
+    padding: 0.35rem 0.65rem;
+    border-radius: 0.4rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+#cc-fab:hover::before,
+#cc-fab:focus-visible::before {
+    opacity: 1;
+}
+
+@media (max-width: 480px) {
+    #cc-fab {
+        width: 38px;
+        height: 38px;
+        left: 0.75rem;
+        bottom: 0.75rem;
+    }
+
+    #cc-fab svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    /* Tooltip na mobile chodzi w górę, żeby nie wychodził poza ekran */
+    #cc-fab::before {
+        left: 0;
+        bottom: calc(100% + 0.5rem);
+        transform: none;
+    }
+}

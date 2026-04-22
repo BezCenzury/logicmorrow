@@ -20,12 +20,35 @@
     }
 })();
 
+// Wstrzykuje pływający przycisk "Ustawienia cookies" (lewy dolny róg).
+// Wywoływana po pierwszej decyzji i przy powrocie na stronę (gdy cc_cookie istnieje).
+function injectCookieFab() {
+    if (document.getElementById('cc-fab')) {
+        document.getElementById('cc-fab').classList.add('cc-fab--visible');
+        return;
+    }
+    var btn = document.createElement('button');
+    btn.id = 'cc-fab';
+    btn.setAttribute('aria-label', 'Ustawienia plików cookie');
+    btn.setAttribute('type', 'button');
+    // Ikona ciasteczka (SVG inline — brak zewnętrznego pliku)
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="8.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="10" cy="14.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="15.5" cy="14" r="0.9" fill="currentColor" stroke="none"/></svg>';
+    btn.addEventListener('click', function () { CookieConsent.showPreferences(); });
+    document.body.appendChild(btn);
+    // Drobne opóźnienie, żeby CSS transition fade-in zadziałało
+    requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+            btn.classList.add('cc-fab--visible');
+        });
+    });
+}
+
 CookieConsent.run({
     guiOptions: {
         consentModal: {
             layout: 'box',
             position: 'middle center',
-            equalWeightButtons: false,
+            equalWeightButtons: true,
             flipButtons: false
         },
         preferencesModal: {
@@ -104,6 +127,7 @@ CookieConsent.run({
     },
 
     onConsent: function ({ cookie }) {
+        injectCookieFab();
         var analyticsStatus = cookie.categories.includes('analytics') ? 'granted' : 'denied';
         var marketingStatus = cookie.categories.includes('marketing') ? 'granted' : 'denied';
         gtag('consent', 'update', {

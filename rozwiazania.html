@@ -14,6 +14,8 @@
     <meta property="og:title" content="Biblioteka Rozwiązań — Automatyzacje w Działaniu | LogicMorrow">
     <meta property="og:description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych — linki do GitHub.">
     <meta property="og:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="LogicMorrow">
     <meta name="twitter:card" content="summary_large_image">
@@ -88,8 +90,40 @@
             --cc-overlay-bg: rgba(0, 0, 0, 0.55);
         }
         #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box {
+                max-width: 100%;
+                min-width: unset;
+                width: 100%;
+            }
+        }
         #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
     </style>
+
+    <!-- Schema: WebPage + BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://logicmorrow.pl/rozwiazania.html",
+          "url": "https://logicmorrow.pl/rozwiazania.html",
+          "name": "Biblioteka Rozwiązań — Automatyzacje w Działaniu | LogicMorrow",
+          "description": "Działające automatyzacje i aplikacje webowe zbudowane dla firm 5–35 pracowników. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte narzędzia.",
+          "inLanguage": "pl-PL",
+          "isPartOf": { "@id": "https://logicmorrow.pl/#website" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://logicmorrow.pl/" },
+            { "@type": "ListItem", "position": 2, "name": "Biblioteka Rozwiązań", "item": "https://logicmorrow.pl/rozwiazania.html" }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,9 +138,11 @@
     <!-- Component CSS -->
     <link rel="stylesheet" href="css/components/navbar.css">
     <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/cookie-fab.css">
     <link rel="stylesheet" href="css/components/buttons.css">
     <link rel="stylesheet" href="css/components/cards.css">
     <link rel="stylesheet" href="css/components/badge.css">
+    <link rel="stylesheet" href="css/components/modal.css">
 
     <!-- Section CSS -->
     <link rel="stylesheet" href="css/sections/hero.css">
@@ -310,109 +346,54 @@
                 <div class="library__grid">
 
                     <!-- Karta 1: Skład drewna -->
-                    <article class="process-card" data-category="zaawansowane" data-animate="fade-up" data-delay="0">
-                        <div class="process-card__video-wrapper" role="button" tabindex="0" aria-label="Odtwórz wideo: System dla składu drewna">
-                            <svg class="process-card__thumbnail" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-                                <rect width="640" height="360" fill="#1e293b"/>
-                                <text x="320" y="180" text-anchor="middle" fill="#334155" font-family="Inter" font-size="16">[Nagranie: Skład drewna]</text>
-                            </svg>
-                            <div class="process-card__play-btn" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-                                    <path d="M6 4l12 6-12 6V4z"/>
-                                </svg>
+                    <article class="process-card js-open-system-modal" data-modal-target="modal-sklad-drewna" style="cursor: pointer;" data-category="zaawansowane" data-animate="fade-up" data-delay="0" role="button" tabindex="0">
+                        <div class="process-card__visual" style="position: relative;">
+                            <video src="assets/Video/System-skladu-drewna.mp4" poster="assets/images/System-zamowien/Dashboard.jpg" muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16/9; display: block;"></video>
+                            <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; transition: background 0.2s;" onmouseenter="this.style.background='rgba(0,0,0,0.1)'" onmouseleave="this.style.background='rgba(0,0,0,0.3)'">
+                                <span style="background: var(--color-primary); color: white; padding: 12px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; pointer-events: none; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M6 4l12 6-12 6V4z"/></svg>
+                                    Zobacz więcej
+                                </span>
                             </div>
                         </div>
                         <div class="process-card__body">
-                            <p class="process-card__category">Zaawansowane</p>
+                            <p class="process-card__category">Zaawansowane <span style="text-transform: none; opacity: 0.7; font-weight: 400; margin-left: 4px;">(Aplikacja webowa)</span></p>
                             <h3 class="process-card__title">Dedykowany system dla składu drewna</h3>
                             <div class="process-card__stats">
-                                <span class="process-card__stat"><strong>Wdrożenie:</strong> 28 dni</span>
-                                <span class="process-card__stat"><strong>Zakres:</strong> Magazyn, zamówienia, finanse</span>
+                                <span class="process-card__stat"><strong>Wdrożenie:</strong> 8 tygodni</span>
+                                <span class="process-card__stat"><strong>Zakres:</strong> Magazyn, zamówienia, finanse, logistyka</span>
                             </div>
+                            <p style="font-size: var(--text-xs); color: var(--color-slate-500); line-height: 1.6; margin-top: var(--space-4); border-top: 1px solid var(--color-slate-100); padding-top: var(--space-3);">
+                                <strong>Rozwiązanie:</strong> Połączenie wszystkich dotychczasowych systemów i procesów firmy, w jeden spójny system.
+                            </p>
                         </div>
                     </article>
 
-                    <!-- Karta 2: Płatności -->
-                    <article class="process-card" data-category="proste" data-animate="fade-up" data-delay="100">
-                        <div class="process-card__video-wrapper" role="button" tabindex="0" aria-label="Odtwórz wideo: Automatyzacja płatności">
-                            <svg class="process-card__thumbnail" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-                                <rect width="640" height="360" fill="#1e293b"/>
-                                <text x="320" y="180" text-anchor="middle" fill="#334155" font-family="Inter" font-size="16">[Nagranie: Płatności]</text>
-                            </svg>
-                            <div class="process-card__play-btn" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-                                    <path d="M6 4l12 6-12 6V4z"/>
-                                </svg>
+                    <!-- Karta 2: Obsługa kontaktów -->
+                    <article class="process-card js-open-system-modal" data-modal-target="modal-obsluga-kontaktow" style="cursor: pointer;" data-category="proste" data-animate="fade-up" data-delay="100" role="button" tabindex="0">
+                        <div class="process-card__visual" style="position: relative;">
+                            <video src="assets/Video/system-faormularzy.mp4" poster="assets/images/Kontakt/miniaturka-kontakt.png" muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16/9; display: block;"></video>
+                            <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; transition: background 0.2s;" onmouseenter="this.style.background='rgba(0,0,0,0.1)'" onmouseleave="this.style.background='rgba(0,0,0,0.3)'">
+                                <span style="background: var(--color-primary); color: white; padding: 12px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; pointer-events: none; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M6 4l12 6-12 6V4z"/></svg>
+                                    Zobacz więcej
+                                </span>
                             </div>
                         </div>
                         <div class="process-card__body">
-                            <p class="process-card__category">Najprostsze</p>
-                            <h3 class="process-card__title">Automatyczne powiadomienia o zaległościach</h3>
+                            <p class="process-card__category">Średniozaawansowane <span style="text-transform: none; opacity: 0.7; font-weight: 400; margin-left: 4px;">(Automatyzacja)</span></p>
+                            <h3 class="process-card__title">Automatyczna obsługa kontaktów z formularza</h3>
                             <div class="process-card__stats">
-                                <span class="process-card__stat"><strong>Wdrożenie:</strong> 12 dni</span>
-                                <span class="process-card__stat"><strong>Narzędzia:</strong> n8n + Bank API</span>
+                                <span class="process-card__stat"><strong>Wdrożenie:</strong> 6 tygodni</span>
+                                <span class="process-card__stat"><strong>Zakres:</strong> CRM, Powiadomienia, Inteligentny system ofertowania</span>
                             </div>
+                            <p style="font-size: var(--text-xs); color: var(--color-slate-500); line-height: 1.6; margin-top: var(--space-4); border-top: 1px solid var(--color-slate-100); padding-top: var(--space-3);">
+                                <strong>Rozwiązanie:</strong> Zautomatyzowanie zapisu kontaktów z formularza, spersonalizowane oferty, powiadomienia dla handlowca.
+                            </p>
                         </div>
                     </article>
 
-                    <!-- Karta 3: Magazyn -->
-                    <article class="process-card" data-category="srednie" data-animate="fade-up" data-delay="200">
-                        <div class="process-card__video-wrapper" role="button" tabindex="0" aria-label="Odtwórz wideo: Monitoring stanów magazynowych">
-                            <svg class="process-card__thumbnail" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-                                <rect width="640" height="360" fill="#1e293b"/>
-                                <text x="320" y="180" text-anchor="middle" fill="#334155" font-family="Inter" font-size="16">[Miniatura wideo: Magazyn]</text>
-                            </svg>
-                            <div class="process-card__play-btn" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-                                    <path d="M6 4l12 6-12 6V4z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="process-card__body">
-                            <p class="process-card__category">Średniozaawansowane</p>
-                            <h3 class="process-card__title">Monitoring stanów i automatyczne domówienia</h3>
-                            <div class="process-card__stats">
-                                <span class="process-card__stat"><strong>Wdrożenie:</strong> 10 dni</span>
-                                <span class="process-card__stat"><strong>Cel:</strong> Brak braków asortymentowych</span>
-                            </div>
-                        </div>
-                    </article>
 
-                    <!-- Karta 4: Analiza Danych -->
-                    <article class="process-card" data-category="srednie" data-animate="fade-up" data-delay="300">
-                        <div class="process-card__image-wrapper">
-                            <svg class="process-card__thumbnail" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-                                <rect width="640" height="360" fill="#0f172a"/>
-                                <text x="320" y="180" text-anchor="middle" fill="#475569" font-family="Inter" font-size="14">[System Raportowania]</text>
-                            </svg>
-                        </div>
-                        <div class="process-card__body">
-                            <p class="process-card__category">Średniozaawansowane</p>
-                            <h3 class="process-card__title">Centralny System Raportowania Marży</h3>
-                            <div class="process-card__stats">
-                                <span class="process-card__stat"><strong>Efekt:</strong> Raport w 5 sekund (vs 4h manualnie)</span>
-                                <span class="process-card__stat"><strong>Integracja:</strong> ERP + Excel + SQL</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Karta 5: AI Support -->
-                    <article class="process-card" data-category="zaawansowane" data-animate="fade-up" data-delay="400">
-                        <div class="process-card__image-wrapper">
-                            <svg class="process-card__thumbnail" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-                                <rect width="640" height="360" fill="#1e293b"/>
-                                <text x="320" y="180" text-anchor="middle" fill="#475569" font-family="Inter" font-size="14">[System AI]</text>
-                            </svg>
-                        </div>
-                        <div class="process-card__body">
-                            <p class="process-card__category">Zaawansowane</p>
-                            <h3 class="process-card__title">Inteligentna Kwalifikacja Leadów</h3>
-                            <div class="process-card__stats">
-                                <span class="process-card__stat"><strong>Skuteczność:</strong> 92% trafnych ocen</span>
-                                <span class="process-card__stat"><strong>Technologia:</strong> LLM + CRM Sync</span>
-                            </div>
-                        </div>
-                    </article>
 
                 </div>
 
@@ -490,12 +471,86 @@
 
     </main>
 
+    <!-- Modals -->
+    <div class="custom-modal-overlay" id="modal-sklad-drewna" aria-hidden="true">
+      <div class="custom-modal-container custom-modal-content">
+        <button class="custom-modal-close" aria-label="Zamknij">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="custom-modal-left">
+          <video src="assets/Video/System-skladu-drewna.mp4" poster="assets/images/System-zamowien/Dashboard.jpg" controls style="width: 100%; max-height: 100%; outline: none;" playsinline></video>
+        </div>
+        <div class="custom-modal-right">
+          <h3>System Dedykowany dla Składu Drewna</h3>
+          <h4>Wyzwanie</h4>
+          <p>
+            Firma handlująca drewnem konstrukcyjnym opierała swoje procesy na dwóch odseparowanych systemach: jednym do zarządzania magazynem i zamówieniami (WZ/PZ) oraz drugim do księgowości. Komunikacja odbywała się manualnie (maile, telefony). Takie rozproszenie narzędzi powodowało:
+          </p>
+          <ul>
+            <li>Brak natychmiastowej kontroli nad opóźnieniami w płatnościach.</li>
+            <li>Wydłużony czas weryfikacji statusu zamówień.</li>
+            <li>Błędy inwentaryzacyjne prowadzące do braków na magazynie.</li>
+          </ul>
+          <h4>Rozwiązanie</h4>
+          <p>
+            Zaprojektowaliśmy zintegrowany system dedykowany, który w jednym miejscu łączy zarządzanie zamówieniami, magazynem oraz finansami:
+          </p>
+          <ul>
+            <li><strong>Zarządzanie finansami:</strong> Automatyzacja faktur i monitoring wpłat z powiadomieniami o opóźnieniach.</li>
+            <li><strong>Inteligentny Magazyn:</strong> Minimalne progi magazynowe i generowanie list zakupowych jednym kliknięciem.</li>
+            <li><strong>Dedykowany Panel dla Magazynu:</strong> Podgląd zleceń na żywo dla magazynierów w aplikacji mobilnej.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="custom-modal-overlay" id="modal-obsluga-kontaktow" aria-hidden="true">
+      <div class="custom-modal-container custom-modal-content">
+        <button class="custom-modal-close" aria-label="Zamknij">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="custom-modal-left">
+          <video src="assets/Video/system-faormularzy.mp4" poster="assets/images/Kontakt/miniaturka-kontakt.png" controls style="width: 100%; max-height: 100%; outline: none;" playsinline></video>
+        </div>
+        <div class="custom-modal-right">
+          <h3>Automatyczna obsługa kontaktów (AI + CRM)</h3>
+          <h4>Wyzwanie</h4>
+          <p>
+            Dotychczas proces obsługi zapytań ze strony WWW był całkowicie manualny:
+          </p>
+          <ul>
+            <li>Dane kontaktowe trafiały na ogólną skrzynkę mailową biura.</li>
+            <li>Pracownik musiał odczytać wiadomość, odszukać odpowiedniego handlowca i przekazać mu kontakt.</li>
+            <li>Klient otrzymywał najpierw ogólną, sztampową ofertę.</li>
+            <li>Długi czas reakcji na zapytanie powodował utratę części potencjalnych klientów (leadów).</li>
+          </ul>
+          <h4>Rozwiązanie</h4>
+          <p>
+            Wdrożono natychmiastową automatyzację procesującą przychodzące wiadomości z formularza:
+          </p>
+          <ul>
+            <li><strong>Automatyczny przydział:</strong> System sam kategoryzuje zapytanie na podstawie wybranego rejonu województwa i przypisuje odpowiedniego handlowca.</li>
+            <li><strong>Synchronizacja z CRM:</strong> Wszystkie dane z zapytania natychmiast zapisują się jako nowa szansa sprzedaży w systemie CRM.</li>
+            <li><strong>Asystent AI:</strong> System potrafi od razu wysłać wstępną, wysoce spersonalizowaną odpowiedź dopasowaną dokładnie do treści problemu klienta.</li>
+            <li><strong>Alerty mobilne:</strong> Handlowiec otrzymuje automatyczne powiadomienie na telefon, dzięki czemu wie, że musi podjąć błyskawiczny kontakt.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <div id="footer-placeholder"></div>
 
     <script src="js/loader.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/forms.js"></script>
+    <script src="js/modal.js"></script>
     <!-- Logika filtrów biblioteki -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
