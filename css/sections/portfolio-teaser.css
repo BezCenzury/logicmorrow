@@ -8,6 +8,7 @@
     position: sticky;
     top: calc(var(--navbar-height, 72px) + 40px);
     z-index: 12;
+    overflow: hidden;
 }
 
 .portfolio-teaser__container {
@@ -153,5 +154,9 @@
     
     .portfolio-teaser__header .btn {
         width: 100%;
+    }
+
+    .portfolio-teaser__grid {
+        grid-template-columns: 1fr;
     }
 }

@@ -1,0 +1,238 @@
+/* ============================================================
+   MODAL.CSS — Okno popup na pełny ekran
+   ============================================================ */
+
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.custom-modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.custom-modal-content {
+    background: var(--color-slate-900);
+    width: 90vw;
+    height: 90vh;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    transform: translateY(20px) scale(0.98);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-modal-overlay.active .custom-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.custom-modal-close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.custom-modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.custom-modal-left {
+    flex: 1.5;
+    background: var(--color-slate-950);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.custom-modal-left .modal-carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.custom-modal-left .modal-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-carousel-item {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-8);
+}
+
+.modal-carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.modal-carousel-controls {
+    position: absolute;
+    bottom: var(--space-6);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--space-2);
+    background: rgba(0,0,0,0.5);
+    padding: var(--space-2) var(--space-3);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.modal-carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-carousel-dot.active {
+    background: var(--color-primary-light);
+    transform: scale(1.2);
+}
+
+.modal-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.modal-carousel-arrow:hover {
+    background: rgba(37, 99, 235, 0.8);
+    border-color: var(--color-primary-light);
+}
+
+.modal-carousel-arrow--prev {
+    left: var(--space-4);
+}
+
+.modal-carousel-arrow--next {
+    right: var(--space-4);
+}
+
+.custom-modal-right {
+    flex: 1;
+    padding: var(--space-10) var(--space-8);
+    overflow-y: auto;
+    color: var(--color-slate-200);
+}
+
+.custom-modal-right h3 {
+    color: var(--color-white);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-6);
+    line-height: 1.2;
+}
+
+.custom-modal-right h4 {
+    color: var(--color-primary-light);
+    font-size: var(--text-lg);
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-3);
+}
+
+.custom-modal-right p {
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+    color: var(--color-white);
+}
+
+.custom-modal-right ul {
+    list-style: none;
+    margin-bottom: var(--space-6);
+}
+
+.custom-modal-right ul li {
+    position: relative;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-3);
+    line-height: 1.5;
+}
+
+.custom-modal-right ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary-light);
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .custom-modal-content {
+        flex-direction: column;
+        height: 95vh;
+        width: 95vw;
+    }
+    .custom-modal-left {
+        flex: 1;
+        min-height: 300px;
+    }
+    .modal-carousel-item {
+        padding: var(--space-4);
+    }
+    .custom-modal-right {
+        flex: 1;
+        padding: var(--space-6) var(--space-4);
+    }
+    .custom-modal-right h3 {
+        font-size: var(--text-xl);
+    }
+}

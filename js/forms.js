@@ -51,7 +51,7 @@ function showSuccess(form) {
                 </svg>
             </div>
             <h3 class="form-success__title">Dziękujemy za wiadomość!</h3>
-            <p class="form-success__text">Odezwiemy się najszybciej jak to tylko możliwe — zazwyczaj w ciągu 24&nbsp;godzin roboczych.</p>
+            <p class="form-success__text">Odezwiemy się najszybciej jak to możliwe.</p>
         </div>
     `;
 

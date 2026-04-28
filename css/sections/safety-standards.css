@@ -7,6 +7,7 @@
     position: sticky;
     top: calc(var(--navbar-height, 72px) + 30px);
     z-index: 11;
+    overflow: hidden;
 }
 
 .safety-standards__container {

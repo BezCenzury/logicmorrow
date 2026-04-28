@@ -36,6 +36,7 @@
     align-items: center;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 /* --- Treść hero --- */
@@ -143,6 +144,8 @@
     .hero__visual {
         display: flex;
         margin-top: var(--space-12);
+        max-width: 100%;
+        min-width: 0;
     }
 }
 
@@ -188,6 +191,14 @@
     .hero--overlap .hero__content {
         padding-left: 0;
         margin-right: 0;
+        min-width: 0;
+    }
+    .hero--overlap .hero__visual {
+        transform: none;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
     }
 }
 

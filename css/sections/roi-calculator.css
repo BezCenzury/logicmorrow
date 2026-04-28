@@ -7,6 +7,7 @@
     position: sticky;
     top: calc(var(--navbar-height, 72px) + 20px);
     z-index: 10;
+    overflow: hidden;
 }
 
 .roi-calculator__container {

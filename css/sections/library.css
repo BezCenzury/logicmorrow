@@ -80,7 +80,8 @@
     transform: translateY(-3px);
 }
 
-/* Placeholder wideo (zastępowany przez iframe po kliknięciu) */
+/* Kontener wideo/wizualny — obsługuje zarówno klasę visual jak i wrapper */
+.process-card__visual,
 .process-card__video-wrapper,
 .process-card__image-wrapper {
     position: relative;
