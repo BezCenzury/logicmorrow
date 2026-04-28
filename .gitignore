@@ -1,17 +1,4 @@
 # ============================================================
-# PLIKI WEWNĘTRZNE — NIE WCHODZĄ NA GITHUB
-# ============================================================
-
-# Baza wiedzy i briefy dla Claude
-Baza wiedzy o firmie/
-
-# Konfiguracja i skille Claude Code
-.claude/
-
-# Instrukcje dla Claude Code
-CLAUDE.md
-
-# ============================================================
 # SYSTEM / OS
 # ============================================================
 .DS_Store
