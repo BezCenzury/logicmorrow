@@ -35,6 +35,12 @@ package-lock.json
 assets/Video/
 
 # ============================================================
+# WEWNĘTRZNA BAZA WIEDZY (brief, obiekcje, strategia firmy)
+# Nie publiczna — tylko lokalnie do pracy z copy/strategy
+# ============================================================
+Baza wiedzy o firmie/
+
+# ============================================================
 # INNE
 # ============================================================
 *.log
