@@ -1,0 +1,19 @@
+{
+  "name": "LogicMorrow",
+  "short_name": "LogicMorrow",
+  "description": "Automatyzacje i dedykowane aplikacje webowe dla firm 5–35 pracowników",
+  "lang": "pl",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/assets/images/logo-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
