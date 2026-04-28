@@ -38,9 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
         activeModals.forEach(modal => {
             modal.classList.remove('active');
             
-            // Optional: Pause video when modal is closed
+            // Stop any media playing inside the modal
             const videos = modal.querySelectorAll('video');
             videos.forEach(vid => vid.pause());
+
+            // Reload iframes (YouTube embeds) to stop playback — pause() doesn't apply to iframes
+            const iframes = modal.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+                iframe.src = iframe.src;
+            });
         });
         document.body.style.overflow = '';
     };
