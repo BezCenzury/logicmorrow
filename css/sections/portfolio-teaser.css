@@ -147,11 +147,21 @@
 /* --- Responsive --- */
 
 @media (max-width: 768px) {
+    .portfolio-teaser {
+        position: static;
+        top: auto;
+    }
+
+    .portfolio-teaser__container {
+        padding: var(--space-12) var(--container-padding);
+    }
+
     .portfolio-teaser__header {
         flex-direction: column;
         align-items: flex-start;
+        margin-bottom: var(--space-10);
     }
-    
+
     .portfolio-teaser__header .btn {
         width: 100%;
     }

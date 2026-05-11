@@ -116,6 +116,15 @@
 }
 
 @media (max-width: 768px) {
+    .safety-standards {
+        position: static;
+        top: auto;
+    }
+
+    .safety-standards__container {
+        padding: var(--space-12) var(--container-padding);
+    }
+
     .safety-standards__grid {
         grid-template-columns: 1fr;
     }
