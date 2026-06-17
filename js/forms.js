@@ -8,7 +8,7 @@
  * 4. Stan sukcesu — formularz zastępowany komunikatem z ikonką
  */
 
-const WEBHOOK_URL = 'https://n8n.systemtargowy.pl/webhook/kontakty-st-lm';
+const WEBHOOK_URL = 'https://n8n.logicmorrow.pl/webhook/kontakt-formularz';
 
 // ---------------------------------------------------------------------------
 // 1. Phone number formatter (+48 xxx xxx xxx)
@@ -68,16 +68,6 @@ function showSuccess(form) {
 // 3. Webhook submission
 // ---------------------------------------------------------------------------
 
-async function getClientIp() {
-    try {
-        const res = await fetch('https://api.ipify.org?format=json', { signal: AbortSignal.timeout(3000) });
-        const data = await res.json();
-        return data.ip || null;
-    } catch {
-        return null;
-    }
-}
-
 function setButtonLoading(btn, loading) {
     if (loading) {
         btn.disabled = true;
@@ -114,20 +104,23 @@ async function handleFormSubmit(e) {
     const email   = (form.querySelector('#form-email')   || {}).value?.trim() || '';
     const phone   = (form.querySelector('#form-phone')   || {}).value?.trim() || '';
     const message = (form.querySelector('#form-subject') || {}).value?.trim() || '';
+    // Zgoda obowiązkowa (kontakt zwrotny) + opcjonalna (informacje handlowe)
+    const contact_consent   = !!(form.querySelector('#form-consent')   || {}).checked;
+    const marketing_consent = !!(form.querySelector('#form-marketing') || {}).checked;
 
     if (!email || !phone || !message) return;
+    if (!contact_consent) return; // obowiązkowa zgoda — przeglądarka wymusza ją przez required, to zabezpieczenie
 
     const btn = form.querySelector('button[type="submit"]');
     setButtonLoading(btn, true);
 
-    const ip         = await getClientIp();
     const source_url = window.location.href;
 
     try {
         const res = await fetch(WEBHOOK_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, phone, message, ip, source_url }),
+            body: JSON.stringify({ email, phone, message, contact_consent, marketing_consent, source_url }),
         });
 
         if (!res.ok) throw new Error(`HTTP ${res.status}`);

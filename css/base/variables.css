@@ -32,8 +32,16 @@
     --color-blue-50:    #eff6ff;
     --color-blue-100:   #dbeafe;
 
+    /* --- Powierzchnie (jasna baza) --- */
+    --color-surface:      var(--color-white);   /* domyślne tło sekcji */
+    --color-surface-alt:  var(--color-slate-50); /* naprzemienne, delikatne tło */
+    --color-border:       var(--color-slate-200);/* cienkie obramowania (hairline) */
+
+    /* --- Ciemny akcent (rzadki: stopka) --- */
+    --color-ink:          #111a2e;  /* cieplejszy granat niż slate-950, mniej „atramentowy" */
+
     /* --- Gradienty brandowe --- */
-    --gradient-hero:           linear-gradient(135deg, #0f172a 0%, #0c1f4a 60%, #1d4ed8 100%);
+    --gradient-hero:           linear-gradient(180deg, #ffffff 0%, #eff6ff 55%, #dbeafe 100%);
     --gradient-section-header: linear-gradient(90deg, #1d4ed8, #2563eb);
     --gradient-tofu:           linear-gradient(90deg, #1d4ed8, #2563eb);
     --gradient-mofu:           linear-gradient(90deg, #065f46, #10b981);

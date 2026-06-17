@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
     <title>Automatyzacja Procesów Biznesowych | LogicMorrow</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#2563eb">
     <meta name="description" content="Automatyzujemy powtarzalne procesy w firmach 5–35 pracowników. Połączymy Twoje programy w jeden płynny system finansowy i sprzedażowy. Szybka wycena i analiza.">
@@ -29,7 +32,7 @@
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
          ═══════════════════════════════════════════════════════ -->
 
-    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -65,7 +68,7 @@
         })();
     </script>
 
-    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <!-- [3] Google Tag Manager – zastąp GTM-XXXXXXX docelowym ID -->
     <script>(function(w,d,s,l,i){
         w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
         var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
@@ -74,10 +77,10 @@
     })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 
     <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
 
-    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
     <style>
         :root {
             --cc-btn-primary-bg: #2563eb;
@@ -92,6 +95,9 @@
             --cc-overlay-bg: rgba(0, 0, 0, 0.55);
         }
         #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
         #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
     </style>
 
@@ -160,7 +166,7 @@
           "name": "Jak długo trwa wdrożenie typowego procesu?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Typowe wdrożenie jednego, średnio-zaawansowanego procesu (np. automatyczny obieg faktur) trwa zazwyczaj od 2 do 4 tygodni — od momentu akceptacji planu do pełnego uruchomienia i przeszkolenia zespołu."
+            "text": "Typowe wdrożenie jednego, średnio-zaawansowanego procesu (np. automatyczny obieg faktur) trwa zazwyczaj od 2 do 4 tygodni – od momentu akceptacji planu do pełnego uruchomienia i przeszkolenia zespołu."
           }
         },
         {
@@ -168,7 +174,7 @@
           "name": "Czy moje dane są bezpieczne?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Tak. System instalujemy wewnątrz Twojej firmy lub na bezpiecznym, prywatnym serwerze. Twoje dane nie krążą po publicznych chmurach za granicą — masz nad nimi 100% kontroli i wglądu."
+            "text": "Tak. System instalujemy wewnątrz Twojej firmy lub na bezpiecznym, prywatnym serwerze. Twoje dane nie krążą po publicznych chmurach za granicą – masz nad nimi 100% kontroli i wglądu."
           }
         },
         {
@@ -184,9 +190,8 @@
     </script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Base CSS -->
     <link rel="stylesheet" href="css/base/variables.css">
@@ -228,14 +233,14 @@
             <div class="hero__container">
                 <div class="hero__content">
                     <div class="hero__badge">
-                        <span class="badge badge--dark-blue badge--dot">Koniec z ręcznym przepisywaniem</span>
+                        <span class="badge badge--dark-blue badge--dot">Koniec z ręcznym przepisywaniem</span>
                     </div>
                     <h1 class="hero__title">
                         Twoje programy<br>
                         <span>Zaczną ze sobą rozmawiać.</span>
                     </h1>
                     <p class="hero__subtitle">
-                        Automatyzacja procesów biznesowych — wdrażamy systemy, które same przepisują dane, wysyłają faktury i pilnują terminów. W 2–3 tygodnie, bez miesięcznych opłat za liczbę operacji i bez marnowania czasu Twoich pracowników.
+                        Automatyzacja procesów biznesowych – wdrażamy systemy, które same przepisują dane, wysyłają faktury i pilnują terminów. W 2–4 tygodnie, bez miesięcznych opłat za liczbę operacji i bez marnowania czasu Twoich pracowników.
                     </p>
                     <div class="hero__actions">
                         <a href="/konsultacja.html" class="btn btn--primary btn--lg btn--arrow">
@@ -272,11 +277,14 @@
                                 <stop offset="0%" stop-color="var(--color-primary)" />
                                 <stop offset="100%" stop-color="var(--color-primary-light)" opacity="0.3" />
                             </linearGradient>
+                            <filter id="nodeShadow" x="-40%" y="-40%" width="180%" height="180%">
+                                <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="rgba(15,23,42,0.18)" />
+                            </filter>
                         </defs>
 
                         <!-- Orbit Paths -->
-                        <circle cx="300" cy="300" r="160" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-                        <circle cx="300" cy="300" r="240" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+                        <circle cx="300" cy="300" r="160" stroke="rgba(15,23,42,0.08)" stroke-width="1" />
+                        <circle cx="300" cy="300" r="240" stroke="rgba(15,23,42,0.05)" stroke-width="1" />
 
                         <!-- Connecting Lines (Animated) -->
                         <g opacity="0.2">
@@ -297,7 +305,7 @@
                             <animateMotion dur="4.2s" repeatCount="indefinite" path="M450 450 L300 300" />
                             <animate attributeName="opacity" values="0;1;0" dur="4.2s" repeatCount="indefinite" />
                         </circle>
-                        <circle r="3" fill="#fff">
+                        <circle r="3" fill="var(--color-primary)">
                             <animateMotion dur="2.5s" repeatCount="indefinite" path="M300 100 L300 300" />
                             <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" />
                         </circle>
@@ -317,7 +325,7 @@
                         
                         <!-- Slack (Top Right) -->
                         <g transform="translate(450, 150)">
-                            <circle r="35" fill="var(--color-white)" stroke="rgba(255,255,255,0.1)" />
+                            <circle r="35" fill="var(--color-white)" stroke="var(--color-slate-200)" stroke-width="1.5" filter="url(#nodeShadow)" />
                             <!-- Slack Simplified Logo -->
                             <g transform="translate(-12,-12) scale(0.6)">
                                 <path d="M6 15a3 3 0 1 1-3-3h3v3zm2 0a3 3 0 1 1 6 0v9a3 3 0 1 1-6 0v-9z" fill="#36C5F0"/>
@@ -330,7 +338,7 @@
 
                         <!-- Notion (Top Left) -->
                         <g transform="translate(150, 150)">
-                            <circle r="35" fill="var(--color-white)" stroke="rgba(255,255,255,0.1)" />
+                            <circle r="35" fill="var(--color-white)" stroke="var(--color-slate-200)" stroke-width="1.5" filter="url(#nodeShadow)" />
                             <!-- Notion Simplified Logo -->
                             <rect x="-12" y="-12" width="24" height="24" rx="4" fill="#000" />
                             <text x="0" y="7" text-anchor="middle" fill="#fff" font-size="16" font-weight="900" font-family="Arial">N</text>
@@ -339,7 +347,7 @@
 
                         <!-- Google Drive (Bottom Left) -->
                         <g transform="translate(150, 450)">
-                            <circle r="35" fill="var(--color-white)" stroke="rgba(255,255,255,0.1)" />
+                            <circle r="35" fill="var(--color-white)" stroke="var(--color-slate-200)" stroke-width="1.5" filter="url(#nodeShadow)" />
                             <path d="M-10 10 L0 -10 L10 10 Z" fill="none" stroke="#4285F4" stroke-width="2" />
                             <path d="M-10 10 L0 -10" stroke="#34A853" stroke-width="2" />
                             <path d="M10 10 L0 -10" stroke="#FBBC05" stroke-width="2" />
@@ -361,7 +369,7 @@
 
                         <!-- n8n (Top Center) -->
                         <g transform="translate(300, 100)">
-                            <circle r="35" fill="var(--color-white)" stroke="rgba(255,255,255,0.1)" />
+                            <circle r="35" fill="var(--color-white)" stroke="var(--color-slate-200)" stroke-width="1.5" filter="url(#nodeShadow)" />
                             <path d="M-12 0 H12 M0 -12 V12" stroke="#FF6D5A" stroke-width="3" />
                             <circle r="5" fill="#FF6D5A" cx="-12" cy="0" />
                             <circle r="5" fill="#FF6D5A" cx="12" cy="0" />
@@ -384,6 +392,7 @@
                 <div class="challenges__header" data-animate="fade-up">
                     <span class="section-label">Diagnoza sytuacji</span>
                     <h2>Kiedy firma potrzebuje automatyzacji?</h2>
+                    <p class="lead">Zanim cokolwiek zautomatyzujemy, układamy proces i sprawdzamy, gdzie naprawdę boli. Automatyzacja chaosu daje tylko szybszy chaos.</p>
                 </div>
 
                 <div class="challenges__grid">
@@ -401,7 +410,7 @@
                             </svg>
                         </div>
                         <h3>Ręczne przepisywanie tych samych danych</h3>
-                        <p>Jeśli Twoi pracownicy spędzają godziny na kopiowaniu informacji z maili do Excela lub z jednego programu do drugiego — to znak, że Twoja firma traci pieniądze na zadania, które komputer wykona w sekundy.</p>
+                        <p>Jeśli Twoi pracownicy spędzają godziny na kopiowaniu informacji z maili do Excela lub z jednego programu do drugiego – to znak, że Twoja firma traci pieniądze na zadania, które komputer wykona w sekundy.</p>
                     </div>
 
                     <!-- Problem 2 -->
@@ -415,7 +424,7 @@
                             </svg>
                         </div>
                         <h3>Decyzje podejmowane „na wyczucie”</h3>
-                        <p>Gdy przygotowanie raportu sprzedaży zajmuje pół dnia, zaglądasz do niego rzadko. Automatyzacja sprawia, że aktualne wyniki masz na mailu codziennie o 8:00 rano — bez proszenia nikogo o pomoc.</p>
+                        <p>Gdy przygotowanie raportu sprzedaży zajmuje pół dnia, zaglądasz do niego rzadko. Automatyzacja sprawia, że aktualne wyniki masz na mailu codziennie o 8:00 rano – bez proszenia nikogo o pomoc.</p>
                     </div>
 
                     <!-- Problem 3 -->
@@ -428,7 +437,7 @@
                                 <path d="M24 21v3h3" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <h3>Głuche telefony i szukanie dokumentów</h3>
+                        <h3>Głuche telefony i szukanie dokumentów</h3>
                         <p>Marnowanie czasu na dopytywanie „czy faktura już opłacona?” lub „jaki jest stan magazynu?” to prosta droga do chaosu. System sam wyśle powiadomienie tam, gdzie jest ono potrzebne.</p>
                     </div>
 
@@ -445,8 +454,8 @@
                 
                 <div class="solutions__header" data-animate="fade-up">
                     <span class="section-label">Zakres wdrożeń</span>
-                    <h2>Co możemy zautomatyzować<br>w Twojej firmie?</h2>
-                    <p>Łączymy programy, z których Twoja firma już korzysta, w jeden spójny obieg. Dane przepływają tam gdzie trzeba — bez ręcznego kopiowania i bez pomyłek.</p>
+                    <h2>Co możemy zautomatyzować<br>w Twojej firmie?</h2>
+                    <p>Łączymy programy, z których Twoja firma już korzysta, w jeden spójny obieg. Dane przepływają tam gdzie trzeba – bez ręcznego kopiowania i bez pomyłek.</p>
                 </div>
 
                 <div class="solutions__layout">
@@ -472,20 +481,20 @@
                         <!-- Tab 1 -->
                         <div class="solutions__content active" id="solution-1">
                             <div class="solutions__text">
-                                <h3>Codzienne procesy: Koniec z ręcznym przesyłaniem informacji</h3>
-                                <p>W większości firm marnuje się godziny na ręczne kopiowanie załączników między działami lub wysyłanie klientom statusów realizacji. Automatyzujemy te powtarzalne, proste czynności, by Twój zespół mógł skupić się na pracy, która wymaga myślenia.</p>
+                                <h3>Codzienne procesy: Koniec z ręcznym przesyłaniem informacji</h3>
+                                <p>W większości firm marnuje się godziny na ręczne kopiowanie załączników między działami lub wysyłanie klientom statusów realizacji. Automatyzujemy te powtarzalne, proste czynności, by Twój zespół mógł skupić się na pracy, która wymaga myślenia.</p>
                                 <ul class="solutions__features">
                                     <li class="solutions__feature">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                        Dokumenty trafiają na dysk firmowy automatycznie — bez ręcznego kopiowania i wysyłania
+                                        Dokumenty trafiają na dysk firmowy automatycznie – bez ręcznego kopiowania i wysyłania
                                     </li>
                                     <li class="solutions__feature">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                        Wysyłanie powiadomień do klientów o etapach realizacji zamówienia
+                                        Wysyłanie powiadomień do klientów o etapach realizacji zamówienia
                                     </li>
                                     <li class="solutions__feature">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                        Błyskawiczne powiązanie kontaktów z formularzy z arkuszami Google / Excel
+                                        Błyskawiczne powiązanie kontaktów z formularzy z arkuszami Google / Excel
                                     </li>
                                 </ul>
                                 <a href="/rozwiazania.html" class="btn btn--primary btn--outline-white btn--arrow">
@@ -507,19 +516,19 @@
                         <div class="solutions__content" id="solution-2">
                             <div class="solutions__text">
                                 <h3>Integracje: Jeden proces zamiast wielu narzędzi</h3>
-                                <p>Gdy dane utkną w jednym narzędziu, Twój biznes zwalnia. Łączymy programy, z których już korzystasz na co dzień, w jeden płynny obieg. To tutaj zaczynają się realne ułatwienia w pracy całego zespołu.</p>
+                                <p>Gdy dane utkną w jednym narzędziu, Twój biznes zwalnia. Łączymy programy, z których już korzystasz na co dzień, w jeden płynny obieg. To tutaj zaczynają się realne ułatwienia w pracy całego zespołu.</p>
                                 <ul class="solutions__features">
                                     <li class="solutions__feature">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                        Automatyczne przesyłanie danych między programem do sprzedaży a księgowością
+                                        Automatyczne przesyłanie danych między programem do sprzedaży a księgowością
                                     </li>
                                     <li class="solutions__feature">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                        Automatyczne generowanie umów i certyfikatów na podstawie danych klienta
+                                        Automatyczne generowanie umów i certyfikatów na podstawie danych klienta
                                     </li>
                                     <li class="solutions__feature">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                        Wielopoziomowe obiegi akceptacji kosztów i dokumentacji projektowej
+                                        Wielopoziomowe obiegi akceptacji kosztów i dokumentacji projektowej
                                     </li>
                                 </ul>
                             </div>
@@ -538,15 +547,15 @@
                         <div class="solutions__content" id="solution-3">
                             <div class="solutions__text">
                                 <h3>Analityka: Dane, które pracują na Twój zysk</h3>
-                                <p>Zamiast poświęcać kilkadziesiąt minut dziennie na ręczne przygotowywanie raportów, otrzymujesz gotowe podsumowanie na e-mail. System samodzielnie weryfikuje dokumenty pod kątem poprawności i daje sygnał Twojej załodze, kiedy odkryje złą informację.</p>
+                                <p>Zamiast poświęcać kilkadziesiąt minut dziennie na ręczne przygotowywanie raportów, otrzymujesz gotowe podsumowanie na e-mail. System samodzielnie weryfikuje dokumenty pod kątem poprawności i daje sygnał Twojej załodze, kiedy odkryje złą informację.</p>
                                 <ul class="solutions__features">
                                     <li class="solutions__feature">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                        Automatyczne zestawienia z wielu źródeł (sklep internetowy + reklamy + magazyn)
+                                        Automatyczne zestawienia z wielu źródeł (sklep internetowy + reklamy + magazyn)
                                     </li>
                                     <li class="solutions__feature">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                        Automatyczne wykrywanie błędów i brakujących danych w dokumentach
+                                        Automatyczne wykrywanie błędów i brakujących danych w dokumentach
                                     </li>
                                     <li class="solutions__feature">
                                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -578,36 +587,36 @@
             <div class="use-cases__container">
                 <div class="use-cases__header" data-animate="fade-up">
                     <span class="section-label">Problemy & Rozwiązania</span>
-                    <h2>Typowe procesy – przed i po</h2>
-                    <p class="lead">Konkretne przykłady z firm takich jak Twoja — przed i po naszym wdrożeniu.</p>
+                    <h2>Typowe procesy – przed i po</h2>
+                    <p class="lead">Konkretne przykłady z firm takich jak Twoja – przed i po naszym wdrożeniu.</p>
                 </div>
 
                 <div class="use-cases__carousel" data-animate="fade-up" data-delay="100">
 
-                    <div class="use-cases__track" tabindex="0" aria-label="Karuzela scenariuszy — używaj strzałek lewo/prawo">
+                    <div class="use-cases__track" tabindex="0" aria-label="Karuzela scenariuszy – używaj strzałek lewo/prawo">
 
                         <!-- Scenariusz 1: Onboarding klienta -->
                         <article class="use-case-card">
                             <div class="use-case-card__header">
-                                <h3>Onboarding klienta i start projektu</h3>
+                                <h3>Onboarding klienta i start projektu</h3>
                             </div>
                             <div class="use-case-card__body">
                                 <div class="use-case-card__side use-case-card__side--problem">
                                     <span class="use-case-card__label use-case-card__label--problem">Wczoraj: Ścieżka manualna</span>
                                     <ul class="flow-steps">
-                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Handlowiec wysyła maila do biura o zamknięciu sprzedaży</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Handlowiec wysyła maila do biura o zamknięciu sprzedaży</div></li>
                                         <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Sekretariat ręcznie zakłada foldery na dysku wspólnym</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Pracownik przygotowuje umowę na bazie danych z CRM</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">4</div><div class="flow-step__text">Księgowość wystawia i wysyła fakturę proforma do klienta</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Pracownik przygotowuje umowę na bazie danych z CRM</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">4</div><div class="flow-step__text">Księgowość wystawia i wysyła fakturę proforma do klienta</div></li>
                                     </ul>
-                                    <div class="flow-step__status">Angażuje 3 osoby i trwa do kilku godzin — łatwo o opóźnienie lub przeoczenie</div>
+                                    <div class="flow-step__status">Angażuje 3 osoby i trwa do kilku godzin – łatwo o opóźnienie lub przeoczenie</div>
                                 </div>
                                 <div class="use-case-card__side use-case-card__side--solution">
                                     <div class="use-case-card__benefit-icon">
                                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
                                     </div>
                                     <div class="use-case-card__benefit-title">Działa natychmiast</div>
-                                    <div class="use-case-card__benefit-text">Zmiana statusu w CRM uruchamia automatyzację: foldery, umowa, faktura proforma — gotowe zanim handlowiec zamknie laptop.</div>
+                                    <div class="use-case-card__benefit-text">Zmiana statusu w CRM uruchamia automatyzację: foldery, umowa, faktura proforma – gotowe zanim handlowiec zamknie laptop.</div>
                                     <div class="use-case-card__benefit-status">Jedna automatyzacja zastępuje pracę wielu osób</div>
                                 </div>
                             </div>
@@ -622,10 +631,10 @@
                                 <div class="use-case-card__side use-case-card__side--problem">
                                     <span class="use-case-card__label use-case-card__label--problem">Wczoraj: Ścieżka manualna</span>
                                     <ul class="flow-steps">
-                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Pracownik robi zdjęcie faktury i wysyła przez mail lub Slack</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Księgowa pobiera załącznik i otwiera go ręcznie</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Ręczne przepisywanie daty, kwoty i NIP do systemu finansowego</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">4</div><div class="flow-step__text">Archiwizacja pliku w odpowiednim folderze miesiąca</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Pracownik robi zdjęcie faktury i wysyła przez mail lub Slack</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Księgowa pobiera załącznik i otwiera go ręcznie</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Ręczne przepisywanie daty, kwoty i NIP do systemu finansowego</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">4</div><div class="flow-step__text">Archiwizacja pliku w odpowiednim folderze miesiąca</div></li>
                                     </ul>
                                     <div class="flow-step__status">Jedno literówkowe zero przy NIP może kosztować tysiące złotych</div>
                                 </div>
@@ -634,7 +643,7 @@
                                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                                     </div>
                                     <div class="use-case-card__benefit-title">Zero przepisywania</div>
-                                    <div class="use-case-card__benefit-text">Faktura trafia na maila → system odczytuje dane → sam ją opisuje i układa w folderze. Twoja księgowość tylko zatwierdza gotowe dokumenty.</div>
+                                    <div class="use-case-card__benefit-text">Faktura trafia na maila → system odczytuje dane → sam ją opisuje i układa w folderze. Twoja księgowość tylko zatwierdza gotowe dokumenty.</div>
                                     <div class="use-case-card__benefit-status">Eliminacja błędów ludzkich</div>
                                 </div>
                             </div>
@@ -649,9 +658,9 @@
                                 <div class="use-case-card__side use-case-card__side--problem">
                                     <span class="use-case-card__label use-case-card__label--problem">Wczoraj: Ścieżka manualna</span>
                                     <ul class="flow-steps">
-                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Menedżer co poniedziałek loguje się do CRM i ERP osobno</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Eksportuje dane i ręcznie łączy arkusze w Excelu</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Wysyła zestawienie mailem do zarządu — często z opóźnieniem</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Menedżer co poniedziałek loguje się do CRM i ERP osobno</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Eksportuje dane i ręcznie łączy arkusze w Excelu</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Wysyła zestawienie mailem do zarządu – często z opóźnieniem</div></li>
                                     </ul>
                                     <div class="flow-step__status">Czas menedżera idzie na przepisywanie danych zamiast na ich analizę</div>
                                 </div>
@@ -659,8 +668,8 @@
                                     <div class="use-case-card__benefit-icon">
                                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
                                     </div>
-                                    <div class="use-case-card__benefit-title">Gotowy o 7:30</div>
-                                    <div class="use-case-card__benefit-text">Zarząd dostaje raport na Slacku zanim zacznie pracę. Dane z CRM i ERP zebrane i sformatowane automatycznie — bez udziału menedżera.</div>
+                                    <div class="use-case-card__benefit-title">Gotowy o 7:30</div>
+                                    <div class="use-case-card__benefit-text">Zarząd dostaje raport na Slacku zanim zacznie pracę. Dane z CRM i ERP zebrane i sformatowane automatycznie – bez udziału menedżera.</div>
                                     <div class="use-case-card__benefit-status">Zarząd podejmuje decyzje na aktualnych danych</div>
                                 </div>
                             </div>
@@ -675,10 +684,10 @@
                                 <div class="use-case-card__side use-case-card__side--problem">
                                     <span class="use-case-card__label use-case-card__label--problem">Wczoraj: Ścieżka manualna</span>
                                     <ul class="flow-steps">
-                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Klient pyta przez telefon o dostępność towaru i termin realizacji</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Handlowiec odkłada słuchawkę i dzwoni do magazynu lub biura</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Odpowiedź przychodzi po 20–40 minutach — często niepełna lub nieaktualna</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">4</div><div class="flow-step__text">Handlowiec wraca do klienta z informacją, która może już być nieaktualna</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Klient pyta przez telefon o dostępność towaru i termin realizacji</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Handlowiec odkłada słuchawkę i dzwoni do magazynu lub biura</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Odpowiedź przychodzi po 20–40 minutach – często niepełna lub nieaktualna</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">4</div><div class="flow-step__text">Handlowiec wraca do klienta z informacją, która może już być nieaktualna</div></li>
                                     </ul>
                                     <div class="flow-step__status">Handlowiec spędza część dnia na koordynacji zamiast na rozmowach sprzedażowych</div>
                                 </div>
@@ -687,7 +696,7 @@
                                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                                     </div>
                                     <div class="use-case-card__benefit-title">Dane pod ręką, bez dzwonienia</div>
-                                    <div class="use-case-card__benefit-text">Handlowiec sprawdza stan magazynu i termin wysyłki bezpośrednio w swojej aplikacji lub na prostym panelu — bez odrywania biura od pracy.</div>
+                                    <div class="use-case-card__benefit-text">Handlowiec sprawdza stan magazynu i termin wysyłki bezpośrednio w swojej aplikacji lub na prostym panelu – bez odrywania biura od pracy.</div>
                                     <div class="use-case-card__benefit-status">Handlowiec skupia się na kliencie, nie na logistyce informacji</div>
                                 </div>
                             </div>
@@ -702,18 +711,18 @@
                                 <div class="use-case-card__side use-case-card__side--problem">
                                     <span class="use-case-card__label use-case-card__label--problem">Wczoraj: Ścieżka manualna</span>
                                     <ul class="flow-steps">
-                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Raz w tygodniu ręczne przeglądanie listy faktur w systemie</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Raz w tygodniu ręczne przeglądanie listy faktur w systemie</div></li>
                                         <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Weryfikacja, które faktury minęły termin płatności</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Pisanie i wysyłanie ponagleń do każdego klienta osobno</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Pisanie i wysyłanie ponagleń do każdego klienta osobno</div></li>
                                     </ul>
-                                    <div class="flow-step__status">Zapomniane ponaglenia zamrażają cashflow i relacje z klientami</div>
+                                    <div class="flow-step__status">Zapomniane ponaglenia zamrażają cashflow i relacje z klientami</div>
                                 </div>
                                 <div class="use-case-card__side use-case-card__side--solution">
                                     <div class="use-case-card__benefit-icon">
                                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                                     </div>
                                     <div class="use-case-card__benefit-title">Auto-sequence 7/14/30</div>
-                                    <div class="use-case-card__benefit-text">System codziennie sprawdza faktury i wysyła ponaglenie po 7, 14 i 30 dniach. Sekwencja zatrzymuje się automatycznie w momencie wpłaty.</div>
+                                    <div class="use-case-card__benefit-text">System codziennie sprawdza faktury i wysyła ponaglenie po 7, 14 i 30 dniach. Sekwencja zatrzymuje się automatycznie w momencie wpłaty.</div>
                                     <div class="use-case-card__benefit-status">Skrócenie cyklu należności</div>
                                 </div>
                             </div>
@@ -722,16 +731,16 @@
                         <!-- Scenariusz 6: Ręczne przygotowywanie ofert -->
                         <article class="use-case-card">
                             <div class="use-case-card__header">
-                                <h3>Ręczne przygotowywanie ofert i zamówień</h3>
+                                <h3>Ręczne przygotowywanie ofert i zamówień</h3>
                             </div>
                             <div class="use-case-card__body">
                                 <div class="use-case-card__side use-case-card__side--problem">
                                     <span class="use-case-card__label use-case-card__label--problem">Wczoraj: Ścieżka manualna</span>
                                     <ul class="flow-steps">
-                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Handlowiec notuje dane klienta i wybrane pozycje na kartce lub w mailu</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Ręcznie przepisuje dane do szablonu oferty w Wordzie lub Excelu</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Oferta trafia do akceptacji — błąd w cenie lub nazwie produktu odkrywany po fakcie</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">4</div><div class="flow-step__text">Poprawka, ponowna wysyłka — klient czeka, zaufanie spada</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Handlowiec notuje dane klienta i wybrane pozycje na kartce lub w mailu</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Ręcznie przepisuje dane do szablonu oferty w Wordzie lub Excelu</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Oferta trafia do akceptacji – błąd w cenie lub nazwie produktu odkrywany po fakcie</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">4</div><div class="flow-step__text">Poprawka, ponowna wysyłka – klient czeka, zaufanie spada</div></li>
                                     </ul>
                                     <div class="flow-step__status">Każda ręcznie uzupełniana oferta to potencjalne źródło pomyłki trudnej do odwrócenia</div>
                                 </div>
@@ -740,8 +749,8 @@
                                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                                     </div>
                                     <div class="use-case-card__benefit-title">Oferta bez przepisywania</div>
-                                    <div class="use-case-card__benefit-text">Handlowiec wybiera pozycje z listy w prostym narzędziu — system generuje ofertę PDF z danymi klienta, aktualnymi cenami i warunkami gotową do wysłania.</div>
-                                    <div class="use-case-card__benefit-status">Mniej błędów w dokumentach wychodzących do klientów</div>
+                                    <div class="use-case-card__benefit-text">Handlowiec wybiera pozycje z listy w prostym narzędziu – system generuje ofertę PDF z danymi klienta, aktualnymi cenami i warunkami gotową do wysłania.</div>
+                                    <div class="use-case-card__benefit-status">Mniej błędów w dokumentach wychodzących do klientów</div>
                                 </div>
                             </div>
                         </article>
@@ -749,16 +758,16 @@
                         <!-- Scenariusz 7: Monitoring stanów magazynowych -->
                         <article class="use-case-card">
                             <div class="use-case-card__header">
-                                <h3>Kontrola stanów magazynowych i zamówienia surowców</h3>
+                                <h3>Kontrola stanów magazynowych i zamówienia surowców</h3>
                             </div>
                             <div class="use-case-card__body">
                                 <div class="use-case-card__side use-case-card__side--problem">
                                     <span class="use-case-card__label use-case-card__label--problem">Wczoraj: Ścieżka manualna</span>
                                     <ul class="flow-steps">
-                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Magazynier fizycznie sprawdza stany raz na kilka dni — kiedy pamięta</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">1</div><div class="flow-step__text">Magazynier fizycznie sprawdza stany raz na kilka dni – kiedy pamięta</div></li>
                                         <li class="flow-step"><div class="flow-step__bullet">2</div><div class="flow-step__text">Jedna przeoczona pozycja nie trafia na listę zamówień do dostawcy</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Dostawa surowca zajmuje kilka dni — linia produkcyjna czeka</div></li>
-                                        <li class="flow-step"><div class="flow-step__bullet">4</div><div class="flow-step__text">Przestój produkcji generuje koszty i opóźnienia w realizacji zleceń</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">3</div><div class="flow-step__text">Dostawa surowca zajmuje kilka dni – linia produkcyjna czeka</div></li>
+                                        <li class="flow-step"><div class="flow-step__bullet">4</div><div class="flow-step__text">Przestój produkcji generuje koszty i opóźnienia w realizacji zleceń</div></li>
                                     </ul>
                                     <div class="flow-step__status">Jeden przeoczony surowiec potrafi zatrzymać całą produkcję na kilka dni</div>
                                 </div>
@@ -767,8 +776,8 @@
                                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
                                     </div>
                                     <div class="use-case-card__benefit-title">Alert zanim zabraknie</div>
-                                    <div class="use-case-card__benefit-text">System codziennie sprawdza stany i wysyła powiadomienie na Slacka lub mailem, gdy poziom pozycji spada poniżej ustalonego progu — zanim pojawi się problem.</div>
-                                    <div class="use-case-card__benefit-status">Mniej nieplanowanych przestojów w produkcji i realizacji</div>
+                                    <div class="use-case-card__benefit-text">System codziennie sprawdza stany i wysyła powiadomienie na Slacka lub mailem, gdy poziom pozycji spada poniżej ustalonego progu – zanim pojawi się problem.</div>
+                                    <div class="use-case-card__benefit-status">Mniej nieplanowanych przestojów w produkcji i realizacji</div>
                                 </div>
                             </div>
                         </article>
@@ -818,9 +827,9 @@
                                         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                                     </svg>
                                 </div>
-                                <h3>Twoje dane zostają u Ciebie</h3>
-                                <p>System stawiamy bezpośrednio na Twoich serwerach lub na prywatnym, wydzielonym serwerze w Polsce albo UE. Twoje dane nie trafiają do zewnętrznych platform, do których dostęp mają dziesiątki innych firm.</p>
-                                <p class="safety-card__subtext">Pełna zgodność z RODO. Twoje dane są tam, gdzie Ty chcesz — i nigdzie indziej.</p>
+                                <h3>Twoje dane zostają u Ciebie</h3>
+                                <p>System stawiamy bezpośrednio na Twoich serwerach lub na prywatnym, wydzielonym serwerze w Polsce albo UE. Twoje dane nie trafiają do zewnętrznych platform, do których dostęp mają dziesiątki innych firm.</p>
+                                <p class="safety-card__subtext">Pełna zgodność z RODO. Twoje dane są tam, gdzie Ty chcesz – i nigdzie indziej.</p>
                             </div>
                             <div class="safety-card__visual">
                                 <div class="shield-animation">
@@ -842,8 +851,8 @@
                                     </svg>
                                 </div>
                                 <h3>Koszty, które się nie wymykają spod kontroli</h3>
-                                <p>Większość platform pobiera opłatę za każde przesłanie danych. Im więcej pracujesz, tym więcej im płacisz. Nasze podejście jest inne: budujemy system, który należy do Ciebie. Stała i niska opłata za utrzymanie serwera, bez limitów na liczbę faktur czy klientów.</p>
-                                <p class="safety-card__subtext">Koszt utrzymania jest stały i nie rośnie wraz z sukcesem Twojej firmy.</p>
+                                <p>Większość platform pobiera opłatę za każde przesłanie danych. Im więcej pracujesz, tym więcej im płacisz. Nasze podejście jest inne: budujemy system, który należy do Ciebie. Stała i niska opłata za utrzymanie serwera, bez limitów na liczbę faktur czy klientów.</p>
+                                <p class="safety-card__subtext">Koszt utrzymania jest stały i nie rośnie wraz z sukcesem Twojej firmy.</p>
                             </div>
                             <div class="safety-card__visual">
                                 <!-- Graph SVG -->
@@ -865,7 +874,7 @@
                                     </svg>
                                 </div>
                                 <h3>Kod jest Twój. Zawsze.</h3>
-                                <p>Nie tworzymy "czarnych skrzynek". Po zakończeniu wdrożenia otrzymujesz pełną dokumentację i dostęp do wszystkich zbudowanych automatyzacji. Nie jesteś do nas przywiązany — jeśli chcesz kontynuować samodzielnie lub z innym wykonawcą, możesz to zrobić od razu, bez żadnych blokad ani dodatkowych opłat.</p>
+                                <p>Nie tworzymy „czarnych skrzynek”. Po zakończeniu wdrożenia otrzymujesz pełną dokumentację i dostęp do wszystkich zbudowanych automatyzacji. Nie jesteś do nas przywiązany – jeśli chcesz kontynuować samodzielnie lub z innym wykonawcą, możesz to zrobić od razu, bez żadnych blokad ani dodatkowych opłat.</p>
                                 <p class="safety-card__subtext">To Ty jesteś właścicielem swoich automatyzacji. Zawsze.</p>
                             </div>
                             <div class="safety-card__visual">
@@ -898,8 +907,8 @@
                     <div class="process-step" data-animate="fade-up" data-delay="0">
                         <div class="process-step__number">1</div>
                         <div class="process-step__content">
-                            <h3>Bezpłatna konsultacja i diagnoza</h3>
-                            <p>Wskazujemy „najniżej wiszące owoce” — procesy, których automatyzacja zwróci się najszybciej. Liczymy potencjalną oszczędność godzin i pieniędzy w skali miesiąca.</p>
+                            <h3>Bezpłatna konsultacja i diagnoza</h3>
+                            <p>Wskazujemy „najniżej wiszące owoce” – procesy, których automatyzacja zwróci się najszybciej. Liczymy potencjalną oszczędność godzin i pieniędzy w skali miesiąca.</p>
                         </div>
                     </div>
 
@@ -907,8 +916,8 @@
                     <div class="process-step" data-animate="fade-up" data-delay="100">
                         <div class="process-step__number">2</div>
                         <div class="process-step__content">
-                            <h3>Mapa procesów i propozycja</h3>
-                            <p>Rysujemy dokładny schemat przepływu danych. Widzisz czarno na białym, który system z którym rozmawia i co dzieje się w sytuacjach awaryjnych.</p>
+                            <h3>Mapa procesów i propozycja</h3>
+                            <p>Rysujemy dokładny schemat przepływu danych. Widzisz czarno na białym, który system z którym rozmawia i co dzieje się w sytuacjach awaryjnych.</p>
                         </div>
                     </div>
 
@@ -917,7 +926,7 @@
                         <div class="process-step__number">3</div>
                         <div class="process-step__content">
                             <h3>Budowa zautomatyzowanych ścieżek</h3>
-                            <p>Składamy przepływ i testujemy go na Twoich dotychczasowych próbkach zadań. Pilnujemy, by każda wiadomość lub faktura była przekazana na właściwe biurko w ułamku sekundy.</p>
+                            <p>Składamy przepływ i testujemy go na Twoich dotychczasowych próbkach zadań. Pilnujemy, by każda wiadomość lub faktura była przekazana na właściwe biurko w ułamku sekundy.</p>
                         </div>
                     </div>
 
@@ -925,8 +934,8 @@
                     <div class="process-step" data-animate="fade-up" data-delay="300">
                         <div class="process-step__number">4</div>
                         <div class="process-step__content">
-                            <h3>Wdrożenie produkcyjne i opieka</h3>
-                            <p>Uruchamiamy automatyzację „na żywo”. Przekazujemy Ci pełną dokumentację i instrukcję obsługi. Przez pierwsze tygodnie monitorujemy system, upewniając się, że wszystko działa bezbłędnie.</p>
+                            <h3>Wdrożenie produkcyjne i opieka</h3>
+                            <p>Uruchamiamy automatyzację „na żywo”. Przekazujemy Ci pełną dokumentację i instrukcję obsługi. Przez pierwsze tygodnie monitorujemy system, upewniając się, że wszystko działa bezbłędnie.</p>
                         </div>
                     </div>
 
@@ -946,7 +955,7 @@
                         Odzyskaj czas swojego zespołu.<br>Zautomatyzuj nudę.
                     </h2>
                     <p data-animate="fade-up">
-                        Opowiedz nam o procesie, który zajmuje u Was najwięcej czasu. Pokażemy Ci, jak może wyglądać jego automatyczna wersja.
+                        Opowiedz nam o procesie, który zajmuje u Was najwięcej czasu. Pokażemy Ci, jak może wyglądać jego automatyczna wersja.
                     </p>
                 </div>
 
@@ -964,7 +973,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="form-subject">O czym chcesz porozmawiać?</label>
+                            <label class="form-label" for="form-subject">O czym chcesz porozmawiać?</label>
                             <textarea id="form-subject" class="form-textarea" placeholder="Opisz krótko proces który chcesz zautomatyzować (np. obieg faktur, połączenie z systemem CRM)" rows="3" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" required></textarea>
                         </div>
 
@@ -977,7 +986,14 @@
                         <div class="form-checkbox-group">
                             <input type="checkbox" id="form-consent" class="form-checkbox" required>
                             <label for="form-consent" class="form-checkbox-label">
-                                Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi zgłoszenia. Wyrażam zgodę na otrzymywanie informacji handlowych od LogicMorrow drogą elektroniczną na podany adres e-mail. <a href="/polityka-prywatnosci.html" target="_blank">Polityka Prywatności.</a>
+                                Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi mojego zgłoszenia. Szczegóły w <a href="/polityka-prywatnosci.html" target="_blank" rel="noopener">Polityce Prywatności</a>.
+                            </label>
+                        </div>
+
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="form-marketing" class="form-checkbox">
+                            <label for="form-marketing" class="form-checkbox-label">
+                                Chcę dodatkowo otrzymywać informacje handlowe od LogicMorrow drogą elektroniczną na podany adres e-mail (opcjonalnie – niewymagane do kontaktu).
                             </label>
                         </div>
 
@@ -1013,7 +1029,7 @@
                 
                 <div class="faq-section__header" data-animate="fade-up">
                     <span class="section-label" style="color: var(--color-primary-light)">FAQ</span>
-                    <h2>Najczęstsze pytania o automatyzacje</h2>
+                    <h2>Najczęstsze pytania o automatyzacje</h2>
                 </div>
 
                 <div class="faq-accordion">
@@ -1025,7 +1041,7 @@
                             <span class="faq-accordion__icon"></span>
                         </button>
                         <div class="faq-accordion__content">
-                            <p class="faq-accordion__answer">Najprostsze usprawnienia (np. automatyczna wysyłka ofert) zaczynają się od 3 tys. zł. Bardziej złożone systemy, które łączą kilka działów w firmie, to zazwyczaj inwestycja rzędu 7–12 tys. zł. Na bezpłatnej rozmowie ocenimy Twój proces i podamy dokładną kwotę.</p>
+                            <p class="faq-accordion__answer">Najprostsze usprawnienia (np. automatyczna wysyłka ofert) zaczynają się od 3 tys. zł. Bardziej złożone systemy, które łączą kilka działów w firmie, to zazwyczaj inwestycja rzędu 7–12 tys. zł. Na bezpłatnej rozmowie ocenimy Twój proces i podamy dokładną kwotę.</p>
                         </div>
                     </div>
 
@@ -1047,7 +1063,7 @@
                             <span class="faq-accordion__icon"></span>
                         </button>
                         <div class="faq-accordion__content">
-                            <p class="faq-accordion__answer">Typowe wdrożenie jednego, średnio-zaawansowanego procesu (np. automatyczny obieg faktur) trwa zazwyczaj od 2 do 4 tygodni — od momentu akceptacji planu do pełnego uruchomienia i przeszkolenia zespołu.</p>
+                            <p class="faq-accordion__answer">Typowe wdrożenie jednego, średnio-zaawansowanego procesu (np. automatyczny obieg faktur) trwa zazwyczaj od 2 do 4 tygodni – od momentu akceptacji planu do pełnego uruchomienia i przeszkolenia zespołu.</p>
                         </div>
                     </div>
 
@@ -1058,7 +1074,7 @@
                             <span class="faq-accordion__icon"></span>
                         </button>
                         <div class="faq-accordion__content">
-                            <p class="faq-accordion__answer">Tak. System instalujemy wewnątrz Twojej firmy lub na bezpiecznym, prywatnym serwerze. Twoje dane nie krążą po publicznych chmurach za granicą — masz nad nimi 100% kontroli i wglądu.</p>
+                            <p class="faq-accordion__answer">Tak. System instalujemy wewnątrz Twojej firmy lub na bezpiecznym, prywatnym serwerze. Twoje dane nie krążą po publicznych chmurach za granicą – masz nad nimi 100% kontroli i wglądu.</p>
                         </div>
                     </div>
 
@@ -1069,7 +1085,7 @@
                             <span class="faq-accordion__icon"></span>
                         </button>
                         <div class="faq-accordion__content">
-                            <p class="faq-accordion__answer">Śledzimy aktualizacje systemów, z którymi integrujemy automatyzacje naszych klientów. W ramach opieki powdrożeniowej dbamy o to, by każda zmiana w API została uwzględniona w automatyzacji bez przestojów w pracy Twojej firmy.</p>
+                            <p class="faq-accordion__answer">Śledzimy aktualizacje systemów, z którymi integrujemy automatyzacje naszych klientów. W ramach opieki powdrożeniowej dbamy o to, by każda zmiana w API została uwzględniona w automatyzacji bez przestojów w pracy Twojej firmy.</p>
                         </div>
                     </div>
 
@@ -1090,7 +1106,7 @@
     <script src="js/use-cases-carousel.js"></script>
     <script src="js/faq.js"></script>
 
-    <!-- [6] Cookie Consent — inicjalizacja -->
+    <!-- [6] Cookie Consent – inicjalizacja -->
     <script src="/js/cookie-consent.js"></script>
 </body>
 </html>

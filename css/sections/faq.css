@@ -4,7 +4,7 @@
 
 .faq-section {
     padding: var(--space-24) 0;
-    background-color: var(--color-slate-950);
+    background-color: var(--color-surface-alt);
     position: relative;
     overflow: hidden;
     z-index: 12;
@@ -22,13 +22,13 @@
 }
 
 .faq-section__header h2 {
-    color: var(--color-white);
+    color: var(--color-slate-900);
     font-size: var(--text-4xl);
     margin-bottom: var(--space-4);
 }
 
 .faq-section__header p {
-    color: var(--color-slate-400);
+    color: var(--color-slate-500);
 }
 
 /* Accordion Styles */
@@ -39,16 +39,17 @@
 }
 
 .faq-accordion__item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
     overflow: hidden;
     transition: var(--transition-base);
 }
 
 .faq-accordion__item:hover {
     border-color: var(--color-primary-light);
-    background: rgba(255, 255, 255, 0.05);
+    box-shadow: var(--shadow-elevated);
 }
 
 .faq-accordion__header {
@@ -61,7 +62,7 @@
     align-items: center;
     cursor: pointer;
     text-align: left;
-    color: var(--color-white);
+    color: var(--color-slate-900);
     font-size: var(--text-lg);
     font-weight: var(--font-bold);
     transition: var(--transition-base);
@@ -129,7 +130,7 @@
 }
 
 .faq-accordion__answer {
-    color: var(--color-slate-300);
+    color: var(--color-slate-600);
     line-height: 1.7;
     font-size: var(--text-base);
 }

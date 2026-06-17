@@ -41,6 +41,12 @@ assets/Video/
 Baza wiedzy o firmie/
 
 # ============================================================
+# CLAUDE CODE (skille, agenci, hooki, lokalne ustawienia)
+# Narzędzia deweloperskie — nie publiczne, tylko lokalnie
+# ============================================================
+.claude/
+
+# ============================================================
 # INNE
 # ============================================================
 *.log

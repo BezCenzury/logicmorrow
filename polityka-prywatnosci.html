@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polityka Prywatności i Cookies | LogicMorrow</title>
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>Polityka Prywatności i Cookies | LogicMorrow</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#2563eb">
     <meta name="description" content="Polityka prywatności i plików cookie serwisu LogicMorrow. Informacje o przetwarzaniu danych osobowych, rodzajach plików cookie i prawach użytkownika.">
 
-    <!-- Robots: strona prawna — nie indeksować, ale linki przekazuj -->
+    <!-- Robots: strona prawna – nie indeksować, ale linki przekazuj -->
     <meta name="robots" content="noindex, follow">
 
     <!-- SEO: Canonical + Open Graph + Twitter Card -->
@@ -32,7 +35,7 @@
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
          ═══════════════════════════════════════════════════════ -->
 
-    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -68,7 +71,7 @@
         })();
     </script>
 
-    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <!-- [3] Google Tag Manager – zastąp GTM-XXXXXXX docelowym ID -->
     <script>(function(w,d,s,l,i){
         w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
         var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
@@ -77,10 +80,10 @@
     })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 
     <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
 
-    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
     <style>
         :root {
             --cc-btn-primary-bg: #2563eb;
@@ -95,6 +98,9 @@
             --cc-overlay-bg: rgba(0, 0, 0, 0.55);
         }
         #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
         #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
 
         /* Style dla strony prawnej */
@@ -152,9 +158,8 @@
     </style>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Base CSS -->
     <link rel="stylesheet" href="css/base/variables.css">
@@ -180,46 +185,51 @@
 
     <main class="legal-page" style="max-width: 850px; margin: 0 auto; padding: 10rem 2rem 8rem;">
         <div class="legal-content">
-            <h1>Polityka Prywatności i Plików Cookies serwisu logicmorrow.pl</h1>
-            
+            <h1>Polityka Prywatności i Plików Cookies serwisu logicmorrow.pl</h1>
+            <p style="color: var(--color-slate-500); font-size: 0.95rem; margin-top: 0.5rem;">Data ostatniej aktualizacji: 17 czerwca 2026 r.</p>
+
             <section>
                 <h2>I. Postanowienia ogólne</h2>
-                <p>Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych przez Użytkowników w związku z korzystaniem z serwisu internetowego <a href="/">logicmorrow.pl</a>.</p>
-                <p>Administratorem danych osobowych jest Mateusz Olesiuk z siedzibą w Tereszpol-Zaorenda ul. Długa 27a, 23-407 Tereszpol, NIP: 9182192894, (dalej: "Administrator").</p>
-                <p>W sprawach związanych z przetwarzaniem danych osobowych można kontaktować się z Administratorem pod adresem e-mail: <a href="mailto:kontakt@logicmorrow.pl">kontakt@logicmorrow.pl</a>.</p>
-                <p>Administrator dokłada szczególnej staranności w celu ochrony interesów osób, których dane dotyczą, a w szczególności zapewnia, że zbierane przez niego dane są przetwarzane zgodnie z prawem, zbierane dla oznaczonych, zgodnych z prawem celów i niepoddawane dalszemu przetwarzaniu niezgodnemu z tymi celami.</p>
+                <p>Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych przez Użytkowników w związku z korzystaniem z serwisu internetowego <a href="/">logicmorrow.pl</a>.</p>
+                <p>Administratorem danych osobowych jest Mateusz Olesiuk, prowadzący jednoosobową działalność gospodarczą pod adresem: ul. Długa 27a, Tereszpol-Zaorenda, 23-407 Tereszpol, NIP: 9182192894 (dalej: „Administrator”).</p>
+                <p>W sprawach związanych z przetwarzaniem danych osobowych można kontaktować się z Administratorem pod adresem e-mail: <a href="mailto:kontakt@logicmorrow.pl">kontakt@logicmorrow.pl</a>.</p>
+                <p>Administrator dokłada szczególnej staranności w celu ochrony interesów osób, których dane dotyczą, a w szczególności zapewnia, że zbierane przez niego dane są przetwarzane zgodnie z prawem, zbierane dla oznaczonych, zgodnych z prawem celów i niepoddawane dalszemu przetwarzaniu niezgodnemu z tymi celami.</p>
             </section>
 
             <section>
-                <h2>II. Cele, podstawy prawne i okres przetwarzania danych</h2>
-                <p>Dane osobowe Użytkowników (takie jak: imię, nazwa firmy, adres e-mail, numer telefonu) przetwarzane są w następujących celach:</p>
+                <h2>II. Cele, podstawy prawne i okres przetwarzania danych</h2>
+                <p>Dane osobowe Użytkowników (takie jak: imię, nazwa firmy, adres e-mail, numer telefonu) przetwarzane są w następujących celach:</p>
                 <ul>
-                    <li><strong>Obsługa zapytań z formularza kontaktowego:</strong> Podstawą prawną jest niezbędność przetwarzania do podjęcia działań na żądanie osoby, której dane dotyczą, przed zawarciem umowy (art. 6 ust. 1 lit. b RODO) lub prawnie uzasadniony interes Administratora polegający na udzielaniu odpowiedzi na kierowane do niego zapytania (art. 6 ust. 1 lit. f RODO). Dane przechowywane są przez okres trwania korespondencji oraz do czasu przedawnienia ewentualnych roszczeń.</li>
-                    <li><strong>Wysyłka ofert handlowych i marketing bezpośredni:</strong> Przetwarzanie odbywa się wyłącznie na podstawie dobrowolnej zgody Użytkownika (art. 6 ust. 1 lit. a RODO). Dane będą przetwarzane do momentu cofnięcia zgody przez Użytkownika.</li>
-                    <li><strong>Analiza ruchu i statystyki serwisu:</strong> Podstawą prawną jest zgoda Użytkownika na wykorzystanie analitycznych plików cookies (art. 6 ust. 1 lit. a RODO).</li>
-                    <li><strong>Działania reklamowe i remarketing (Meta Pixel):</strong> Podstawą prawną jest zgoda Użytkownika na wykorzystanie marketingowych plików cookies (art. 6 ust. 1 lit. a RODO).</li>
+                    <li><strong>Obsługa zapytań z formularza kontaktowego:</strong> Podstawą prawną jest niezbędność przetwarzania do podjęcia działań na żądanie osoby, której dane dotyczą, przed zawarciem umowy (art. 6 ust. 1 lit. b RODO) lub prawnie uzasadniony interes Administratora polegający na udzielaniu odpowiedzi na kierowane do niego zapytania (art. 6 ust. 1 lit. f RODO). Dane przechowywane są przez okres trwania korespondencji oraz do czasu przedawnienia ewentualnych roszczeń.</li>
+                    <li><strong>Wysyłka ofert handlowych i marketing bezpośredni:</strong> Przetwarzanie odbywa się wyłącznie na podstawie dobrowolnej zgody Użytkownika (art. 6 ust. 1 lit. a RODO). Dane będą przetwarzane do momentu cofnięcia zgody przez Użytkownika.</li>
+                    <li><strong>Analiza ruchu i statystyki serwisu:</strong> Podstawą prawną jest zgoda Użytkownika na wykorzystanie analitycznych plików cookies (art. 6 ust. 1 lit. a RODO).</li>
+                    <li><strong>Działania reklamowe i remarketing (Meta Pixel):</strong> Podstawą prawną jest zgoda Użytkownika na wykorzystanie marketingowych plików cookies (art. 6 ust. 1 lit. a RODO).</li>
                 </ul>
+                <p>Podanie danych osobowych jest dobrowolne, jednak ich niepodanie uniemożliwia obsługę zgłoszenia przesłanego przez formularz kontaktowy. Zgoda na marketing bezpośredni jest w pełni dobrowolna i nie warunkuje udzielenia odpowiedzi na zapytanie.</p>
+                <p>W przypadku wyrażenia zgody na marketingowe pliki cookies dane mogą podlegać profilowaniu służącemu dopasowaniu wyświetlanych reklam. Profilowanie to nie wywołuje wobec Użytkownika skutków prawnych ani nie wpływa w podobny sposób istotnie na jego sytuację.</p>
             </section>
 
             <section>
                 <h2>III. Odbiorcy danych</h2>
-                <p>Odbiorcami danych osobowych Użytkowników mogą być podmioty współpracujące z Administratorem w celu zapewnienia funkcjonowania serwisu, m.in.:</p>
+                <p>Odbiorcami danych osobowych Użytkowników mogą być podmioty współpracujące z Administratorem w celu zapewnienia funkcjonowania serwisu, m.in.:</p>
                 <ul>
-                    <li>dostawca usług hostingowych i serwerów,</li>
-                    <li>podmioty świadczące usługi informatyczne,</li>
-                    <li>dostawcy narzędzi analitycznych i marketingowych (Google Ireland Limited, Meta Platforms Ireland Limited).</li>
+                    <li>dostawca hostingu strony internetowej (GitHub, Inc. – serwery mogą znajdować się poza EOG, w tym w USA),</li>
+                    <li>dostawca serwera VPS, na którym Administrator samodzielnie utrzymuje system obsługi zgłoszeń z formularza kontaktowego,</li>
+                    <li>podmioty świadczące usługi informatyczne i wsparcia technicznego,</li>
+                    <li>dostawcy narzędzi analitycznych i marketingowych (Google Ireland Limited, Meta Platforms Ireland Limited) – wyłącznie po wyrażeniu przez Użytkownika odpowiedniej zgody.</li>
                 </ul>
-                <p>Podmioty te przetwarzają dane na podstawie umów powierzenia przetwarzania danych osobowych i są zobowiązane do stosowania odpowiednich środków bezpieczeństwa.</p>
+                <p>Dane przesłane przez formularz kontaktowy trafiają do systemu obsługującego zgłoszenia, który jest samodzielnie utrzymywany przez Administratora na jego serwerze. Serwis nie pobiera ani nie przekazuje adresu IP osoby wypełniającej formularz.</p>
+                <p>Podmioty zewnętrzne przetwarzają dane na podstawie umów powierzenia przetwarzania danych osobowych i są zobowiązane do stosowania odpowiednich środków bezpieczeństwa.</p>
             </section>
 
             <section>
                 <h2>IV. Przekazywanie danych poza Europejski Obszar Gospodarczy (EOG)</h2>
-                <p>Ze względu na korzystanie z usług takich jak Google Analytics oraz Meta Pixel, dane Użytkowników mogą być przekazywane poza EOG, w szczególności do Stanów Zjednoczonych. Transfer ten odbywa się w oparciu o odpowiednie zabezpieczenia prawne, w tym Decyzję Wykonawczą Komisji Europejskiej stwierdzającą odpowiedni stopień ochrony danych (Data Privacy Framework) dla podmiotów certyfikowanych w USA, a w razie jej braku – na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską.</p>
+                <p>Ze względu na korzystanie z usług takich jak Google Analytics oraz Meta Pixel, dane Użytkowników mogą być przekazywane poza EOG, w szczególności do Stanów Zjednoczonych. Transfer ten odbywa się w oparciu o odpowiednie zabezpieczenia prawne, w tym Decyzję Wykonawczą Komisji Europejskiej stwierdzającą odpowiedni stopień ochrony danych (Data Privacy Framework) dla podmiotów certyfikowanych w USA, a w razie jej braku – na podstawie standardowych klauzul umownych zatwierdzonych przez Komisję Europejską.</p>
             </section>
 
             <section>
                 <h2>V. Prawa Użytkowników</h2>
-                <p>Zgodnie z RODO, każdemu Użytkownikowi przysługuje prawo do:</p>
+                <p>Zgodnie z RODO, każdemu Użytkownikowi przysługuje prawo do:</p>
                 <ul>
                     <li>dostępu do swoich danych oraz otrzymania ich kopii,</li>
                     <li>sprostowania (poprawiania) swoich danych,</li>
@@ -227,7 +237,7 @@
                     <li>ograniczenia przetwarzania danych,</li>
                     <li>przenoszenia danych,</li>
                     <li>wniesienia sprzeciwu wobec przetwarzania danych opartego na prawnie uzasadnionym interesie Administratora,</li>
-                    <li>cofnięcia zgody na przetwarzanie danych w dowolnym momencie (bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem),</li>
+                    <li>cofnięcia zgody na przetwarzanie danych w dowolnym momencie (bez wpływu na zgodność z prawem przetwarzania dokonanego przed jej cofnięciem),</li>
                     <li>wniesienia skargi do organu nadzorczego (Prezesa Urzędu Ochrony Danych Osobowych), jeśli Użytkownik uzna, że przetwarzanie narusza przepisy RODO.</li>
                 </ul>
             </section>
@@ -235,13 +245,13 @@
             <section>
                 <h2>VI. Polityka Plików Cookies</h2>
                 <p>Serwis <a href="/">logicmorrow.pl</a> wykorzystuje pliki cookies (ciasteczka) – niewielkie informacje tekstowe, przechowywane na urządzeniu końcowym Użytkownika.</p>
-                <p>Wyróżniamy następujące rodzaje plików cookies wykorzystywanych w serwisie:</p>
+                <p>Wyróżniamy następujące rodzaje plików cookies wykorzystywanych w serwisie:</p>
                 <ul>
                     <li><strong>Niezbędne:</strong> Kluczowe dla podstawowego funkcjonowania serwisu. Nie wymagają zgody Użytkownika.</li>
-                    <li><strong>Analityczne (Google Analytics):</strong> Służą do analizowania ruchu na stronie, co pomaga optymalizować jej działanie. Zbierają informacje w sposób zanonimizowany. Uruchamiane wyłącznie po wyrażeniu zgody.</li>
-                    <li><strong>Marketingowe (Meta Pixel):</strong> Pozwalają na śledzenie Użytkowników w celu dostosowania wyświetlanych reklam na platformach zewnętrznych (Facebook, Instagram) oraz mierzenia skuteczności kampanii reklamowych. Uruchamiane wyłącznie po wyrażeniu zgody.</li>
+                    <li><strong>Analityczne (Google Analytics):</strong> Służą do analizowania ruchu na stronie, co pomaga optymalizować jej działanie. Zbierają informacje w sposób zanonimizowany. Uruchamiane wyłącznie po wyrażeniu zgody.</li>
+                    <li><strong>Marketingowe (Meta Pixel):</strong> Pozwalają na śledzenie Użytkowników w celu dostosowania wyświetlanych reklam na platformach zewnętrznych (Facebook, Instagram) oraz mierzenia skuteczności kampanii reklamowych. Uruchamiane wyłącznie po wyrażeniu zgody.</li>
                 </ul>
-                <p>Użytkownik może w każdej chwili samodzielnie zmienić ustawienia dotyczące plików cookies z poziomu swojej przeglądarki internetowej lub za pomocą panelu zarządzania cookies na stronie serwisu.</p>
+                <p>Użytkownik może w każdej chwili samodzielnie zmienić ustawienia dotyczące plików cookies z poziomu swojej przeglądarki internetowej lub za pomocą panelu zarządzania cookies na stronie serwisu.</p>
             </section>
         </div>
     </main>
@@ -254,7 +264,7 @@
     <script src="js/navbar.js"></script>
     <script src="js/animations.js"></script>
 
-    <!-- [6] Cookie Consent — inicjalizacja -->
+    <!-- [6] Cookie Consent – inicjalizacja -->
     <script src="/js/cookie-consent.js"></script>
 </body>
 </html>

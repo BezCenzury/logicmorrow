@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenci AI — Twój Nowy, Cyfrowy Pracownik | LogicMorrow</title>
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>Agenci AI – Twój Nowy, Cyfrowy Pracownik | LogicMorrow</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#2563eb">
-    <meta name="description" content="Wdrażamy agentów AI do codziennych operacji firmy — analiza danych, obsługa zapytań, wsparcie decyzji. Dla firm 5–35 pracowników, bez miesięcznych abonamentów.">
+    <meta name="description" content="Wdrażamy agentów AI do codziennych operacji firmy – analiza danych, obsługa zapytań, wsparcie decyzji. Dla firm 5–35 pracowników, bez miesięcznych abonamentów.">
 
     <!-- SEO: Canonical + Open Graph + Twitter Card -->
     <link rel="canonical" href="https://logicmorrow.pl/agenci.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://logicmorrow.pl/agenci.html">
-    <meta property="og:title" content="Agenci AI — Twój Nowy, Cyfrowy Pracownik | LogicMorrow">
-    <meta property="og:description" content="Wdrażamy agentów AI do codziennych operacji firmy — analiza danych, obsługa zapytań, wsparcie decyzji. Dla firm 5–35 pracowników, bez miesięcznych abonamentów.">
+    <meta property="og:title" content="Agenci AI – Twój Nowy, Cyfrowy Pracownik | LogicMorrow">
+    <meta property="og:description" content="Wdrażamy agentów AI do codziennych operacji firmy – analiza danych, obsługa zapytań, wsparcie decyzji. Dla firm 5–35 pracowników, bez miesięcznych abonamentów.">
     <meta property="og:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="LogicMorrow">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Agenci AI — Twój Nowy, Cyfrowy Pracownik | LogicMorrow">
-    <meta name="twitter:description" content="Wdrażamy agentów AI do codziennych operacji firmy — analiza danych, obsługa zapytań, wsparcie decyzji. Dla firm 5–35 pracowników, bez miesięcznych abonamentów.">
+    <meta name="twitter:title" content="Agenci AI – Twój Nowy, Cyfrowy Pracownik | LogicMorrow">
+    <meta name="twitter:description" content="Wdrażamy agentów AI do codziennych operacji firmy – analiza danych, obsługa zapytań, wsparcie decyzji. Dla firm 5–35 pracowników, bez miesięcznych abonamentów.">
     <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
 
     <!-- ═══════════════════════════════════════════════════════
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
          ═══════════════════════════════════════════════════════ -->
 
-    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -65,7 +68,7 @@
         })();
     </script>
 
-    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <!-- [3] Google Tag Manager – zastąp GTM-XXXXXXX docelowym ID -->
     <script>(function(w,d,s,l,i){
         w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
         var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
@@ -74,10 +77,10 @@
     })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 
     <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
 
-    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
     <style>
         :root {
             --cc-btn-primary-bg: #2563eb;
@@ -92,6 +95,9 @@
             --cc-overlay-bg: rgba(0, 0, 0, 0.55);
         }
         #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
         #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
     </style>
 
@@ -104,8 +110,8 @@
           "@type": "WebPage",
           "@id": "https://logicmorrow.pl/agenci.html",
           "url": "https://logicmorrow.pl/agenci.html",
-          "name": "Agenci AI — Twój Nowy, Cyfrowy Pracownik | LogicMorrow",
-          "description": "Wdrażamy agentów AI do codziennych operacji firmy — analiza danych, obsługa zapytań, wsparcie decyzji. Dla firm 5–35 pracowników, bez miesięcznych abonamentów.",
+          "name": "Agenci AI – Twój Nowy, Cyfrowy Pracownik | LogicMorrow",
+          "description": "Wdrażamy agentów AI do codziennych operacji firmy – analiza danych, obsługa zapytań, wsparcie decyzji. Dla firm 5–35 pracowników, bez miesięcznych abonamentów.",
           "inLanguage": "pl-PL",
           "isPartOf": { "@id": "https://logicmorrow.pl/#website" }
         },
@@ -120,7 +126,7 @@
           "@type": "Service",
           "name": "Agenci AI dla biznesu",
           "provider": { "@type": "ProfessionalService", "name": "LogicMorrow", "url": "https://logicmorrow.pl" },
-          "description": "Inteligentni agenci AI odpowiadający wyłącznie na podstawie Twoich dokumentów i baz danych. Analiza danych, obsługa zapytań, wsparcie decyzji — bez halucynacji, z linkiem do źródła w każdej odpowiedzi.",
+          "description": "Inteligentni agenci AI odpowiadający wyłącznie na podstawie Twoich dokumentów i baz danych. Analiza danych, obsługa zapytań, wsparcie decyzji – bez halucynacji, z linkiem do źródła w każdej odpowiedzi.",
           "areaServed": "PL",
           "serviceType": "Wdrożenie agentów AI",
           "offers": {
@@ -152,7 +158,7 @@
           "name": "Czy Agent AI może się mylić?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nasze rozwiązanie działa inaczej niż popularne chatboty: agent odpowiada wyłącznie na podstawie Twoich dokumentów i baz danych. Jeśli czegoś nie ma w Twoich zasobach — agent o tym wprost poinformuje, zamiast zgadywać. Każda odpowiedź zawiera link do dokumentu źródłowego."
+            "text": "Nasze rozwiązanie działa inaczej niż popularne chatboty: agent odpowiada wyłącznie na podstawie Twoich dokumentów i baz danych. Jeśli czegoś nie ma w Twoich zasobach – agent o tym wprost poinformuje, zamiast zgadywać. Każda odpowiedź zawiera link do dokumentu źródłowego."
           }
         },
         {
@@ -176,9 +182,8 @@
     </script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Base CSS -->
     <link rel="stylesheet" href="css/base/variables.css">
@@ -229,10 +234,10 @@
                     </div>
                     <h1 class="hero__title">
                         Pracownik, który nigdy nie śpi.<br>
-                        <span>Inteligentny Agent AI w Twoim zespole.</span>
+                        <span>Inteligentny Agent AI w Twoim zespole.</span>
                     </h1>
                     <p class="hero__subtitle">
-                        Agent AI to Twoja cyfrowa "prawa ręka". Planuje trasy logistyczne, odpisuje na maile, analizuje wyniki finansowe i sprawdza kalendarz w czasie rzeczywistym. Bez urlopów i bez błędów.
+                        Agent AI to Twoja cyfrowa „prawa ręka”. Planuje trasy logistyczne, odpisuje na maile, analizuje wyniki finansowe i sprawdza kalendarz w czasie rzeczywistym. Bez urlopów i bez błędów.
                     </p>
                     <div class="hero__actions">
                         <a href="/konsultacja.html" class="btn btn--primary btn--lg btn--arrow">
@@ -269,11 +274,14 @@
                                 <feGaussianBlur stdDeviation="15" result="blur"/>
                                 <feComposite in="SourceGraphic" in2="blur" operator="over"/>
                             </filter>
+                            <filter id="taskShadow" x="-40%" y="-40%" width="180%" height="180%">
+                                <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(15,23,42,0.15)" />
+                            </filter>
                         </defs>
                         
                         <!-- Orbity -->
-                        <circle cx="260" cy="200" r="140" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-                        <circle cx="260" cy="200" r="180" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+                        <circle cx="260" cy="200" r="140" stroke="rgba(15,23,42,0.08)" stroke-width="1" />
+                        <circle cx="260" cy="200" r="180" stroke="rgba(15,23,42,0.05)" stroke-width="1" />
                         
                         <!-- Centralny rdzeń AI -->
                         <g filter="url(#aiGlow)">
@@ -288,11 +296,11 @@
                             <animateTransform attributeName="transform" type="rotate" from="0 260 200" to="360 260 200" dur="30s" repeatCount="indefinite" />
                             
                             <!-- Logistyka -->
-                            <rect x="380" y="100" width="40" height="40" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
+                            <rect x="380" y="100" width="40" height="40" rx="8" fill="var(--color-surface)" stroke="var(--color-slate-200)" filter="url(#taskShadow)" />
                             <path d="M390 120 L410 120 M400 110 L400 130" stroke="var(--color-primary-light)" stroke-width="2" />
                             
                             <!-- Dane finansowe -->
-                            <rect x="100" y="150" width="40" height="40" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
+                            <rect x="100" y="150" width="40" height="40" rx="8" fill="var(--color-surface)" stroke="var(--color-slate-200)" filter="url(#taskShadow)" />
                             <path d="M110 180 V170 M120 180 V160 M130 180 V175" stroke="#10b981" stroke-width="2" />
                         </g>
 
@@ -300,12 +308,12 @@
                             <animateTransform attributeName="transform" type="rotate" from="360 260 200" to="0 260 200" dur="40s" repeatCount="indefinite" />
                             
                             <!-- E-mail -->
-                            <rect x="140" y="60" width="40" height="40" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
-                            <path d="M150 75 L160 82 L170 75" stroke="white" stroke-width="1.5" />
+                            <rect x="140" y="60" width="40" height="40" rx="8" fill="var(--color-surface)" stroke="var(--color-slate-200)" filter="url(#taskShadow)" />
+                            <path d="M150 75 L160 82 L170 75" stroke="var(--color-slate-500)" stroke-width="1.5" />
                             
                             <!-- Kalendarz -->
-                            <rect x="400" y="250" width="40" height="40" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" />
-                            <rect x="410" y="260" width="20" height="20" rx="2" stroke="white" stroke-width="1.5" />
+                            <rect x="400" y="250" width="40" height="40" rx="8" fill="var(--color-surface)" stroke="var(--color-slate-200)" filter="url(#taskShadow)" />
+                            <rect x="410" y="260" width="20" height="20" rx="2" stroke="var(--color-slate-500)" stroke-width="1.5" />
                         </g>
                     </svg>
                 </div>
@@ -320,9 +328,9 @@
             <div class="challenges__container">
                 
                 <div class="challenges__header" data-animate="fade-up">
-                    <span class="section-label">Problemy z niestandardowymi procesami</span>
-                    <h2>Gdy Excel i człowiek to za mało.</h2>
-                    <p class="lead">Marnowanie czasu na przeklejanie danych, ręczne planowanie tras czy szukanie informacji o kontrahentach to ukryty koszt Twojego biznesu.</p>
+                    <span class="section-label">Problemy z niestandardowymi procesami</span>
+                    <h2>Gdy Excel i człowiek to za mało.</h2>
+                    <p class="lead">Marnowanie czasu na przeklejanie danych, ręczne planowanie tras czy szukanie informacji o kontrahentach to ukryty koszt Twojego biznesu.</p>
                 </div>
 
                 <div class="challenges__grid">
@@ -333,8 +341,8 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline><polyline points="7.5 19.79 7.5 14.63 3 12"></polyline><polyline points="21 12 16.5 14.63 16.5 19.79"></polyline><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
                             LOGISTYKA
                         </span>
-                        <h3>Wąskie gardła w planowaniu</h3>
-                        <p>Ręczne ustalanie kilkudziesięciu tras dla kurierów potrafi zajmować spedytorowi znaczną część każdego poranka. Agent AI planuje te same trasy w ułamku sekundy, uwzględniając okna czasowe, pojemność aut i warunki drogowe.</p>
+                        <h3>Wąskie gardła w planowaniu</h3>
+                        <p>Ręczne ustalanie kilkudziesięciu tras dla kurierów potrafi zajmować spedytorowi znaczną część każdego poranka. Agent AI planuje te same trasy w ułamku sekundy, uwzględniając okna czasowe, pojemność aut i warunki drogowe.</p>
                     </div>
 
                     <!-- Wyzwanie 2 -->
@@ -344,7 +352,7 @@
                             DOKUMENTY
                         </span>
                         <h3>Analiza, która spowalnia sprzedaż</h3>
-                        <p>Wycena skomplikowanych projektów z plików PDF wymaga skupienia inżyniera. Nasz agent "czyta" dokumentację i przygotowuje wstępną wycenę natychmiast po otrzymaniu maila.</p>
+                        <p>Wycena skomplikowanych projektów z plików PDF wymaga skupienia inżyniera. Nasz agent „czyta” dokumentację i przygotowuje wstępną wycenę natychmiast po otrzymaniu maila.</p>
                     </div>
 
                     <!-- Wyzwanie 3 -->
@@ -353,8 +361,8 @@
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                             INFORMACJA
                         </span>
-                        <h3>Rozproszone informacje w firmie</h3>
-                        <p>Dostęp do kluczowych współczynników firmy wymaga logowania do osobnych programów sprzedażowych i księgowych. Z Agentem AI po prostu rozmawiasz: "Jaki mamy wynik marżowy na projekcie X?" — odpowiedź dostajesz od ręki.</p>
+                        <h3>Rozproszone informacje w firmie</h3>
+                        <p>Dostęp do kluczowych współczynników firmy wymaga logowania do osobnych programów sprzedażowych i księgowych. Z Agentem AI po prostu rozmawiasz: „Jaki mamy wynik marżowy na projekcie X?” – odpowiedź dostajesz od ręki.</p>
                     </div>
 
                 </div>
@@ -370,8 +378,8 @@
                 
                 <div class="solutions__header" data-animate="fade-up">
                     <span class="section-label">Co robi Agent?</span>
-                    <h2>Twoja nowa "Prawa Ręka"</h2>
-                    <p class="lead">Agenci AI to nie tylko chatboty. To wirtualni pracownicy, którzy mają dostęp do Twoich narzędzi i wykonują w nich realną pracę.</p>
+                    <h2>Twoja nowa „Prawa Ręka”</h2>
+                    <p class="lead">Zaczynamy od audytu procesu, a agenta wpinamy dopiero tam, gdzie realnie pomaga. To nie chatboty – to wirtualni pracownicy z dostępem do Twoich narzędzi, którzy wykonują w nich realną pracę.</p>
                 </div>
 
                 <div class="solutions__layout">
@@ -380,15 +388,15 @@
                     <div class="solutions__tabs" data-animate="slide-left">
                         <button class="solutions__tab active" data-solution="1">
                             <span class="solutions__tab-title">Raporty na żądanie</span>
-                            <span class="solutions__tab-desc">Pytasz — dostajesz odpowiedź.</span>
+                            <span class="solutions__tab-desc">Pytasz – dostajesz odpowiedź.</span>
                         </button>
                         <button class="solutions__tab" data-solution="2">
                             <span class="solutions__tab-title">Asystent szefa</span>
-                            <span class="solutions__tab-desc">Kalendarz, e-maile i szukanie informacji.</span>
+                            <span class="solutions__tab-desc">Kalendarz, e-maile i szukanie informacji.</span>
                         </button>
                         <button class="solutions__tab" data-solution="3">
-                            <span class="solutions__tab-title">Planowanie i logistyka</span>
-                            <span class="solutions__tab-desc">Trasy, wyceny i trudne obliczenia.</span>
+                            <span class="solutions__tab-title">Planowanie i logistyka</span>
+                            <span class="solutions__tab-desc">Trasy, wyceny i trudne obliczenia.</span>
                         </button>
                     </div>
 
@@ -399,8 +407,8 @@
                         <div class="solutions__content active" id="solution-1">
                             <div class="solutions__main-info">
                                 <div class="solutions__text">
-                                    <h3>Mózg Twojej Firmy: Wgląd w dane w sekundę</h3>
-                                    <p>Zamiast przeszukiwać dziesiątki dokumentów albo dzwonić do kolegów z pytaniem — pytasz agenta. Dostajesz odpowiedź w kilka sekund, z konkretnym plikiem jako źródłem. Wiedza firmy zawsze pod ręką, dla każdego w zespole.</p>
+                                    <h3>Mózg Twojej Firmy: Wgląd w dane w sekundę</h3>
+                                    <p>Zamiast przeszukiwać dziesiątki dokumentów albo dzwonić do kolegów z pytaniem – pytasz agenta. Dostajesz odpowiedź w kilka sekund, z konkretnym plikiem jako źródłem. Wiedza firmy zawsze pod ręką, dla każdego w zespole.</p>
                                     <ul class="solutions__features">
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -408,11 +416,11 @@
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Odczytywanie danych z faktur i dokumentów technicznych
+                                            Odczytywanie danych z faktur i dokumentów technicznych
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Wyszukiwanie konkretnych zapisów w umowach
+                                            Wyszukiwanie konkretnych zapisów w umowach
                                         </li>
                                     </ul>
                                 </div>
@@ -421,7 +429,7 @@
                                         <rect x="20" y="20" width="200" height="140" rx="12" fill="#0f172a" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
                                         <text x="40" y="50" fill="var(--color-primary-light)" font-family="Inter, sans-serif" font-size="7" font-weight="bold">QUERY: Jaka jest marża projektu Gamma?</text>
                                         <rect x="40" y="65" width="160" height="40" rx="8" fill="rgba(37, 99, 235, 0.1)" stroke="rgba(37, 99, 235, 0.3)"/>
-                                        <text x="50" y="80" fill="white" font-family="Inter, sans-serif" font-size="6">Wynik: 18.4% (wzrost o 2% m/m)</text>
+                                        <text x="50" y="80" fill="white" font-family="Inter, sans-serif" font-size="6">Wynik: 18.4% (wzrost o 2% m/m)</text>
                                         <text x="50" y="92" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="5">Źródło: System księgowy, Faktury Q1</text>
                                         
                                         <rect x="40" y="115" width="40" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
@@ -432,30 +440,30 @@
                             <div class="solutions__examples">
                                 <span class="solutions__example-heading">Możliwe zastosowania</span>
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Handlowiec nie zna technicznej odpowiedzi i dzwoni do biura"</summary>
+                                    <summary class="industry-case__summary">„Handlowiec nie zna technicznej odpowiedzi i dzwoni do biura”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        Klient zadaje trudne pytanie o parametry techniczne. Handlowiec musi dzwonić do działu technicznego lub samemu wertować całą dokumentację.
+                                        Klient zadaje trudne pytanie o parametry techniczne. Handlowiec musi dzwonić do działu technicznego lub samemu wertować całą dokumentację.
                                         <strong>Rozwiązanie:</strong>
-                                        Agent "Mózg" natychmiast znajduje odpowiedź. Handlowiec utrzymuje tempo rozmowy, a dział techniczny nie jest odrywany od pracy.
+                                        Agent „Mózg” natychmiast znajduje odpowiedź. Handlowiec utrzymuje tempo rozmowy, a dział techniczny nie jest odrywany od pracy.
                                     </div>
                                 </details>
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Ile zarobiliśmy na kliencie X w ostatnim półroczu?"</summary>
+                                    <summary class="industry-case__summary">„Ile zarobiliśmy na kliencie X w ostatnim półroczu?”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        Zbieranie danych z systemu księgowego i CRM zajmuje kwadrans.
+                                        Zbieranie danych z systemu księgowego i CRM zajmuje kwadrans.
                                         <strong>Rozwiązanie:</strong>
-                                        Agent AI pobiera dane z obu systemów, sumuje marżę i wyświetla gotowy wynik. Bez wchodzenia do żadnego systemu, bez czekania.
+                                        Agent AI pobiera dane z obu systemów, sumuje marżę i wyświetla gotowy wynik. Bez wchodzenia do żadnego systemu, bez czekania.
                                     </div>
                                 </details>
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Sprawdź specyfikację techniczną w 20 plikach PDF"</summary>
+                                    <summary class="industry-case__summary">„Sprawdź specyfikację techniczną w 20 plikach PDF”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        Ręczne szukanie konkretnego parametru w setkach stron dokumentacji technicznej.
+                                        Ręczne szukanie konkretnego parametru w setkach stron dokumentacji technicznej.
                                         <strong>Rozwiązanie:</strong>
-                                        Agent "przeczytał" dokumentację i natychmiast odpowiada, która część spełnia Twoje wymogi.
+                                        Agent „przeczytał” dokumentację i natychmiast odpowiada, która część spełnia Twoje wymogi.
                                     </div>
                                 </details>
                             </div>
@@ -465,8 +473,8 @@
                         <div class="solutions__content" id="solution-2">
                             <div class="solutions__main-info">
                                 <div class="solutions__text">
-                                    <h3>Codzienne wsparcie w pracy</h3>
-                                    <p>Agent ma dostęp do Twojego kalendarza, skrzynki mailowej i Internetu. Działa jako najbardziej efektywny asystent, którego nie musisz uczyć wszystkiego od nowa.</p>
+                                    <h3>Codzienne wsparcie w pracy</h3>
+                                    <p>Agent ma dostęp do Twojego kalendarza, skrzynki mailowej i Internetu. Działa jako najbardziej efektywny asystent, którego nie musisz uczyć wszystkiego od nowa.</p>
                                     <ul class="solutions__features">
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -474,11 +482,11 @@
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Rezerwowanie terminów i pilnowanie kalendarza
+                                            Rezerwowanie terminów i pilnowanie kalendarza
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Szukanie firm i kontaktów w czasie rzeczywistym
+                                            Szukanie firm i kontaktów w czasie rzeczywistym
                                         </li>
                                     </ul>
                                 </div>
@@ -500,21 +508,21 @@
                             <div class="solutions__examples">
                                 <span class="solutions__example-heading">Możliwe zastosowania</span>
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Znajdź 10 firm z Krakowa zajmujących się obróbką CNC"</summary>
+                                    <summary class="industry-case__summary">„Znajdź 10 firm z Krakowa zajmujących się obróbką CNC”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        Pracownik musi samodzielnie przeglądać dziesiątki stron w Google i LinkedIn, by zebrać użyteczną listę.
+                                        Pracownik musi samodzielnie przeglądać dziesiątki stron w Google i LinkedIn, by zebrać użyteczną listę.
                                         <strong>Rozwiązanie:</strong>
-                                        Agent przeszukuje sieć, weryfikuje branżę i dostarcza gotową listę z linkami i telefonami. Bez tracenia czasu na żmudny research.
+                                        Agent przeszukuje sieć, weryfikuje branżę i dostarcza gotową listę z linkami i telefonami. Bez tracenia czasu na żmudny research.
                                     </div>
                                 </details>
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Odpisz na maila z prośbą o przesłanie cennika"</summary>
+                                    <summary class="industry-case__summary">„Odpisz na maila z prośbą o przesłanie cennika”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        Handlowiec traci czas na wklejanie tych samych treści i załączników.
+                                        Handlowiec traci czas na wklejanie tych samych treści i załączników.
                                         <strong>Rozwiązanie:</strong>
-                                        Agent sam przygotowuje roboczą wersję maila z odpowiednimi załącznikami — handlowiec musi tylko kliknąć "Wyślij".
+                                        Agent sam przygotowuje roboczą wersję maila z odpowiednimi załącznikami – handlowiec musi tylko kliknąć „Wyślij”.
                                     </div>
                                 </details>
                             </div>
@@ -524,8 +532,8 @@
                         <div class="solutions__content" id="solution-3">
                             <div class="solutions__main-info">
                                 <div class="solutions__text">
-                                    <h3>Planowanie i wyceny, które wcześniej zajmowały godziny</h3>
-                                    <p>Wdrażamy agentów, którzy radzą sobie z zadaniami zbyt złożonymi dla arkusza kalkulacyjnego — jak planowanie tras dla całej floty czy wycena produkcji z uwzględnieniem bieżących cen materiałów.</p>
+                                    <h3>Planowanie i wyceny, które wcześniej zajmowały godziny</h3>
+                                    <p>Wdrażamy agentów, którzy radzą sobie z zadaniami zbyt złożonymi dla arkusza kalkulacyjnego – jak planowanie tras dla całej floty czy wycena produkcji z uwzględnieniem bieżących cen materiałów.</p>
                                     <ul class="solutions__features">
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -537,7 +545,7 @@
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Przewidywanie opóźnień i proaktywne informowanie
+                                            Przewidywanie opóźnień i proaktywne informowanie
                                         </li>
                                     </ul>
                                 </div>
@@ -558,21 +566,21 @@
                             <div class="solutions__examples">
                                 <span class="solutions__example-heading">Możliwe zastosowania</span>
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Mamy 100 przesyłek i 5 aut. Jak to najtaniej rozwieźć?"</summary>
+                                    <summary class="industry-case__summary">„Mamy 100 przesyłek i 5 aut. Jak to najtaniej rozwieźć?”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
                                         Spedytor musi ręcznie grupować zlecenia, co rzadko jest rozwiązaniem matematycznie optymalnym.
                                         <strong>Rozwiązanie:</strong>
-                                        Agent AI analizuje systemy drogowe, okna czasowe klientów i pojemność aut, podając gotowy plan załadunku i trasy.
+                                        Agent AI analizuje systemy drogowe, okna czasowe klientów i pojemność aut, podając gotowy plan załadunku i trasy.
                                     </div>
                                 </details>
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Wyceń to zlecenie biorąc pod uwagę bieżące ceny stali"</summary>
+                                    <summary class="industry-case__summary">„Wyceń to zlecenie biorąc pod uwagę bieżące ceny stali”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
                                         Ceny surowców zmieniają się co tydzień. Kalkulacja oferty to ryzyko błędu.
                                         <strong>Rozwiązanie:</strong>
-                                        Agent sprawdza kursy surowców na giełdach lub w cennikach dostawców i automatycznie koryguje Twoją marżę w ofercie.
+                                        Agent sprawdza kursy surowców na giełdach lub w cennikach dostawców i automatycznie koryguje Twoją marżę w ofercie.
                                     </div>
                                 </details>
                             </div>
@@ -587,16 +595,16 @@
         <!-- ====================================================
              SEKCJA 3.5: AGENCI A APLIKACJE
              ==================================================== -->
-        <section style="padding: var(--space-16) 0; background: var(--color-slate-950);" aria-label="Agenci AI jako część aplikacji">
+        <section style="padding: var(--space-16) 0; background: var(--color-surface-alt);" aria-label="Agenci AI jako część aplikacji">
             <div style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding);">
                 <div class="agent-context-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center;" data-animate="fade-up">
                     <div>
-                        <span class="section-label">Jak to działa w praktyce</span>
-                        <h2 style="font-size: var(--text-3xl); line-height: 1.2; color: var(--color-white); margin: var(--space-4) 0 var(--space-6);">Agent nie zawsze stoi sam. Często jest sercem całej aplikacji.</h2>
-                        <p style="color: var(--color-slate-300); font-size: var(--text-lg); line-height: 1.7; margin-bottom: var(--space-4);">Wiele procesów ma zbyt wiele wariantów i wyjątków, żeby opisać je jako prostą automatyzację. Tutaj wkracza Agent AI — wbudowany w dedykowaną aplikację, która zarządza przepływem, zbiera dane, prezentuje wyniki i pozwala ludziom zatwierdzać decyzje.</p>
-                        <p style="color: var(--color-slate-400); font-size: var(--text-base); line-height: 1.7;">Przykład: aplikacja do obsługi zapytań ofertowych, gdzie Agent czyta pliki techniczne, dobiera materiały, liczy koszty i generuje wstępną wycenę — a handlowiec tylko weryfikuje i zatwierdza. Jeden system, agent w środku, zero kopiowania danych między narzędziami.</p>
+                        <span class="section-label">Jak to działa w praktyce</span>
+                        <h2 style="font-size: var(--text-3xl); line-height: 1.2; color: var(--color-slate-900); margin: var(--space-4) 0 var(--space-6);">Agent nie zawsze stoi sam. Często jest sercem całej aplikacji.</h2>
+                        <p style="color: var(--color-slate-600); font-size: var(--text-lg); line-height: 1.7; margin-bottom: var(--space-4);">Wiele procesów ma zbyt wiele wariantów i wyjątków, żeby opisać je jako prostą automatyzację. Tutaj wkracza Agent AI – wbudowany w dedykowaną aplikację, która zarządza przepływem, zbiera dane, prezentuje wyniki i pozwala ludziom zatwierdzać decyzje.</p>
+                        <p style="color: var(--color-slate-600); font-size: var(--text-base); line-height: 1.7;">Przykład: aplikacja do obsługi zapytań ofertowych, gdzie Agent czyta pliki techniczne, dobiera materiały, liczy koszty i generuje wstępną wycenę – a handlowiec tylko weryfikuje i zatwierdza. Jeden system, agent w środku, zero kopiowania danych między narzędziami.</p>
                     </div>
-                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-xl); padding: var(--space-8);">
+                    <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-card);">
                         <p style="font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-slate-500); margin-bottom: var(--space-6);">Kiedy agent + aplikacja, kiedy sama automatyzacja?</p>
                         <div style="display: flex; flex-direction: column; gap: var(--space-5);">
                             <div style="display: flex; gap: var(--space-4); align-items: flex-start;">
@@ -604,8 +612,8 @@
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4.5" stroke="var(--color-primary-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                 </div>
                                 <div>
-                                    <p style="font-weight: var(--font-semibold); color: var(--color-white); font-size: var(--text-sm); margin-bottom: var(--space-1);">Prosta automatyzacja</p>
-                                    <p style="color: var(--color-slate-400); font-size: var(--text-sm);">Jeden, powtarzalny ciąg kroków bez rozgałęzień. np. wysyłka faktury po płatności.</p>
+                                    <p style="font-weight: var(--font-semibold); color: var(--color-slate-900); font-size: var(--text-sm); margin-bottom: var(--space-1);">Prosta automatyzacja</p>
+                                    <p style="color: var(--color-slate-600); font-size: var(--text-sm);">Jeden, powtarzalny ciąg kroków bez rozgałęzień. np. wysyłka faktury po płatności.</p>
                                 </div>
                             </div>
                             <div style="display: flex; gap: var(--space-4); align-items: flex-start;">
@@ -613,8 +621,8 @@
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#8b5cf6" stroke-width="1.5"/><path d="M8 5v3l2 2" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/></svg>
                                 </div>
                                 <div>
-                                    <p style="font-weight: var(--font-semibold); color: var(--color-white); font-size: var(--text-sm); margin-bottom: var(--space-1);">Agent AI</p>
-                                    <p style="color: var(--color-slate-400); font-size: var(--text-sm);">Wiele wariantów, decyzje w czasie rzeczywistym, praca na nieustrukturyzowanych danych.</p>
+                                    <p style="font-weight: var(--font-semibold); color: var(--color-slate-900); font-size: var(--text-sm); margin-bottom: var(--space-1);">Agent AI</p>
+                                    <p style="color: var(--color-slate-600); font-size: var(--text-sm);">Wiele wariantów, decyzje w czasie rzeczywistym, praca na nieustrukturyzowanych danych.</p>
                                 </div>
                             </div>
                             <div style="display: flex; gap: var(--space-4); align-items: flex-start;">
@@ -622,8 +630,8 @@
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#10b981" stroke-width="1.5"/><path d="M5 8h6M8 5v6" stroke="#10b981" stroke-width="1.5" stroke-linecap="round"/></svg>
                                 </div>
                                 <div>
-                                    <p style="font-weight: var(--font-semibold); color: var(--color-white); font-size: var(--text-sm); margin-bottom: var(--space-1);">Agent + dedykowana aplikacja</p>
-                                    <p style="color: var(--color-slate-400); font-size: var(--text-sm);">Złożone procesy, wiele działów, interfejs dla zespołu, zatwierdzanie decyzji przez człowieka.</p>
+                                    <p style="font-weight: var(--font-semibold); color: var(--color-slate-900); font-size: var(--text-sm); margin-bottom: var(--space-1);">Agent + dedykowana aplikacja</p>
+                                    <p style="color: var(--color-slate-600); font-size: var(--text-sm);">Złożone procesy, wiele działów, interfejs dla zespołu, zatwierdzanie decyzji przez człowieka.</p>
                                 </div>
                             </div>
                         </div>
@@ -641,8 +649,8 @@
 
                     <div class="safety-standards__header">
                         <span class="section-label" style="color: var(--color-primary-light)">Stabilność & Privacy</span>
-                        <h2 style="color: var(--color-white)">Prywatne AI z Twoją wiedzą</h2>
-                        <p style="color: var(--color-slate-400); max-width: 600px; margin: var(--space-4) auto 0;">Nie używamy Twoich danych do trenowania publicznych modeli. Budujemy bezpieczne środowiska, w których Twoja wiedza firmowa pozostaje tylko Twoją.</p>
+                        <h2 style="color: var(--color-slate-900)">Prywatne AI z Twoją wiedzą</h2>
+                        <p style="color: var(--color-slate-400); max-width: 600px; margin: var(--space-4) auto 0;">Nie używamy Twoich danych do trenowania publicznych modeli. Budujemy bezpieczne środowiska, w których Twoja wiedza firmowa pozostaje tylko Twoją.</p>
                     </div>
 
                     <div class="safety-standards__grid">
@@ -653,7 +661,7 @@
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                             </div>
                             <h3>Izolacja danych firmowych</h3>
-                            <p>Agent pracuje na wydzielonym, prywatnym serwerze. Twoje bazy danych i pliki nigdy nie wychodzą poza bezpieczne środowisko Twojej firmy.</p>
+                            <p>Agent pracuje na wydzielonym, prywatnym serwerze. Twoje bazy danych i pliki nigdy nie wychodzą poza bezpieczne środowisko Twojej firmy.</p>
                         </div>
 
                         <div class="safety-card">
@@ -661,16 +669,16 @@
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"></path></svg>
                             </div>
                             <h3>Transparentność źródeł</h3>
-                            <p>Nie zgadujesz, czy odpowiedź jest prawdziwa. Nasze AI zawsze pokazuje, z którego dokumentu lub zapisu wzięło daną informację. Pełna możliwość weryfikacji.</p>
+                            <p>Nie zgadujesz, czy odpowiedź jest prawdziwa. Nasze AI zawsze pokazuje, z którego dokumentu lub zapisu wzięło daną informację. Pełna możliwość weryfikacji.</p>
                         </div>
 
                         <div class="safety-card">
-                            <div class="safety-card__badge">Zero działań w tle</div>
+                            <div class="safety-card__badge">Zero działań w tle</div>
                             <div class="safety-card__icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                             </div>
                             <h3>Pełna kontrola dostępu</h3>
-                            <p>Agent ma dostęp tylko do tego, na co wyraźnie pozwolisz. Nie przegląda maili ani plików "pod spodem", jeśli nie dasz mu do tego uprawnień. Działa wyłącznie na polecenie lub w ramach zdefiniowanych zadań.</p>
+                            <p>Agent ma dostęp tylko do tego, na co wyraźnie pozwolisz. Nie przegląda maili ani plików „pod spodem”, jeśli nie dasz mu do tego uprawnień. Działa wyłącznie na polecenie lub w ramach zdefiniowanych zadań.</p>
                         </div>
 
                     </div>
@@ -685,7 +693,7 @@
         <section class="process-section" id="model-wspolpracy" aria-label="Jak wdrażamy agentów AI">
             <div class="process-section__container">
                 <div class="process-section__header" data-animate="fade-up">
-                    <span class="section-label" style="color: var(--color-primary)">Twój Agent w 4 krokach</span>
+                    <span class="section-label" style="color: var(--color-primary)">Twój Agent w 4 krokach</span>
                     <h2>Model wdrożenia</h2>
                 </div>
 
@@ -695,7 +703,7 @@
                         <div class="process-step__number">1</div>
                         <div class="process-step__content">
                             <h3>Mapowanie procesów</h3>
-                            <p>Szukamy miejsc, w których Twoi pracownicy "utknęli". Identyfikujemy zadania nudne, powtarzalne i wysoce logiczne, które Agent przejmie jako pierwsze.</p>
+                            <p>Szukamy miejsc, w których Twoi pracownicy „utknęli”. Identyfikujemy zadania nudne, powtarzalne i wysoce logiczne, które Agent przejmie jako pierwsze.</p>
                         </div>
                     </div>
 
@@ -703,7 +711,7 @@
                         <div class="process-step__number">2</div>
                         <div class="process-step__content">
                             <h3>Integracja wiedzy</h3>
-                            <p>Łączymy Agenta z Twoimi dokumentami i systemami. Budujemy bazę wiedzy, która pozwala mu "rozumieć" specyfikę Twojej firmy.</p>
+                            <p>Łączymy Agenta z Twoimi dokumentami i systemami. Budujemy bazę wiedzy, która pozwala mu „rozumieć” specyfikę Twojej firmy.</p>
                         </div>
                     </div>
 
@@ -711,8 +719,8 @@
                         <div class="process-step__number">3</div>
                         <div class="process-step__number-line"></div>
                         <div class="process-step__content">
-                            <h3>Rygorystyczne i bezpieczne testy</h3>
-                            <p>Agenci AI wymagają więcej testów niż proste automatyzacje. Pracują dłużej w środowisku testowym na tysiącach zmiennych, abyśmy mieli 100% pewności, że działają bezbłędnie przed oddaniem do produkcji.</p>
+                            <h3>Rygorystyczne i bezpieczne testy</h3>
+                            <p>Agenci AI wymagają więcej testów niż proste automatyzacje. Pracują dłużej w środowisku testowym na tysiącach zmiennych, abyśmy mieli 100% pewności, że działają bezbłędnie przed oddaniem do produkcji.</p>
                         </div>
                     </div>
 
@@ -720,7 +728,7 @@
                         <div class="process-step__number">4</div>
                         <div class="process-step__content">
                             <h3>Przekazanie sterów</h3>
-                            <p>Wdrażamy Agenta do produkcji. Twój zespół dostaje narzędzie, z którym może rozmawiać i któremu może zlecać zadania. Monitorujemy efektywność i optymalizujemy działanie.</p>
+                            <p>Wdrażamy Agenta do produkcji. Twój zespół dostaje narzędzie, z którym może rozmawiać i któremu może zlecać zadania. Monitorujemy efektywność i optymalizujemy działanie.</p>
                         </div>
                     </div>
 
@@ -759,7 +767,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="form-subject">W czym Agent AI miałby Wam pomóc?</label>
+                            <label class="form-label" for="form-subject">W czym Agent AI miałby Wam pomóc?</label>
                             <textarea id="form-subject" class="form-textarea" placeholder="Napisz krótko o procesie, który chcesz usprawnić (np. logistyka, analizy, research)." rows="3" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" required></textarea>
                         </div>
 
@@ -772,7 +780,14 @@
                         <div class="form-checkbox-group">
                             <input type="checkbox" id="form-consent" class="form-checkbox" required>
                             <label for="form-consent" class="form-checkbox-label">
-                                Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi zgłoszenia. Wyrażam zgodę na otrzymywanie informacji handlowych od LogicMorrow drogą elektroniczną na podany adres e-mail. <a href="/polityka-prywatnosci.html" target="_blank">Polityka Prywatności.</a>
+                                Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi mojego zgłoszenia. Szczegóły w <a href="/polityka-prywatnosci.html" target="_blank" rel="noopener">Polityce Prywatności</a>.
+                            </label>
+                        </div>
+
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="form-marketing" class="form-checkbox">
+                            <label for="form-marketing" class="form-checkbox-label">
+                                Chcę dodatkowo otrzymywać informacje handlowe od LogicMorrow drogą elektroniczną na podany adres e-mail (opcjonalnie – niewymagane do kontaktu).
                             </label>
                         </div>
 
@@ -808,7 +823,7 @@
             <div class="faq-section__container">
                 <div class="faq-section__header" data-animate="fade-up">
                     <span class="section-label" style="color: var(--color-primary-light)">FAQ</span>
-                    <h2 style="color: var(--color-white)">Pytania o Agentów AI</h2>
+                    <h2 style="color: var(--color-slate-900)">Pytania o Agentów AI</h2>
                 </div>
 
                 <div class="faq-accordion" data-animate="fade-up">
@@ -821,7 +836,7 @@
                         </button>
                         <div class="faq-accordion__content">
                             <div class="faq-accordion__answer">
-                                Budowa agentów AI to procesy bardziej złożone i czasochłonne niż proste automatyzacje. Koszt wdrożenia dedykowanego rozwiązania zaczyna się od kilkunastu tysięcy złotych. Wynika to z konieczności głębokiej integracji z wiedzą firmową, dłuższego okresu testowego oraz dbałości o to, by system radził sobie z niestandardowymi procesami o dużej liczbie zmiennych.
+                                Budowa agentów AI to procesy bardziej złożone i czasochłonne niż proste automatyzacje. Koszt wdrożenia dedykowanego rozwiązania zaczyna się od kilkunastu tysięcy złotych. Wynika to z konieczności głębokiej integracji z wiedzą firmową, dłuższego okresu testowego oraz dbałości o to, by system radził sobie z niestandardowymi procesami o dużej liczbie zmiennych.
                             </div>
                         </div>
                     </div>
@@ -833,7 +848,7 @@
                         </button>
                         <div class="faq-accordion__content">
                             <div class="faq-accordion__answer">
-                                Tradycyjne chatboty potrafią podawać nieprawdziwe informacje, bo opierają się na własnych domysłach. Nasze rozwiązanie działa inaczej: agent odpowiada wyłącznie na podstawie Twoich dokumentów i baz danych. Jeśli czegoś nie ma w Twoich zasobach — agent o tym wprost poinformuje, zamiast zgadywać. Każda odpowiedź zawiera link do dokumentu źródłowego.
+                                Tradycyjne chatboty potrafią podawać nieprawdziwe informacje, bo opierają się na własnych domysłach. Nasze rozwiązanie działa inaczej: agent odpowiada wyłącznie na podstawie Twoich dokumentów i baz danych. Jeśli czegoś nie ma w Twoich zasobach – agent o tym wprost poinformuje, zamiast zgadywać. Każda odpowiedź zawiera link do dokumentu źródłowego.
                             </div>
                         </div>
                     </div>
@@ -845,19 +860,19 @@
                         </button>
                         <div class="faq-accordion__content">
                             <div class="faq-accordion__answer">
-                                Naszym celem nie jest zastępowanie ludzi, ale zdejmowanie z nich "robotycznej" pracy. AI zajmuje się powtarzalnym planowaniem, przeszukiwaniem plików i kopiowaniem danych, dzięki czemu Twój zespół może skupić się na budowaniu relacji z klientami i podejmowaniu strategicznych decyzji.
+                                Naszym celem nie jest zastępowanie ludzi, ale zdejmowanie z nich „robotycznej” pracy. AI zajmuje się powtarzalnym planowaniem, przeszukiwaniem plików i kopiowaniem danych, dzięki czemu Twój zespół może skupić się na budowaniu relacji z klientami i podejmowaniu strategicznych decyzji.
                             </div>
                         </div>
                     </div>
 
                     <div class="faq-accordion__item">
                         <button class="faq-accordion__header">
-                            <span>Z jakimi systemami może połączyć się Agent?</span>
+                            <span>Z jakimi systemami może połączyć się Agent?</span>
                             <div class="faq-accordion__icon"></div>
                         </button>
                         <div class="faq-accordion__content">
                             <div class="faq-accordion__answer">
-                                Z większością nowoczesnych programów księgowych i sprzedażowych oraz systemów zarządzania magazynem. Przeszkolimy Asystenta by swobodnie pobierał informacje z waszych firmowych plików Excel lub PDF.
+                                Z większością nowoczesnych programów księgowych i sprzedażowych oraz systemów zarządzania magazynem. Przeszkolimy Asystenta by swobodnie pobierał informacje z waszych firmowych plików Excel lub PDF.
                             </div>
                         </div>
                     </div>

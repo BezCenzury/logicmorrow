@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jak Pracujemy — Stała Cena, Pełna Własność Kodu | LogicMorrow</title>
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>Jak Pracujemy – Stała Cena, Pełna Własność Kodu | LogicMorrow</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#2563eb">
-    <meta name="description" content="Proof of Concept w 2–3 tygodnie. Stała cena. Pełna własność kodu. Bezpośredni kontakt z inżynierem. Dowiedz się, jak wygląda współpraca z LogicMorrow.">
+    <meta name="description" content="Proof of Concept w 2–4 tygodnie. Stała cena. Pełna własność kodu. Bezpośredni kontakt z inżynierem. Dowiedz się, jak wygląda współpraca z LogicMorrow.">
 
     <!-- SEO: Canonical + Open Graph + Twitter Card -->
     <link rel="canonical" href="https://logicmorrow.pl/model-pracy.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://logicmorrow.pl/model-pracy.html">
-    <meta property="og:title" content="Jak Pracujemy — Stała Cena, Pełna Własność Kodu | LogicMorrow">
-    <meta property="og:description" content="Pilotaż w 2–3 tygodnie. Stała cena. Pełna własność kodu. Bezpośredni kontakt z inżynierem. Dowiedz się, jak wygląda współpraca z LogicMorrow.">
+    <meta property="og:title" content="Jak Pracujemy – Stała Cena, Pełna Własność Kodu | LogicMorrow">
+    <meta property="og:description" content="Pilotaż w 2–4 tygodnie. Stała cena. Pełna własność kodu. Bezpośredni kontakt z inżynierem. Dowiedz się, jak wygląda współpraca z LogicMorrow.">
     <meta property="og:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="LogicMorrow">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jak Pracujemy — Stała Cena, Pełna Własność Kodu | LogicMorrow">
-    <meta name="twitter:description" content="Pilotaż w 2–3 tygodnie. Stała cena. Pełna własność kodu. Bezpośredni kontakt z inżynierem. Dowiedz się, jak wygląda współpraca z LogicMorrow.">
+    <meta name="twitter:title" content="Jak Pracujemy – Stała Cena, Pełna Własność Kodu | LogicMorrow">
+    <meta name="twitter:description" content="Pilotaż w 2–4 tygodnie. Stała cena. Pełna własność kodu. Bezpośredni kontakt z inżynierem. Dowiedz się, jak wygląda współpraca z LogicMorrow.">
     <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
 
     <!-- ═══════════════════════════════════════════════════════
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
          ═══════════════════════════════════════════════════════ -->
 
-    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -65,7 +68,7 @@
         })();
     </script>
 
-    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <!-- [3] Google Tag Manager – zastąp GTM-XXXXXXX docelowym ID -->
     <script>(function(w,d,s,l,i){
         w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
         var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
@@ -74,10 +77,10 @@
     })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 
     <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
 
-    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
     <style>
         :root {
             --cc-btn-primary-bg: #2563eb;
@@ -92,6 +95,9 @@
             --cc-overlay-bg: rgba(0, 0, 0, 0.55);
         }
         #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
         #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
     </style>
 
@@ -104,8 +110,8 @@
           "@type": "WebPage",
           "@id": "https://logicmorrow.pl/model-pracy.html",
           "url": "https://logicmorrow.pl/model-pracy.html",
-          "name": "Jak Pracujemy — Stała Cena, Pełna Własność Kodu | LogicMorrow",
-          "description": "Proof of Concept w 2–3 tygodnie. Stała cena. Pełna własność kodu. Bezpośredni kontakt z inżynierem. Dowiedz się, jak wygląda współpraca z LogicMorrow.",
+          "name": "Jak Pracujemy – Stała Cena, Pełna Własność Kodu | LogicMorrow",
+          "description": "Proof of Concept w 2–4 tygodnie. Stała cena. Pełna własność kodu. Bezpośredni kontakt z inżynierem. Dowiedz się, jak wygląda współpraca z LogicMorrow.",
           "inLanguage": "pl-PL",
           "isPartOf": { "@id": "https://logicmorrow.pl/#website" }
         },
@@ -120,7 +126,7 @@
           "@type": "Service",
           "name": "Automatyzacja Procesów i Aplikacje Webowe",
           "provider": { "@type": "ProfessionalService", "name": "LogicMorrow", "url": "https://logicmorrow.pl" },
-          "description": "Model PoC: jeden konkretny proces, stała cena, wdrożenie w 2–3 tygodnie. Pełna własność kodu i dokumentacji po projekcie. Brak vendor lock-in.",
+          "description": "Model PoC: jeden konkretny proces, stała cena, wdrożenie w 2–4 tygodnie. Pełna własność kodu i dokumentacji po projekcie. Brak vendor lock-in.",
           "areaServed": "PL",
           "offers": {
             "@type": "Offer",
@@ -133,9 +139,8 @@
     </script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Base CSS -->
     <link rel="stylesheet" href="css/base/variables.css">
@@ -182,7 +187,7 @@
                         Nie sprzedajemy obietnic bez pokrycia. Każdy projekt dzielimy na mierzalne etapy, które pozwalają Ci zweryfikować wartość wdrożenia zanim zaangażujesz większe środki.
                     </p>
                     <div class="hero__actions">
-                        <a href="/konsultacja.html" class="btn btn--primary btn--arrow">Umów bezpłatną analizę</a>
+                        <a href="/konsultacja.html" class="btn btn--primary btn--arrow">Umów bezpłatną konsultację</a>
                     </div>
                 </div>
 
@@ -265,8 +270,8 @@
 
                 <div class="section-header" data-animate="fade-up">
                     <span class="section-label" style="color: var(--color-primary); font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">Metodologia</span>
-                    <h2>Twój wzrost w 4 krokach</h2>
-                    <p class="lead">Budujemy fundamenty, które pozwalają bezpiecznie piąć się w górę.</p>
+                    <h2>Twój wzrost w 4 krokach</h2>
+                    <p class="lead">Najpierw porządkujemy proces, potem dokładamy technologię. Każdy krok możesz sprawdzić, zanim zaangażujesz większe środki.</p>
                 </div>
 
                 <div class="poc-stairs">
@@ -275,8 +280,8 @@
                     <div class="poc-stair poc-stair--1" data-animate="fade-up">
                         <div class="poc-stair__card">
                             <div class="poc-stair__number">01</div>
-                            <h3>Bezpłatna Konsultacja</h3>
-                            <p>Definiujemy problem i szukamy mierzalnych oszczędności. Szukamy fundamentu pod rentowny projekt.</p>
+                            <h3>Audyt i bezpłatna konsultacja</h3>
+                            <p>Rozkładamy Twój proces na części: co się dzieje krok po kroku, gdzie dane krążą z ręki do ręki i gdzie firma traci czas. Najpierw porządek, potem liczymy, czy automatyzacja się opłaca.</p>
                         </div>
                         <div class="poc-stair__block"></div>
                     </div>
@@ -285,8 +290,8 @@
                     <div class="poc-stair poc-stair--2" data-animate="fade-up" data-delay="100">
                         <div class="poc-stair__card">
                             <div class="poc-stair__number">02</div>
-                            <h3>Wycena i Plan</h3>
-                            <p>Przygotowuję stałą ofertę na pierwszy, konkretny moduł — jeden wybrany proces. Znasz cenę i termin zanim ruszymy.</p>
+                            <h3>Wycena i Plan</h3>
+                            <p>Przygotowuję stałą ofertę na pierwszy, konkretny moduł – jeden wybrany proces. Znasz cenę i termin zanim ruszymy.</p>
                         </div>
                         <div class="poc-stair__block"></div>
                     </div>
@@ -296,7 +301,7 @@
                         <div class="poc-stair__card">
                             <div class="poc-stair__number">03</div>
                             <h3>Testy bez ryzyka</h3>
-                            <p>Przez kilka tygodni nowy system działa obok starego — Twój zespół pracuje jak zwykle. Porównujemy wyniki. Stary proces wyłączamy dopiero gdy jesteśmy pewni, że nowy działa bezbłędnie. Żadnych zaskoczeń, żadnego "wszystko na raz".</p>
+                            <p>Przez kilka tygodni nowy system działa obok starego – Twój zespół pracuje jak zwykle. Porównujemy wyniki. Stary proces wyłączamy dopiero gdy jesteśmy pewni, że nowy działa bezbłędnie. Żadnych zaskoczeń, żadnego „wszystko na raz”.</p>
                         </div>
                         <div class="poc-stair__block"></div>
                     </div>
@@ -305,8 +310,8 @@
                     <div class="poc-stair poc-stair--4" data-animate="fade-up" data-delay="300">
                         <div class="poc-stair__card">
                             <div class="poc-stair__number">04</div>
-                            <h3>Odbiór i Dalszy Rozwój</h3>
-                            <p>Sprawdzasz wyniki. Masz gotowy, przetestowany system gotowy do wdrożenia w całej firmie.</p>
+                            <h3>Odbiór i Dalszy Rozwój</h3>
+                            <p>Sprawdzasz wyniki. Masz gotowy, przetestowany system gotowy do wdrożenia w całej firmie.</p>
                         </div>
                         <div class="poc-stair__block"></div>
                     </div>
@@ -335,7 +340,7 @@
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
                         </div>
                         <h3>Kod na własność</h3>
-                        <p>Otrzymujesz pełne prawa autorskie i dostęp do repozytorium. Nie jesteś "uwiązany" do wykonawcy — masz klucze do swojego domu.</p>
+                        <p>Otrzymujesz pełne prawa autorskie i dostęp do repozytorium. Nie jesteś „uwiązany” do wykonawcy – masz klucze do swojego domu.</p>
                     </div>
 
                     <div class="guarantee-card" data-animate="fade-up" data-delay="100">
@@ -351,7 +356,7 @@
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                         </div>
                         <h3>Stała cena. Bez niespodzianek.</h3>
-                        <p>Podpisujemy umowę na konkretną kwotę. Żadnych niespodziewanych faktur za "dodatkowe godziny", o których nikt nie uprzedzał.</p>
+                        <p>Podpisujemy umowę na konkretną kwotę. Żadnych niespodziewanych faktur za „dodatkowe godziny”, o których nikt nie uprzedzał.</p>
                     </div>
 
                     <div class="guarantee-card" data-animate="fade-up">
@@ -359,7 +364,7 @@
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                         </div>
                         <h3>Bezpośredni Kontakt</h3>
-                        <p>Rozmawiasz bezpośrednio z osobą, która buduje Twój system. Żadnych pośredników, żadnego głuchego telefonu. Szybka decyzja, konkretna odpowiedź.</p>
+                        <p>Rozmawiasz bezpośrednio z osobą, która buduje Twój system. Żadnych pośredników, żadnego głuchego telefonu. Szybka decyzja, konkretna odpowiedź.</p>
                     </div>
 
                     <div class="guarantee-card" data-animate="fade-up" data-delay="100">
@@ -367,7 +372,7 @@
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
                         </div>
                         <h3>Pełna Dokumentacja</h3>
-                        <p>System bez instrukcji to problem w przyszłości. Każde wdrożenie kończymy przekazaniem jasnej dokumentacji operacyjnej dla Twojego zespołu.</p>
+                        <p>System bez instrukcji to problem w przyszłości. Każde wdrożenie kończymy przekazaniem jasnej dokumentacji operacyjnej dla Twojego zespołu.</p>
                     </div>
 
                     <div class="guarantee-card" data-animate="fade-up" data-delay="200">
@@ -375,7 +380,7 @@
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
                         </div>
                         <h3>Bezpieczny Rozruch</h3>
-                        <p>Wdrożenie nie oznacza rewolucji. System uruchamiamy w tle, dając zespołowi czas na spokojną naukę nowych narzędzi bez przerywania dotychczasowej pracy.</p>
+                        <p>Wdrożenie nie oznacza rewolucji. System uruchamiamy w tle, dając zespołowi czas na spokojną naukę nowych narzędzi bez przerywania dotychczasowej pracy.</p>
                     </div>
 
                 </div>
@@ -392,10 +397,10 @@
                 <div class="consultation__header">
                     <span class="section-label" data-animate="fade-up">Zacznij tutaj</span>
                     <h2 data-animate="fade-up">
-                        Porozmawiajmy o Twoim projekcie.
+                        Porozmawiajmy o Twoim projekcie.
                     </h2>
                     <p data-animate="fade-up">
-                        20 minut. Zero nacisku sprzedażowego. Policzymy razem, czy automatyzacja ma mierzalny sens w Twojej firmie.
+                        20 minut. Zero nacisku sprzedażowego. Policzymy razem, czy automatyzacja ma mierzalny sens w Twojej firmie.
                     </p>
                 </div>
 
@@ -413,7 +418,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label" for="form-subject">O czym chcesz porozmawiać?</label>
+                            <label class="form-label" for="form-subject">O czym chcesz porozmawiać?</label>
                             <textarea id="form-subject" class="form-textarea" placeholder="Opisz krótko, co chcesz zmienić lub zautomatyzować w swojej firmie." rows="3" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" required></textarea>
                         </div>
 
@@ -426,7 +431,14 @@
                         <div class="form-checkbox-group">
                             <input type="checkbox" id="form-consent" class="form-checkbox" required>
                             <label for="form-consent" class="form-checkbox-label">
-                                Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi zgłoszenia. Wyrażam zgodę na otrzymywanie informacji handlowych od LogicMorrow drogą elektroniczną na podany adres e-mail. <a href="/polityka-prywatnosci.html" target="_blank">Polityka Prywatności.</a>
+                                Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi mojego zgłoszenia. Szczegóły w <a href="/polityka-prywatnosci.html" target="_blank" rel="noopener">Polityce Prywatności</a>.
+                            </label>
+                        </div>
+
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="form-marketing" class="form-checkbox">
+                            <label for="form-marketing" class="form-checkbox-label">
+                                Chcę dodatkowo otrzymywać informacje handlowe od LogicMorrow drogą elektroniczną na podany adres e-mail (opcjonalnie – niewymagane do kontaktu).
                             </label>
                         </div>
 
@@ -465,7 +477,7 @@
     <script src="js/animations.js"></script>
     <script src="js/forms.js"></script>
 
-    <!-- [6] Cookie Consent — inicjalizacja -->
+    <!-- [6] Cookie Consent – inicjalizacja -->
     <script src="/js/cookie-consent.js"></script>
 
 </body>

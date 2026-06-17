@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bezpłatna Konsultacja — Diagnoza Twojego procesu | LogicMorrow</title>
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>Bezpłatna Konsultacja – Diagnoza Twojego procesu | LogicMorrow</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#2563eb">
     <meta name="description" content="Opisz nam swój proces. Policzymy razem zwrot z inwestycji dla nowych ulepszeń w Twojej firmie. Bezpłatna analiza, konkretne rozwiązania, zero presji.">
@@ -16,7 +19,7 @@
     <link rel="canonical" href="https://logicmorrow.pl/konsultacja.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://logicmorrow.pl/konsultacja.html">
-    <meta property="og:title" content="Bezpłatna Konsultacja — Diagnoza Twojego procesu | LogicMorrow">
+    <meta property="og:title" content="Bezpłatna Konsultacja – Diagnoza Twojego procesu | LogicMorrow">
     <meta property="og:description" content="Opisz nam swój proces. Policzymy razem zwrot z inwestycji dla nowych ulepszeń w Twojej firmie. Bezpłatna analiza, konkretne rozwiązania, zero presji.">
     <meta property="og:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
@@ -24,7 +27,7 @@
     <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="LogicMorrow">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bezpłatna Konsultacja — Diagnoza Twojego procesu | LogicMorrow">
+    <meta name="twitter:title" content="Bezpłatna Konsultacja – Diagnoza Twojego procesu | LogicMorrow">
     <meta name="twitter:description" content="Opisz nam swój proces. Policzymy razem zwrot z inwestycji dla nowych ulepszeń w Twojej firmie. Bezpłatna analiza, konkretne rozwiązania, zero presji.">
     <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
 
@@ -32,7 +35,7 @@
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
          ═══════════════════════════════════════════════════════ -->
 
-    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -68,7 +71,7 @@
         })();
     </script>
 
-    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <!-- [3] Google Tag Manager – zastąp GTM-XXXXXXX docelowym ID -->
     <script>(function(w,d,s,l,i){
         w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
         var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
@@ -77,10 +80,10 @@
     })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 
     <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
 
-    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
     <style>
         :root {
             --cc-btn-primary-bg: #2563eb;
@@ -95,13 +98,15 @@
             --cc-overlay-bg: rgba(0, 0, 0, 0.55);
         }
         #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
         #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
     </style>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Base CSS -->
     <link rel="stylesheet" href="css/base/variables.css">
@@ -120,7 +125,7 @@
     <link rel="stylesheet" href="css/sections/workflow.css">
 </head>
 
-<body class="booking-page">
+<body class="booking-page" data-page="konsultacja">
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
@@ -137,13 +142,13 @@
                 <span class="badge badge--dark-green badge--dot">Skuteczna diagnoza · Realny wynik</span>
             </div>
 
-            <h1>Zdiagnozujmy wąskie gardła w Twojej firmie.</h1>
+            <h1>Zdiagnozujmy wąskie gardła w Twojej firmie.</h1>
             <p class="booking-info__desc">
-                Nie musisz znać się na AI czy automatyzacji. Musisz jednak wiedzieć, co w Twojej codziennej pracy boli najbardziej. My zadamy pytania, które pomogą nam wspólnie znaleźć rozwiązanie.
+                Nie musisz znać się na AI czy automatyzacji. Musisz jednak wiedzieć, co w Twojej codziennej pracy boli najbardziej. My zadamy pytania, które pomogą nam wspólnie znaleźć rozwiązanie.
             </p>
 
             <div class="booking-agenda">
-                <p class="booking-agenda__title">O czym będziemy rozmawiać?</p>
+                <p class="booking-agenda__title">O czym będziemy rozmawiać?</p>
                 <ul class="booking-agenda__list">
                     <li class="booking-agenda__item">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0; margin-top: 2px;"><circle cx="10" cy="10" r="10" fill="#10b981" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -151,11 +156,11 @@
                     </li>
                     <li class="booking-agenda__item">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0; margin-top: 2px;"><circle cx="10" cy="10" r="10" fill="#10b981" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        <span><strong>Miejsca strat:</strong> Wskażemy, gdzie "przepalasz" budżet na zbędną, manualną pracę.</span>
+                        <span><strong>Miejsca strat:</strong> Wskażemy, gdzie „przepalasz” budżet na zbędną, manualną pracę.</span>
                     </li>
                     <li class="booking-agenda__item">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="flex-shrink: 0; margin-top: 2px;"><circle cx="10" cy="10" r="10" fill="#10b981" opacity="0.1"/><path d="M6 10l3 3 5-5" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        <span><strong>Plan działania:</strong> Wyjdziesz z rozmowy z konkretnym pomysłem na kolejny krok.</span>
+                        <span><strong>Plan działania:</strong> Wyjdziesz z rozmowy z konkretnym pomysłem na kolejny krok.</span>
                     </li>
                 </ul>
             </div>
@@ -189,7 +194,14 @@
                     <div class="form-checkbox-group">
                         <input type="checkbox" id="form-consent" class="form-checkbox" required>
                         <label for="form-consent" class="form-checkbox-label">
-                            Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi zgłoszenia. Wyrażam zgodę na otrzymywanie informacji handlowych od LogicMorrow drogą elektroniczną na podany adres e-mail. <a href="/polityka-prywatnosci.html" target="_blank">Polityka Prywatności.</a>
+                            Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi mojego zgłoszenia. Szczegóły w <a href="/polityka-prywatnosci.html" target="_blank" rel="noopener">Polityce Prywatności</a>.
+                        </label>
+                    </div>
+
+                    <div class="form-checkbox-group">
+                        <input type="checkbox" id="form-marketing" class="form-checkbox">
+                        <label for="form-marketing" class="form-checkbox-label">
+                            Chcę dodatkowo otrzymywać informacje handlowe od LogicMorrow drogą elektroniczną na podany adres e-mail (opcjonalnie – niewymagane do kontaktu).
                         </label>
                     </div>
 
@@ -223,7 +235,7 @@
                     <span class="section-label">Twoja rola</span>
                     <h2>Masz firmę. Wiesz co nie działa.</h2>
                     <p>
-                        Nie oczekujemy od Ciebie prezentacji ani wykresów, ale oczekujemy szczerości w opisie Twojej codzienności biznesowej. Aby rozmowa dała Ci wartość, zastanów się:
+                        Nie oczekujemy od Ciebie prezentacji ani wykresów, ale oczekujemy szczerości w opisie Twojej codzienności biznesowej. Aby rozmowa dała Ci wartość, zastanów się:
                     </p>
                     <ul class="preparation__check-list" style="list-style: none; padding: 0; margin-bottom: var(--space-8); display: flex; flex-direction: column; gap: var(--space-4);">
                         <li style="display: flex; gap: var(--space-3); color: var(--color-slate-700);">
@@ -232,7 +244,7 @@
                         </li>
                         <li style="display: flex; gap: var(--space-3); color: var(--color-slate-700);">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-                            Gdzie najczęściej zdarzają się pomyłki i "fuck upy"?
+                            Gdzie najczęściej zdarzają się pomyłki i potknięcia?
                         </li>
                         <li style="display: flex; gap: var(--space-3); color: var(--color-slate-700);">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
@@ -241,14 +253,14 @@
                     </ul>
                     <div class="preparation__note">
                         <p>
-                            <strong>To my dobieramy technologię.</strong> Ty opowiadasz historię swoich procesów, a my zadajemy pytania, które pomogą nam wspólnie zdiagnozować źródło problemu.
+                            <strong>To my dobieramy technologię.</strong> Ty opowiadasz historię swoich procesów, a my zadajemy pytania, które pomogą nam wspólnie zdiagnozować źródło problemu.
                         </p>
                     </div>
                 </div>
                 <div class="preparation__guarantee" data-animate="fade-up">
                     <h3>Partnerskie podejście</h3>
                     <p>
-                        Nie szukamy szybkiej sprzedaży. Szukamy problemów, które możemy rozwiązać, generując dla Ciebie realny zwrot z inwestycji.
+                        Nie szukamy szybkiej sprzedaży. Szukamy problemów, które możemy rozwiązać, generując dla Ciebie realny zwrot z inwestycji.
                     </p>
                     <ul>
                         <li>
@@ -274,21 +286,21 @@
                 <div class="workflow__header">
                     <span class="workflow__badge">Jak działamy</span>
                     <h2>Poukładamy Twoje procesy na nowo</h2>
-                    <p>Zamiast rzucać hasłami o AI, skupiamy się na Twoim biznesie. Tak wygląda droga od diagnozy do oszczędności.</p>
+                    <p>Zamiast rzucać hasłami o AI, skupiamy się na Twoim biznesie. Tak wygląda droga od diagnozy do oszczędności.</p>
                 </div>
 
                 <div class="workflow__grid">
                     <!-- Card 01 -->
                     <div class="workflow-card" data-animate="fade-up" data-delay="100">
                         <div class="workflow-card__number">01</div>
-                        <h3>Bezpłatna Analiza i Diagnoza</h3>
-                        <p>Podczas wspólnej rozmowy rozbieramy Twoje procesy na czynniki pierwsze. Szukamy miejsc, gdzie firma "przepala" budżet na manualną pracę i błędy.</p>
+                        <h3>Bezpłatna Analiza i Diagnoza</h3>
+                        <p>Podczas wspólnej rozmowy rozbieramy Twoje procesy na czynniki pierwsze. Szukamy miejsc, gdzie firma „przepala” budżet na manualną pracę i błędy.</p>
                         <div class="workflow-card__visual">
                             <svg class="workflow-svg" viewBox="0 0 240 160">
                                 <circle cx="80" cy="80" r="25" fill="var(--color-primary)" fill-opacity="0.1" />
                                 <circle cx="160" cy="80" r="25" fill="var(--color-primary)" fill-opacity="0.1" />
                                 <path d="M105 80 Q120 70 135 80" stroke="var(--color-primary)" stroke-width="2" fill="none" stroke-dasharray="4 4" />
-                                <text x="120" y="55" text-anchor="middle" fill="var(--color-slate-400)" font-size="8">ROZMOWA O BIZNESIE</text>
+                                <text x="120" y="55" text-anchor="middle" fill="var(--color-slate-400)" font-size="8">ROZMOWA O BIZNESIE</text>
                                 <circle cx="80" cy="80" r="10" fill="var(--color-primary)" />
                                 <circle cx="160" cy="80" r="10" fill="var(--color-primary)" />
                             </svg>
@@ -298,8 +310,8 @@
                     <!-- Card 02 -->
                     <div class="workflow-card" data-animate="fade-up" data-delay="200">
                         <div class="workflow-card__number">02</div>
-                        <h3>Projekt i Przewidywane Zyski</h3>
-                        <p>Przekuwamy diagnozę w konkretny plan wdrożenia. Otrzymujesz propozycję narzędzi oraz wyliczenie, po jakim czasie inwestycja się zwróci.</p>
+                        <h3>Projekt i Przewidywane Zyski</h3>
+                        <p>Przekuwamy diagnozę w konkretny plan wdrożenia. Otrzymujesz propozycję narzędzi oraz wyliczenie, po jakim czasie inwestycja się zwróci.</p>
                         <div class="workflow-card__visual">
                             <svg class="workflow-svg" viewBox="0 0 240 160">
                                 <rect x="65" y="50" width="110" height="60" rx="4" fill="rgba(37, 99, 235, 0.05)" stroke="var(--color-primary)" stroke-width="1.5" />
@@ -313,8 +325,8 @@
                     <!-- Card 03 -->
                     <div class="workflow-card" data-animate="fade-up" data-delay="300">
                         <div class="workflow-card__number">03</div>
-                        <h3>Wdrożenie i Wzrost</h3>
-                        <p>Budujemy rozwiązanie, które eliminuje chaos. Odzyskujesz czas, który dotąd szedł na manualne zadania, i zyskujesz fundament pod dalszy, zdrowy wzrost firmy.</p>
+                        <h3>Wdrożenie i Wzrost</h3>
+                        <p>Budujemy rozwiązanie, które eliminuje chaos. Odzyskujesz czas, który dotąd szedł na manualne zadania, i zyskujesz fundament pod dalszy, zdrowy wzrost firmy.</p>
                         <div class="workflow-card__visual">
                             <svg class="workflow-svg" viewBox="0 0 240 160">
                                 <path d="M40 120 L80 100 L120 110 L160 70 L200 40" stroke="var(--color-success)" stroke-width="3" fill="none" />
@@ -340,16 +352,16 @@
             
             <div class="faq-list">
                 <div class="faq-item" data-animate="fade-up">
-                    <p class="booking-faq__q">"Czy muszę mieć listę wymagań biznesowych?"</p>
-                    <p class=”booking-faq__a”>Nie. Twoim zadaniem jest opisać sytuacje, w których firma „nie domyka” procesów lub traci czas. To my przekuwamy Twoją opowieść w wymagania techniczne i plan wdrożenia.</p>
+                    <p class="booking-faq__q">„Czy muszę mieć listę wymagań biznesowych?”</p>
+                    <p class="booking-faq__a">Nie. Twoim zadaniem jest opisać sytuacje, w których firma „nie domyka” procesów lub traci czas. To my przekuwamy Twoją opowieść w wymagania techniczne i plan wdrożenia.</p>
                 </div>
                 <div class="faq-item" data-animate="fade-up" data-delay="100">
-                    <p class="booking-faq__q">"Co jeśli nie wiem, czy to u mnie zadziała?"</p>
-                    <p class="booking-faq__a">Właśnie po to jest ta rozmowa. Uczciwie powiemy Ci, czy Twój problem rozwiązuje się za pomocą kilku prostych automatyzacji, czy wymaga budowy aplikacji, czy może w ogóle nie warto go w tym momencie ruszać.</p>
+                    <p class="booking-faq__q">„Co jeśli nie wiem, czy to u mnie zadziała?”</p>
+                    <p class="booking-faq__a">Właśnie po to jest ta rozmowa. Uczciwie powiemy Ci, czy Twój problem rozwiązuje się za pomocą kilku prostych automatyzacji, czy wymaga budowy aplikacji, czy może w ogóle nie warto go w tym momencie ruszać.</p>
                 </div>
                 <div class="faq-item" data-animate="fade-up" data-delay="200">
-                    <p class="booking-faq__q">"Na czym polega Wasza pomoc podczas samej rozmowy?"</p>
-                    <p class="booking-faq__a">Jesteśmy moderatorami. Zadajemy pytania o przepływ danych, punkty styku systemów i miejsca, w których pojawia się "człowiek-pośrednik". Pomagamy Ci nazwać problemy, które do tej pory traktowałeś jako "normalną, nudną pracę".</p>
+                    <p class="booking-faq__q">„Na czym polega Wasza pomoc podczas samej rozmowy?”</p>
+                    <p class="booking-faq__a">Jesteśmy moderatorami. Zadajemy pytania o przepływ danych, punkty styku systemów i miejsca, w których pojawia się „człowiek-pośrednik”. Pomagamy Ci nazwać problemy, które do tej pory traktowałeś jako „normalną, nudną pracę”.</p>
                 </div>
             </div>
         </div>

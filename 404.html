@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>Strona nie została znaleziona (404) | LogicMorrow</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Fonts -->
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="/css/base/variables.css">
+    <link rel="stylesheet" href="/css/base/reset.css">
+    <link rel="stylesheet" href="/css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/css/components/navbar.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/buttons.css">
+
+    <style>
+        .error-page {
+            min-height: 70vh;
+            min-height: 70dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10rem 1.5rem 6rem;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .error-page__code {
+            font-size: clamp(4rem, 18vw, 8rem);
+            font-weight: 900;
+            line-height: 1;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        .error-page__title {
+            margin-bottom: 1rem;
+        }
+        .error-page__desc {
+            color: var(--color-slate-500);
+            margin-bottom: 2.5rem;
+        }
+        .error-page__links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Globalny nagłówek (wstrzykiwany przez loader.js) -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="error-page">
+        <p class="error-page__code">404</p>
+        <h1 class="error-page__title">Tej strony nie ma (albo już jej nie ma).</h1>
+        <p class="error-page__desc">
+            Adres mógł się zmienić lub zawiera literówkę. Wróć na stronę główną
+            albo od razu umów bezpłatną konsultację.
+        </p>
+        <div class="error-page__links">
+            <a href="/" class="btn btn--primary btn--arrow">Wróć na stronę główną</a>
+            <a href="/konsultacja.html" class="btn btn--secondary">Umów bezpłatną konsultację</a>
+        </div>
+    </main>
+
+    <!-- Globalna stopka (wstrzykiwana przez loader.js) -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="/js/loader.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+</html>

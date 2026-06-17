@@ -21,16 +21,17 @@
 /* --- Karta ciemna --- */
 
 .card--dark {
-    background-color: var(--color-slate-800);
-    border-color: rgba(255, 255, 255, 0.06);
+    background-color: var(--color-surface-alt);
+    border-color: var(--color-border);
+    box-shadow: var(--shadow-card);
 }
 
 .card--dark .card__title {
-    color: var(--color-white);
+    color: var(--color-slate-900);
 }
 
 .card--dark .card__desc {
-    color: var(--color-slate-300);
+    color: var(--color-slate-600);
 }
 
 /* --- Karta z akcentem (lewa krawędź) --- */

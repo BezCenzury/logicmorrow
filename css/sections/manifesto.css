@@ -70,10 +70,10 @@
 }
 
 .manifesto__card--engineer {
-    background: var(--color-slate-950);
-    color: var(--color-white);
-    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color-surface);
+    color: var(--color-slate-900);
+    box-shadow: var(--shadow-elevated);
+    border: 1px solid var(--color-primary);
     transform: scale(1.03); /* Highlight card logic */
     z-index: 2;
 }
@@ -104,7 +104,7 @@
 }
 
 .manifesto__card--engineer .manifesto__card-title {
-    color: var(--color-white);
+    color: var(--color-slate-900);
 }
 
 /* --- Listy Cecha --- */
@@ -128,8 +128,8 @@
 }
 
 .manifesto__card--engineer .manifesto__feature {
-    color: var(--color-slate-300);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-slate-600);
+    border-bottom-color: var(--color-border);
 }
 
 .manifesto__feature:last-child {

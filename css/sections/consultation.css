@@ -4,8 +4,8 @@
 
 .consultation {
     padding: var(--space-24) 0;
-    background: var(--color-slate-950);
-    color: var(--color-white);
+    background: var(--color-surface);
+    color: var(--color-slate-900);
     position: relative;
     overflow: hidden;
 }
@@ -26,7 +26,7 @@
     right: -100px;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     z-index: 1;
     pointer-events: none;
@@ -39,7 +39,7 @@
     left: -150px;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 60%);
     border-radius: 50%;
     z-index: 1;
     pointer-events: none;
@@ -57,11 +57,11 @@
 /* --- Formularz --- */
 
 .consultation__form-wrapper {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     padding: var(--space-10);
-    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-card);
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -78,7 +78,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    opacity: 0.2;
+    opacity: 0.08;
     transform: rotate(12deg);
     pointer-events: none;
     z-index: -1;
@@ -101,15 +101,15 @@
 .form-label {
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
-    color: var(--color-slate-300);
+    color: var(--color-slate-700);
 }
 
 .form-input, .form-textarea, .form-select {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: var(--space-4) var(--space-5);
-    color: var(--color-white);
+    color: var(--color-slate-900);
     font-family: inherit;
     font-size: var(--text-base);
     transition: var(--transition-base);
@@ -118,12 +118,12 @@
 .form-input:focus, .form-textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--color-surface);
     box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
 .form-input::placeholder {
-    color: var(--color-slate-500);
+    color: var(--color-slate-400);
 }
 
 .form-textarea {
@@ -146,13 +146,13 @@
 }
 
 .form-checkbox-label {
-    font-size: 8px; /* Zmniejszone o 4px (z 12px na 8px) */
-    color: var(--color-slate-400);
+    font-size: 12px; /* min. czytelny rozmiar dla zgody RODO (a11y) */
+    color: var(--color-slate-600);
     line-height: 1.6;
 }
 
 .form-checkbox-label a {
-    color: var(--color-primary-light);
+    color: var(--color-primary);
     text-decoration: underline;
 }
 
@@ -160,7 +160,7 @@
 .consultation__direct {
     margin-top: var(--space-8);
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--color-border);
     padding-top: var(--space-6);
 }
 
@@ -185,18 +185,18 @@
     align-items: center;
     gap: var(--space-2);
     font-size: var(--text-sm);
-    color: var(--color-slate-300);
+    color: var(--color-slate-600);
     transition: var(--transition-base);
     font-weight: var(--font-medium);
 }
 
 .consultation__direct-link:hover {
-    color: var(--color-primary-light);
+    color: var(--color-primary);
     transform: translateY(-1px);
 }
 
 .consultation__direct-link svg {
-    color: var(--color-primary-light);
+    color: var(--color-primary);
 }
 
 /* --- Success state --- */
@@ -217,13 +217,13 @@
 .form-success__title {
     font-size: var(--text-2xl);
     font-weight: 700;
-    color: var(--color-white);
+    color: var(--color-slate-900);
     margin: 0;
 }
 
 .form-success__text {
     font-size: var(--text-base);
-    color: var(--color-slate-400);
+    color: var(--color-slate-600);
     max-width: 360px;
     margin: 0;
     line-height: 1.6;
@@ -243,12 +243,12 @@
     font-size: var(--text-4xl);
     line-height: 1.1;
     margin-bottom: var(--space-6);
-    color: var(--color-white);
+    color: var(--color-slate-900);
 }
 
 .consultation__content p {
     font-size: var(--text-lg);
-    color: var(--color-slate-300);
+    color: var(--color-slate-600);
     margin-bottom: var(--space-8);
 }
 
@@ -263,7 +263,7 @@
     align-items: center;
     gap: var(--space-3);
     font-size: var(--text-sm);
-    color: var(--color-slate-400);
+    color: var(--color-slate-600);
 }
 
 .consultation__trust-item svg {

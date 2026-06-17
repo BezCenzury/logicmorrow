@@ -91,11 +91,11 @@
 /* Kafelki z gradientem */
 .process-step__content {
     flex: 1;
-    background: linear-gradient(135deg, var(--color-slate-800) 0%, var(--color-slate-950) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     padding: var(--space-8) var(--space-10);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-card);
     transition: var(--transition-base);
 }
 
@@ -105,14 +105,14 @@
 }
 
 .process-step__content h3 {
-    color: var(--color-white);
+    color: var(--color-slate-900);
     font-size: var(--text-xl);
     margin-bottom: var(--space-3);
     font-weight: var(--font-bold);
 }
 
 .process-step__content p {
-    color: var(--color-slate-300);
+    color: var(--color-slate-600);
     font-size: var(--text-base);
     line-height: 1.6;
     margin: 0;

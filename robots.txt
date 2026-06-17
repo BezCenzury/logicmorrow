@@ -1,8 +1,8 @@
 User-agent: *
 Allow: /
 
-# Exclude private and legal pages
-Disallow: /polityka-prywatnosci.html
+# Strony prawne/konwersyjne mają meta robots noindex,follow —
+# nie blokujemy ich tutaj, żeby roboty mogły odczytać tę dyrektywę.
 
 # Sitemap location
 Sitemap: https://logicmorrow.pl/sitemap.xml

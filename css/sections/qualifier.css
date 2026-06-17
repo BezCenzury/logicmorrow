@@ -58,8 +58,9 @@
 }
 
 .qualifier__panel--yes {
-    background-color: var(--color-slate-950);
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-success);
+    box-shadow: var(--shadow-card);
 }
 
 .qualifier__panel--no {
@@ -98,7 +99,7 @@
 }
 
 .qualifier__panel--yes .qualifier__item {
-    color: var(--color-slate-300);
+    color: var(--color-slate-600);
 }
 
 .qualifier__panel--no .qualifier__item {

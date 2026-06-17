@@ -86,7 +86,7 @@
 .process-card__image-wrapper {
     position: relative;
     aspect-ratio: 16 / 9;
-    background-color: var(--color-slate-950);
+    background-color: var(--color-surface-alt);
     overflow: hidden;
 }
 

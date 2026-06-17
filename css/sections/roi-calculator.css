@@ -3,7 +3,7 @@
    ============================================================ */
 
 .roi-calculator {
-    background-color: var(--color-slate-950);
+    background-color: var(--color-surface);
     position: sticky;
     top: calc(var(--navbar-height, 72px) + 20px);
     z-index: 10;
@@ -60,12 +60,12 @@
 }
 
 .roi-calculator__header h2 {
-    color: var(--color-white);
+    color: var(--color-slate-900);
     margin-bottom: var(--space-4);
 }
 
 .roi-calculator__header p {
-    color: var(--color-slate-400, #94a3b8);
+    color: var(--color-slate-600);
 }
 
 /* --- Layout: formularz + wynik --- */
@@ -80,8 +80,9 @@
 /* --- Formularz --- */
 
 .roi-form {
-    background-color: var(--color-slate-800);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
     border-radius: var(--radius-lg);
     padding: var(--space-8);
     position: relative;
@@ -116,13 +117,13 @@
     align-items: center;
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
-    color: var(--color-slate-300);
+    color: var(--color-slate-600);
     margin-bottom: var(--space-3);
 }
 
 .roi-form__value {
     font-weight: var(--font-bold);
-    color: var(--color-primary-light);
+    color: var(--color-primary);
 }
 
 .roi-form__range {
@@ -130,7 +131,7 @@
     appearance: none;
     width: 100%;
     height: 4px;
-    background: var(--color-slate-700);
+    background: var(--color-slate-200);
     border-radius: var(--radius-full);
     outline: none;
 }
@@ -169,8 +170,9 @@
 /* --- Wynik --- */
 
 .roi-result {
-    background-color: var(--color-slate-800);
+    background-color: var(--color-surface-alt);
     border: 1px solid rgba(37, 99, 235, 0.3);
+    box-shadow: var(--shadow-card);
     border-radius: var(--radius-lg);
     padding: var(--space-8);
 }
@@ -182,7 +184,7 @@
 .roi-result__title {
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
-    color: var(--color-slate-400, #94a3b8);
+    color: var(--color-slate-500);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: var(--space-6);
@@ -193,7 +195,7 @@
     justify-content: space-between;
     align-items: center;
     padding: var(--space-4) 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .roi-result__row:last-of-type {
@@ -202,17 +204,17 @@
 
 .roi-result__label {
     font-size: var(--text-sm);
-    color: var(--color-slate-400, #94a3b8);
+    color: var(--color-slate-600);
 }
 
 .roi-result__val {
     font-size: var(--text-lg);
     font-weight: var(--font-bold);
-    color: var(--color-white);
+    color: var(--color-slate-900);
 }
 
 .roi-result__val--accent {
-    color: var(--color-primary-light);
+    color: var(--color-primary);
 }
 
 .roi-result__val--success {
@@ -228,6 +230,14 @@
 }
 
 /* --- Responsive --- */
+
+/* Tablet i niżej: wyłącz efekt sticky-stack (sekcje nie nakładają się) */
+@media (max-width: 1024px) {
+    .roi-calculator {
+        position: static;
+        top: auto;
+    }
+}
 
 @media (max-width: 768px) {
     .roi-calculator {

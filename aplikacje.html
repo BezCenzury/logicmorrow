@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
     <title>Dedykowane Aplikacje Webowe dla Firm | LogicMorrow</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#2563eb">
-    <meta name="description" content="Budujemy lekkie aplikacje webowe dla firm 5–35 pracowników — zamiennik pękającego Excela lub drogiego SaaS. Wdrożenie w 2–4 tygodnie, płacisz raz.">
+    <meta name="description" content="Budujemy lekkie aplikacje webowe dla firm 5–35 pracowników – zamiennik pękającego Excela lub drogiego SaaS. Wdrożenie w 2–4 tygodnie, płacisz raz.">
 
     <!-- SEO: Canonical + Open Graph + Twitter Card -->
     <link rel="canonical" href="https://logicmorrow.pl/aplikacje.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://logicmorrow.pl/aplikacje.html">
     <meta property="og:title" content="Dedykowane Aplikacje Webowe dla Firm | LogicMorrow">
-    <meta property="og:description" content="Budujemy lekkie aplikacje webowe dla firm 5–35 pracowników — zamiennik pękającego Excela lub drogiego SaaS. Wdrożenie w 2–4 tygodnie, płacisz raz.">
+    <meta property="og:description" content="Budujemy lekkie aplikacje webowe dla firm 5–35 pracowników – zamiennik pękającego Excela lub drogiego SaaS. Wdrożenie w 2–4 tygodnie, płacisz raz.">
     <meta property="og:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -22,14 +25,14 @@
     <meta property="og:site_name" content="LogicMorrow">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dedykowane Aplikacje Webowe dla Firm | LogicMorrow">
-    <meta name="twitter:description" content="Budujemy lekkie aplikacje webowe dla firm 5–35 pracowników — zamiennik pękającego Excela lub drogiego SaaS. Wdrożenie w 2–4 tygodnie, płacisz raz.">
+    <meta name="twitter:description" content="Budujemy lekkie aplikacje webowe dla firm 5–35 pracowników – zamiennik pękającego Excela lub drogiego SaaS. Wdrożenie w 2–4 tygodnie, płacisz raz.">
     <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
 
     <!-- ═══════════════════════════════════════════════════════
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
          ═══════════════════════════════════════════════════════ -->
 
-    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -65,7 +68,7 @@
         })();
     </script>
 
-    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <!-- [3] Google Tag Manager – zastąp GTM-XXXXXXX docelowym ID -->
     <script>(function(w,d,s,l,i){
         w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
         var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
@@ -74,10 +77,10 @@
     })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 
     <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
 
-    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
     <style>
         :root {
             --cc-btn-primary-bg: #2563eb;
@@ -92,6 +95,9 @@
             --cc-overlay-bg: rgba(0, 0, 0, 0.55);
         }
         #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
         #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
     </style>
 
@@ -105,7 +111,7 @@
           "@id": "https://logicmorrow.pl/aplikacje.html",
           "url": "https://logicmorrow.pl/aplikacje.html",
           "name": "Dedykowane Aplikacje Webowe dla Firm | LogicMorrow",
-          "description": "Lekkie aplikacje webowe dla firm 5–35 pracowników — zamiennik pękającego Excela lub drogiego SaaS. Wdrożenie 2–4 tygodnie, płacisz raz.",
+          "description": "Lekkie aplikacje webowe dla firm 5–35 pracowników – zamiennik pękającego Excela lub drogiego SaaS. Wdrożenie 2–4 tygodnie, płacisz raz.",
           "inLanguage": "pl-PL",
           "isPartOf": { "@id": "https://logicmorrow.pl/#website" }
         },
@@ -120,7 +126,7 @@
           "@type": "Service",
           "name": "Dedykowane Aplikacje Webowe",
           "provider": { "@type": "ProfessionalService", "name": "LogicMorrow", "url": "https://logicmorrow.pl" },
-          "description": "Budujemy aplikacje webowe skrojone pod realne procesy w Twojej firmie — bez kompromisów gotowych SaaS i bez ograniczeń Excela. Pełna własność kodu, płacisz raz, bez abonamentów per użytkownik.",
+          "description": "Budujemy aplikacje webowe skrojone pod realne procesy w Twojej firmie – bez kompromisów gotowych SaaS i bez ograniczeń Excela. Pełna własność kodu, płacisz raz, bez abonamentów per użytkownik.",
           "areaServed": "PL",
           "serviceType": "Dedykowane aplikacje webowe",
           "offers": {
@@ -144,7 +150,7 @@
           "name": "Ile kosztuje stworzenie dedykowanego systemu?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Najprostsze aplikacje zaczynają się od 7 tys. zł. Większość projektów — panel do zarządzania operacjami, system ofertowania czy aplikacja do obsługi zleceń — mieści się w przedziale 20–30 tys. zł. Bardziej rozbudowane systemy integrujące wiele działów to zazwyczaj 50–100 tys. zł. Na bezpłatnej konsultacji analizujemy Twoje potrzeby i podajemy konkretne widełki, zanim zdecydujesz cokolwiek."
+            "text": "Najprostsze aplikacje zaczynają się od 7 tys. zł. Większość projektów – panel do zarządzania operacjami, system ofertowania czy aplikacja do obsługi zleceń – mieści się w przedziale 20–30 tys. zł. Bardziej rozbudowane systemy integrujące wiele działów to zazwyczaj 50–100 tys. zł. Na bezpłatnej konsultacji analizujemy Twoje potrzeby i podajemy konkretne widełki, zanim zdecydujesz cokolwiek."
           }
         },
         {
@@ -152,7 +158,7 @@
           "name": "Jak długo trwa zaprojektowanie i wdrożenie rozwiązania?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wszystko zależy od zaawansowania projektu, ale działamy zwinnie. Najprostsze, punktowe narzędzia często wdrażamy w 2–3 tygodnie. Budowanie bardziej rozbudowanych, dedykowanych systemów zajmuje zazwyczaj od kilku tygodni do kilku miesięcy. Zawsze zaczynamy od priorytetów, które przynoszą najszybszy zwrot z inwestycji."
+            "text": "Wszystko zależy od zaawansowania projektu, ale działamy zwinnie. Najprostsze, punktowe narzędzia często wdrażamy w 2–4 tygodnie. Budowanie bardziej rozbudowanych, dedykowanych systemów zajmuje zazwyczaj od kilku tygodni do kilku miesięcy. Zawsze zaczynamy od priorytetów, które przynoszą najszybszy zwrot z inwestycji."
           }
         },
         {
@@ -168,7 +174,7 @@
           "name": "Czy system będzie łatwy w obsłudze dla moich pracowników?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Intuicyjność to nasz priorytet. Program odwzorowuje Twoje realne kroki w firmie, dzięki czemu zespół od pierwszego dnia wie, jak z niego korzystać — bez wielogodzinnych szkoleń."
+            "text": "Intuicyjność to nasz priorytet. Program odwzorowuje Twoje realne kroki w firmie, dzięki czemu zespół od pierwszego dnia wie, jak z niego korzystać – bez wielogodzinnych szkoleń."
           }
         },
         {
@@ -184,9 +190,8 @@
     </script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Base CSS -->
     <link rel="stylesheet" href="css/base/variables.css">
@@ -206,7 +211,6 @@
     <link rel="stylesheet" href="css/sections/challenges.css">
     <link rel="stylesheet" href="css/sections/solutions.css">
     <link rel="stylesheet" href="css/sections/safety-standards.css">
-    <link rel="stylesheet" href="css/sections/roi-calculator.css">
     <link rel="stylesheet" href="css/sections/faq.css">
     <link rel="stylesheet" href="css/sections/process.css">
     <link rel="stylesheet" href="css/sections/consultation.css">
@@ -233,12 +237,12 @@
                         <span class="badge badge--dark-blue badge--dot">Dedykowane Mikro-Aplikacje</span>
                     </div>
                     <h1 class="hero__title">
-                        Excel pęka w szwach.<br>
+                        Excel pęka w szwach.<br>
                         <span>Czas na system skrojony pod Ciebie.</span>
                     </h1>
                     <p class="hero__subtitle">
-                        Tworzymy lekkie aplikacje webowe — dedykowane, proste w obsłudze, dopasowane do realnych procesów Twojej firmy.
-                        Bez płacenia za zbędne funkcje i bez miesięcznych abonamentów. System, który od początku do końca należy do Ciebie.
+                        Tworzymy lekkie aplikacje webowe – dedykowane, proste w obsłudze, dopasowane do realnych procesów Twojej firmy.
+                        Bez płacenia za zbędne funkcje i bez miesięcznych abonamentów. System, który od początku do końca należy do Ciebie.
                     </p>
                     <div class="hero__actions">
                         <a href="/konsultacja.html" class="btn btn--primary btn--lg btn--arrow">
@@ -324,9 +328,9 @@
             <div class="challenges__container">
                 
                 <div class="challenges__header" data-animate="fade-up">
-                    <span class="section-label">Problemy z gotowym abonamentem</span>
-                    <h2>Narzędzia z półki mają ograniczenia.<br>Twój biznes nie.</h2>
-                    <p class="lead">Gdy Twój proces jest choć trochę inny niż przewidział dostawca gotowego oprogramowania — zaczynają się problemy.</p>
+                    <span class="section-label">Problemy z gotowym abonamentem</span>
+                    <h2>Narzędzia z półki mają ograniczenia.<br>Twój biznes nie.</h2>
+                    <p class="lead">Gdy Twój proces jest choć trochę inny niż przewidział dostawca gotowego oprogramowania – zaczynają się problemy.</p>
                 </div>
 
                 <div class="challenges__grid">
@@ -338,7 +342,7 @@
                             NADMIAROWOŚĆ
                         </span>
                         <h3>Płacisz za to, czego nie używasz</h3>
-                        <p>Popularne systemy ERP/CRM narzucają mnóstwo funkcji, których Twój zespół nigdy nie użyje — a każda z nich komplikuje codzienną pracę.</p>
+                        <p>Popularne systemy ERP/CRM narzucają mnóstwo funkcji, których Twój zespół nigdy nie użyje – a każda z nich komplikuje codzienną pracę.</p>
                     </div>
 
                     <!-- Wyzwanie 2 -->
@@ -348,7 +352,7 @@
                             BRAKI
                         </span>
                         <h3>Brak kluczowych 10%</h3>
-                        <p>Zawsze brakuje tej jednej, najważniejszej funkcji, która sprawia, że i tak musisz wracać do Excela.</p>
+                        <p>Zawsze brakuje tej jednej, najważniejszej funkcji, która sprawia, że i tak musisz wracać do Excela.</p>
                     </div>
 
                     <!-- Wyzwanie 3 -->
@@ -358,7 +362,7 @@
                             UZALEŻNIENIE
                         </span>
                         <h3>Uzależnienie od jednego dostawcy</h3>
-                        <p>Twoje dane i procesy są uwięzione w systemie, którego nie jesteś właścicielem. Jeśli dostawca podniesie ceny lub przestanie rozwijać program — nie masz na to wpływu.</p>
+                        <p>Twoje dane i procesy są uwięzione w systemie, którego nie jesteś właścicielem. Jeśli dostawca podniesie ceny lub przestanie rozwijać program – nie masz na to wpływu.</p>
                     </div>
 
                 </div>
@@ -376,7 +380,7 @@
                 <div class="solutions__header" data-animate="fade-up">
                     <span class="section-label">Nasze specjalizacje</span>
                     <h2>Programy skrojone na miarę</h2>
-                    <p class="lead">Budujemy narzędzia, które ułatwiają pracę, a nie ją utrudniają. Nie dodajemy zbędnych przycisków i skomplikowanych opcji.</p>
+                    <p class="lead">Najpierw porządkujemy proces, dopiero potem budujemy pod niego narzędzie. Takie, które ułatwia pracę, a nie ją utrudnia – bez zbędnych przycisków i opcji, których nikt nie używa.</p>
                 </div>
 
                 <div class="solutions__layout">
@@ -405,19 +409,19 @@
                             <div class="solutions__main-info">
                                 <div class="solutions__text">
                                     <h3>Szybkie rozwiązania punktowe</h3>
-                                    <p>Budujemy proste, chirurgiczne narzędzia, które usprawniają jedno konkretne zadanie w firmie. Idealne na start, gdy chcesz szybko poczuć ulgę w codziennych operacjach i wyeliminować najbardziej irytujące, powtarzalne czynności.</p>
+                                    <p>Budujemy proste, chirurgiczne narzędzia, które usprawniają jedno konkretne zadanie w firmie. Idealne na start, gdy chcesz szybko poczuć ulgę w codziennych operacjach i wyeliminować najbardziej irytujące, powtarzalne czynności.</p>
                                     <ul class="solutions__features">
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Precyzyjne kalkulatory ofertowe i marżowe
+                                            Precyzyjne kalkulatory ofertowe i marżowe
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Automatyczne generatory dokumentów i ofert PDF
+                                            Automatyczne generatory dokumentów i ofert PDF
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Proste panele do zbiórki i walidacji danych
+                                            Proste panele do zbiórki i walidacji danych
                                         </li>
                                     </ul>
                                 </div>
@@ -449,32 +453,32 @@
                                 <span class="solutions__example-heading">Znasz te problemy?</span>
                                 
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Klient czeka na ofertę, a handlowiec musi dzwonić do biura"</summary>
+                                    <summary class="industry-case__summary">„Klient czeka na ofertę, a handlowiec musi dzwonić do biura”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        <p>Handlowiec na spotkaniu nie potrafi wycenić niestandardowej części. Musi wrócić do biura lub czekać na maila od technologa. W tym czasie konkurencja może być szybsza.</p>
+                                        <p>Handlowiec na spotkaniu nie potrafi wycenić niestandardowej części. Musi wrócić do biura lub czekać na maila od technologa. W tym czasie konkurencja może być szybsza.</p>
                                         <strong>Rozwiązanie:</strong>
-                                        Mobilny kalkulator z automatem PDF. Handlowiec wpisuje parametry i wysyła gotową ofertę jeszcze w trakcie trwania spotkania.
+                                        Mobilny kalkulator z automatem PDF. Handlowiec wpisuje parametry i wysyła gotową ofertę jeszcze w trakcie trwania spotkania.
                                     </div>
                                 </details>
 
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Informacja o wadzie komponentu trafia do biura za późno"</summary>
+                                    <summary class="industry-case__summary">„Informacja o wadzie komponentu trafia do biura za późno”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        <p>Pracownik uszkodził detal rano, ale wpisał to w papierowy raport dopiero po zmianie. Produkcja stoi, bo nie zamówiono nowej sztuki na czas.</p>
+                                        <p>Pracownik uszkodził detal rano, ale wpisał to w papierowy raport dopiero po zmianie. Produkcja stoi, bo nie zamówiono nowej sztuki na czas.</p>
                                         <strong>Rozwiązanie:</strong>
-                                        Przycisk "Zgłoś błąd" na tablecie na hali. Dział zakupów dostaje alert w sekundę i może od razu domówić surowiec.
+                                        Przycisk „Zgłoś błąd” na tablecie na hali. Dział zakupów dostaje alert w sekundę i może od razu domówić surowiec.
                                     </div>
                                 </details>
 
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Cięcie materiału 'na oko' generuje drogi odpad"</summary>
+                                    <summary class="industry-case__summary">„Cięcie materiału 'na oko' generuje drogi odpad”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        <p>Bez narzuconego schematu, pracownicy cięcia "na oko" generują znacznie więcej odpadu niż założył kosztorys. Ta różnica bezpośrednio zjada Twoją marżę.</p>
+                                        <p>Bez narzuconego schematu, pracownicy cięcia „na oko” generują znacznie więcej odpadu niż założył kosztorys. Ta różnica bezpośrednio zjada Twoją marżę.</p>
                                         <strong>Rozwiązanie:</strong>
-                                        Narzędzie do optymalizacji rozkroju. Pracownik wpisuje wymiary płyt, a system pokazuje mu jak ciąć, by stracić jak najmniej materiału.
+                                        Narzędzie do optymalizacji rozkroju. Pracownik wpisuje wymiary płyt, a system pokazuje mu jak ciąć, by stracić jak najmniej materiału.
                                     </div>
                                 </details>
                             </div>
@@ -485,15 +489,15 @@
                             <div class="solutions__main-info">
                                 <div class="solutions__text">
                                     <h3>Optymalizacja całych procesów</h3>
-                                    <p>Systemy, które łączą kilka kroków w jeden płynny mechanizm. Zastępują rozproszone arkusze w konkretnym dziale, eliminując chaos i błędy przy ręcznym przepisywaniu danych.</p>
+                                    <p>Systemy, które łączą kilka kroków w jeden płynny mechanizm. Zastępują rozproszone arkusze w konkretnym dziale, eliminując chaos i błędy przy ręcznym przepisywaniu danych.</p>
                                     <ul class="solutions__features">
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Panele zarządzania zleceniami i statusem prac
+                                            Panele zarządzania zleceniami i statusem prac
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Systemy rezerwacji i harmonogramowania zasobów
+                                            Systemy rezerwacji i harmonogramowania zasobów
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -529,7 +533,7 @@
                                         <text x="80" y="112" fill="white" font-family="Inter, sans-serif" font-size="6" font-weight="bold">Zlecenie #LM-403</text>
                                         <text x="80" y="120" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="5">Klient: Logistics SA</text>
                                         <rect x="180" y="107" width="35" height="10" rx="5" fill="rgba(245, 158, 11, 0.1)"/>
-                                        <text x="197.5" y="114" text-anchor="middle" fill="#f59e0b" font-family="Inter, sans-serif" font-size="4.5" font-weight="bold">W TRAKCIE</text>
+                                        <text x="197.5" y="114" text-anchor="middle" fill="#f59e0b" font-family="Inter, sans-serif" font-size="4.5" font-weight="bold">W TRAKCIE</text>
                                     </svg>
                                 </div>
                             </div>
@@ -537,32 +541,32 @@
                                 <span class="solutions__example-heading">Znasz te problemy?</span>
                                 
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Kierownik biura musi iść na halę, by sprawdzić postęp prac"</summary>
+                                    <summary class="industry-case__summary">„Kierownik biura musi iść na halę, by sprawdzić postęp prac”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        <p>Ciągłe przerywanie pracy operatorom, by dowiedzieć się na jakim etapie jest zlecenie X. Dokumenty z postępów produkcyjnych docierają do biura dobę później.</p>
+                                        <p>Ciągłe przerywanie pracy operatorom, by dowiedzieć się na jakim etapie jest zlecenie X. Dokumenty z postępów produkcyjnych docierają do biura dobę później.</p>
                                         <strong>Rozwiązanie:</strong>
-                                        Cyfrowy panel "Postęp Prac". Operator odklika wykonany etap (np. spawanie), a biuro widzi aktualny status zlecenia bez wstawania z fotela.</p>
+                                        Cyfrowy panel „Postęp Prac”. Operator odklika wykonany etap (np. spawanie), a biuro widzi aktualny status zlecenia bez wstawania z fotela.</p>
                                     </div>
                                 </details>
 
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Stan magazynu w Excelu znowu mija się z prawdą"</summary>
+                                    <summary class="industry-case__summary">„Stan magazynu w Excelu znowu mija się z prawdą”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        <p>Handlowiec przyjmuje zamówienie na podstawie arkusza, który jest już nieaktualny. Towar wyjechał rano, a handlowiec musi teraz przepraszać klienta.</p>
+                                        <p>Handlowiec przyjmuje zamówienie na podstawie arkusza, który jest już nieaktualny. Towar wyjechał rano, a handlowiec musi teraz przepraszać klienta.</p>
                                         <strong>Rozwiązanie:</strong>
-                                        Panel handlowy z podglądem stanów LIVE. System sam pilnuje rezerwacji towaru w momencie tworzenia oferty lub zamówienia.</p>
+                                        Panel handlowy z podglądem stanów LIVE. System sam pilnuje rezerwacji towaru w momencie tworzenia oferty lub zamówienia.</p>
                                     </div>
                                 </details>
 
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Przepisanie godzin z kartek biuru zajmuje całe popołudnie"</summary>
+                                    <summary class="industry-case__summary">„Przepisanie godzin z kartek biuru zajmuje całe popołudnie”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        <p>Błędy w odczytywaniu pisma pracowników i uciążliwe ręczne wprowadzanie danych do zbiorczej tabeli na koniec tygodnia. Masa pomyłek w rozliczeniach.</p>
+                                        <p>Błędy w odczytywaniu pisma pracowników i uciążliwe ręczne wprowadzanie danych do zbiorczej tabeli na koniec tygodnia. Masa pomyłek w rozliczeniach.</p>
                                         <strong>Rozwiązanie:</strong>
-                                        Rejestrator operacji. Pracownik loguje się do konkretnego zlecenia jednym kliknięciem, a raport wydajności na koniec dnia generuje się sam.</p>
+                                        Rejestrator operacji. Pracownik loguje się do konkretnego zlecenia jednym kliknięciem, a raport wydajności na koniec dnia generuje się sam.</p>
                                     </div>
                                 </details>
                             </div>
@@ -573,7 +577,7 @@
                             <div class="solutions__main-info">
                                 <div class="solutions__text">
                                     <h3>Cała firma pod Twoją kontrolą</h3>
-                                    <p>Kompleksowe, dedykowane systemy zastępujące dziesiątki plików na Google Drive i pękające w szwach Excele. Wszystkie dokumenty i projekty w jednym, bezpiecznym miejscu.</p>
+                                    <p>Spójne, dedykowane systemy zastępujące dziesiątki plików na Google Drive i pękające w szwach Excele. Wszystkie dokumenty i projekty w jednym, bezpiecznym miejscu.</p>
                                     <ul class="solutions__features">
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -581,11 +585,11 @@
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Pełna skalowalność bez dodatkowych opłat
+                                            Rośnie razem z Twoją firmą – bez dodatkowych opłat
                                         </li>
                                         <li class="solutions__feature">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                            Dostęp z dowolnego miejsca — z biura, hali czy z domu
+                                            Dostęp z dowolnego miejsca – z biura, hali czy z domu
                                         </li>
                                     </ul>
                                 </div>
@@ -628,32 +632,32 @@
                                 <span class="solutions__example-heading">Znasz te problemy?</span>
                                 
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Kolejna pomyłka przez nieaktualną wersję rysunku technicznego"</summary>
+                                    <summary class="industry-case__summary">„Kolejna pomyłka przez nieaktualną wersję rysunku technicznego”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        <p>Rewizja projektu nr 2 nie dotarła na czas na halę. Element wykonany błędnie na podstawie starego rysunku. Materiał i godziny pracy do kosza.</p>
+                                        <p>Rewizja projektu nr 2 nie dotarła na czas na halę. Element wykonany błędnie na podstawie starego rysunku. Materiał i godziny pracy do kosza.</p>
                                         <strong>Rozwiązanie:</strong>
                                         <p>Centralny obieg dokumentów przez tablety. Pracownik ma 100% pewności, że otwiera najnowszą, zatwierdzoną wersję dokumentacji.</p>
                                     </div>
                                 </details>
 
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Brakuje jednego detalu i cała wysyłka za 100 tys. zł stoi"</summary>
+                                    <summary class="industry-case__summary">„Brakuje jednego detalu i cała wysyłka za 100 tys. zł stoi”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        <p>Zakupy surowca „na wyczucie”. Zapomniano o jednej śrubie lub komponencie, co wstrzymuje terminalny wyjazd gotowego urządzenia do klienta.</p>
+                                        <p>Zakupy surowca „na wyczucie”. Zapomniano o jednej śrubie lub komponencie, co wstrzymuje terminowy wyjazd gotowego urządzenia do klienta.</p>
                                         <strong>Rozwiązanie:</strong>
-                                        <p>Moduł planowania potrzeb (MRP). System sam sugeruje listę zakupów na bazie aktywnych zleceń produkcyjnych i aktualnego stanu magazynu.</p>
+                                        <p>Moduł planowania potrzeb (MRP). System sam sugeruje listę zakupów na bazie aktywnych zleceń produkcyjnych i aktualnego stanu magazynu.</p>
                                     </div>
                                 </details>
 
                                 <details class="industry-case">
-                                    <summary class="industry-case__summary">"Nikt nie widzi pełnego obrazu marży w trakcie trwania projektu"</summary>
+                                    <summary class="industry-case__summary">„Nikt nie widzi pełnego obrazu marży w trakcie trwania projektu”</summary>
                                     <div class="industry-case__content">
                                         <strong>Problem:</strong>
-                                        <p>Koszty są rozproszone w 5 różnych plikach. O tym, czy projekt był rentowny, dowiadujesz się miesiąc po fakcie, kiedy nie można już nic zmienić.</p>
+                                        <p>Koszty są rozproszone w 5 różnych plikach. O tym, czy projekt był rentowny, dowiadujesz się miesiąc po fakcie, kiedy nie można już nic zmienić.</p>
                                         <strong>Rozwiązanie:</strong>
-                                        <p>System integrujący dane projektowe. Rezerwacja terminu, koszt materiałów i realna marża dostępne w jednym widoku LIVE.</p>
+                                        <p>System integrujący dane projektowe. Rezerwacja terminu, koszt materiałów i realna marża dostępne w jednym widoku LIVE.</p>
                                     </div>
                                 </details>
                             </div>
@@ -679,9 +683,9 @@
                 <div class="safety-standards__container" data-animate="fade-up">
 
                     <div class="safety-standards__header">
-                        <span class="section-label" style="color: var(--color-primary-light)">Stabilność i bezpieczeństwo</span>
-                        <h2 style="color: var(--color-white)">Twój system, Twoje dane, Twoje zasady</h2>
-                        <p style="color: var(--color-slate-400); max-width: 600px; margin: var(--space-4) auto 0;">Płacisz raz za budowę i wdrożenie, stając się jedynym właścicielem rozwiązania. Żadnych prowizji i limitów na użytkowników z zewnątrz.</p>
+                        <span class="section-label" style="color: var(--color-primary-light)">Stabilność i bezpieczeństwo</span>
+                        <h2 style="color: var(--color-slate-900)">Twój system, Twoje dane, Twoje zasady</h2>
+                        <p style="color: var(--color-slate-600); max-width: 600px; margin: var(--space-4) auto 0;">Płacisz raz za budowę i wdrożenie, stając się jedynym właścicielem rozwiązania. Żadnych prowizji i limitów na użytkowników z zewnątrz.</p>
                     </div>
 
                     <div class="safety-standards__grid">
@@ -695,7 +699,7 @@
                                 </svg>
                             </div>
                             <h3>Płacisz raz, posiadasz zawsze</h3>
-                            <p>Zapomnij o comiesięcznych fakturach za dostęp. Po wdrożeniu stajesz się właścicielem kodu w 100%. To inwestycja, która spłaca się od pierwszego dnia.</p>
+                            <p>Zapomnij o comiesięcznych fakturach za dostęp. Po wdrożeniu stajesz się właścicielem kodu w 100%. To inwestycja, która spłaca się od pierwszego dnia.</p>
                         </div>
 
                         <!-- Karta 2: Rynkowe standardy i rozwój -->
@@ -706,8 +710,8 @@
                                     <polyline points="8 6 2 12 8 18" />
                                 </svg>
                             </div>
-                            <h3>Popularne i bezpieczne technologie</h3>
-                            <p>Tworzymy systemy na bazie technologii, które są standardem na światowych rynkach i u gigantów takich jak Google czy Facebook. Jeśli za kilka lat zechcesz powierzyć system wewnątrz Twojej firmy innemu informatykowi, bez trudu przejmie on obsługę.</p>
+                            <h3>Popularne i bezpieczne technologie</h3>
+                            <p>Tworzymy systemy na bazie technologii, które są standardem na światowych rynkach i u gigantów takich jak Google czy Facebook. Jeśli za kilka lat zechcesz powierzyć system wewnątrz Twojej firmy innemu informatykowi, bez trudu przejmie on obsługę.</p>
                         </div>
 
                         <!-- Karta 3: Maksymalne bezpieczeństwo -->
@@ -719,7 +723,7 @@
                                 </svg>
                             </div>
                             <h3>Twoje dane są bezpieczne</h3>
-                            <p>Aplikacja działa wewnątrz Twojej sieci firmowej. Brak ryzyka wycieku danych na zewnątrz oraz gwarantowana, bezpieczna migracja z CRM/Exceli bez utraty danych.</p>
+                            <p>Aplikacja działa wewnątrz Twojej sieci firmowej. Brak ryzyka wycieku danych na zewnątrz oraz gwarantowana, bezpieczna migracja z CRM/Exceli bez utraty danych.</p>
                         </div>
 
                     </div>
@@ -745,7 +749,7 @@
                         <div class="process-step__content">
                             <h3>Bezpłatna konsultacja</h3>
                             <p>
-                                Rozmowa, na której wspólnie diagnozujemy Twoje największe wyzwania. Określamy cele projektu, unikalne wymogi Twojego zespołu i szukamy konkretnych punktów, które przyniosą najszybszy zwrot z inwestycji.
+                                Rozmowa, na której wspólnie diagnozujemy Twoje największe wyzwania. Określamy cele projektu, unikalne wymogi Twojego zespołu i szukamy konkretnych punktów, które przyniosą najszybszy zwrot z inwestycji.
                             </p>
                         </div>
                     </div>
@@ -754,9 +758,9 @@
                     <div class="process-step" data-animate="fade-up" data-delay="100">
                         <div class="process-step__number">2</div>
                         <div class="process-step__content">
-                            <h3>Analiza i plan działania</h3>
+                            <h3>Analiza i plan działania</h3>
                             <p>
-                                Rozbieramy Twoje procesy na czynniki pierwsze. Przedstawiamy dokładną propozycję rozwiązań technicznych, architekturę systemu i mierzalny plan wdrożenia z podziałem na kluczowe etapy.
+                                Rozbieramy Twoje procesy na czynniki pierwsze. Przedstawiamy dokładną propozycję rozwiązań technicznych, architekturę systemu i mierzalny plan wdrożenia z podziałem na kluczowe etapy.
                             </p>
                         </div>
                     </div>
@@ -766,9 +770,9 @@
                         <div class="process-step__number">3</div>
                         <div class="process-step__number-line"></div>
                         <div class="process-step__content">
-                            <h3>Budowa i testy</h3>
+                            <h3>Budowa i testy</h3>
                             <p>
-                                Tworzymy kod w sposób zwinny. Równolegle budujemy i testujemy wszystkie funkcje, na bieżąco korygując ewentualne błędy i dostosowując interface pod kątem maksymalnej ergonomii i wygody Twoich pracowników.
+                                Tworzymy kod w sposób zwinny. Równolegle budujemy i testujemy wszystkie funkcje, na bieżąco korygując ewentualne błędy i dostosowując interface pod kątem maksymalnej ergonomii i wygody Twoich pracowników.
                             </p>
                         </div>
                     </div>
@@ -777,9 +781,9 @@
                     <div class="process-step" data-animate="fade-up" data-delay="300">
                         <div class="process-step__number">4</div>
                         <div class="process-step__content">
-                            <h3>Wdrożenie i szkolenie</h3>
+                            <h3>Wdrożenie i szkolenie</h3>
                             <p>
-                                Przenosimy dane i uruchamiamy aplikację w środowisku firmy. Przeprowadzamy pełne szkolenie Twojego zespołu i przedstawiamy każdą opcję. Na koniec oddajemy gotowy system i przekazujemy Ci wszystkie prawa własności.
+                                Przenosimy dane i uruchamiamy aplikację w środowisku firmy. Przeprowadzamy pełne szkolenie Twojego zespołu i przedstawiamy każdą opcję. Na koniec oddajemy gotowy system i przekazujemy Ci wszystkie prawa własności.
                             </p>
                         </div>
                     </div>
@@ -799,10 +803,10 @@
                 <div class="consultation__header">
                     <span class="section-label" data-animate="fade-up">Rozpocznij zmianę</span>
                     <h2 data-animate="fade-up">
-                        Przestań walczyć z narzędziami.<br>Zacznij z nich korzystać.
+                        Przestań walczyć z narzędziami.<br>Zacznij z nich korzystać.
                     </h2>
                     <p data-animate="fade-up">
-                        Opowiedz nam o swoim procesie na bezpłatnej konsultacji. Jeśli aplikacja nie jest właściwą odpowiedzią — powiemy Ci o tym szczerze.
+                        Opowiedz nam o swoim procesie na bezpłatnej konsultacji. Jeśli aplikacja nie jest właściwą odpowiedzią – powiemy Ci o tym szczerze.
                     </p>
                 </div>
 
@@ -833,7 +837,14 @@
                         <div class="form-checkbox-group">
                             <input type="checkbox" id="form-consent" class="form-checkbox" required>
                             <label for="form-consent" class="form-checkbox-label">
-                                Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi zgłoszenia. Wyrażam zgodę na otrzymywanie informacji handlowych od LogicMorrow drogą elektroniczną na podany adres e-mail. <a href="/polityka-prywatnosci.html" target="_blank">Polityka Prywatności.</a>
+                                Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi mojego zgłoszenia. Szczegóły w <a href="/polityka-prywatnosci.html" target="_blank" rel="noopener">Polityce Prywatności</a>.
+                            </label>
+                        </div>
+
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="form-marketing" class="form-checkbox">
+                            <label for="form-marketing" class="form-checkbox-label">
+                                Chcę dodatkowo otrzymywać informacje handlowe od LogicMorrow drogą elektroniczną na podany adres e-mail (opcjonalnie – niewymagane do kontaktu).
                             </label>
                         </div>
 
@@ -868,7 +879,7 @@
             <div class="faq-section__container">
                 <div class="faq-section__header" data-animate="fade-up">
                     <span class="section-label" style="color: var(--color-primary-light)">FAQ</span>
-                    <h2 style="color: var(--color-white)">Najczęstsze pytania o dedykowany soft</h2>
+                    <h2 style="color: var(--color-slate-900)">Najczęstsze pytania o dedykowany soft</h2>
                 </div>
 
                 <div class="faq-accordion" data-animate="fade-up">
@@ -881,7 +892,7 @@
                         </button>
                         <div class="faq-accordion__content">
                             <div class="faq-accordion__answer">
-                                Najprostsze aplikacje zaczynają się od 7 tys. zł. Większość projektów — panel do zarządzania operacjami, system ofertowania czy aplikacja do obsługi zleceń — mieści się w przedziale 20–30 tys. zł. Bardziej rozbudowane systemy integrujące wiele działów to zazwyczaj 50–100 tys. zł. Na bezpłatnej konsultacji analizujemy Twoje potrzeby i podajemy konkretne widełki, zanim zdecydujesz cokolwiek.
+                                Najprostsze aplikacje zaczynają się od 7 tys. zł. Większość projektów – panel do zarządzania operacjami, system ofertowania czy aplikacja do obsługi zleceń – mieści się w przedziale 20–30 tys. zł. Bardziej rozbudowane systemy integrujące wiele działów to zazwyczaj 50–100 tys. zł. Na bezpłatnej konsultacji analizujemy Twoje potrzeby i podajemy konkretne widełki, zanim zdecydujesz cokolwiek.
                             </div>
                         </div>
                     </div>
@@ -889,12 +900,12 @@
                     <!-- Question 2: Czas -->
                     <div class="faq-accordion__item">
                         <button class="faq-accordion__header">
-                            <span>Jak długo trwa zaprojektowanie i wdrożenie rozwiązania?</span>
+                            <span>Jak długo trwa zaprojektowanie i wdrożenie rozwiązania?</span>
                             <div class="faq-accordion__icon"></div>
                         </button>
                         <div class="faq-accordion__content">
                             <div class="faq-accordion__answer">
-                                Wszystko zależy od zaawansowania projektu, ale działamy zwinnie. Najprostsze, punktowe narzędzia często wdrażamy w 2-3 tygodnie. Budowanie bardziej rozbudowanych, dedykowanych systemów ERP czy paneli zarządczych zajmuje zazwyczaj od kilku tygodni do kilku miesięcy. Zawsze zaczynamy od priorytetów, które przynoszą najszybszy zwrot z inwestycji.
+                                Wszystko zależy od zaawansowania projektu, ale działamy zwinnie. Najprostsze, punktowe narzędzia często wdrażamy w 2–4 tygodnie. Budowanie bardziej rozbudowanych, dedykowanych systemów ERP czy paneli zarządczych zajmuje zazwyczaj od kilku tygodni do kilku miesięcy. Zawsze zaczynamy od priorytetów, które przynoszą najszybszy zwrot z inwestycji.
                             </div>
                         </div>
                     </div>
@@ -907,7 +918,7 @@
                         </button>
                         <div class="faq-accordion__content">
                             <div class="faq-accordion__answer">
-                                Główną różnicą jest brak kompromisów. Gotowe pakiety oprogramowania często mają setki niepotrzebnych funkcji, za które trzeba uiszczać opłaty i licencje, a jednocześnie brakuje im tych kluczowych u Ciebie. Nasze aplikacje są dopasowane pod Twoją firmę – ani jednej zbędnej linii. Co ważne: narzędzie działa bez narzutów i limitów ilości stanowisk, z nielimitowanymi kontami dla Twoich ludzi.
+                                Główną różnicą jest brak kompromisów. Gotowe pakiety oprogramowania często mają setki niepotrzebnych funkcji, za które trzeba uiszczać opłaty i licencje, a jednocześnie brakuje im tych kluczowych u Ciebie. Nasze aplikacje są dopasowane pod Twoją firmę – ani jednej zbędnej linii. Co ważne: narzędzie działa bez narzutów i limitów ilości stanowisk, z nielimitowanymi kontami dla Twoich ludzi.
                             </div>
                         </div>
                     </div>
@@ -915,12 +926,12 @@
                     <!-- Question 4: Ease of Use -->
                     <div class="faq-accordion__item">
                         <button class="faq-accordion__header">
-                            <span>Czy system będzie łatwy w obsłudze dla moich pracowników?</span>
+                            <span>Czy system będzie łatwy w obsłudze dla moich pracowników?</span>
                             <div class="faq-accordion__icon"></div>
                         </button>
                         <div class="faq-accordion__content">
                             <div class="faq-accordion__answer">
-                                Intuicyjność to nasz priorytet. Nawet jeśli budujemy system o ogromnej liczbie funkcji, projektujemy go w taki sposób, aby obsługa była naturalna dla każdego pracownika i nie wymagała wielogodzinnych szkoleń. Program odwzorowuje Twoje realne kroki w firmie, dzięki czemu zespół od pierwszego dnia wie, jak z niego korzystać.
+                                Intuicyjność to nasz priorytet. Nawet jeśli budujemy system o ogromnej liczbie funkcji, projektujemy go w taki sposób, aby obsługa była naturalna dla każdego pracownika i nie wymagała wielogodzinnych szkoleń. Program odwzorowuje Twoje realne kroki w firmie, dzięki czemu zespół od pierwszego dnia wie, jak z niego korzystać.
                             </div>
                         </div>
                     </div>
@@ -928,12 +939,12 @@
                     <!-- Question 5: Security -->
                     <div class="faq-accordion__item">
                         <button class="faq-accordion__header">
-                            <span>Jak dbacie o bezpieczeństwo moich danych firmowych?</span>
+                            <span>Jak dbacie o bezpieczeństwo moich danych firmowych?</span>
                             <div class="faq-accordion__icon"></div>
                         </button>
                         <div class="faq-accordion__content">
                             <div class="faq-accordion__answer">
-                                Bezpieczeństwo danych to fundament, nie idziemy na skróty. Korzystamy z najwyższych rynkowych standardów i dbamy o stabilność systemu. Twoja aplikacja może działać wewnątrz Twojej firmowej sieci lub na prywatnej chmurze, co daje Ci pełną kontrolę i gwarancję, że dane nie wyciekną na zewnątrz. Nie budujemy „na szybko” kosztem stabilności.
+                                Bezpieczeństwo danych to fundament, nie idziemy na skróty. Korzystamy z najwyższych rynkowych standardów i dbamy o stabilność systemu. Twoja aplikacja może działać wewnątrz Twojej firmowej sieci lub na prywatnej chmurze, co daje Ci pełną kontrolę i gwarancję, że dane nie wyciekną na zewnątrz. Nie budujemy „na szybko” kosztem stabilności.
                             </div>
                         </div>
                     </div>
@@ -953,7 +964,7 @@
     <script src="js/faq.js"></script>
     <script src="js/forms.js"></script>
 
-    <!-- [6] Cookie Consent — inicjalizacja -->
+    <!-- [6] Cookie Consent – inicjalizacja -->
     <script src="/js/cookie-consent.js"></script>
 
 </body>

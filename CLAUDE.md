@@ -286,4 +286,27 @@ Pliki `.md` z briefem firmy, obiekcjami klientów i strategią strony. Nie trafi
 
 ## Skille Claude Code
 
-Folder `.claude/` zawiera skille (np. `/seo` — audyt SEO dla stron statycznych). Nie trafia na GitHub.
+Folder `.claude/` zawiera skille, agentów i hooki. Nie trafia na GitHub.
+
+### Skille (`.claude/skills/`)
+
+| Skill | Kiedy używać |
+|---|---|
+| `seo` | Audyt SEO dla stron statycznych (był pierwszy w projekcie) |
+| `polish-typography` | Reguły poprawnej polszczyzny i typografii PL (nbsp, cudzysłowy „...", półpauza, top 30 błędów). Referencja przy pisaniu/edycji copy |
+| `responsive-web-standards-2026` | HTML5 semantyczny, mobile-first breakpointy, WCAG 2.2 AA, Core Web Vitals, checklista Lighthouse 95+, optymalizacja obrazków |
+| `static-site-premium-patterns` | Wzorce vanilla HTML/CSS/JS: design tokens, scroll-reveal przez IntersectionObserver, modal wideo, formularz serverless, anti-patterns |
+| `video-web-integration` | Osadzanie wideo (MP4+WebM, poster, lazy-load, VTT captions, FFmpeg presety) — przyda się przy placeholderach wideo w portfolio/rozwiązaniach |
+| `github-pages-deploy` | Konfiguracja własnej domeny, rekordy DNS, HTTPS na GitHub Pages |
+
+> Skille `polish-typography`, `responsive-web-standards-2026`, `static-site-premium-patterns`, `video-web-integration`, `github-pages-deploy` zostały przeniesione z bliźniaczego repo `LogicMorrow/af-pack-portfolio-vanilla` (ta sama filozofia: vanilla, GitHub Pages, PL).
+
+### Agenci (`.claude/agents/`)
+
+| Agent | Kiedy używać |
+|---|---|
+| `polish-proofreader` | Korekta polskiego copy przed publikacją. Lintuje typografię + **wykrywa zakazany żargon IT z tej sekcji CLAUDE.md**. Generuje raport (HITL — nie zmienia plików sam). Wywołanie: `Task polish-proofreader --path=automatyzacje.html` lub `--all`. Zaadaptowany z af-pack pod pliki `.html` LogicMorrow |
+
+### Hooki (`.claude/hooks/`)
+
+- `validate-pl-typography.sh` — szybki, nieblokujący warning o typowych błędach PL przy Write/Edit plików `.html`/`.md`. **Nieaktywny domyślnie** (skrypt bash; na Windows wymaga podpięcia przez Git Bash w `settings.local.json`). Pełny audyt: agent `polish-proofreader`.

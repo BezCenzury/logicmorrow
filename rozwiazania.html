@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteka Rozwiązań — Automatyzacje w Działaniu | LogicMorrow</title>
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>Biblioteka Rozwiązań – Automatyzacje w Działaniu | LogicMorrow</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#2563eb">
-    <meta name="description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych — linki do GitHub.">
+    <meta name="description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych – linki do GitHub.">
 
     <!-- SEO: Canonical + Open Graph + Twitter Card -->
     <link rel="canonical" href="https://logicmorrow.pl/rozwiazania.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://logicmorrow.pl/rozwiazania.html">
-    <meta property="og:title" content="Biblioteka Rozwiązań — Automatyzacje w Działaniu | LogicMorrow">
-    <meta property="og:description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych — linki do GitHub.">
+    <meta property="og:title" content="Biblioteka Rozwiązań – Automatyzacje w Działaniu | LogicMorrow">
+    <meta property="og:description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych – linki do GitHub.">
     <meta property="og:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="LogicMorrow">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Biblioteka Rozwiązań — Automatyzacje w Działaniu | LogicMorrow">
-    <meta name="twitter:description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych — linki do GitHub.">
+    <meta name="twitter:title" content="Biblioteka Rozwiązań – Automatyzacje w Działaniu | LogicMorrow">
+    <meta name="twitter:description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych – linki do GitHub.">
     <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
 
     <!-- ═══════════════════════════════════════════════════════
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
          ═══════════════════════════════════════════════════════ -->
 
-    <!-- [1] Google Consent Mode V2 — domyślne zgody (MUST BE FIRST) -->
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -65,7 +68,7 @@
         })();
     </script>
 
-    <!-- [3] Google Tag Manager — zastąp GTM-XXXXXXX docelowym ID -->
+    <!-- [3] Google Tag Manager – zastąp GTM-XXXXXXX docelowym ID -->
     <script>(function(w,d,s,l,i){
         w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
         var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
@@ -74,10 +77,10 @@
     })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
 
     <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
-    <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
 
-    <!-- [5] Cookie Consent — kolory brand LogicMorrow -->
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
     <style>
         :root {
             --cc-btn-primary-bg: #2563eb;
@@ -111,7 +114,7 @@
           "@type": "WebPage",
           "@id": "https://logicmorrow.pl/rozwiazania.html",
           "url": "https://logicmorrow.pl/rozwiazania.html",
-          "name": "Biblioteka Rozwiązań — Automatyzacje w Działaniu | LogicMorrow",
+          "name": "Biblioteka Rozwiązań – Automatyzacje w Działaniu | LogicMorrow",
           "description": "Działające automatyzacje i aplikacje webowe zbudowane dla firm 5–35 pracowników. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte narzędzia.",
           "inLanguage": "pl-PL",
           "isPartOf": { "@id": "https://logicmorrow.pl/#website" }
@@ -128,9 +131,8 @@
     </script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Base CSS -->
     <link rel="stylesheet" href="css/base/variables.css">
@@ -175,7 +177,7 @@
                         <span>Działające systemy.</span>
                     </h1>
                     <p class="hero__subtitle">
-                        Zobacz działające systemy i automatyzacje, które rozwiązują realne problemy w firmach naszych klientów. Żadnej teorii, same konkrety.
+                        Zobacz działające systemy i automatyzacje, które rozwiązują realne problemy w firmach naszych klientów. Żadnej teorii, same konkrety.
                     </p>
                     <div class="hero__actions">
                         <a href="/konsultacja.html" class="btn btn--primary btn--lg btn--arrow">
@@ -331,9 +333,9 @@
             <div class="library__container">
 
                 <div class="library__header" data-animate="fade-up">
-                    <span class="section-label">Rozwiązania w praktyce</span>
-                    <h2>Zastosowania automatyzacji i systemów w firmach</h2>
-                    <p>Poniżej zobaczysz, jak automatyzacja i nasze systemy działają w praktyce. To konkretne rozwiązania, które radzą sobie z codziennymi problemami w firmach.</p>
+                    <span class="section-label">Rozwiązania w praktyce</span>
+                    <h2>Zastosowania automatyzacji i systemów w firmach</h2>
+                    <p>Poniżej zobaczysz, jak automatyzacja i nasze systemy działają w praktyce. To konkretne rozwiązania, które radzą sobie z codziennymi problemami w firmach.</p>
                 </div>
 
                 <!-- Filtry kategorii -->
@@ -344,7 +346,7 @@
                     <button class="library__filter-btn" data-filter="zaawansowane">Zaawansowane</button>
                 </div>
 
-                <!-- Grid wideo — karty procesów -->
+                <!-- Grid wideo – karty procesów -->
                 <div class="library__grid">
 
                     <!-- Karta 1: Skład drewna -->
@@ -352,7 +354,7 @@
                         <div class="process-card__visual" style="position: relative;">
                             <picture>
                                 <source srcset="assets/images/System-zamowien/Dashboard.webp" type="image/webp">
-                                <img src="assets/images/System-zamowien/Dashboard.jpg" alt="System dla składu drewna — podgląd" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16/9; display: block;" />
+                                <img src="assets/images/System-zamowien/Dashboard.jpg" alt="System dla składu drewna – podgląd" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16/9; display: block;" />
                             </picture>
                             <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; transition: background 0.2s;" onmouseenter="this.style.background='rgba(0,0,0,0.1)'" onmouseleave="this.style.background='rgba(0,0,0,0.3)'">
                                 <span style="background: var(--color-primary); color: white; padding: 12px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; pointer-events: none; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
@@ -369,7 +371,7 @@
                                 <span class="process-card__stat"><strong>Zakres:</strong> Magazyn, zamówienia, finanse, logistyka</span>
                             </div>
                             <p style="font-size: var(--text-xs); color: var(--color-slate-500); line-height: 1.6; margin-top: var(--space-4); border-top: 1px solid var(--color-slate-100); padding-top: var(--space-3);">
-                                <strong>Rozwiązanie:</strong> Połączenie wszystkich dotychczasowych systemów i procesów firmy, w jeden spójny system.
+                                <strong>Rozwiązanie:</strong> Połączenie wszystkich dotychczasowych systemów i procesów firmy, w jeden spójny system.
                             </p>
                         </div>
                     </article>
@@ -379,7 +381,7 @@
                         <div class="process-card__visual" style="position: relative;">
                             <picture>
                                 <source srcset="assets/images/Kontakt/miniaturka-kontakt.webp" type="image/webp">
-                                <img src="assets/images/Kontakt/miniaturka-kontakt.jpg" alt="Automatyczna obsługa kontaktów — podgląd" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16/9; display: block;" />
+                                <img src="assets/images/Kontakt/miniaturka-kontakt.jpg" alt="Automatyczna obsługa kontaktów – podgląd" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16/9; display: block;" />
                             </picture>
                             <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; transition: background 0.2s;" onmouseenter="this.style.background='rgba(0,0,0,0.1)'" onmouseleave="this.style.background='rgba(0,0,0,0.3)'">
                                 <span style="background: var(--color-primary); color: white; padding: 12px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; pointer-events: none; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
@@ -390,13 +392,13 @@
                         </div>
                         <div class="process-card__body">
                             <p class="process-card__category">Średniozaawansowane <span style="text-transform: none; opacity: 0.7; font-weight: 400; margin-left: 4px;">(Automatyzacja)</span></p>
-                            <h3 class="process-card__title">Automatyczna obsługa kontaktów z formularza</h3>
+                            <h3 class="process-card__title">Automatyczna obsługa kontaktów z formularza</h3>
                             <div class="process-card__stats">
                                 <span class="process-card__stat"><strong>Wdrożenie:</strong> 6 tygodni</span>
                                 <span class="process-card__stat"><strong>Zakres:</strong> CRM, Powiadomienia, Inteligentny system ofertowania</span>
                             </div>
                             <p style="font-size: var(--text-xs); color: var(--color-slate-500); line-height: 1.6; margin-top: var(--space-4); border-top: 1px solid var(--color-slate-100); padding-top: var(--space-3);">
-                                <strong>Rozwiązanie:</strong> Zautomatyzowanie zapisu kontaktów z formularza, spersonalizowane oferty, powiadomienia dla handlowca.
+                                <strong>Rozwiązanie:</strong> Zautomatyzowanie zapisu kontaktów z formularza, spersonalizowane oferty, powiadomienia dla handlowca.
                             </p>
                         </div>
                     </article>
@@ -416,27 +418,27 @@
                 <div class="consultation__grid" style="grid-template-columns: 1fr; max-width: 640px; margin: 0 auto;">
                     
                     <div style="text-align: center; margin-bottom: var(--space-10);">
-                        <h2 style="color: var(--color-white); margin-bottom: var(--space-4);" data-animate="fade-up">
-                            Widzisz podobny problem w swojej firmie?
+                        <h2 style="color: var(--color-slate-900); margin-bottom: var(--space-4);" data-animate="fade-up">
+                            Widzisz podobny problem w swojej firmie?
                         </h2>
-                        <p style="color: var(--color-slate-300); margin: 0 auto;" data-animate="fade-up">
-                            Opisz wyzwanie, a na bezpłatnej konsultacji pokażemy Ci gotowy plan automatyzacji.
+                        <p style="color: var(--color-slate-600); margin: 0 auto;" data-animate="fade-up">
+                            Opisz wyzwanie, a na bezpłatnej konsultacji pokażemy Ci gotowy plan automatyzacji.
                         </p>
                     </div>
 
                     <!-- Lewa strona: Formularz -->
-                    <div class="consultation__form-wrapper" data-animate="fade-up" style="background: var(--color-slate-900); border: 1px solid rgba(255,255,255,0.05); padding: var(--space-8); border-radius: var(--radius-xl);">
+                    <div class="consultation__form-wrapper" data-animate="fade-up" style="background: var(--color-surface); border: 1px solid var(--color-border); padding: var(--space-8); border-radius: var(--radius-xl); box-shadow: var(--shadow-card);">
                         <form class="consultation__form" id="contact-form">
                             <div class="form-group">
-                                <label class="form-label" for="form-email" style="color: var(--color-white);">Adres e-mail</label>
+                                <label class="form-label" for="form-email" style="color: var(--color-slate-700);">Adres e-mail</label>
                                 <input type="email" id="form-email" class="form-input" placeholder="adres@firma.pl" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="form-phone" style="color: var(--color-white);">Numer telefonu</label>
+                                <label class="form-label" for="form-phone" style="color: var(--color-slate-700);">Numer telefonu</label>
                                 <input type="tel" id="form-phone" class="form-input" placeholder="+48 000 000 000" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="form-subject" style="color: var(--color-white);">Temat rozmowy</label>
+                                <label class="form-label" for="form-subject" style="color: var(--color-slate-700);">Temat rozmowy</label>
                                 <textarea id="form-subject" class="form-textarea" placeholder="Co chcesz zautomatyzować?" rows="3" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" required></textarea>
                             </div>
 
@@ -448,8 +450,15 @@
                             
                             <div class="form-checkbox-group">
                                 <input type="checkbox" id="form-consent" class="form-checkbox" required>
-                                <label for="form-consent" class="form-checkbox-label" style="color: var(--color-slate-400); font-size: var(--text-xs);">
-                                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi zgłoszenia. Wyrażam zgodę na otrzymywanie informacji handlowych od LogicMorrow drogą elektroniczną na podany adres e-mail. <a href="/polityka-prywatnosci.html" target="_blank" style="color: var(--color-primary-light);">Polityka Prywatności.</a>
+                                <label for="form-consent" class="form-checkbox-label" style="color: var(--color-slate-600); font-size: var(--text-xs);">
+                                    Wyrażam zgodę na przetwarzanie moich danych osobowych przez LogicMorrow w celu obsługi mojego zgłoszenia. Szczegóły w <a href="/polityka-prywatnosci.html" target="_blank" rel="noopener" style="color: var(--color-primary-light);">Polityce Prywatności</a>.
+                                </label>
+                            </div>
+
+                            <div class="form-checkbox-group">
+                                <input type="checkbox" id="form-marketing" class="form-checkbox">
+                                <label for="form-marketing" class="form-checkbox-label" style="color: var(--color-slate-600); font-size: var(--text-xs);">
+                                    Chcę dodatkowo otrzymywać informacje handlowe od LogicMorrow drogą elektroniczną na podany adres e-mail (opcjonalnie – niewymagane do kontaktu).
                                 </label>
                             </div>
 
@@ -459,14 +468,14 @@
                         </form>
 
                         <!-- Bezpośredni kontakt -->
-                        <div class="consultation__direct" style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid rgba(255,255,255,0.05);">
+                        <div class="consultation__direct" style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-border);">
                             <span class="consultation__direct-label" style="display: block; font-size: var(--text-xs); color: var(--color-slate-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-4); text-align: center;">Lub skontaktuj się bezpośrednio</span>
                             <div class="consultation__direct-links" style="display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-8); justify-content: center;">
-                                <a href="tel:+48537844013" class="consultation__direct-link" style="display: flex; align-items: center; gap: var(--space-2); color: var(--color-white); font-weight: var(--font-semibold); transition: color 0.2s;">
+                                <a href="tel:+48537844013" class="consultation__direct-link" style="display: flex; align-items: center; gap: var(--space-2); color: var(--color-slate-900); font-weight: var(--font-semibold); transition: color 0.2s;">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary-light);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                                     537 844 013
                                 </a>
-                                <a href="mailto:kontakt@logicmorrow.pl" class="consultation__direct-link" style="display: flex; align-items: center; gap: var(--space-2); color: var(--color-white); font-weight: var(--font-semibold); transition: color 0.2s;">
+                                <a href="mailto:kontakt@logicmorrow.pl" class="consultation__direct-link" style="display: flex; align-items: center; gap: var(--space-2); color: var(--color-slate-900); font-weight: var(--font-semibold); transition: color 0.2s;">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-primary-light);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                     kontakt@logicmorrow.pl
                                 </a>
@@ -495,21 +504,21 @@
           <h3>System Dedykowany dla Składu Drewna</h3>
           <h4>Wyzwanie</h4>
           <p>
-            Firma handlująca drewnem konstrukcyjnym opierała swoje procesy na dwóch odseparowanych systemach: jednym do zarządzania magazynem i zamówieniami (WZ/PZ) oraz drugim do księgowości. Komunikacja odbywała się manualnie (maile, telefony). Takie rozproszenie narzędzi powodowało:
+            Firma handlująca drewnem konstrukcyjnym opierała swoje procesy na dwóch odseparowanych systemach: jednym do zarządzania magazynem i zamówieniami (WZ/PZ) oraz drugim do księgowości. Komunikacja odbywała się manualnie (maile, telefony). Takie rozproszenie narzędzi powodowało:
           </p>
           <ul>
-            <li>Brak natychmiastowej kontroli nad opóźnieniami w płatnościach.</li>
+            <li>Brak natychmiastowej kontroli nad opóźnieniami w płatnościach.</li>
             <li>Wydłużony czas weryfikacji statusu zamówień.</li>
             <li>Błędy inwentaryzacyjne prowadzące do braków na magazynie.</li>
           </ul>
           <h4>Rozwiązanie</h4>
           <p>
-            Zaprojektowaliśmy zintegrowany system dedykowany, który w jednym miejscu łączy zarządzanie zamówieniami, magazynem oraz finansami:
+            Zaprojektowaliśmy zintegrowany system dedykowany, który w jednym miejscu łączy zarządzanie zamówieniami, magazynem oraz finansami:
           </p>
           <ul>
-            <li><strong>Zarządzanie finansami:</strong> Automatyzacja faktur i monitoring wpłat z powiadomieniami o opóźnieniach.</li>
-            <li><strong>Inteligentny Magazyn:</strong> Minimalne progi magazynowe i generowanie list zakupowych jednym kliknięciem.</li>
-            <li><strong>Dedykowany Panel dla Magazynu:</strong> Podgląd zleceń na żywo dla magazynierów w aplikacji mobilnej.</li>
+            <li><strong>Zarządzanie finansami:</strong> Automatyzacja faktur i monitoring wpłat z powiadomieniami o opóźnieniach.</li>
+            <li><strong>Inteligentny Magazyn:</strong> Minimalne progi magazynowe i generowanie list zakupowych jednym kliknięciem.</li>
+            <li><strong>Dedykowany Panel dla Magazynu:</strong> Podgląd zleceń na żywo dla magazynierów w aplikacji mobilnej.</li>
           </ul>
         </div>
       </div>
@@ -534,17 +543,17 @@
           </p>
           <ul>
             <li>Dane kontaktowe trafiały na ogólną skrzynkę mailową biura.</li>
-            <li>Pracownik musiał odczytać wiadomość, odszukać odpowiedniego handlowca i przekazać mu kontakt.</li>
+            <li>Pracownik musiał odczytać wiadomość, odszukać odpowiedniego handlowca i przekazać mu kontakt.</li>
             <li>Klient otrzymywał najpierw ogólną, sztampową ofertę.</li>
             <li>Długi czas reakcji na zapytanie powodował utratę części potencjalnych klientów (leadów).</li>
           </ul>
           <h4>Rozwiązanie</h4>
           <p>
-            Wdrożono natychmiastową automatyzację procesującą przychodzące wiadomości z formularza:
+            Wdrożono natychmiastową automatyzację procesującą przychodzące wiadomości z formularza:
           </p>
           <ul>
-            <li><strong>Automatyczny przydział:</strong> System sam kategoryzuje zapytanie na podstawie wybranego rejonu województwa i przypisuje odpowiedniego handlowca.</li>
-            <li><strong>Synchronizacja z CRM:</strong> Wszystkie dane z zapytania natychmiast zapisują się jako nowa szansa sprzedaży w systemie CRM.</li>
+            <li><strong>Automatyczny przydział:</strong> System sam kategoryzuje zapytanie na podstawie wybranego rejonu województwa i przypisuje odpowiedniego handlowca.</li>
+            <li><strong>Synchronizacja z CRM:</strong> Wszystkie dane z zapytania natychmiast zapisują się jako nowa szansa sprzedaży w systemie CRM.</li>
             <li><strong>Asystent AI:</strong> System potrafi od razu wysłać wstępną, wysoce spersonalizowaną odpowiedź dopasowaną dokładnie do treści problemu klienta.</li>
             <li><strong>Alerty mobilne:</strong> Handlowiec otrzymuje automatyczne powiadomienie na telefon, dzięki czemu wie, że musi podjąć błyskawiczny kontakt.</li>
           </ul>
@@ -581,7 +590,7 @@
         });
     </script>
 
-    <!-- [6] Cookie Consent — inicjalizacja -->
+    <!-- [6] Cookie Consent – inicjalizacja -->
     <script src="/js/cookie-consent.js"></script>
 
 </body>
