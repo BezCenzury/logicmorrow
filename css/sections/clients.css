@@ -1,0 +1,113 @@
+/* ============================================================
+   CLIENTS.CSS — Firmy, które mi zaufały (logo marquee)
+   ============================================================ */
+
+.clients {
+    padding: var(--space-20) 0 var(--space-16);
+    background: var(--color-surface);
+    overflow: hidden;
+    position: relative;
+}
+
+.clients__header {
+    max-width: var(--container-max);
+    margin: 0 auto var(--space-12);
+    padding: 0 var(--container-padding);
+    text-align: center;
+}
+
+.clients__header h2 {
+    margin-bottom: var(--space-3);
+}
+
+.clients__header .lead {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* --- Marquee --- */
+.clients__marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.clients__track {
+    display: flex;
+    width: max-content;
+    animation: clients-marquee 45s linear infinite;
+}
+
+.clients__list {
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-6);
+    list-style: none;
+    margin: 0;
+    padding: 0 var(--space-3);
+}
+
+.clients__item {
+    flex-shrink: 0;
+}
+
+/* Logotyp bez kafelka — sam znak na tle sekcji */
+.clients__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
+    padding: 0 var(--space-6);
+}
+
+.clients__card img {
+    max-width: 180px;
+    max-height: 56px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    /* Wszystkie logotypy zaszarzone — spójny dowód społeczny */
+    filter: grayscale(1);
+    opacity: 0.7;
+}
+
+@keyframes clients-marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+    .clients {
+        padding: var(--space-16) 0 var(--space-12);
+    }
+
+    .clients__track {
+        animation-duration: 32s;
+    }
+
+    .clients__card {
+        height: 60px;
+        padding: 0 var(--space-5);
+    }
+
+    .clients__card img {
+        max-width: 140px;
+        max-height: 46px;
+    }
+}
+
+/* Szacunek dla preferencji ograniczonego ruchu */
+@media (prefers-reduced-motion: reduce) {
+    .clients__track {
+        animation: none;
+    }
+    .clients__marquee {
+        overflow-x: auto;
+    }
+    .clients__list[aria-hidden="true"] {
+        display: none;
+    }
+}

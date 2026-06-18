@@ -109,4 +109,64 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // ----------------------------------------------------------
+    // Nawigacja MIĘDZY projektami (poprzedni / następny)
+    // Pozwala przeskakiwać między case studies bez zamykania okna.
+    // ----------------------------------------------------------
+    const projectModals = Array.from(triggers)
+        .map(t => document.getElementById(t.getAttribute('data-modal-target')))
+        .filter((m, i, arr) => m && arr.indexOf(m) === i);
+
+    if (projectModals.length > 1) {
+        const total = projectModals.length;
+
+        const goToProject = (idx) => {
+            if (idx < 0 || idx >= total) return;
+            const current = projectModals.find(m => m.classList.contains('active'));
+            const target = projectModals[idx];
+            if (current === target) return;
+            if (current) current.classList.remove('active');
+            target.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            const car = target.querySelector('.modal-carousel');
+            if (car) car.scrollTo(0, 0);
+            const right = target.querySelector('.custom-modal-right');
+            if (right) right.scrollTop = 0;
+        };
+
+        projectModals.forEach((modal, i) => {
+            const right = modal.querySelector('.custom-modal-right');
+            if (!right || right.querySelector('.modal-projnav')) return;
+
+            const nav = document.createElement('div');
+            nav.className = 'modal-projnav';
+            nav.innerHTML =
+                '<button type="button" class="modal-projnav__btn" data-proj="prev" aria-label="Poprzedni projekt">' +
+                '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>' +
+                '<span>Poprzedni</span></button>' +
+                '<span class="modal-projnav__counter">Projekt <strong>' + (i + 1) + '</strong> z ' + total + '</span>' +
+                '<button type="button" class="modal-projnav__btn" data-proj="next" aria-label="Następny projekt">' +
+                '<span>Następny</span>' +
+                '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>' +
+                '</button>';
+            right.prepend(nav);
+
+            const prevBtn = nav.querySelector('[data-proj="prev"]');
+            const nextBtn = nav.querySelector('[data-proj="next"]');
+            prevBtn.disabled = (i === 0);
+            nextBtn.disabled = (i === total - 1);
+            prevBtn.addEventListener('click', () => goToProject(i - 1));
+            nextBtn.addEventListener('click', () => goToProject(i + 1));
+        });
+
+        // Strzałki klawiatury przełączają projekty, gdy modal jest otwarty
+        document.addEventListener('keydown', (e) => {
+            const active = projectModals.find(m => m.classList.contains('active'));
+            if (!active) return;
+            const idx = projectModals.indexOf(active);
+            if (e.key === 'ArrowRight') { e.preventDefault(); goToProject(idx + 1); }
+            else if (e.key === 'ArrowLeft') { e.preventDefault(); goToProject(idx - 1); }
+        });
+    }
 });

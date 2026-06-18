@@ -1,0 +1,355 @@
+/* ============================================================
+   RESULTS-CAROUSEL.CSS — Biblioteka rozwiązań (case studies)
+   Przewijana sekcja: lewa = screen/logo, prawa = wynik → przed → realizacja
+   ============================================================ */
+
+.results {
+    background: var(--color-surface-alt);
+    padding: var(--space-20) 0 var(--space-24);
+    overflow: hidden;
+    position: relative;
+}
+
+.results__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.results__header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto var(--space-12);
+}
+
+.results__header h2 {
+    color: var(--color-slate-900);
+    margin-bottom: var(--space-3);
+}
+
+.results__header .lead {
+    margin: 0 auto;
+}
+
+/* --- Viewport + tor przewijania --- */
+.results__viewport {
+    position: relative;
+}
+
+.results__track {
+    display: flex;
+    gap: var(--space-6);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;            /* Firefox */
+    padding-bottom: var(--space-2);
+}
+
+.results__track::-webkit-scrollbar {
+    display: none;                    /* Chrome / Safari */
+}
+
+/* --- Pojedyncze case study --- */
+.results-card {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    min-height: 480px;
+}
+
+/* Lewa kolumna: wizual (screen lub logo) */
+.results-card__visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8);
+    background:
+        radial-gradient(circle at 72% 12%, rgba(37, 99, 235, 0.06) 0%, transparent 55%),
+        linear-gradient(160deg, var(--color-slate-100) 0%, var(--color-slate-50) 100%);
+    overflow: hidden;
+}
+
+/* Screen aplikacji — ramka, cały ekran widoczny (contain), bez przycinania */
+.results-card__visual img {
+    width: 100%;
+    height: auto;
+    max-height: 340px;
+    object-fit: contain;
+    border-radius: var(--radius-base);
+    box-shadow: var(--shadow-elevated);
+    display: block;
+}
+
+/* Wariant: tylko logo (brak screena) — panel brandowy, logo bez ramki */
+.results-card__visual--logo {
+    padding: var(--space-12);
+    background:
+        radial-gradient(circle at 30% 25%, rgba(37, 99, 235, 0.08) 0%, transparent 60%),
+        linear-gradient(135deg, var(--color-blue-50) 0%, var(--color-blue-100) 100%);
+}
+
+.results-card__visual--logo img {
+    width: auto;
+    height: auto;
+    max-width: 78%;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+    filter: drop-shadow(0 8px 24px rgba(15, 23, 42, 0.10));
+}
+
+/* Prawa kolumna: treść */
+.results-card__body {
+    padding: var(--space-10);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.results-card__head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.results-card__tag {
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.results-card__company {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-extrabold);
+    color: var(--color-slate-900);
+    line-height: 1.1;
+}
+
+/* --- Wyniki (najważniejsze, uwypuklone liczby) ---
+   Minimalistyczny styl: duża, mocna liczba + cienki brandowy akcent.
+   3–4 korzyści → siatka 2 kolumny; 2 korzyści → w pionie (bez pustki). */
+.results-card__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5) var(--space-6);
+}
+
+/* Gdy są tylko 2 wyniki — jeden pod drugim, większe liczby */
+.results-card__stats--duo {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+}
+
+.results-stat {
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--color-primary);
+}
+
+.results-stat__value {
+    display: block;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-extrabold);
+    color: var(--color-slate-900);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+/* 2 korzyści: liczby jeszcze mocniejsze, wypełniają wysokość */
+.results-card__stats--duo .results-stat {
+    padding-left: var(--space-5);
+    border-left-width: 3px;
+}
+
+.results-card__stats--duo .results-stat__value {
+    font-size: var(--text-4xl);
+}
+
+.results-stat__value .arrow {
+    color: var(--color-slate-300);
+    font-weight: var(--font-bold);
+    margin: 0 0.1em;
+}
+
+.results-stat__label {
+    display: block;
+    margin-top: var(--space-1);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-slate-500);
+    line-height: 1.35;
+}
+
+/* --- Narracja: przed / jak to zrobiliśmy (mniejsza czcionka) --- */
+.results-card__story {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-top: auto;
+}
+
+.results-block__label {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-1);
+}
+
+.results-block--before .results-block__label {
+    color: var(--color-error);
+}
+
+.results-block--after .results-block__label {
+    color: var(--color-primary);
+}
+
+.results-block p {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-slate-600);
+    margin: 0;
+}
+
+/* --- Strzałki nawigacji --- */
+.results__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    color: var(--color-slate-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: var(--transition-base);
+}
+
+.results__arrow:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary-light);
+    box-shadow: var(--shadow-elevated);
+}
+
+.results__arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+    box-shadow: none;
+}
+
+.results__arrow--prev { left: -10px; }
+.results__arrow--next { right: -10px; }
+
+/* --- Kropki --- */
+.results__dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-top: var(--space-8);
+}
+
+.results__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background: var(--color-slate-300);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.results__dot:hover {
+    background: var(--color-slate-400);
+}
+
+.results__dot.active {
+    background: var(--color-primary);
+    width: 28px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .results-card {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .results-card__visual {
+        aspect-ratio: 16 / 10;
+        padding: var(--space-6);
+    }
+
+    .results-card__visual img {
+        max-height: 100%;
+    }
+
+    .results-card__visual--logo {
+        aspect-ratio: 16 / 9;
+        padding: var(--space-8);
+    }
+
+    .results-card__visual--logo img {
+        max-height: 120px;
+    }
+
+    .results__arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .results {
+        padding: var(--space-16) 0 var(--space-16);
+    }
+
+    .results-card__body {
+        padding: var(--space-6);
+        gap: var(--space-5);
+    }
+
+    .results-card__stats {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4) var(--space-5);
+    }
+
+    .results-card__stats--duo {
+        grid-template-columns: 1fr;
+    }
+
+    .results-stat__value,
+    .results-card__stats--duo .results-stat__value {
+        font-size: var(--text-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .results-card__stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Szacunek dla preferencji ograniczonego ruchu */
+@media (prefers-reduced-motion: reduce) {
+    .results__track {
+        scroll-behavior: auto;
+    }
+}

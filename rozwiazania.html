@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
     <title>Biblioteka Rozwiązań – Automatyzacje w Działaniu | LogicMorrow</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/logo-mark.svg">
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -152,6 +152,7 @@
     <link rel="stylesheet" href="css/sections/hero.css">
     <link rel="stylesheet" href="css/sections/library.css">
     <link rel="stylesheet" href="css/sections/consultation.css">
+    <link rel="stylesheet" href="css/sections/stats-band.css">
 </head>
 <body>
 
@@ -327,6 +328,32 @@
 
 
         <!-- ====================================================
+             SEKCJA 1.5: PASEK ZBIORCZYCH LICZB
+             ==================================================== -->
+        <section class="stats-band" aria-label="Nasze wdrożenia w liczbach">
+            <div class="stats-band__container" data-animate="fade-up">
+                <div class="stats-band__grid">
+                    <div class="stats-band__item">
+                        <span class="stats-band__value">25<span class="unit">+</span></span>
+                        <span class="stats-band__label">firm, którym pomogliśmy</span>
+                    </div>
+                    <div class="stats-band__item">
+                        <span class="stats-band__value">300<span class="unit">+</span></span>
+                        <span class="stats-band__label">roboczogodzin oszczędzanych miesięcznie u klientów</span>
+                    </div>
+                    <div class="stats-band__item">
+                        <span class="stats-band__value">40<span class="unit">+</span></span>
+                        <span class="stats-band__label">wdrożonych automatyzacji i aplikacji</span>
+                    </div>
+                    <div class="stats-band__item">
+                        <span class="stats-band__value">100<span class="unit">%</span></span>
+                        <span class="stats-band__label">kodu na własność klienta</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================
              SEKCJA 2: KATALOG WIDEO
              ==================================================== -->
         <section class="library" aria-label="Katalog rozwiązań i procesów">
@@ -349,12 +376,12 @@
                 <!-- Grid wideo – karty procesów -->
                 <div class="library__grid">
 
-                    <!-- Karta 1: Skład drewna -->
-                    <article class="process-card js-open-system-modal" data-modal-target="modal-sklad-drewna" style="cursor: pointer;" data-category="zaawansowane" data-animate="fade-up" data-delay="0" role="button" tabindex="0">
+                    <!-- Karta 1: CestPoldrew - skład drewna -->
+                    <article class="process-card js-open-system-modal" data-modal-target="modal-cestpoldrew" style="cursor: pointer;" data-category="zaawansowane" data-animate="fade-up" data-delay="0" role="button" tabindex="0">
                         <div class="process-card__visual" style="position: relative;">
                             <picture>
                                 <source srcset="assets/images/System-zamowien/Dashboard.webp" type="image/webp">
-                                <img src="assets/images/System-zamowien/Dashboard.jpg" alt="System dla składu drewna – podgląd" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16/9; display: block;" />
+                                <img src="assets/images/System-zamowien/Dashboard.jpg" alt="System dla składu drewna CestPoldrew - pulpit zamówień i magazynu" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                             </picture>
                             <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; transition: background 0.2s;" onmouseenter="this.style.background='rgba(0,0,0,0.1)'" onmouseleave="this.style.background='rgba(0,0,0,0.3)'">
                                 <span style="background: var(--color-primary); color: white; padding: 12px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; pointer-events: none; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
@@ -365,24 +392,45 @@
                         </div>
                         <div class="process-card__body">
                             <p class="process-card__category">Zaawansowane <span style="text-transform: none; opacity: 0.7; font-weight: 400; margin-left: 4px;">(Aplikacja webowa)</span></p>
-                            <h3 class="process-card__title">Dedykowany system dla składu drewna</h3>
+                            <h3 class="process-card__title">CestPoldrew: system dla składu drewna</h3>
                             <div class="process-card__stats">
-                                <span class="process-card__stat"><strong>Wdrożenie:</strong> 8 tygodni</span>
-                                <span class="process-card__stat"><strong>Zakres:</strong> Magazyn, zamówienia, finanse, logistyka</span>
+                                <span class="process-card__stat"><strong>+20 h</strong> odzyskane tygodniowo</span>
+                                <span class="process-card__stat"><strong>15 → 2</strong> opóźnień na miesiąc</span>
                             </div>
                             <p style="font-size: var(--text-xs); color: var(--color-slate-500); line-height: 1.6; margin-top: var(--space-4); border-top: 1px solid var(--color-slate-100); padding-top: var(--space-3);">
-                                <strong>Rozwiązanie:</strong> Połączenie wszystkich dotychczasowych systemów i procesów firmy, w jeden spójny system.
+                                <strong>Rozwiązanie:</strong> Cała firma w jednym systemie. Magazyn, klienci, zamówienia i terminy zamiast dziesięciu Exceli i kilku programów.
                             </p>
                         </div>
                     </article>
 
-                    <!-- Karta 2: Obsługa kontaktów -->
-                    <article class="process-card js-open-system-modal" data-modal-target="modal-obsluga-kontaktow" style="cursor: pointer;" data-category="srednie" data-animate="fade-up" data-delay="100" role="button" tabindex="0">
+                    <!-- Karta 2: EcoEnergy Pro - pompy ciepła -->
+                    <article class="process-card js-open-system-modal" data-modal-target="modal-ecoenergy" style="cursor: pointer;" data-category="srednie" data-animate="fade-up" data-delay="100" role="button" tabindex="0">
+                        <div class="process-card__visual" style="position: relative; background: linear-gradient(135deg, var(--color-blue-50) 0%, var(--color-blue-100) 100%);">
+                            <img src="assets/logos/ecoenergy-pro.svg" alt="EcoEnergy Pro - automatyzacja sprzedaży pomp ciepła" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; padding: 14% 18%; display: block;" />
+                            <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.18); display: flex; justify-content: center; align-items: center; transition: background 0.2s;" onmouseenter="this.style.background='rgba(0,0,0,0.04)'" onmouseleave="this.style.background='rgba(0,0,0,0.18)'">
+                                <span style="background: var(--color-primary); color: white; padding: 12px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; pointer-events: none; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M6 4l12 6-12 6V4z"/></svg>
+                                    Zobacz więcej
+                                </span>
+                            </div>
+                        </div>
+                        <div class="process-card__body">
+                            <p class="process-card__category">Średniozaawansowane <span style="text-transform: none; opacity: 0.7; font-weight: 400; margin-left: 4px;">(Automatyzacja sprzedaży)</span></p>
+                            <h3 class="process-card__title">EcoEnergy Pro: szybszy kontakt z klientem</h3>
+                            <div class="process-card__stats">
+                                <span class="process-card__stat"><strong>24 h → 30 min</strong> reakcja na kontakt</span>
+                                <span class="process-card__stat"><strong>+7%</strong> umów w miesiąc</span>
+                            </div>
+                            <p style="font-size: var(--text-xs); color: var(--color-slate-500); line-height: 1.6; margin-top: var(--space-4); border-top: 1px solid var(--color-slate-100); padding-top: var(--space-3);">
+                                <strong>Rozwiązanie:</strong> Kontakt z formularza trafia od razu do właściwego handlowca, który dostaje powiadomienie na telefon i wysyła ofertę dopasowaną do klienta.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Karta 3: MatJar Dachy - wyceny -->
+                    <article class="process-card js-open-system-modal" data-modal-target="modal-matjar" style="cursor: pointer;" data-category="zaawansowane" data-animate="fade-up" data-delay="200" role="button" tabindex="0">
                         <div class="process-card__visual" style="position: relative;">
-                            <picture>
-                                <source srcset="assets/images/Kontakt/miniaturka-kontakt.webp" type="image/webp">
-                                <img src="assets/images/Kontakt/miniaturka-kontakt.jpg" alt="Automatyczna obsługa kontaktów – podgląd" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16/9; display: block;" />
-                            </picture>
+                            <img src="assets/images/MatJar/01.webp" alt="Aplikacja do wycen dla firmy dekarskiej MatJar Dachy" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                             <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.3); display: flex; justify-content: center; align-items: center; transition: background 0.2s;" onmouseenter="this.style.background='rgba(0,0,0,0.1)'" onmouseleave="this.style.background='rgba(0,0,0,0.3)'">
                                 <span style="background: var(--color-primary); color: white; padding: 12px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; pointer-events: none; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M6 4l12 6-12 6V4z"/></svg>
@@ -391,19 +439,65 @@
                             </div>
                         </div>
                         <div class="process-card__body">
-                            <p class="process-card__category">Średniozaawansowane <span style="text-transform: none; opacity: 0.7; font-weight: 400; margin-left: 4px;">(Automatyzacja)</span></p>
-                            <h3 class="process-card__title">Automatyczna obsługa kontaktów z formularza</h3>
+                            <p class="process-card__category">Zaawansowane <span style="text-transform: none; opacity: 0.7; font-weight: 400; margin-left: 4px;">(Aplikacja webowa)</span></p>
+                            <h3 class="process-card__title">MatJar Dachy: błyskawiczne wyceny</h3>
                             <div class="process-card__stats">
-                                <span class="process-card__stat"><strong>Wdrożenie:</strong> 6 tygodni</span>
-                                <span class="process-card__stat"><strong>Zakres:</strong> CRM, Powiadomienia, Inteligentny system ofertowania</span>
+                                <span class="process-card__stat"><strong>2-3 h → 20 min</strong> jedna wycena</span>
+                                <span class="process-card__stat"><strong>1 dzień</strong> do gotowej oferty</span>
                             </div>
                             <p style="font-size: var(--text-xs); color: var(--color-slate-500); line-height: 1.6; margin-top: var(--space-4); border-top: 1px solid var(--color-slate-100); padding-top: var(--space-3);">
-                                <strong>Rozwiązanie:</strong> Zautomatyzowanie zapisu kontaktów z formularza, spersonalizowane oferty, powiadomienia dla handlowca.
+                                <strong>Rozwiązanie:</strong> Kalkulator przelicza wycenę automatycznie, a oferta wychodzi w jednym wzorze PDF. Koniec liczenia na kartce.
                             </p>
                         </div>
                     </article>
 
+                    <!-- Karta 4: eolesianails - beauty -->
+                    <article class="process-card js-open-system-modal" data-modal-target="modal-eolesianails" style="cursor: pointer;" data-category="proste" data-animate="fade-up" data-delay="0" role="button" tabindex="0">
+                        <div class="process-card__visual" style="position: relative; background: linear-gradient(135deg, var(--color-blue-50) 0%, var(--color-blue-100) 100%);">
+                            <img src="assets/logos/eolesianails.webp" alt="eolesianails - automatyzacja rezerwacji w salonie beauty" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; padding: 22% 16%; display: block;" />
+                            <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.18); display: flex; justify-content: center; align-items: center; transition: background 0.2s;" onmouseenter="this.style.background='rgba(0,0,0,0.04)'" onmouseleave="this.style.background='rgba(0,0,0,0.18)'">
+                                <span style="background: var(--color-primary); color: white; padding: 12px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; pointer-events: none; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M6 4l12 6-12 6V4z"/></svg>
+                                    Zobacz więcej
+                                </span>
+                            </div>
+                        </div>
+                        <div class="process-card__body">
+                            <p class="process-card__category">Najprostsze <span style="text-transform: none; opacity: 0.7; font-weight: 400; margin-left: 4px;">(Automatyzacja)</span></p>
+                            <h3 class="process-card__title">eolesianails: koniec z pustymi terminami</h3>
+                            <div class="process-card__stats">
+                                <span class="process-card__stat"><strong>-70%</strong> odwołanych wizyt</span>
+                                <span class="process-card__stat"><strong>+20 h</strong> miesięcznie</span>
+                            </div>
+                            <p style="font-size: var(--text-xs); color: var(--color-slate-500); line-height: 1.6; margin-top: var(--space-4); border-top: 1px solid var(--color-slate-100); padding-top: var(--space-3);">
+                                <strong>Rozwiązanie:</strong> Automatyczne SMS-y przypominające o wizycie, połączone z kalendarzem rezerwacji. Klientki nie zapominają o terminie.
+                            </p>
+                        </div>
+                    </article>
 
+                    <!-- Karta 5: Majster Dachy - handel materiałami -->
+                    <article class="process-card js-open-system-modal" data-modal-target="modal-majster" style="cursor: pointer;" data-category="srednie" data-animate="fade-up" data-delay="100" role="button" tabindex="0">
+                        <div class="process-card__visual" style="position: relative; background: linear-gradient(135deg, var(--color-blue-50) 0%, var(--color-blue-100) 100%);">
+                            <img src="assets/logos/majsterdachy.webp" alt="Majster Dachy - automatyzacja faktur i magazynu w handlu" loading="lazy" style="width: 100%; height: 100%; object-fit: contain; padding: 12% 12%; display: block;" />
+                            <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0,0,0,0.18); display: flex; justify-content: center; align-items: center; transition: background 0.2s;" onmouseenter="this.style.background='rgba(0,0,0,0.04)'" onmouseleave="this.style.background='rgba(0,0,0,0.18)'">
+                                <span style="background: var(--color-primary); color: white; padding: 12px 24px; border-radius: 30px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px; pointer-events: none; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><path d="M6 4l12 6-12 6V4z"/></svg>
+                                    Zobacz więcej
+                                </span>
+                            </div>
+                        </div>
+                        <div class="process-card__body">
+                            <p class="process-card__category">Średniozaawansowane <span style="text-transform: none; opacity: 0.7; font-weight: 400; margin-left: 4px;">(Automatyzacja)</span></p>
+                            <h3 class="process-card__title">Majster Dachy: faktury i magazyn pod kontrolą</h3>
+                            <div class="process-card__stats">
+                                <span class="process-card__stat"><strong>+50 h</strong> tygodniowo</span>
+                                <span class="process-card__stat"><strong>15 → 1-2</strong> opóźnień w płatnościach</span>
+                            </div>
+                            <p style="font-size: var(--text-xs); color: var(--color-slate-500); line-height: 1.6; margin-top: var(--space-4); border-top: 1px solid var(--color-slate-100); padding-top: var(--space-3);">
+                                <strong>Rozwiązanie:</strong> Jedna automatyzacja pilnuje płatności i sama ponagla klientów, druga codziennie sprawdza magazyn i podpowiada, co domówić.
+                            </p>
+                        </div>
+                    </article>
 
                 </div>
 
@@ -489,74 +583,181 @@
     </main>
 
     <!-- Modals -->
-    <div class="custom-modal-overlay" id="modal-sklad-drewna" aria-hidden="true">
+    <!-- Modal 1: CestPoldrew -->
+    <div class="custom-modal-overlay" id="modal-cestpoldrew" aria-hidden="true">
       <div class="custom-modal-container custom-modal-content">
         <button class="custom-modal-close" aria-label="Zamknij">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
         <div class="custom-modal-left">
-          <iframe src="https://www.youtube-nocookie.com/embed/s7I1Zn2j-94?rel=0" title="System dla składu drewna" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; height: 100%; border: 0;"></iframe>
+          <div class="modal-carousel">
+            <div class="modal-carousel-item"><img src="assets/images/System-zamowien/Dashboard.jpg" alt="Pulpit systemu CestPoldrew" loading="lazy"></div>
+            <div class="modal-carousel-item"><img src="assets/images/System-zamowien/Panel-magazynowy.jpg" alt="Panel magazynowy" loading="lazy"></div>
+            <div class="modal-carousel-item"><img src="assets/images/System-zamowien/zamowienie.jpg" alt="Widok zamówienia" loading="lazy"></div>
+            <div class="modal-carousel-item"><img src="assets/images/System-zamowien/faktury.jpg" alt="Faktury i płatności" loading="lazy"></div>
+            <div class="modal-carousel-item"><img src="assets/images/System-zamowien/klienci.jpg" alt="Baza klientów" loading="lazy"></div>
+          </div>
+          <button class="modal-carousel-arrow modal-carousel-arrow--prev" aria-label="Poprzedni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="modal-carousel-arrow modal-carousel-arrow--next" aria-label="Następny"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <div class="modal-carousel-controls">
+            <span class="modal-carousel-dot active"></span>
+            <span class="modal-carousel-dot"></span>
+            <span class="modal-carousel-dot"></span>
+            <span class="modal-carousel-dot"></span>
+            <span class="modal-carousel-dot"></span>
+          </div>
         </div>
         <div class="custom-modal-right">
-          <h3>System Dedykowany dla Składu Drewna</h3>
-          <h4>Wyzwanie</h4>
-          <p>
-            Firma handlująca drewnem konstrukcyjnym opierała swoje procesy na dwóch odseparowanych systemach: jednym do zarządzania magazynem i zamówieniami (WZ/PZ) oraz drugim do księgowości. Komunikacja odbywała się manualnie (maile, telefony). Takie rozproszenie narzędzi powodowało:
-          </p>
+          <h3>CestPoldrew: system dla składu drewna</h3>
+          <h4>Efekty</h4>
           <ul>
-            <li>Brak natychmiastowej kontroli nad opóźnieniami w płatnościach.</li>
-            <li>Wydłużony czas weryfikacji statusu zamówień.</li>
-            <li>Błędy inwentaryzacyjne prowadzące do braków na magazynie.</li>
+            <li>20 roboczogodzin odzyskanych tygodniowo</li>
+            <li>Opóźnienia w zamówieniach z 15 do 2 w miesiącu</li>
+            <li>Zero telefonów między biurem a produkcją</li>
+            <li>Dziesięć Exceli i kilka programów zastąpione jednym systemem</li>
           </ul>
-          <h4>Rozwiązanie</h4>
+          <h4>Jak było wcześniej</h4>
           <p>
-            Zaprojektowaliśmy zintegrowany system dedykowany, który w jednym miejscu łączy zarządzanie zamówieniami, magazynem oraz finansami:
+            Zamówienia spływały telefonicznie i mailowo, a biuro przekazywało je do produkcji telefonem. Przy większym natłoku pojawiały się opóźnienia, część zleceń się gubiła, nie dało się pilnować terminów wysyłki, a klient nie wiedział, co dzieje się z jego zamówieniem. Stany magazynowe leżały w Excelu, osobno od dokumentów, a produkcja działała po omacku.
           </p>
-          <ul>
-            <li><strong>Zarządzanie finansami:</strong> Automatyzacja faktur i monitoring wpłat z powiadomieniami o opóźnieniach.</li>
-            <li><strong>Inteligentny Magazyn:</strong> Minimalne progi magazynowe i generowanie list zakupowych jednym kliknięciem.</li>
-            <li><strong>Dedykowany Panel dla Magazynu:</strong> Podgląd zleceń na żywo dla magazynierów w aplikacji mobilnej.</li>
-          </ul>
+          <h4>Co zrobiliśmy</h4>
+          <p>
+            Najpierw poukładaliśmy procesy firmy, a potem zamknęliśmy je w jednej dedykowanej aplikacji webowej. Magazyn, klienci, zamówienia i terminy są w jednym miejscu. Nic się nie gubi, powiadomienia o opóźnieniach przychodzą automatycznie, a stan magazynu widać na żywo. Zamiast dziesięciu Exceli i kilku programów firma ma jeden spójny system do prowadzenia całej sprzedaży.
+          </p>
         </div>
       </div>
     </div>
-    
-    <div class="custom-modal-overlay" id="modal-obsluga-kontaktow" aria-hidden="true">
+
+    <!-- Modal 2: EcoEnergy Pro -->
+    <div class="custom-modal-overlay" id="modal-ecoenergy" aria-hidden="true">
       <div class="custom-modal-container custom-modal-content">
         <button class="custom-modal-close" aria-label="Zamknij">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
-        <div class="custom-modal-left">
-          <iframe src="https://www.youtube-nocookie.com/embed/Pvwx9RF4Wok?rel=0" title="Automatyczna obsługa kontaktów (AI + CRM)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width: 100%; height: 100%; border: 0;"></iframe>
+        <div class="custom-modal-left" style="background: linear-gradient(135deg, #0b1220 0%, #0f172a 100%);">
+          <div style="background: #ffffff; border-radius: var(--radius-lg); padding: var(--space-12); max-width: 78%; box-shadow: 0 18px 40px rgba(0,0,0,0.45);">
+            <img src="assets/logos/ecoenergy-pro.svg" alt="EcoEnergy Pro" style="display: block; width: 100%; max-height: 160px; object-fit: contain;">
+          </div>
         </div>
         <div class="custom-modal-right">
-          <h3>Automatyczna obsługa kontaktów (AI + CRM)</h3>
-          <h4>Wyzwanie</h4>
-          <p>
-            Dotychczas proces obsługi zapytań ze strony WWW był całkowicie manualny:
-          </p>
+          <h3>EcoEnergy Pro: szybszy i trafniejszy kontakt</h3>
+          <h4>Efekty</h4>
           <ul>
-            <li>Dane kontaktowe trafiały na ogólną skrzynkę mailową biura.</li>
-            <li>Pracownik musiał odczytać wiadomość, odszukać odpowiedniego handlowca i przekazać mu kontakt.</li>
-            <li>Klient otrzymywał najpierw ogólną, sztampową ofertę.</li>
-            <li>Długi czas reakcji na zapytanie powodował utratę części potencjalnych klientów (leadów).</li>
+            <li>Czas reakcji na kontakt z około 24 godzin do 30 minut</li>
+            <li>Więcej podpisanych umów o 7% w miesiąc</li>
+            <li>7 roboczogodzin biura odzyskanych tygodniowo</li>
+            <li>Oferta dopasowana do każdego klienta</li>
           </ul>
-          <h4>Rozwiązanie</h4>
+          <h4>Jak było wcześniej</h4>
           <p>
-            Wdrożono natychmiastową automatyzację procesującą przychodzące wiadomości z formularza:
+            Kontakt wpadał przez formularz, dane trafiały do biura, a pracownik ręcznie przypisywał klienta handlowcowi i wysyłał ogólną ofertę ze wszystkimi pompami ciepła. Handlowcy w trasie sprawdzali system dopiero następnego dnia, więc część klientów zdążyła już wybrać inną firmę.
           </p>
+          <h4>Co zrobiliśmy</h4>
+          <p>
+            Dane z formularza zapisują się i przypisują do właściwego handlowca automatycznie. Handlowiec dostaje powiadomienie na telefon razem z danymi klienta i może oddzwonić od razu, a nie następnego dnia. Klient zamiast ogólnego maila dostaje ofertę dopasowaną do metrażu domu, który podał w formularzu. Kontakt jest szybszy i bardziej trafny, a biuro ma mniej ręcznej roboty.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 3: MatJar Dachy -->
+    <div class="custom-modal-overlay" id="modal-matjar" aria-hidden="true">
+      <div class="custom-modal-container custom-modal-content">
+        <button class="custom-modal-close" aria-label="Zamknij">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="custom-modal-left">
+          <div class="modal-carousel">
+            <div class="modal-carousel-item"><img src="assets/images/MatJar/01.webp" alt="Aplikacja do wycen MatJar Dachy - widok 1" loading="lazy"></div>
+            <div class="modal-carousel-item"><img src="assets/images/MatJar/02.webp" alt="Aplikacja do wycen MatJar Dachy - widok 2" loading="lazy"></div>
+            <div class="modal-carousel-item"><img src="assets/images/MatJar/03.webp" alt="Aplikacja do wycen MatJar Dachy - widok 3" loading="lazy"></div>
+            <div class="modal-carousel-item"><img src="assets/images/MatJar/04.webp" alt="Aplikacja do wycen MatJar Dachy - widok 4" loading="lazy"></div>
+          </div>
+          <button class="modal-carousel-arrow modal-carousel-arrow--prev" aria-label="Poprzedni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+          <button class="modal-carousel-arrow modal-carousel-arrow--next" aria-label="Następny"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          <div class="modal-carousel-controls">
+            <span class="modal-carousel-dot active"></span>
+            <span class="modal-carousel-dot"></span>
+            <span class="modal-carousel-dot"></span>
+            <span class="modal-carousel-dot"></span>
+          </div>
+        </div>
+        <div class="custom-modal-right">
+          <h3>MatJar Dachy: wyceny w 20 minut</h3>
+          <h4>Efekty</h4>
           <ul>
-            <li><strong>Automatyczny przydział:</strong> System sam kategoryzuje zapytanie na podstawie wybranego rejonu województwa i przypisuje odpowiedniego handlowca.</li>
-            <li><strong>Synchronizacja z CRM:</strong> Wszystkie dane z zapytania natychmiast zapisują się jako nowa szansa sprzedaży w systemie CRM.</li>
-            <li><strong>Asystent AI:</strong> System potrafi od razu wysłać wstępną, wysoce spersonalizowaną odpowiedź dopasowaną dokładnie do treści problemu klienta.</li>
-            <li><strong>Alerty mobilne:</strong> Handlowiec otrzymuje automatyczne powiadomienie na telefon, dzięki czemu wie, że musi podjąć błyskawiczny kontakt.</li>
+            <li>Oferta dla klienta w 1 dzień roboczy zamiast 4-5 dni</li>
+            <li>Czas jednej wyceny z 2-3 godzin do 20 minut</li>
+            <li>Zero zgubionych wycen i ofert</li>
           </ul>
+          <h4>Jak było wcześniej</h4>
+          <p>
+            Wyceny powstawały ręcznie, na kartce, i wszystko trzeba było liczyć od nowa za każdym razem. Zajmowało to godziny, gotowe wyceny zostawały w notesie, czasem się gubiły, czasem zapominało się o kliencie. Do tego notes trzeba było mieć zawsze przy sobie.
+          </p>
+          <h4>Co zrobiliśmy</h4>
+          <p>
+            Zbudowaliśmy dedykowaną aplikację z wbudowaną logiką wycen. Kalkulator przelicza większość danych sam, zamiast liczenia wszystkiego ręcznie. Każda oferta i wycena ma jeden wzór w PDF, a nie zdjęcie kartki. Wycenę da się zrobić w jeden wieczór, nic nie ginie, a zmianę w wycenie wystarczy poprawić w systemie, bez przepisywania wszystkiego od początku.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4: eolesianails -->
+    <div class="custom-modal-overlay" id="modal-eolesianails" aria-hidden="true">
+      <div class="custom-modal-container custom-modal-content">
+        <button class="custom-modal-close" aria-label="Zamknij">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="custom-modal-left" style="background: linear-gradient(135deg, #0b1220 0%, #0f172a 100%);">
+          <div style="background: #ffffff; border-radius: var(--radius-lg); padding: var(--space-12); max-width: 72%; box-shadow: 0 18px 40px rgba(0,0,0,0.45);">
+            <img src="assets/logos/eolesianails.webp" alt="eolesianails" style="display: block; width: 100%; max-height: 150px; object-fit: contain;">
+          </div>
+        </div>
+        <div class="custom-modal-right">
+          <h3>eolesianails: koniec z pustymi terminami</h3>
+          <h4>Efekty</h4>
+          <ul>
+            <li>70% mniej odwołanych i nieodbytych wizyt</li>
+            <li>20 roboczogodzin odzyskanych miesięcznie</li>
+          </ul>
+          <h4>Jak było wcześniej</h4>
+          <p>
+            Klientki rezerwowały wizyty z kilkutygodniowym wyprzedzeniem i zapominały o terminie, więc część po prostu nie przychodziła, a salon tracił zarezerwowany czas. Pracownica wysyłała przypomnienia ręcznie, ale zajmowało jej to średnio 5 godzin tygodniowo, bywało nieregularne i o części klientek zwyczajnie zapominała.
+          </p>
+          <h4>Co zrobiliśmy</h4>
+          <p>
+            Wprowadziliśmy automatyczne powiadomienia połączone z kalendarzem rezerwacji. Klientka dostaje dwa SMS-y w odpowiednim czasie przed wizytą. Dzięki temu nie zapomina o terminie, a jeśli musi odwołać, zostaje czas, żeby wpisać kogoś na zwolnione miejsce.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5: Majster Dachy -->
+    <div class="custom-modal-overlay" id="modal-majster" aria-hidden="true">
+      <div class="custom-modal-container custom-modal-content">
+        <button class="custom-modal-close" aria-label="Zamknij">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="custom-modal-left" style="background: linear-gradient(135deg, #0b1220 0%, #0f172a 100%);">
+          <div style="background: #ffffff; border-radius: var(--radius-lg); padding: var(--space-12); max-width: 64%; box-shadow: 0 18px 40px rgba(0,0,0,0.45);">
+            <img src="assets/logos/majsterdachy.webp" alt="Majster Dachy" style="display: block; width: 100%; max-height: 200px; object-fit: contain;">
+          </div>
+        </div>
+        <div class="custom-modal-right">
+          <h3>Majster Dachy: faktury i magazyn pod kontrolą</h3>
+          <h4>Efekty</h4>
+          <ul>
+            <li>Opóźnienia w płatnościach z około 15 do 1-2 w miesiącu</li>
+            <li>50 roboczogodzin odzyskanych tygodniowo</li>
+          </ul>
+          <h4>Jak było wcześniej</h4>
+          <p>
+            Firmę bolały dwie rzeczy: klienci nie płacili na czas, a sprawdzanie stanów magazynowych pochłaniało mnóstwo czasu. System był, ale niezautomatyzowany, więc ktoś ręcznie pilnował faktur i dzwonił do spóźnialskich, a braki na magazynie trzeba było samemu wyłapywać i oceniać, co domówić.
+          </p>
+          <h4>Co zrobiliśmy</h4>
+          <p>
+            Pierwsza automatyzacja pilnuje faktur, terminów i płatności, a do tego sama wysyła przypomnienia i ponaglenia mailowe do klientów. Druga codziennie pobiera stany magazynowe, porównuje je z założonymi poziomami i wysyła raport: czego jest poniżej minimum i co trzeba domówić.
+          </p>
         </div>
       </div>
     </div>

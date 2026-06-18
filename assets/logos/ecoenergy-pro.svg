@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="110" viewBox="0 0 430 110" role="img" aria-label="EcoEnergy Pro">
+  <defs>
+    <linearGradient id="eep-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34b3f1"/>
+      <stop offset="1" stop-color="#1467d6"/>
+    </linearGradient>
+  </defs>
+  <!-- Ikona: zaokrąglony kwadrat z piorunem -->
+  <rect x="8" y="14" width="82" height="82" rx="22" fill="url(#eep-grad)"/>
+  <path d="M55 28 L35 60 L48 60 L44 82 L67 50 L52 50 Z" fill="#ffffff"/>
+  <!-- Wordmark -->
+  <text x="104" y="68" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" letter-spacing="-1.5">
+    <tspan fill="#15619f">EcoEnergy</tspan><tspan fill="#2aa0e8"> Pro</tspan>
+  </text>
+</svg>

@@ -38,12 +38,15 @@ Piszemy **co klient zyska**, nie **co robi technologia**.
 - Nie: "Standardy klasy Enterprise"
 - Tak: "Bez niespodzianek. Bez haczyków."
 
-### Pozycjonowanie: butikowy inżynier, nie agencja
+### Pozycjonowanie: mała, zwinna agencja (my), nie korporacja
 
-- Komunikacja szczera i bezpośrednia — bez korporacyjnej nowomowy
-- Nie nadużywamy słów: "innowacyjny", "kompleksowy", "holistyczny", "synergia"
-- Konkretne liczby są lepsze niż przymiotniki ("15 minut → 3 sekundy" zamiast "znacznie szybciej")
-- Obiekcje klienta zbijamy matematyką i konkretem, nie ogólnikami
+- **Mówimy w liczbie mnogiej — „my / nam / nasz".** Nigdy w pierwszej osobie liczby pojedynczej („ja", „mi", „mój", „przygotowuję"). Jesteśmy małym zespołem / małą agencją, nie solowym wykonawcą.
+- **Nie używamy ramy „inżynier zamiast agencji" ani fraz typu „1:1 z inżynierem", „bezpośrednio z twórcą".** Przewagę budujemy jako: mały zespół = mniej etapów niż w korporacji, łatwy i bezpośredni kontakt, szybka decyzja.
+- Komunikacja szczera i bezpośrednia, bez korporacyjnej nowomowy.
+- Nie nadużywamy słów: "innowacyjny", "kompleksowy", "holistyczny", "synergia".
+- Konkretne liczby są lepsze niż przymiotniki ("15 minut → 3 sekundy" zamiast "znacznie szybciej").
+- Obiekcje klienta zbijamy matematyką i konkretem, nie ogólnikami.
+- Dane podmiotu JDG (Mateusz Olesiuk, NIP) trzymamy **wyłącznie w Polityce Prywatności** (wymóg prawny). W stopce i sekcjach marketingowych — tylko marka „LogicMorrow".
 
 ### Wyjątek — kontekst techniczny
 
@@ -223,18 +226,19 @@ Kiedy użytkownik poda numer kontenera GTM, zamień `GTM-XXXXXXX` we wszystkich 
 ## Inwentarz podstron i ich sekcji
 
 ### `index.html` — Strona główna (centrum dowodzenia)
-Pełny lejek TOFU→BOFU. CSS: hero, tech-stack, challenges, solutions, portfolio-teaser, qualifier, roi-calculator, manifesto, consultation, safety-standards.
+Pełny lejek TOFU→BOFU. CSS: hero, stats-band, clients, challenges, solutions, results-carousel, qualifier, roi-calculator, manifesto, consultation, safety-standards. Kolejność strefy zaufania: Hero → pasek liczb (`.stats-band`) → przewijane logo „Firmy, które nam zaufały" (`.clients` marquee). Sekcja `.popular-processes` (pasek „najczęściej automatyzowane procesy", stylowany w `tech-stack.css`) została usunięta, by nie dublować ruchomych pasków — na stronie zostaje jeden marquee (logo klientów).
 
 | Sekcja | Klasa CSS | JS | Opis |
 |---|---|---|---|
 | Hero | `.hero` | `animations.js` (typewriter) | Nagłówek z typewriterem, przed/po SVG, CTA → konsultacja |
-| Tech Stack | `.tech-stack` | — | Infinite-scroll karuzela technologii (CSS animation) |
+| Pasek liczb | `.stats-band` | `animations.js` | Strefa zaufania pod Hero: 4 zbiorcze KPI (25+ firm, 300+ h/mies., 40+ wdrożeń, 100% kodu na własność) |
+| Firmy, które nam zaufały | `.clients` | — | Przewijany marquee logo (pod paskiem liczb, jedyny ruchomy pasek na stronie) |
 | Wyzwania | `.challenges` | `animations.js` | 6 kart problemów klientów |
 | Rozwiązania | `.solutions` | `solutions.js` | 3 zakładki: automatyzacje/aplikacje/agenci AI z SVG |
-| Portfolio | `.portfolio-teaser` | — | 3 karty z placeholderami wideo |
+| Biblioteka rozwiązań | `.results` | `results-carousel.js` | Przewijane case studies (wynik → przed → realizacja), kropki + strzałki |
 | Kwalifikator | `.qualifier` | `animations.js` | Dla kogo jest / dla kogo nie jest |
 | Kalkulator ROI | `.roi-calculator` | `roi-calculator.js` | 3 suwaki → wyliczenie kosztu manualu |
-| Manifest | `.manifesto` | `animations.js` | Tabela porównawcza: Agencja vs LogicMorrow |
+| Manifest | `.manifesto` | `animations.js` | Tabela porównawcza: Duża agencja / korporacja vs LogicMorrow (mały zespół) |
 | Formularz kontaktowy | `.consultation` | inline script | Formularz z honeypot bot-protection |
 | Safety Standards | `.safety-standards` | `animations.js` | 3 karty: on-premise, monitoring, shadow run |
 
@@ -270,7 +274,7 @@ Hero skupiony na zastąpieniu Excela. CSS: hero, challenges, solutions, safety-s
 PoC 4-krokowy + 6 kart gwarancji (własność kodu, stała cena, brak vendor lock-in, jeden kontakt, shadow run, dane w infrastrukturze klienta). CSS: hero, process-model, safety-standards, roadmap.
 
 ### `rozwiazania.html` — Biblioteka procesów (portfolio)
-Filtry (Wszystkie/Sprzedaż/Operacje/Produkcja/Aplikacje) + 3 placeholder karty z wideo. Filter logic: inline JS w DOMContentLoaded. CSS: hero, library.
+Pasek zbiorczych liczb (`.stats-band`, te same KPI co na index) między Hero a katalogiem. Filtry (Wszystkie/Najprostsze/Średniozaawansowane/Zaawansowane, `data-category`: proste/srednie/zaawansowane) + 5 kart case studies otwieranych w modalu (`js-open-system-modal` → `custom-modal-overlay`, obsługa w `js/modal.js`). Modale: galeria screenów (`modal-carousel`) dla CestPoldrew i MatJar, panel z logo dla EcoEnergy/eolesianails/Majster; treść = Efekty → Jak było wcześniej → Co zrobiliśmy. **Nawigacja między projektami** (`.modal-projnav`, wstrzykiwana przez `modal.js`): „Poprzedni / Projekt N z 5 / Następny" + strzałki klawiatury ←/→ przełączają case studies bez zamykania okna. Bez YouTube. Filter logic: inline JS w DOMContentLoaded. CSS: hero, stats-band, library, modal.
 
 ### `agenci.html` — Agenci AI
 Pełna podstrona: hero z SVG + sekcja wyzwań + 3 zakładki możliwości (Analityk/Operacyjny/Ekspert) + bezpieczeństwo + model wdrożenia (4 kroki) + formularz kontaktowy + FAQ. CSS: hero, challenges, solutions, safety-standards, process, consultation, faq.

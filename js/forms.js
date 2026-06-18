@@ -125,6 +125,11 @@ async function handleFormSubmit(e) {
 
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
+        // GTM: konwersja — tylko po potwierdzonym sukcesie wysyłki.
+        // Sam sygnał zdarzenia, bez danych osobowych w pushu.
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'form_submit' });
+
         showSuccess(form);
     } catch (err) {
         console.error('Webhook error:', err);

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="180" viewBox="0 0 500 180" role="img" aria-label="MAT JAR Dachy">
+  <!-- Wordmark: ciężki, rzemieślniczy -->
+  <g fill="#141414" font-family="'Arial Black', Arial, Helvetica, sans-serif" font-weight="900">
+    <text x="6" y="74" font-size="62" letter-spacing="-1">MAT JAR</text>
+    <text x="6" y="146" font-size="62" letter-spacing="16">DACHY</text>
+  </g>
+  <!-- Pasek akcentu pod napisem -->
+  <rect x="8" y="158" width="301" height="7" rx="2" fill="#141414"/>
+
+  <!-- ===== Grafika: dach + dekarz ===== -->
+  <!-- Dach: gruby kontur (gable) -->
+  <g fill="none" stroke="#141414" stroke-width="14" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M330 150 L408 60 L486 150"/>
+    <path d="M322 150 L494 150"/>
+  </g>
+  <!-- Dachówka / akcent na prawej połaci -->
+  <g stroke="#141414" stroke-width="6" stroke-linecap="round" opacity="0.9">
+    <path d="M430 96 L452 84"/>
+    <path d="M444 118 L466 106"/>
+  </g>
+
+  <!-- Dekarz: masywna sylwetka, klęczy i uderza młotkiem -->
+  <g fill="#141414" stroke="#141414" stroke-linecap="round" stroke-linejoin="round">
+    <!-- nogi (klęk na połaci) -->
+    <path d="M372 96 L358 112 L353 124" fill="none" stroke-width="16"/>
+    <path d="M372 96 L388 100 L381 116" fill="none" stroke-width="16"/>
+    <!-- tułów -->
+    <path d="M369 70 L373 98" fill="none" stroke-width="21"/>
+    <!-- ramię + przedramię uniesione z młotkiem -->
+    <path d="M371 74 L391 66 L408 52" fill="none" stroke-width="15"/>
+    <!-- głowa -->
+    <circle cx="365" cy="58" r="12"/>
+    <!-- kaszkiet: czasza + daszek -->
+    <ellipse cx="364" cy="49" rx="16" ry="9"/>
+    <path d="M378 49 l14 1 a3 3 0 0 1 -1 6 l-13 -2 z"/>
+  </g>
+  <!-- Młotek: gruba rączka + obuch -->
+  <path d="M402 58 L418 46" stroke="#141414" stroke-width="9" stroke-linecap="round"/>
+  <rect x="409" y="32" width="24" height="15" rx="2.5" fill="#141414" transform="rotate(-37 421 39)"/>
+</svg>
