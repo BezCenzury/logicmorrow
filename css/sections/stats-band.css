@@ -36,6 +36,8 @@
     color: var(--color-slate-900);
     line-height: 1;
     letter-spacing: -0.03em;
+    /* stała szerokość cyfr — liczby nie skaczą podczas liczenia */
+    font-variant-numeric: tabular-nums;
 }
 
 .stats-band__value .unit {
