@@ -24,12 +24,14 @@
     <meta property="og:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LogicMorrow – polityka prywatności">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="LogicMorrow">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Polityka Prywatności i Cookies | LogicMorrow">
     <meta name="twitter:description" content="Polityka prywatności i plików cookie serwisu LogicMorrow. Informacje o przetwarzaniu danych osobowych, rodzajach plików cookie i prawach użytkownika.">
     <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
+    <meta name="twitter:image:alt" content="LogicMorrow – polityka prywatności">
 
     <!-- ═══════════════════════════════════════════════════════
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
@@ -175,15 +177,16 @@
     <link rel="stylesheet" href="css/components/badge.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8KFFQZN"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    title="Google Tag Manager" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Globalny nagłówek (wstrzykiwany przez loader.js) -->
     <div id="navbar-placeholder"></div>
 
-    <main class="legal-page" style="max-width: 850px; margin: 0 auto; padding: 10rem 2rem 8rem;">
+    <main id="main-content" class="legal-page" style="max-width: 850px; margin: 0 auto; padding: 10rem 2rem 8rem;">
         <div class="legal-content">
             <h1>Polityka Prywatności i Plików Cookies serwisu logicmorrow.pl</h1>
             <p style="color: var(--color-slate-500); font-size: 0.95rem; margin-top: 0.5rem;">Data ostatniej aktualizacji: 17 czerwca 2026 r.</p>
@@ -260,11 +263,11 @@
     <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
-    <script src="js/loader.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/animations.js"></script>
+    <script defer src="js/loader.js"></script>
+    <script defer src="js/navbar.js"></script>
+    <script defer src="js/animations.js"></script>
 
     <!-- [6] Cookie Consent – inicjalizacja -->
-    <script src="/js/cookie-consent.js"></script>
+    <script defer src="/js/cookie-consent.js"></script>
 </body>
 </html>

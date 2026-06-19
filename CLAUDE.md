@@ -8,7 +8,7 @@ Wszelkie zmiany wprowadzaj **wyłącznie lokalnie**. Nie pushuj do repozytorium 
 
 ## Zasady języka i tonu copy
 
-Odbiorca strony to **CEO / Dyrektor Operacyjny / właściciel firmy 5–35 osób** — decydent biznesowy, często nietech­niczny. Czyta stronę żeby sprawdzić, czy LogicMorrow rozwiąże jego problem, a nie żeby poznać technologię.
+Odbiorca strony to **właściciel albo szef firmy do 35 pracowników** — najczęściej z branży budowlanej, dekarskiej, handlowej czy usługowej. To osoba decyzyjna, ale zwykle nietechniczna i nieobeznana z korporacyjnym żargonem (słowa typu „CEO", „stakeholder" mogą być dla niej obce — nie używamy ich). Pisz prosto, „po ludzku", konkretami z jej codziennej pracy (Excel, telefony, faktury, magazyn, wyceny). Czyta stronę, żeby sprawdzić, czy rozwiążemy jej problem, a nie żeby poznać technologię.
 
 ### Zakaz żargonu IT
 
@@ -278,6 +278,9 @@ Pasek zbiorczych liczb (`.stats-band`, te same KPI co na index) między Hero a k
 
 ### `agenci.html` — Agenci AI
 Pełna podstrona: hero z SVG + sekcja wyzwań + 3 zakładki możliwości (Analityk/Operacyjny/Ekspert) + bezpieczeństwo + model wdrożenia (4 kroki) + formularz kontaktowy + FAQ. CSS: hero, challenges, solutions, safety-standards, process, consultation, faq.
+
+### `blog/` — Blog (SEO + GEO)
+`blog/index.html` (lista wpisów: kafelki poziome, kategoria, data, czas czytania) + `blog/<slug>.html` (artykuły). Wspólny arkusz `css/blog.css`. Strony w podfolderze — **wszystkie ścieżki absolutne** (`/css/`, `/js/`, `/assets/`). Drafty wpisów wrzucane do `Blog-draft/<slug>/` (`.md` + `.jsonld` + `assets/`, folder w `.gitignore`); finalne wersje trafiają do `/blog/`. **Jak adaptować draft (humanizacja: usuwanie długich myślników „—", głos małej agencji „my", zakaz żargonu IT, autor Person „Mateusz Olesiuk", FAQ widoczne = JSON-LD verbatim, linki wewnętrzne + CTA): pełna procedura w `.claude/blog-playbook.md` — czytaj przed każdą publikacją wpisu.**
 
 ## Zawartość `Baza wiedzy o firmie/`
 

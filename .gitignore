@@ -45,6 +45,30 @@ Baza wiedzy o firmie/
 # Narzędzia deweloperskie — nie publiczne, tylko lokalnie
 # ============================================================
 .claude/
+.claude.backup-*/
+.claude-pack-tmp/
+
+# Artefakty pracy agentów CC (raporty/drafty/dane uczenia) — generowane w korzeniu
+# repo podczas używania paczki. To NIE są pliki strony. Repo publiczne — nie commitować.
+knowledge-base/
+geo-reports/
+analytics-reports/
+competitor-reports/
+perf-reports/
+humanization-reports/
+proofreading-reports/
+local-seo/
+self-pilot-reports/
+version-bumper-reports/
+docs/feedback-*
+json/feedback-summary.json
+
+# ============================================================
+# DRAFTY WPISÓW BLOGA (surowe paczki .md + .jsonld + assets)
+# Robocze materiały wejściowe — finalne wersje trafiają do /blog/.
+# Nie publiczne — tylko lokalnie do adaptacji.
+# ============================================================
+Blog-draft/
 
 # ============================================================
 # INNE

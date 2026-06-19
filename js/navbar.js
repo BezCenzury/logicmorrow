@@ -47,6 +47,7 @@ function initHamburger() {
         mobileMenu.classList.toggle('open', isOpen);
         hamburger.setAttribute('aria-expanded', String(isOpen));
         mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+        mobileMenu.toggleAttribute('inert', !isOpen);
     });
 
     // Zamknij menu po kliknięciu w link mobilny
@@ -68,6 +69,7 @@ function initHamburger() {
         mobileMenu.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
         mobileMenu.setAttribute('aria-hidden', 'true');
+        mobileMenu.setAttribute('inert', '');
     }
 }
 

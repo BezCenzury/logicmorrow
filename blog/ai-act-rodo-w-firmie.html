@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>AI Act a RODO w firmie – obowiązki MŚP w 2026 roku | LogicMorrow</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="description" content="AI Act a RODO w firmie – co musi zrobić MŚP, by wdrożyć AI zgodnie z prawem? Kategorie ryzyka, terminy 2025–2027 i checklista zgodności. Umów konsultację.">
+    <meta name="robots" content="index,follow">
+
+    <!-- SEO: Canonical + Open Graph + Twitter Card -->
+    <link rel="canonical" href="https://logicmorrow.pl/blog/ai-act-rodo-w-firmie.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://logicmorrow.pl/blog/ai-act-rodo-w-firmie.html">
+    <meta property="og:title" content="AI Act a RODO w firmie – obowiązki MŚP 2026">
+    <meta property="og:description" content="Kategorie ryzyka, terminy 2025–2027 i checklista zgodności AI Act + RODO dla małych i średnich firm.">
+    <meta property="og:image" content="https://logicmorrow.pl/assets/images/blog/ai-act-rodo-w-firmie/ai-act-rodo-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="AI Act a RODO w firmie – poradnik dla MŚP od LogicMorrow">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="LogicMorrow">
+    <meta property="article:published_time" content="2026-06-19">
+    <meta property="article:modified_time" content="2026-06-19">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Act a RODO w firmie – obowiązki MŚP 2026">
+    <meta name="twitter:description" content="Kategorie ryzyka, terminy 2025–2027 i checklista zgodności AI Act + RODO dla małych i średnich firm.">
+    <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/blog/ai-act-rodo-w-firmie/ai-act-rodo-og.png">
+    <meta name="twitter:image:alt" content="AI Act a RODO w firmie – poradnik dla MŚP od LogicMorrow">
+
+    <!-- ═══════════════════════════════════════════════════════
+         COOKIE CONSENT + GOOGLE CONSENT MODE V2
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 2000
+        });
+    </script>
+
+    <!-- [2] Pre-inicjalizacja consent dla powracających użytkowników -->
+    <script>
+        (function () {
+            try {
+                var raw = document.cookie.split(';').reduce(function (acc, c) {
+                    var p = c.trim().split('=');
+                    return p[0] === 'cc_cookie' ? decodeURIComponent(p.slice(1).join('=')) : acc;
+                }, null);
+                if (raw) {
+                    var cats = JSON.parse(raw).categories || [];
+                    var analytics = cats.indexOf('analytics') >= 0 ? 'granted' : 'denied';
+                    var marketing = cats.indexOf('marketing') >= 0 ? 'granted' : 'denied';
+                    gtag('consent', 'update', {
+                        'analytics_storage': analytics,
+                        'ad_storage': marketing,
+                        'ad_user_data': marketing,
+                        'ad_personalization': marketing
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- [3] Google Tag Manager -->
+    <script>(function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T8KFFQZN');</script>
+
+    <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
+
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
+    <style>
+        :root {
+            --cc-btn-primary-bg: #2563eb;
+            --cc-btn-primary-hover-bg: #1d4ed8;
+            --cc-btn-primary-text: #fff;
+            --cc-btn-secondary-bg: #f1f5f9;
+            --cc-btn-secondary-hover-bg: #e2e8f0;
+            --cc-btn-secondary-text: #475569;
+            --cc-toggle-on-bg: #2563eb;
+            --cc-link-color: #2563eb;
+            --cc-btn-border-radius: 0.75rem;
+            --cc-overlay-bg: rgba(0, 0, 0, 0.55);
+        }
+        #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
+        #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+    </style>
+
+    <!-- Schema: Article + FAQPage + BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "AI Act a RODO w firmie – obowiązki MŚP w 2026 roku",
+          "description": "AI Act a RODO w firmie – co musi zrobić MŚP, by wdrożyć AI zgodnie z prawem? Kategorie ryzyka, terminy 2025–2027 i checklista zgodności.",
+          "inLanguage": "pl",
+          "datePublished": "2026-06-19",
+          "dateModified": "2026-06-19",
+          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://logicmorrow.pl/blog/ai-act-rodo-w-firmie.html" },
+          "image": "https://logicmorrow.pl/assets/images/blog/ai-act-rodo-w-firmie/ai-act-rodo-og.png",
+          "author": {
+            "@type": "Person",
+            "name": "Mateusz Olesiuk",
+            "jobTitle": "Założyciel",
+            "url": "https://logicmorrow.pl/",
+            "worksFor": { "@type": "Organization", "name": "LogicMorrow" }
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "LogicMorrow",
+            "url": "https://logicmorrow.pl/",
+            "logo": { "@type": "ImageObject", "url": "https://logicmorrow.pl/assets/images/logo.svg" }
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czy AI Act dotyczy małej firmy?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Tak, AI Act obowiązuje firmy każdej wielkości, które tworzą, wdrażają lub używają systemów AI w UE. Większość MŚP występuje w roli podmiotu stosującego systemy minimalnego lub ograniczonego ryzyka, gdzie obowiązki są lekkie. Kluczowe jest sklasyfikowanie każdego używanego narzędzia według poziomu ryzyka." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy AI Act zastępuje RODO?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Nie. AI Act i RODO obowiązują równolegle i uzupełniają się. RODO (Rozporządzenie UE 2016/679) reguluje przetwarzanie danych osobowych, a AI Act dodaje wymogi dotyczące samej technologii AI. Jeśli system AI przetwarza dane osobowe, firma musi spełnić oba zestawy obowiązków jednocześnie." }
+            },
+            {
+              "@type": "Question",
+              "name": "Od kiedy obowiązuje AI Act?",
+              "acceptedAnswer": { "@type": "Answer", "text": "AI Act wszedł w życie 1 sierpnia 2024 roku, a jego przepisy stosowane są etapami. Zakazy systemów niedopuszczalnego ryzyka obowiązują od lutego 2025, obowiązki dla modeli ogólnego przeznaczenia od sierpnia 2025, a większość pozostałych wymogów od sierpnia 2026 i 2027 roku." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy korzystanie z ChatGPT w firmie podlega AI Act?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Korzystanie z narzędzi takich jak ChatGPT zwykle plasuje firmę w roli podmiotu stosującego system ograniczonego lub minimalnego ryzyka. Główne obowiązki to przejrzystość wobec odbiorców treści generowanej przez AI oraz ochrona danych osobowych wprowadzanych do narzędzia zgodnie z RODO." }
+            },
+            {
+              "@type": "Question",
+              "name": "Jakie kary grożą za naruszenie AI Act?",
+              "acceptedAnswer": { "@type": "Answer", "text": "AI Act przewiduje kary do 35 mln euro lub 7% rocznego światowego obrotu za stosowanie zakazanych praktyk AI, oraz do 15 mln euro lub 3% obrotu za inne naruszenia. Dla naruszeń RODO obowiązują odrębne kary do 20 mln euro lub 4% obrotu." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy potrzebuję prawnika, aby wdrożyć AI zgodnie z prawem?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Dla typowych systemów minimalnego i ograniczonego ryzyka wystarczy uporządkowana checklista zgodności oraz konsultacja techniczna na etapie projektowania wdrożenia. Przy systemach wysokiego ryzyka lub przetwarzaniu danych wrażliwych warto skonsultować się z prawnikiem specjalizującym się w prawie nowych technologii." }
+            },
+            {
+              "@type": "Question",
+              "name": "Od czego zacząć wdrożenie zgodne z AI Act i RODO?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Zacznij od inwentaryzacji wszystkich narzędzi AI używanych w firmie i przypisania im kategorii ryzyka. Następnie zmapuj, które systemy przetwarzają dane osobowe i na jakiej podstawie z RODO. Te dwa kroki dają pełny obraz sytuacji i pozwalają zaplanować dalsze działania." }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://logicmorrow.pl/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://logicmorrow.pl/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "AI Act a RODO w firmie", "item": "https://logicmorrow.pl/blog/ai-act-rodo-w-firmie.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="/css/base/variables.css">
+    <link rel="stylesheet" href="/css/base/reset.css">
+    <link rel="stylesheet" href="/css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/css/components/navbar.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/cookie-fab.css">
+    <link rel="stylesheet" href="/css/components/buttons.css">
+
+    <!-- Blog CSS -->
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8KFFQZN"
+    title="Google Tag Manager" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Globalny nagłówek -->
+    <div id="navbar-placeholder"></div>
+
+    <main id="main-content" class="post">
+
+        <article class="post-article">
+
+            <header class="post__header">
+                <nav class="post__breadcrumb" aria-label="Ścieżka okruszków">
+                    <a href="/">Strona główna</a> / <a href="/blog/">Blog</a> / AI Act a RODO w firmie
+                </nav>
+                <span class="post__cat">Zgodność i prawo</span>
+                <h1 class="post__title">AI Act a RODO w firmie – obowiązki MŚP w 2026 roku</h1>
+                <div class="post__meta">
+                    <span><strong>Mateusz Olesiuk</strong></span>
+                    <span class="dot" aria-hidden="true"></span>
+                    <time datetime="2026-06-19">19 czerwca 2026</time>
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>11 min czytania</span>
+                </div>
+            </header>
+
+            <div class="post-prose">
+
+                <p>Wdrażasz w firmie chatbota do obsługi klientów, agenta AI do ofertowania albo narzędzie do analizy danych i nie wiesz, czy działasz zgodnie z prawem? Od 2025 roku obowiązuje <strong>Rozporządzenie (UE) 2024/1689 (AI Act)</strong>, czyli pierwsza na świecie kompleksowa regulacja sztucznej inteligencji. Dla małych i średnich firm mamy dobrą wiadomość: w większości zastosowań nie oznacza ona rewolucji. Trzeba jednak uporządkować kilka rzeczy: klasyfikację ryzyka używanych systemów, podstawy przetwarzania danych osobowych zgodnie z RODO oraz przejrzystość wobec klientów i pracowników. W LogicMorrow wdrażamy automatyzacje i agentów AI dla MŚP w całej Polsce, więc relację między AI Act a RODO tłumaczymy każdego dnia językiem konkretu, nie paragrafów.</p>
+
+                <blockquote>
+                    <p><strong>Disclaimer:</strong> Ten artykuł ma charakter edukacyjny i informacyjny. <strong>Nie stanowi porady prawnej.</strong> Stan prawny opisujemy na podstawie aktów źródłowych obowiązujących w 2026 roku. W indywidualnej sprawie skonsultuj się z prawnikiem specjalizującym się w prawie nowych technologii i ochronie danych.</p>
+                </blockquote>
+
+                <figure>
+                    <img src="/assets/images/blog/ai-act-rodo-w-firmie/ai-act-rodo-banner.webp" width="1200" height="340" loading="lazy" decoding="async" alt="AI Act i RODO obowiązują równolegle: AI Act reguluje technologię, RODO dane osobowe">
+                </figure>
+
+                <h2>AI Act a RODO: dwie regulacje, które działają równolegle</h2>
+                <p>Najczęstsze nieporozumienie, jakie spotykamy u właścicieli firm, brzmi: „skoro mamy AI Act, to RODO już nie obowiązuje”. To błąd, który może kosztować. <strong>AI Act a RODO w firmie to dwa odrębne, uzupełniające się porządki prawne</strong>, więc jeśli system AI przetwarza dane osobowe, trzeba spełnić oba jednocześnie.</p>
+                <ul>
+                    <li><strong>RODO, czyli Rozporządzenie (UE) 2016/679</strong>, reguluje przetwarzanie danych osobowych: podstawę prawną, cel, minimalizację oraz prawa osób, których dane dotyczą. Obowiązuje od 2018 roku.</li>
+                    <li><strong>AI Act, czyli Rozporządzenie (UE) 2024/1689</strong>, reguluje samą technologię: jej projektowanie, wprowadzanie na rynek i stosowanie, niezależnie od tego, czy przetwarza dane osobowe.</li>
+                </ul>
+                <p>Innymi słowy: RODO pyta „czy wolno Ci przetwarzać te dane i jak”, a nowa regulacja pyta „czy ten system jest dopuszczalny, bezpieczny i przejrzysty”. Chatbot odpowiadający klientom na podstawie ich danych zakupowych podlega obu aktom. Wewnętrzne narzędzie generujące podsumowania dokumentów bez danych osobowych podlega głównie nowej regulacji. Ta świadomość to fundament zgodnego wdrożenia i punkt wyjścia do każdej dalszej decyzji.</p>
+
+                <h2>Kategorie ryzyka w AI Act: gdzie plasuje się Twoja firma</h2>
+                <p>AI Act porządkuje systemy sztucznej inteligencji według poziomu ryzyka. To kluczowy mechanizm całej regulacji, bo od kategorii zależy zakres obowiązków. Dla MŚP najważniejsze jest poprawne przypisanie każdego używanego narzędzia, ponieważ to firma stosująca system odpowiada za prawidłową klasyfikację.</p>
+                <figure>
+                    <img src="/assets/images/blog/ai-act-rodo-w-firmie/ai-act-rodo-piramida-ryzyka.webp" width="1040" height="600" loading="lazy" decoding="async" alt="Piramida czterech kategorii ryzyka systemów AI wg AI Act: niedopuszczalne, wysokie, ograniczone, minimalne. Większość MŚP to ryzyko ograniczone lub minimalne">
+                </figure>
+
+                <h3>Ryzyko niedopuszczalne: systemy zakazane</h3>
+                <p>To systemy zakazane w całej Unii, między innymi social scoring obywateli, manipulacja podprogowa czy nieukierunkowane zbieranie wizerunków twarzy z internetu. Zakazy obowiązują od lutego 2025 roku. <strong>Typowe MŚP handlowe i produkcyjne praktycznie nigdy nie wchodzą w tę kategorię.</strong> Wyjątkiem bywa sytuacja, w której firma nieświadomie kupi narzędzie marketingowe wykorzystujące zakazane techniki, dlatego warto weryfikować dostawców.</p>
+
+                <h3>Wysokie ryzyko: pełne obowiązki</h3>
+                <p>Systemy wpływające na bezpieczeństwo lub prawa podstawowe: rekrutacja i ocena pracowników, scoring kredytowy, zarządzanie infrastrukturą krytyczną. Jeśli stosujesz sztuczną inteligencję do <strong>automatycznej selekcji CV</strong> albo oceny zdolności kredytowej klientów, prawdopodobnie działasz w tej kategorii. Wiążą się z nią twarde wymogi: system zarządzania ryzykiem, dokumentacja techniczna, nadzór człowieka, rejestrowanie zdarzeń i ocena zgodności. Większość pozostałych obowiązków dla tej grupy stosowana jest od sierpnia 2026 i 2027 roku.</p>
+
+                <h3>Ograniczone ryzyko: obowiązek przejrzystości</h3>
+                <p>Tu plasuje się <strong>większość zastosowań w MŚP</strong>: chatboty obsługujące klientów, generatory treści marketingowych, asystenci ofertowania. Główny obowiązek to <strong>przejrzystość</strong>, czyli odbiorca musi wiedzieć, że rozmawia z systemem albo że treść powstała automatycznie. Wdrożenia agentów AI projektujemy tak, by ten wymóg był spełniony od początku: jasna informacja o automatycznej obsłudze i prosta możliwość przejścia do człowieka.</p>
+
+                <h3>Minimalne ryzyko: bez dodatkowych obowiązków</h3>
+                <p>Filtry antyspamowe, sztuczna inteligencja w arkuszach kalkulacyjnych, narzędzia do porządkowania danych. Tu regulacja nie nakłada dodatkowych obowiązków, ale jeśli przetwarzane są dane osobowe, <strong>RODO obowiązuje niezmiennie</strong>.</p>
+                <p>Praktyczny wniosek: zdecydowana większość małych firm działa w obszarze ograniczonego i minimalnego ryzyka. To dobra wiadomość, ale nie zwalnia ze świadomej klasyfikacji każdego narzędzia.</p>
+
+                <h2>Co AI Act zmienia w obowiązkach RODO</h2>
+                <p>Nowa regulacja nie podważa RODO, lecz wzmacnia kilka jego elementów w kontekście sztucznej inteligencji. W praktyce oznacza to cztery obszary, na które patrzymy przy każdym projekcie.</p>
+                <ol>
+                    <li><strong>Podstawa prawna i cel przetwarzania.</strong> Zanim system dotknie danych osobowych, musisz mieć jednoznaczną podstawę z RODO (zgoda, umowa, prawnie uzasadniony interes) i jasno określony cel. „Bo model lepiej działa na większej ilości danych” nie jest podstawą prawną.</li>
+                    <li><strong>Minimalizacja danych.</strong> Sztuczna inteligencja kusi, by „nakarmić” ją wszystkim. RODO wymaga odwrotnie: tylko dane niezbędne do celu. Przy projektowaniu agentów ograniczamy zakres danych wejściowych do koniecznego minimum.</li>
+                    <li><strong>Przejrzystość i informowanie.</strong> AI Act dokłada obowiązek informowania o kontakcie z automatem, a RODO o przetwarzaniu danych. Te dwa obowiązki najlepiej połączyć w jednej, czytelnej informacji dla klienta.</li>
+                    <li><strong>Decyzje zautomatyzowane (art. 22 RODO).</strong> Jeśli system podejmuje decyzje wywołujące skutki prawne lub podobnie istotne (na przykład automatyczne odrzucenie wniosku), obowiązują szczególne wymogi: prawo do interwencji człowieka i wyjaśnienia decyzji.</li>
+                </ol>
+
+                <p><strong>AI Act a RODO: kto za co odpowiada</strong></p>
+                <div class="post-table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Obszar</th>
+                                <th>RODO (UE 2016/679)</th>
+                                <th>AI Act (UE 2024/1689)</th>
+                                <th>Co zrobić w MŚP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Podstawa i cel</td>
+                                <td>wymaga podstawy prawnej i celu</td>
+                                <td>nie reguluje danych</td>
+                                <td>ustal podstawę i cel przed wdrożeniem</td>
+                            </tr>
+                            <tr>
+                                <td>Minimalizacja danych</td>
+                                <td>tylko dane niezbędne</td>
+                                <td>nie dotyczy</td>
+                                <td>ogranicz dane wejściowe do AI</td>
+                            </tr>
+                            <tr>
+                                <td>Przejrzystość</td>
+                                <td>obowiązek informacji o przetwarzaniu</td>
+                                <td>obowiązek informacji o kontakcie z AI</td>
+                                <td>połącz w jednej informacji dla klienta</td>
+                            </tr>
+                            <tr>
+                                <td>Decyzje automatyczne</td>
+                                <td>art. 22, prawo do interwencji człowieka</td>
+                                <td>nadzór człowieka (zwłaszcza wysokie ryzyko)</td>
+                                <td>zapewnij człowieka „w pętli”</td>
+                            </tr>
+                            <tr>
+                                <td>Sama technologia</td>
+                                <td>nie dotyczy</td>
+                                <td>klasyfikacja ryzyka systemu</td>
+                                <td>sklasyfikuj każde narzędzie AI</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Warto też pamiętać o roli krajowego nadzoru. <strong>Wytyczne UODO</strong> (Urzędu Ochrony Danych Osobowych) pozostają podstawowym źródłem interpretacji RODO w Polsce, również w kontekście narzędzi opartych na sztucznej inteligencji. Śledzenie komunikatów UODO to tani sposób, by nie przegapić zmian w praktyce stosowania przepisów.</p>
+
+                <h2>Checklista zgodności AI Act i RODO dla MŚP</h2>
+                <p>Poniżej praktyczna checklista, którą stosujemy na starcie każdego wdrożenia u klienta. Nie zastępuje analizy prawnej, ale porządkuje 90% spraw, z którymi mierzy się mała firma.</p>
+                <figure>
+                    <img src="/assets/images/blog/ai-act-rodo-w-firmie/ai-act-rodo-checklista.webp" width="900" height="1020" loading="lazy" decoding="async" alt="Checklista zgodności AI Act i RODO dla MŚP: inwentaryzacja, klasyfikacja ryzyka, mapa danych, przejrzystość, minimalizacja, nadzór człowieka, umowy z dostawcami, dokumentacja">
+                </figure>
+                <ul>
+                    <li><strong>Inwentaryzacja narzędzi.</strong> Spisz wszystkie narzędzia i funkcje oparte na sztucznej inteligencji używane w firmie, także te „ukryte” w popularnym oprogramowaniu (CRM, pakiety biurowe, marketing).</li>
+                    <li><strong>Klasyfikacja ryzyka.</strong> Przypisz każdemu narzędziu kategorię ryzyka według AI Act (niedopuszczalne, wysokie, ograniczone lub minimalne).</li>
+                    <li><strong>Mapa danych osobowych.</strong> Ustal, które systemy przetwarzają dane osobowe i na jakiej podstawie prawnej z RODO.</li>
+                    <li><strong>Przejrzystość.</strong> Zapewnij informację dla klientów i pracowników o kontakcie z automatem oraz o treściach generowanych maszynowo.</li>
+                    <li><strong>Minimalizacja.</strong> Ogranicz dane wprowadzane do narzędzi do niezbędnego minimum i uważaj na wklejanie danych klientów do publicznych modeli.</li>
+                    <li><strong>Nadzór człowieka.</strong> Zapewnij, że istotne decyzje podejmuje lub może skorygować człowiek, szczególnie przy systemach wysokiego ryzyka.</li>
+                    <li><strong>Umowy z dostawcami.</strong> Sprawdź, czy dostawcy deklarują zgodność z AI Act, i podpisz umowy powierzenia danych zgodne z RODO.</li>
+                    <li><strong>Dokumentacja i rejestr.</strong> Zapisuj decyzje o klasyfikacji ryzyka i podstawach przetwarzania. To Twój dowód należytej staranności wobec organów nadzoru.</li>
+                </ul>
+                <p>Przejście tej listy zajmuje typowemu MŚP kilka godzin pracy, a porządkuje sytuację prawną na długo. To zarazem dobry moment, by zaprojektować wdrożenie od razu zgodnie z prawem, zamiast łatać zgodność po fakcie.</p>
+
+                <h2>Trzy scenariusze z praktyki MŚP</h2>
+                <p>Teoria robi się prosta dopiero wtedy, gdy zobaczysz ją na przykładach. Poniżej trzy sytuacje, które najczęściej spotykamy u firm handlowych i produkcyjnych zatrudniających od kilku do kilkudziesięciu osób.</p>
+
+                <h3>Scenariusz 1: chatbot na stronie i w komunikatorze</h3>
+                <p>Firma handlowa wdraża chatbota, który odpowiada na pytania klientów o produkty i dostępność. System przetwarza imię, adres e-mail i historię zapytań, więc działa na styku obu regulacji. Z perspektywy AI Act to system <strong>ograniczonego ryzyka</strong>: wystarczy wyraźna informacja, że klient rozmawia z automatem, oraz prosta ścieżka do kontaktu z człowiekiem. Z perspektywy RODO firma potrzebuje podstawy prawnej dla danych kontaktowych i odpowiedniego zapisu w polityce prywatności. Całość da się wdrożyć w kilka dni, jeśli zaprojektuje się ją od razu poprawnie.</p>
+
+                <h3>Scenariusz 2: selekcja CV wspierana przez AI</h3>
+                <p>Producent z działem HR chce, by system wstępnie segregował zgłoszenia kandydatów. To moment, w którym zapala się czerwona lampka: rekrutacja należy do obszaru <strong>wysokiego ryzyka</strong>. Pojawiają się obowiązki nadzoru człowieka nad decyzją, dokumentacji i informowania kandydatów, a od strony RODO szczególne wymogi wobec profilowania i decyzji zautomatyzowanych z art. 22. Tu rekomendujemy ostrożność, a przy realnym wpływie na zatrudnienie także konsultację prawną. Często lepszym rozwiązaniem jest narzędzie wspierające rekrutera, a nie zastępujące jego decyzję.</p>
+
+                <h3>Scenariusz 3: wewnętrzny asystent na dokumentach firmy</h3>
+                <p>Biuro używa modelu językowego do streszczania ofert i umów. Jeśli dokumenty zawierają dane osobowe kontrahentów, kluczowe staje się to, <strong>dokąd te dane trafiają</strong>. Wklejanie ich do publicznego, darmowego narzędzia bywa naruszeniem RODO. Bezpieczniejsze jest wdrożenie w kontrolowanym środowisku, z umową powierzenia i wyłączonym uczeniem modelu na danych firmy. Pod kątem AI Act to zwykle minimalne ryzyko, a cały ciężar zgodności leży po stronie ochrony danych.</p>
+
+                <h2>Najczęstsze błędy MŚP przy wdrażaniu sztucznej inteligencji</h2>
+                <p>Z każdego projektu wyciągamy wnioski. Oto błędy, które kosztują firmy najwięcej czasu i nerwów, a których łatwo uniknąć.</p>
+                <ul>
+                    <li><strong>„Regulacja nas nie dotyczy, bo jesteśmy mali”.</strong> Dotyczy każdej firmy używającej AI. Skala wpływa jedynie na zakres obowiązków, nie na ich istnienie.</li>
+                    <li><strong>Wklejanie danych klientów do publicznych modeli.</strong> To najczęstsze naruszenie RODO w erze sztucznej inteligencji. Zanim wkleisz, sprawdź, gdzie trafiają dane i czy są używane do trenowania.</li>
+                    <li><strong>Brak informacji o kontakcie z automatem.</strong> Ukrywanie, że klienta obsługuje system, narusza wymóg przejrzystości i podważa zaufanie.</li>
+                    <li><strong>Traktowanie zgodności jako jednorazowego projektu.</strong> Przepisy stosowane są etapami do 2027 roku, a narzędzia się zmieniają. Zgodność to proces, nie jednorazowy „ptaszek”.</li>
+                    <li><strong>Poleganie wyłącznie na deklaracji dostawcy.</strong> Odpowiedzialność za stosowanie systemu i tak spoczywa na firmie. Deklaracja dostawcy to argument, nie zwolnienie z obowiązku.</li>
+                </ul>
+                <p>Większości z tych błędów unika się już na etapie projektowania wdrożenia, i to jest najtańszy moment, by zadbać o zgodność.</p>
+
+                <h2>Terminy AI Act: kalendarz wdrożenia 2025–2027</h2>
+                <p>Przepisy AI Act stosowane są etapami, co daje firmom czas na przygotowanie. Najważniejsze daty z perspektywy MŚP:</p>
+                <ul>
+                    <li><strong>Sierpień 2024:</strong> wejście w życie Rozporządzenia (UE) 2024/1689.</li>
+                    <li><strong>Luty 2025:</strong> start zakazów systemów niedopuszczalnego ryzyka oraz obowiązków w zakresie kompetencji AI w organizacji.</li>
+                    <li><strong>Sierpień 2025:</strong> obowiązki dla dostawców modeli ogólnego przeznaczenia (GPAI).</li>
+                    <li><strong>Sierpień 2026:</strong> stosowanie większości pozostałych przepisów, w tym obowiązków przejrzystości dla systemów ograniczonego ryzyka.</li>
+                    <li><strong>Sierpień 2027:</strong> pełne stosowanie wymogów dla części systemów wysokiego ryzyka.</li>
+                </ul>
+                <p>Dla firmy używającej chatbota czy agenta najistotniejszy jest rok 2026, bo wtedy obowiązki przejrzystości zaczynają być w pełni egzekwowane. Im wcześniej uporządkujesz wdrożenie, tym mniej kosztowne będą ewentualne korekty.</p>
+
+                <h2>Jak wdrażać AI zgodnie z prawem: podejście LogicMorrow</h2>
+                <p>Naszym zdaniem zgodność z przepisami nie powinna być hamulcem, lecz elementem dobrego projektu. Dlatego w każdym wdrożeniu automatyzacji i agentów łączymy warstwę techniczną z warstwą zgodności: projektujemy systemy tak, by przejrzystość, minimalizacja danych i nadzór człowieka były wbudowane od początku, a nie doklejane później.</p>
+                <p>Jeśli zastanawiasz się, w której kategorii ryzyka znajdują się Twoje narzędzia, albo planujesz wdrożenie <a href="/agenci.html">agenta AI do obsługi klientów lub ofertowania</a>, zaczynamy od krótkiej inwentaryzacji i klasyfikacji ryzyka. Pokazujemy też, jak konkretne <a href="/rozwiazania.html">rozwiązania automatyzujące procesy w MŚP</a> zaprojektować w zgodzie z obowiązującym prawem, bez nadmiernej biurokracji. Wdrażamy w 2–4 tygodnie, w małym zespole i z bezpośrednim kontaktem przez cały czas trwania projektu.</p>
+                <p>Jeśli chcesz uporządkować używane w firmie narzędzia i wdrażać je spokojnie, <a href="/konsultacja.html">umów bezpłatną konsultację</a>, a przejdziemy przez Twój przypadek na konkretach.</p>
+
+                <h2>FAQ: najczęstsze pytania o AI Act a RODO w firmie</h2>
+
+                <h3>Czy AI Act dotyczy małej firmy?</h3>
+                <p>Tak, AI Act obowiązuje firmy każdej wielkości, które tworzą, wdrażają lub używają systemów AI w UE. Większość MŚP występuje w roli podmiotu stosującego systemy minimalnego lub ograniczonego ryzyka, gdzie obowiązki są lekkie. Kluczowe jest sklasyfikowanie każdego używanego narzędzia według poziomu ryzyka.</p>
+
+                <h3>Czy AI Act zastępuje RODO?</h3>
+                <p>Nie. AI Act i RODO obowiązują równolegle i uzupełniają się. RODO (Rozporządzenie UE 2016/679) reguluje przetwarzanie danych osobowych, a AI Act dodaje wymogi dotyczące samej technologii AI. Jeśli system AI przetwarza dane osobowe, firma musi spełnić oba zestawy obowiązków jednocześnie.</p>
+
+                <h3>Od kiedy obowiązuje AI Act?</h3>
+                <p>AI Act wszedł w życie 1 sierpnia 2024 roku, a jego przepisy stosowane są etapami. Zakazy systemów niedopuszczalnego ryzyka obowiązują od lutego 2025, obowiązki dla modeli ogólnego przeznaczenia od sierpnia 2025, a większość pozostałych wymogów od sierpnia 2026 i 2027 roku.</p>
+
+                <h3>Czy korzystanie z ChatGPT w firmie podlega AI Act?</h3>
+                <p>Korzystanie z narzędzi takich jak ChatGPT zwykle plasuje firmę w roli podmiotu stosującego system ograniczonego lub minimalnego ryzyka. Główne obowiązki to przejrzystość wobec odbiorców treści generowanej przez AI oraz ochrona danych osobowych wprowadzanych do narzędzia zgodnie z RODO.</p>
+
+                <h3>Jakie kary grożą za naruszenie AI Act?</h3>
+                <p>AI Act przewiduje kary do 35 mln euro lub 7% rocznego światowego obrotu za stosowanie zakazanych praktyk AI, oraz do 15 mln euro lub 3% obrotu za inne naruszenia. Dla naruszeń RODO obowiązują odrębne kary do 20 mln euro lub 4% obrotu.</p>
+
+                <h3>Czy potrzebuję prawnika, aby wdrożyć AI zgodnie z prawem?</h3>
+                <p>Dla typowych systemów minimalnego i ograniczonego ryzyka wystarczy uporządkowana checklista zgodności oraz konsultacja techniczna na etapie projektowania wdrożenia. Przy systemach wysokiego ryzyka lub przetwarzaniu danych wrażliwych warto skonsultować się z prawnikiem specjalizującym się w prawie nowych technologii.</p>
+
+                <h3>Od czego zacząć wdrożenie zgodne z AI Act i RODO?</h3>
+                <p>Zacznij od inwentaryzacji wszystkich narzędzi AI używanych w firmie i przypisania im kategorii ryzyka. Następnie zmapuj, które systemy przetwarzają dane osobowe i na jakiej podstawie z RODO. Te dwa kroki dają pełny obraz sytuacji i pozwalają zaplanować dalsze działania.</p>
+
+                <h2>Źródła i akty prawne</h2>
+                <ul>
+                    <li><strong>Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2024/1689 (AI Act)</strong> ustanawia zharmonizowane przepisy dotyczące sztucznej inteligencji w Unii Europejskiej. Reguluje kategorie ryzyka, obowiązki i terminy stosowania.</li>
+                    <li><strong>Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO)</strong> reguluje ochronę osób fizycznych w związku z przetwarzaniem danych osobowych, w tym art. 22 o decyzjach zautomatyzowanych.</li>
+                    <li><strong>Wytyczne i komunikaty UODO (Urząd Ochrony Danych Osobowych)</strong> to krajowe źródło interpretacji RODO w Polsce, również w kontekście narzędzi opartych na sztucznej inteligencji.</li>
+                </ul>
+
+            </div>
+
+            <!-- Autor -->
+            <aside class="post-author">
+                <div class="post-author__avatar" aria-hidden="true">MO</div>
+                <div>
+                    <div class="post-author__name">Mateusz Olesiuk</div>
+                    <div class="post-author__role">Założyciel LogicMorrow. Razem z zespołem wdrażamy automatyzacje i agentów AI dla małych i średnich firm w Polsce. Artykuł edukacyjny, nie stanowi porady prawnej.</div>
+                </div>
+            </aside>
+
+            <!-- CTA końcowe -->
+            <section class="post-cta">
+                <h2>Chcesz wdrożyć AI spokojnie i zgodnie z prawem?</h2>
+                <p>Przejdziemy przez Twój przypadek na konkretach: sklasyfikujemy narzędzia, wskażemy obowiązki i zaproponujemy wdrożenie bez nadmiernej biurokracji.</p>
+                <a href="/konsultacja.html" class="btn btn--primary btn--lg">Umów bezpłatną konsultację</a>
+            </section>
+
+        </article>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script defer src="/js/loader.js"></script>
+    <script defer src="/js/navbar.js"></script>
+    <script defer src="/js/animations.js"></script>
+
+    <!-- [6] Cookie Consent – inicjalizacja -->
+    <script defer src="/js/cookie-consent.js"></script>
+
+</body>
+</html>

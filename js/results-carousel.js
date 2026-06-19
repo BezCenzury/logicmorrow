@@ -22,6 +22,8 @@
             const dot = document.createElement('button');
             dot.type = 'button';
             dot.className = 'results__dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('role', 'tab');
+            dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
             dot.setAttribute('aria-label', 'Pokaż wdrożenie ' + (i + 1));
             dot.addEventListener('click', function () {
                 scrollToIndex(i);
@@ -50,6 +52,7 @@
             const idx = currentIndex();
             dots.forEach(function (dot, i) {
                 dot.classList.toggle('active', i === idx);
+                dot.setAttribute('aria-selected', i === idx ? 'true' : 'false');
             });
             if (prevBtn) prevBtn.disabled = idx <= 0;
             if (nextBtn) nextBtn.disabled = idx >= cards.length - 1;

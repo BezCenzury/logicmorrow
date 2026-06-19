@@ -53,6 +53,14 @@
     line-height: 1.4;
 }
 
+.stats-band__asof {
+    margin-top: var(--space-5);
+    text-align: center;
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--color-slate-400);
+    letter-spacing: 0.02em;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
     .stats-band {

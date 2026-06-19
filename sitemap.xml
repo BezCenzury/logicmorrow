@@ -3,36 +3,50 @@
   <!-- Strona główna -->
   <url>
     <loc>https://logicmorrow.pl/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <priority>1.0</priority>
   </url>
 
   <!-- Usługi i rozwiązania -->
   <url>
     <loc>https://logicmorrow.pl/automatyzacje.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://logicmorrow.pl/aplikacje.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://logicmorrow.pl/agenci.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <priority>0.9</priority>
   </url>
   
   <!-- Biblioteka i Wiedza -->
   <url>
     <loc>https://logicmorrow.pl/rozwiazania.html</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://logicmorrow.pl/model-pracy.html</loc>
-    <lastmod>2026-04-22</lastmod>
+    <lastmod>2026-06-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://logicmorrow.pl/blog/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/ai-act-rodo-w-firmie.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 

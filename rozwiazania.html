@@ -21,12 +21,14 @@
     <meta property="og:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="LogicMorrow – biblioteka wdrożeń i case studies">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="LogicMorrow">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Biblioteka Rozwiązań – Automatyzacje w Działaniu | LogicMorrow">
     <meta name="twitter:description" content="Zobacz działające automatyzacje i aplikacje. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte technologie. Dla sceptycznych – linki do GitHub.">
     <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/og-image.jpg">
+    <meta name="twitter:image:alt" content="LogicMorrow – biblioteka wdrożeń i case studies">
 
     <!-- ═══════════════════════════════════════════════════════
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
@@ -115,7 +117,7 @@
           "@id": "https://logicmorrow.pl/rozwiazania.html",
           "url": "https://logicmorrow.pl/rozwiazania.html",
           "name": "Biblioteka Rozwiązań – Automatyzacje w Działaniu | LogicMorrow",
-          "description": "Działające automatyzacje i aplikacje webowe zbudowane dla firm 5–35 pracowników. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte narzędzia.",
+          "description": "Działające automatyzacje i aplikacje webowe zbudowane dla firm do 35 pracowników. Twarde dane: czas wdrożenia, zaoszczędzone godziny, użyte narzędzia.",
           "inLanguage": "pl-PL",
           "isPartOf": { "@id": "https://logicmorrow.pl/#website" }
         },
@@ -156,13 +158,15 @@
 </head>
 <body>
 
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
+
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8KFFQZN"
+    <noscript><iframe title="Google Tag Manager" src="https://www.googletagmanager.com/ns.html?id=GTM-T8KFFQZN"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div id="navbar-placeholder"></div>
 
-    <main>
+    <main id="main-content">
 
         <!-- ====================================================
              SEKCJA 1: HERO
@@ -193,7 +197,7 @@
                         <div class="screen screen--dashboard">
                             <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="320" height="200" rx="8" fill="#f1f5f9" />
-                                <rect width="50" height="200" rx="8 0 0 8" fill="#0f172a" /> <!-- Sidebar -->
+                                <rect width="50" height="200" rx="0" fill="#0f172a" /> <!-- Sidebar -->
                                 <g transform="translate(10, 20)">
                                     <circle r="4" fill="#334155" />
                                     <circle r="4" cy="15" fill="#334155" />
@@ -350,6 +354,7 @@
                         <span class="stats-band__label">kodu na własność klienta</span>
                     </div>
                 </div>
+                <p class="stats-band__asof">Stan na 2026 r.</p>
             </div>
         </section>
 
@@ -764,12 +769,12 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="js/loader.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/counter.js"></script>
-    <script src="js/forms.js"></script>
-    <script src="js/modal.js"></script>
+    <script defer src="js/loader.js"></script>
+    <script defer src="js/navbar.js"></script>
+    <script defer src="js/animations.js"></script>
+    <script defer src="js/counter.js"></script>
+    <script defer src="js/forms.js"></script>
+    <script defer src="js/modal.js"></script>
     <!-- Logika filtrów biblioteki -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -793,7 +798,7 @@
     </script>
 
     <!-- [6] Cookie Consent – inicjalizacja -->
-    <script src="/js/cookie-consent.js"></script>
+    <script defer src="/js/cookie-consent.js"></script>
 
 </body>
 </html>

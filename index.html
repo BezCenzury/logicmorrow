@@ -25,7 +25,7 @@
     />
     <meta
       property="og:description"
-      content="Automatyzujemy powtarzalne procesy i budujemy dedykowane aplikacje webowe dla firm 5–35 pracowników. Zyskaj czas i pełną własność rozwiązania."
+      content="Automatyzujemy powtarzalne procesy i budujemy dedykowane aplikacje webowe dla firm do 35 pracowników. Zyskaj czas i pełną własność rozwiązania."
     />
     <meta
       property="og:image"
@@ -33,6 +33,7 @@
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="LogicMorrow – automatyzacje i dedykowane aplikacje webowe dla firm" />
     <meta property="og:locale" content="pl_PL" />
     <meta property="og:site_name" content="LogicMorrow" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -42,12 +43,13 @@
     />
     <meta
       name="twitter:description"
-      content="Automatyzujemy powtarzalne procesy i budujemy dedykowane aplikacje webowe dla firm 5–35 pracowników. Zyskaj czas i pełną własność rozwiązania."
+      content="Automatyzujemy powtarzalne procesy i budujemy dedykowane aplikacje webowe dla firm do 35 pracowników. Zyskaj czas i pełną własność rozwiązania."
     />
     <meta
       name="twitter:image"
       content="https://logicmorrow.pl/assets/images/og-image.jpg"
     />
+    <meta name="twitter:image:alt" content="LogicMorrow – automatyzacje i dedykowane aplikacje webowe dla firm" />
 
     <!-- ═══════════════════════════════════════════════════════
          COOKIE CONSENT + GOOGLE CONSENT MODE V2
@@ -154,18 +156,18 @@
             "@id": "https://logicmorrow.pl/#website",
             "url": "https://logicmorrow.pl/",
             "name": "LogicMorrow",
-            "description": "Automatyzacje procesów biznesowych i dedykowane aplikacje webowe dla firm 5–35 pracowników.",
+            "description": "Automatyzacje procesów biznesowych i dedykowane aplikacje webowe dla firm do 35 pracowników.",
             "inLanguage": "pl-PL"
           },
           {
-            "@type": "ProfessionalService",
+            "@type": ["Organization", "ProfessionalService"],
             "@id": "https://logicmorrow.pl/#business",
             "name": "LogicMorrow",
             "url": "https://logicmorrow.pl",
             "logo": "https://logicmorrow.pl/assets/images/logo.svg",
             "image": "https://logicmorrow.pl/assets/images/og-image.jpg",
             "slogan": "Automatyzacje i dedykowane aplikacje webowe dla firm, które rosną szybciej niż ich procesy.",
-            "description": "Mała agencja (butikowy software house): automatyzujemy procesy biznesowe i budujemy dedykowane aplikacje webowe dla małych i średnich firm.",
+            "description": "Mała agencja: automatyzujemy procesy biznesowe i budujemy dedykowane aplikacje webowe oraz agentów AI dla firm od 5 do 35 pracowników.",
             "serviceType": [
               "Automatyzacja procesów biznesowych",
               "Dedykowane aplikacje webowe",
@@ -182,6 +184,19 @@
             "areaServed": {
               "@type": "Country",
               "name": "Polska"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "ul. Długa 27a",
+              "addressLocality": "Tereszpol-Zaorenda",
+              "postalCode": "23-407",
+              "addressRegion": "lubelskie",
+              "addressCountry": "PL"
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Mateusz Olesiuk",
+              "jobTitle": "Założyciel"
             },
             "priceRange": "$$",
             "telephone": "+48537844013",
@@ -230,10 +245,13 @@
     <link rel="stylesheet" href="css/sections/stats-band.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-T8KFFQZN"
+        title="Google Tag Manager"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
@@ -243,7 +261,7 @@
     <!-- Globalny nagłówek (wstrzykiwany przez loader.js) -->
     <div id="navbar-placeholder"></div>
 
-    <main>
+    <main id="main-content">
       <!-- ====================================================
              SEKCJA 1: HERO
              Obietnica biznesowa + CTA do kalendarza
@@ -548,6 +566,7 @@
               <span class="stats-band__label">kodu na własność klienta</span>
             </div>
           </div>
+          <p class="stats-band__asof">Stan na 2026 r.</p>
         </div>
       </section>
 
@@ -1071,7 +1090,7 @@
                       y="0"
                       width="280"
                       height="30"
-                      rx="12 12 0 0"
+                      rx="0"
                       fill="rgba(255,255,255,0.03)"
                     />
                     <circle cx="15" cy="15" r="3" fill="#ef4444" />
@@ -1613,7 +1632,7 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  Twoja firma zatrudnia od 5 do 35 osób i działa ponad rok
+                  Twoja firma zatrudnia do 35 osób i działa ponad rok
                 </li>
                 <li class="qualifier__item">
                   <svg
@@ -1661,8 +1680,8 @@
                       stroke-linejoin="round"
                     />
                   </svg>
-                  Decyzja leży po stronie CEO lub właściciela – bez
-                  wieloosobowego przetargu
+                  Decyzję podejmuje właściciel albo szef firmy, bez
+                  ciągnących się ustaleń w kilku działach
                 </li>
                 <li class="qualifier__item">
                   <svg
@@ -2719,16 +2738,16 @@
     <div id="footer-placeholder"></div>
 
     <!-- JavaScript -->
-    <script src="js/loader.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/solutions.js"></script>
-    <script src="js/roi-calculator.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/counter.js"></script>
-    <script src="js/forms.js"></script>
-    <script src="js/results-carousel.js"></script>
+    <script defer src="js/loader.js"></script>
+    <script defer src="js/navbar.js"></script>
+    <script defer src="js/solutions.js"></script>
+    <script defer src="js/roi-calculator.js"></script>
+    <script defer src="js/animations.js"></script>
+    <script defer src="js/counter.js"></script>
+    <script defer src="js/forms.js"></script>
+    <script defer src="js/results-carousel.js"></script>
 
     <!-- [6] Cookie Consent – inicjalizacja -->
-    <script src="/js/cookie-consent.js"></script>
+    <script defer src="/js/cookie-consent.js"></script>
   </body>
 </html>

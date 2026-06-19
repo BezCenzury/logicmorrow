@@ -1,0 +1,28 @@
+# LogicMorrow
+
+> Mała agencja, która automatyzuje procesy biznesowe i buduje dedykowane aplikacje webowe oraz agentów AI dla firm od 5 do 35 pracowników.
+
+LogicMorrow pomaga firmom, które rosną szybciej niż ich ręczne procesy — przepisywanie danych między programami, pękające arkusze Excela, gotowe systemy niedopasowane do realnej pracy. Zaczynamy od jednego konkretnego procesu: stała cena ustalona przed startem, wdrożenie zwykle w 2–4 tygodnie, pełna własność kodu po projekcie. Jeśli z wyliczeń nie wychodzi sensowny zwrot z inwestycji — mówimy o tym wprost i odradzamy projekt.
+
+Jesteśmy małym zespołem, nie korporacją. Oznacza to mniej etapów, bezpośredni kontakt i szybką decyzję.
+
+## Usługi
+
+- [Automatyzacja procesów](https://logicmorrow.pl/automatyzacje.html): Łączymy programy używane w firmie (CRM, fakturowanie, e-mail, arkusze, magazyn) w jeden płynny przepływ i eliminujemy ręczne przepisywanie danych. Najprostsze automatyzacje od 3 000 zł.
+- [Dedykowane aplikacje webowe](https://logicmorrow.pl/aplikacje.html): Lekkie narzędzia skrojone pod proces firmy — zamiennik pękającego Excela lub drogiego abonamentowego systemu. Płacisz raz, bez opłat za liczbę użytkowników. Najprostsze od 7 000 zł.
+- [Agenci AI](https://logicmorrow.pl/agenci.html): Systemy AI podłączone do danych firmy, które wspierają analizę danych, obsługę zapytań i decyzje. Każde działanie agenta jest zapisywane i można je sprawdzić.
+
+## Najważniejsze strony
+
+- [Biblioteka rozwiązań](https://logicmorrow.pl/rozwiazania.html): Działające wdrożenia z konkretnymi danymi — czas wdrożenia, zaoszczędzone godziny, użyte narzędzia.
+- [Model pracy i gwarancje](https://logicmorrow.pl/model-pracy.html): Jak pracujemy krok po kroku, stała cena oraz gwarancje: własność kodu, brak uzależnienia od jednego dostawcy, jeden kontakt, testy równoległe i dane na serwerach klienta lub w UE.
+- [Bezpłatna konsultacja](https://logicmorrow.pl/konsultacja.html): 20-minutowa rozmowa, na której wspólnie liczymy zwrot z inwestycji dla konkretnego procesu.
+
+## Dla kogo
+
+Firmy do 35 pracowników, działające ponad rok, które obsługują rosnącą liczbę zamówień, klientów i danych starymi metodami. Dobrze dopasowane branże: produkcja, usługi dla firm, handel, budownictwo i instalatorzy, logistyka. Nie pracujemy z mikrofirmami 1–4 osób ani nie robimy prostych stron-wizytówek czy sklepów internetowych.
+
+## Kontakt
+
+- E-mail: kontakt@logicmorrow.pl
+- Bezpłatna konsultacja: https://logicmorrow.pl/konsultacja.html

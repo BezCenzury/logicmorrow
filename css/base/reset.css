@@ -32,6 +32,26 @@ img, svg, video, canvas {
     max-width: 100%;
 }
 
+img {
+    height: auto;
+}
+
+/* Skip link (dostępność WCAG 2.4.1) — niewidoczny do momentu fokusu klawiaturą */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 2000;
+    padding: var(--space-3, 0.75rem) var(--space-5, 1.25rem);
+    background: var(--color-primary, #2563eb);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0 0 var(--radius-md, 0.5rem) 0;
+}
+.skip-link:focus {
+    left: 0;
+}
+
 input, button, textarea, select {
     font: inherit;
 }
