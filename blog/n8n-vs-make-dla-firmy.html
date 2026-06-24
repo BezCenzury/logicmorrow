@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>n8n vs Make dla firmy – co wybrać do automatyzacji w MŚP | LogicMorrow</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="description" content="n8n vs Make dla firmy – który wybrać do automatyzacji w MŚP? Porównanie kosztów, kontroli danych i odporności na wzrost + kiedy własna automatyzacja. Umów konsultację.">
+    <meta name="robots" content="index,follow">
+
+    <!-- SEO: Canonical + Open Graph + Twitter Card -->
+    <link rel="canonical" href="https://logicmorrow.pl/blog/n8n-vs-make-dla-firmy.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://logicmorrow.pl/blog/n8n-vs-make-dla-firmy.html">
+    <meta property="og:title" content="n8n vs Make vs własna automatyzacja – co wybrać w MŚP">
+    <meta property="og:description" content="Porównanie n8n, Make i własnej automatyzacji dla firmy: koszt, kontrola danych, odporność na wzrost i kiedy wybrać które rozwiązanie.">
+    <meta property="og:image" content="https://logicmorrow.pl/assets/images/blog/n8n-vs-make-dla-firmy/n8n-vs-make-dla-firmy-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="n8n vs Make vs własna automatyzacja – porównanie dla MŚP od LogicMorrow">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="LogicMorrow">
+    <meta property="article:published_time" content="2026-06-24">
+    <meta property="article:modified_time" content="2026-06-24">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="n8n vs Make vs własna automatyzacja – co wybrać w MŚP">
+    <meta name="twitter:description" content="Porównanie n8n, Make i własnej automatyzacji dla firmy: koszt, kontrola danych, odporność na wzrost i kiedy wybrać które rozwiązanie.">
+    <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/blog/n8n-vs-make-dla-firmy/n8n-vs-make-dla-firmy-og.png">
+    <meta name="twitter:image:alt" content="n8n vs Make vs własna automatyzacja – porównanie dla MŚP od LogicMorrow">
+
+    <!-- ═══════════════════════════════════════════════════════
+         COOKIE CONSENT + GOOGLE CONSENT MODE V2
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 2000
+        });
+    </script>
+
+    <!-- [2] Pre-inicjalizacja consent dla powracających użytkowników -->
+    <script>
+        (function () {
+            try {
+                var raw = document.cookie.split(';').reduce(function (acc, c) {
+                    var p = c.trim().split('=');
+                    return p[0] === 'cc_cookie' ? decodeURIComponent(p.slice(1).join('=')) : acc;
+                }, null);
+                if (raw) {
+                    var cats = JSON.parse(raw).categories || [];
+                    var analytics = cats.indexOf('analytics') >= 0 ? 'granted' : 'denied';
+                    var marketing = cats.indexOf('marketing') >= 0 ? 'granted' : 'denied';
+                    gtag('consent', 'update', {
+                        'analytics_storage': analytics,
+                        'ad_storage': marketing,
+                        'ad_user_data': marketing,
+                        'ad_personalization': marketing
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- [3] Google Tag Manager -->
+    <script>(function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T8KFFQZN');</script>
+
+    <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
+
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
+    <style>
+        :root {
+            --cc-btn-primary-bg: #2563eb;
+            --cc-btn-primary-hover-bg: #1d4ed8;
+            --cc-btn-primary-text: #fff;
+            --cc-btn-secondary-bg: #f1f5f9;
+            --cc-btn-secondary-hover-bg: #e2e8f0;
+            --cc-btn-secondary-text: #475569;
+            --cc-toggle-on-bg: #2563eb;
+            --cc-link-color: #2563eb;
+            --cc-btn-border-radius: 0.75rem;
+            --cc-overlay-bg: rgba(0, 0, 0, 0.55);
+        }
+        #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
+        #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+    </style>
+
+    <!-- Schema: Article + FAQPage + BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "n8n vs Make dla firmy – co wybrać do automatyzacji w MŚP",
+          "description": "n8n vs Make dla firmy – który wybrać do automatyzacji w MŚP? Porównanie kosztów, kontroli danych i odporności na wzrost oraz kiedy warto postawić na własną automatyzację.",
+          "inLanguage": "pl",
+          "datePublished": "2026-06-24",
+          "dateModified": "2026-06-24",
+          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://logicmorrow.pl/blog/n8n-vs-make-dla-firmy.html" },
+          "image": "https://logicmorrow.pl/assets/images/blog/n8n-vs-make-dla-firmy/n8n-vs-make-dla-firmy-og.png",
+          "author": {
+            "@type": "Person",
+            "name": "Mateusz Olesiuk",
+            "jobTitle": "Założyciel",
+            "url": "https://logicmorrow.pl/",
+            "worksFor": { "@type": "Organization", "name": "LogicMorrow" }
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "LogicMorrow",
+            "url": "https://logicmorrow.pl/",
+            "logo": { "@type": "ImageObject", "url": "https://logicmorrow.pl/assets/images/logo.svg" }
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "n8n czy Make – co jest lepsze dla małej firmy?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Dla małej firmy z kilkoma prostymi procesami i bez zaplecza IT zwykle wygodniejszy jest Make: niski próg wejścia i szybki start. n8n staje się lepszy, gdy automatyzacji przybywa, koszt operacji rośnie albo potrzebujesz kontroli nad danymi (RODO) i masz wsparcie techniczne do utrzymania serwera." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy n8n jest tańszy od Make?",
+              "acceptedAnswer": { "@type": "Answer", "text": "To zależy od skali. Make rozlicza się za operacje, więc przy dużej liczbie automatyzacji rachunek rośnie. n8n na własnym serwerze ma koszt serwera niezależny od liczby operacji, co przy dużym wolumenie bywa wyraźnie tańsze. Przy małej skali różnica jest niewielka, a Make wygrywa wygodą." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy n8n jest bezpieczny pod kątem RODO?",
+              "acceptedAnswer": { "@type": "Answer", "text": "n8n na własnym serwerze pozwala trzymać dane na własnym serwerze, co ułatwia spełnienie wymogów RODO co do lokalizacji i kontroli danych. Samo narzędzie nie gwarantuje zgodności: kluczowe jest poprawne wdrożenie: podstawa prawna przetwarzania, minimalizacja danych i odpowiednie zabezpieczenie serwera." }
+            },
+            {
+              "@type": "Question",
+              "name": "Kiedy warto zlecić własną automatyzację zamiast Make lub n8n?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Gdy proces jest krytyczny dla biznesu, wymaga głębokich lub nietypowych integracji (np. ze starszym systemem produkcyjnym), albo gdy koszt długoterminowy gotowej platformy przewyższa jednorazowy koszt budowy. Własna automatyzacja daje pełną kontrolę i niezawodność, ale ma wyższy próg wejścia i koszt początkowy." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy potrzebuję programisty, żeby korzystać z Make lub n8n?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Make jest na tyle prosty, że podstawowe scenariusze zbuduje osoba nietechniczna. n8n na własnym serwerze wymaga wsparcia technicznego do postawienia i utrzymania serwera. Bardziej złożone automatyzacje w obu narzędziach warto powierzyć kogoś z doświadczeniem, by uniknąć błędów i luk bezpieczeństwa." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy mogę połączyć Make, n8n i własny kod?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Tak, i często to najlepsze rozwiązanie. Gotowe platformy świetnie sprawdzają się przy prostych integracjach, a dedykowany kod przy procesach krytycznych lub nietypowych. W LogicMorrow regularnie łączymy te ścieżki: dobieramy narzędzie do konkretnego fragmentu procesu, zamiast wciskać całość w jedno rozwiązanie." }
+            },
+            {
+              "@type": "Question",
+              "name": "Od czego zacząć wybór narzędzia do automatyzacji?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Zacznij od opisania procesu: co się dzieje krok po kroku, jak często, jakie dane przepływają i co się stanie, gdy automatyzacja zawiedzie. Z tej mapy wynika rekomendacja: prosty proces bez wrażliwych danych to zwykle Make, większa skala z wymogiem kontroli to n8n, a proces krytyczny lub głęboko zintegrowany to własna automatyzacja." }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://logicmorrow.pl/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://logicmorrow.pl/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "n8n vs Make dla firmy", "item": "https://logicmorrow.pl/blog/n8n-vs-make-dla-firmy.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="/css/base/variables.css">
+    <link rel="stylesheet" href="/css/base/reset.css">
+    <link rel="stylesheet" href="/css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/css/components/navbar.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/cookie-fab.css">
+    <link rel="stylesheet" href="/css/components/buttons.css">
+
+    <!-- Blog CSS -->
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8KFFQZN"
+    title="Google Tag Manager" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Globalny nagłówek -->
+    <div id="navbar-placeholder"></div>
+
+    <main id="main-content" class="post">
+
+        <article class="post-article">
+
+            <header class="post__header">
+                <nav class="post__breadcrumb" aria-label="Ścieżka okruszków">
+                    <a href="/">Strona główna</a> / <a href="/blog/">Blog</a> / n8n vs Make dla firmy
+                </nav>
+                <span class="post__cat">Automatyzacja procesów</span>
+                <h1 class="post__title">n8n vs Make dla firmy – co wybrać do automatyzacji w MŚP</h1>
+                <div class="post__meta">
+                    <span><strong>Mateusz Olesiuk</strong></span>
+                    <span class="dot" aria-hidden="true"></span>
+                    <time datetime="2026-06-24">24 czerwca 2026</time>
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>10 min czytania</span>
+                </div>
+            </header>
+
+            <div class="post-prose">
+
+                <p>Chcesz przestać przeklejać dane między systemami, ręcznie wystawiać te same dokumenty i pilnować, czy ktoś odpisał na zapytanie, i trafiasz na dwa nazwiska, które wracają w każdej dyskusji o automatyzacji: Make i n8n. A gdzieś z boku pojawia się trzecia opcja: „a może lepiej zlecić własną automatyzację”. Pytanie „n8n vs Make dla firmy” nie ma jednej dobrej odpowiedzi, ma odpowiedź zależną od tego, ile procesów chcesz automatyzować, jak wrażliwe są Twoje dane i jak krytyczny jest dany proces. W LogicMorrow wdrażamy automatyzacje dla MŚP w całej Polsce na wszystkich trzech ścieżkach, więc porównujemy je bez kibicowania jednemu narzędziu: liczy się dobór pod konkretny przypadek.</p>
+
+                <figure>
+                    <img src="/assets/images/blog/n8n-vs-make-dla-firmy/n8n-vs-make-dla-firmy-banner.webp" width="1200" height="340" loading="lazy" decoding="async" alt="Porównanie trzech ścieżek automatyzacji dla firmy: Make, n8n i własna automatyzacja: koszt, kontrola danych i odporność na wzrost">
+                </figure>
+
+                <h2>Kiedy w ogóle warto sięgać po automatyzację no-code</h2>
+                <p>Zanim porównamy narzędzia, jedna myśl porządkująca. Automatyzacja no-code (lub low-code) ma sens wtedy, gdy proces jest <strong>powtarzalny, oparty na regułach i zjada czas ludzi</strong>, którzy mogliby robić coś wartościowszego. Klasyczne przykłady w MŚP to przepisywanie danych z formularza do CRM, generowanie ofert z szablonu, synchronizacja stanów magazynowych czy powiadomienia o nowym zamówieniu.</p>
+                <p>Jeśli proces jest jednorazowy, zmienia się co tydzień albo wymaga ludzkiej oceny na każdym kroku, automatyzacja niewiele da. Ale gdy ten sam ciąg kroków wykonuje się dziesiątki razy w tygodniu, narzędzia takie jak Make i n8n potrafią go domknąć w dni, a nie miesiące. Szerzej rozpisaliśmy to w przewodniku <a href="/blog/jak-zautomatyzowac-procesy-w-firmie.html">jak zautomatyzować procesy w firmie krok po kroku</a>, tu skupiamy się na wyborze narzędzia.</p>
+
+                <h2>Czym jest Make: automatyzacja wizualna dla każdego</h2>
+                <p>Make (dawniej Integromat) to chmurowa platforma do budowania automatyzacji metodą „przeciągnij i połącz”. Tworzysz scenariusz, w którym kolejne moduły (wyzwalacz, akcje, filtry) łączysz wizualnie w jeden przepływ. Nie piszesz kodu; logikę układasz na planszy, a Make wykonuje ją na swoich serwerach.</p>
+
+                <p><strong>Plusy Make:</strong></p>
+                <ul>
+                    <li><strong>Niski próg wejścia.</strong> Osoba nietechniczna ogarnia podstawowy scenariusz w jeden wieczór. Wizualny interfejs jest czytelny, a setki gotowych integracji (Gmail, Google Sheets, popularne CRM-y, fakturowanie) działają „z pudełka”.</li>
+                    <li><strong>Zero utrzymania serwera.</strong> Nie stawiasz serwera, nie aktualizujesz nic samodzielnie, działa jako usługa w chmurze.</li>
+                    <li><strong>Szybki start.</strong> Od pomysłu do działającej automatyzacji potrafi minąć kilka godzin.</li>
+                </ul>
+
+                <p><strong>Minusy Make:</strong></p>
+                <ul>
+                    <li><strong>Koszt rośnie z wolumenem.</strong> Rozliczenie opiera się na liczbie operacji (każdy krok scenariusza to operacja). Przy dużej liczbie automatyzacji miesięczny rachunek potrafi zaskoczyć.</li>
+                    <li><strong>Dane przechodzą przez serwery dostawcy.</strong> Dla procesów z danymi osobowymi czy wrażliwymi to wymaga świadomej oceny pod kątem RODO i umowy powierzenia.</li>
+                    <li><strong>Ograniczona kontrola.</strong> Działasz w ramach tego, co platforma udostępnia, niestandardowa logika bywa trudna lub niemożliwa.</li>
+                </ul>
+
+                <p><strong>Dla kogo:</strong> małe firmy z kilkoma prostymi, niezbyt obciążonymi procesami, które chcą szybkiego efektu bez zaplecza technicznego i bez szczególnych wymagań co do lokalizacji danych.</p>
+
+                <h2>Czym jest n8n: kontrola i własny serwer</h2>
+                <p>n8n to platforma automatyzacji o podobnej, wizualnej filozofii pracy (łączysz kroki w przepływ), ale z kluczową różnicą: <strong>ma otwarty kod</strong> i można ją uruchomić na własnym serwerze. To zmienia układ sił, zwłaszcza w obszarze kosztów przy wzroście i kontroli nad danymi.</p>
+
+                <p><strong>Plusy n8n:</strong></p>
+                <ul>
+                    <li><strong>Kontrola nad danymi (RODO).</strong> Przy wdrożeniu na własnym serwerze dane nie wychodzą poza Twoje serwery, przepływają przez serwer, który kontrolujesz. To mocny argument dla firm przetwarzających dane osobowe klientów lub dane wrażliwe.</li>
+                    <li><strong>Koszt niezależny od liczby operacji.</strong> Przy własnym serwerze płacisz za serwer, a nie za każdą operację. Przy dużej liczbie automatyzacji potrafi to być wyraźnie taniej niż rozliczenie za operacje.</li>
+                    <li><strong>Elastyczność.</strong> Pozwala wpleść własny kod (np. fragment w JavaScript) tam, gdzie gotowe kroki nie wystarczają, to most między no-code a pełnym kodem.</li>
+                </ul>
+
+                <p><strong>Minusy n8n:</strong></p>
+                <ul>
+                    <li><strong>Wyższy próg wejścia.</strong> Własny serwer wymaga zaplecza technicznego: postawienia serwera, aktualizacji, kopii zapasowych, zabezpieczeń. Bez kogoś, kto to ogarnie, łatwo o zaniedbania.</li>
+                    <li><strong>Odpowiedzialność za utrzymanie.</strong> To, co w Make robi dostawca, tutaj spada na Ciebie (lub partnera wdrożeniowego).</li>
+                    <li><strong>Mniej „magii z pudełka”.</strong> Część integracji wymaga więcej konfiguracji niż w najbardziej dopieszczonych modułach Make.</li>
+                </ul>
+
+                <blockquote>
+                    <p>n8n oferuje też wersję chmurową (rozliczaną abonamentowo), która zdejmuje z firmy utrzymanie serwera, ale to właśnie własny serwer jest wyróżnikiem n8n w kontekście kontroli danych i kosztu przy wzroście.</p>
+                </blockquote>
+
+                <p><strong>Dla kogo:</strong> firmy z większą liczbą automatyzacji, z wymaganiami RODO co do lokalizacji danych, mające dostęp do wsparcia technicznego (własnego lub partnera), gotowe zainwestować w setup, by zyskać kontrolę i niższy koszt jednostkowy przy wzroście.</p>
+
+                <h2>Kiedy własna automatyzacja albo dedykowany kod</h2>
+                <p>Jest trzecia ścieżka, o której rzadziej się mówi, a która bywa najlepsza: <strong>własna automatyzacja napisana pod konkretny proces</strong>. Nie chodzi o to, że gotowe narzędzia są złe, to dobre narzędzia. Chodzi o sytuacje, w których platforma no-code staje się ograniczeniem, a nie ułatwieniem.</p>
+                <p>Własna automatyzacja zaczyna mieć przewagę, gdy:</p>
+                <ul>
+                    <li><strong>Proces jest krytyczny dla biznesu.</strong> Jeśli awaria automatyzacji zatrzymuje produkcję albo sprzedaż, chcesz pełnej kontroli nad kodem, monitoringiem i scenariuszami awaryjnymi, bez zależności od zewnętrznej platformy i jej limitów.</li>
+                    <li><strong>Integracje są głębokie lub nietypowe.</strong> Łączenie ze starszym systemem (ERP, oprogramowanie produkcyjne, niestandardowe API) często wykracza poza to, co oferują gotowe kroki.</li>
+                    <li><strong>Wymagania RODO są zaostrzone.</strong> Pełna kontrola nad tym, gdzie i jak przetwarzane są dane, bywa łatwiejsza do udowodnienia w dedykowanym rozwiązaniu.</li>
+                    <li><strong>Koszt długoterminowy ma znaczenie.</strong> Przy stabilnym, intensywnie używanym procesie jednorazowy koszt budowy potrafi zwrócić się szybciej niż rosnący abonament za operacje.</li>
+                </ul>
+                <p>Tu warto być uczciwym co do minusów: własna automatyzacja ma <strong>najwyższy próg wejścia</strong> (wymaga inżyniera) i wyższy koszt początkowy. Za to daje to, czego gotowe platformy z definicji nie dadzą: pełną własność, kontrolę i dopasowanie. Tak powstały nasze wdrożenia jak „System zamówień” (automatyzacja procesu produkcyjnego) czy aplikacja „MatJar”, tam, gdzie standardowe narzędzie po prostu nie obejmowało całości procesu.</p>
+
+                <h2>n8n vs Make vs własna automatyzacja: tabela porównawcza</h2>
+                <p>Poniżej najważniejsze różnice w jednym miejscu. Traktuj to jako mapę decyzyjną, nie wyrok, w realnym wdrożeniu często łączy się ścieżki (np. Make do prostych integracji + dedykowany kod do procesu krytycznego).</p>
+
+                <figure>
+                    <img src="/assets/images/blog/n8n-vs-make-dla-firmy/n8n-vs-make-dla-firmy-porownanie.webp" width="1040" height="600" loading="lazy" decoding="async" alt="Trzy karty porównawcze: Make, n8n i własna automatyzacja z cechami: koszt, kontrola, odporność na wzrost, próg wejścia, kiedy wybrać">
+                </figure>
+
+                <div class="post-table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Kryterium</th>
+                                <th>Make</th>
+                                <th>n8n (na własnym serwerze)</th>
+                                <th>Własna automatyzacja</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Koszt</strong></td>
+                                <td>abonament + opłata za operacje (rośnie z wolumenem)</td>
+                                <td>koszt serwera + utrzymanie (stały, niezależny od operacji)</td>
+                                <td>wyższy koszt początkowy, niski koszt jednostkowy przy wzroście</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Odporność na wzrost</strong></td>
+                                <td>wygodna, ale rachunek rośnie z liczbą operacji</td>
+                                <td>bardzo dobra przy własnym serwerze, koszt nie skacze z wolumenem</td>
+                                <td>najwyższa, projektowana pod konkretny proces</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kontrola / własność danych</strong></td>
+                                <td>dane przez serwery dostawcy</td>
+                                <td>pełna przy własnym serwerze, dane zostają u Ciebie</td>
+                                <td>pełna własność i kontrola</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Próg wejścia</strong></td>
+                                <td>niski, bez kodu, szybki start</td>
+                                <td>średni, wymaga setupu i utrzymania</td>
+                                <td>wysoki, wymaga inżyniera</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kiedy wybrać</strong></td>
+                                <td>mało procesów, prosto, szybko, bez zaplecza IT</td>
+                                <td>dużo automatyzacji + RODO/kontrola danych</td>
+                                <td>proces krytyczny, głębokie integracje, długi horyzont</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Co wybrać: rekomendacje wg scenariusza MŚP</h2>
+                <p>Zamiast jednej „najlepszej” odpowiedzi, oto trzy typowe scenariusze, które spotykamy u firm handlowych i produkcyjnych. Dobierz ten, który najbliższy jest Twojej sytuacji.</p>
+
+                <figure>
+                    <img src="/assets/images/blog/n8n-vs-make-dla-firmy/n8n-vs-make-dla-firmy-co-wybrac.webp" width="1040" height="520" loading="lazy" decoding="async" alt="Proste drzewo decyzyjne „Co wybrać?”: pytania o liczbę procesów, wymagania RODO i krytyczność prowadzą do Make, n8n lub własnej automatyzacji">
+                </figure>
+
+                <h3>Mało procesów, prosto i szybko → Make</h3>
+                <p>Masz kilka prostych, niezbyt obciążonych przepływów (np. formularz → CRM → powiadomienie), brak zaplecza IT i nie przetwarzasz szczególnie wrażliwych danych w tych procesach. <strong>Wybierz Make.</strong> Zaczniesz w kilka dni, bez stawiania serwera, a koszt na tej skali jest przewidywalny.</p>
+
+                <h3>Więcej automatyzacji + wymóg kontroli danych → n8n na własnym serwerze</h3>
+                <p>Automatyzujesz coraz więcej, liczba operacji rośnie, a w grę wchodzą dane osobowe klientów, dla których chcesz mieć pełną kontrolę nad lokalizacją (RODO). <strong>Rozważ n8n na własnym serwerze.</strong> Zyskujesz kontrolę nad danymi i koszt niezależny od liczby operacji, pod warunkiem, że masz wsparcie techniczne do utrzymania serwera.</p>
+
+                <h3>Proces krytyczny lub głębokie integracje → własna automatyzacja</h3>
+                <p>Automatyzowany proces jest sercem Twojego biznesu, łączy się ze starszym systemem produkcyjnym albo wymaga niestandardowej logiki, której nie obejmie gotowa platforma. <strong>Postaw na własną automatyzację.</strong> Wyższy koszt początkowy kupuje Ci niezawodność, pełną kontrolę i dopasowanie, których gotowe narzędzia nie zapewnią.</p>
+
+                <h2>Jak dobieramy narzędzie w LogicMorrow</h2>
+                <p>Nie sprzedajemy jednego narzędzia, dobieramy je pod proces. To nasza zasada bezstronności: Make, n8n i dedykowany kod traktujemy jako trzy narzędzia w tym samym pudełku, a nie konkurujące religie. Często najlepszym rozwiązaniem jest <strong>kombinacja</strong>: gotowa platforma do prostych integracji i dedykowany kod tam, gdzie potrzebna jest kontrola, zgodność z RODO albo niezawodność procesu krytycznego.</p>
+                <p>Zaczynamy od mapy procesu: co się dzieje, jak często, jakie dane przepływają i co się stanie, gdy automatyzacja zawiedzie. Dopiero z tego wynika rekomendacja narzędzia, a nie odwrotnie. Wdrażamy w 2–4 tygodnie, w małym zespole i z bezpośrednim kontaktem przez cały projekt, i pokazujemy, jak konkretne <a href="/rozwiazania.html">rozwiązania automatyzujące procesy w MŚP</a> zaprojektować pod Twój przypadek. Pełen obraz tematu znajdziesz w naszym przewodniku <a href="/blog/automatyzacja-ai-w-malej-firmie.html">automatyzacja i AI w małej firmie</a>, a ofertę samych wdrożeń opisaliśmy na stronie <a href="/automatyzacje.html">automatyzacje procesów</a>.</p>
+                <p>Jeśli wahasz się między Make, n8n a dedykowanym rozwiązaniem, <a href="/konsultacja.html">umów bezpłatną konsultację</a>, przejdziemy przez Twój proces na konkretach i powiemy wprost, które narzędzie się opłaca, a kiedy szkoda na nie czasu i pieniędzy.</p>
+
+                <h2>FAQ: najczęstsze pytania o n8n vs Make dla firmy</h2>
+
+                <h3>n8n czy Make – co jest lepsze dla małej firmy?</h3>
+                <p>Dla małej firmy z kilkoma prostymi procesami i bez zaplecza IT zwykle wygodniejszy jest Make: niski próg wejścia i szybki start. n8n staje się lepszy, gdy automatyzacji przybywa, koszt operacji rośnie albo potrzebujesz kontroli nad danymi (RODO) i masz wsparcie techniczne do utrzymania serwera.</p>
+
+                <h3>Czy n8n jest tańszy od Make?</h3>
+                <p>To zależy od skali. Make rozlicza się za operacje, więc przy dużej liczbie automatyzacji rachunek rośnie. n8n na własnym serwerze ma koszt serwera niezależny od liczby operacji, co przy dużym wolumenie bywa wyraźnie tańsze. Przy małej skali różnica jest niewielka, a Make wygrywa wygodą.</p>
+
+                <h3>Czy n8n jest bezpieczny pod kątem RODO?</h3>
+                <p>n8n na własnym serwerze pozwala trzymać dane na własnym serwerze, co ułatwia spełnienie wymogów RODO co do lokalizacji i kontroli danych. Samo narzędzie nie gwarantuje zgodności: kluczowe jest poprawne wdrożenie: podstawa prawna przetwarzania, minimalizacja danych i odpowiednie zabezpieczenie serwera.</p>
+
+                <h3>Kiedy warto zlecić własną automatyzację zamiast Make lub n8n?</h3>
+                <p>Gdy proces jest krytyczny dla biznesu, wymaga głębokich lub nietypowych integracji (np. ze starszym systemem produkcyjnym), albo gdy koszt długoterminowy gotowej platformy przewyższa jednorazowy koszt budowy. Własna automatyzacja daje pełną kontrolę i niezawodność, ale ma wyższy próg wejścia i koszt początkowy.</p>
+
+                <h3>Czy potrzebuję programisty, żeby korzystać z Make lub n8n?</h3>
+                <p>Make jest na tyle prosty, że podstawowe scenariusze zbuduje osoba nietechniczna. n8n na własnym serwerze wymaga wsparcia technicznego do postawienia i utrzymania serwera. Bardziej złożone automatyzacje w obu narzędziach warto powierzyć kogoś z doświadczeniem, by uniknąć błędów i luk bezpieczeństwa.</p>
+
+                <h3>Czy mogę połączyć Make, n8n i własny kod?</h3>
+                <p>Tak, i często to najlepsze rozwiązanie. Gotowe platformy świetnie sprawdzają się przy prostych integracjach, a dedykowany kod przy procesach krytycznych lub nietypowych. W LogicMorrow regularnie łączymy te ścieżki: dobieramy narzędzie do konkretnego fragmentu procesu, zamiast wciskać całość w jedno rozwiązanie.</p>
+
+                <h3>Od czego zacząć wybór narzędzia do automatyzacji?</h3>
+                <p>Zacznij od opisania procesu: co się dzieje krok po kroku, jak często, jakie dane przepływają i co się stanie, gdy automatyzacja zawiedzie. Z tej mapy wynika rekomendacja: prosty proces bez wrażliwych danych to zwykle Make, większa skala z wymogiem kontroli to n8n, a proces krytyczny lub głęboko zintegrowany to własna automatyzacja.</p>
+
+            </div>
+
+            <!-- Autor -->
+            <aside class="post-author">
+                <div class="post-author__avatar" aria-hidden="true">MO</div>
+                <div>
+                    <div class="post-author__name">Mateusz Olesiuk</div>
+                    <div class="post-author__role">Założyciel LogicMorrow. Razem z zespołem wdrażamy automatyzacje, agentów AI i dedykowane aplikacje dla małych i średnich firm w Polsce.</div>
+                </div>
+            </aside>
+
+            <!-- CTA końcowe -->
+            <section class="post-cta">
+                <h2>Make, n8n czy własna automatyzacja u Ciebie?</h2>
+                <p>Przejdziemy przez Twój proces na konkretach i powiemy wprost, które narzędzie się opłaca, a kiedy szkoda na nie czasu i pieniędzy.</p>
+                <a href="/konsultacja.html" class="btn btn--primary btn--lg">Umów bezpłatną konsultację</a>
+            </section>
+
+        </article>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script defer src="/js/loader.js"></script>
+    <script defer src="/js/navbar.js"></script>
+    <script defer src="/js/animations.js"></script>
+
+    <!-- [6] Cookie Consent – inicjalizacja -->
+    <script defer src="/js/cookie-consent.js"></script>
+
+</body>
+</html>
