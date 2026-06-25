@@ -18,6 +18,16 @@ Jesteśmy małym zespołem, nie korporacją. Oznacza to mniej etapów, bezpośre
 - [Model pracy i gwarancje](https://logicmorrow.pl/model-pracy.html): Jak pracujemy krok po kroku, stała cena oraz gwarancje: własność kodu, brak uzależnienia od jednego dostawcy, jeden kontakt, testy równoległe i dane na serwerach klienta lub w UE.
 - [Bezpłatna konsultacja](https://logicmorrow.pl/konsultacja.html): 20-minutowa rozmowa, na której wspólnie liczymy zwrot z inwestycji dla konkretnego procesu.
 
+## Blog — poradniki i artykuły
+
+- [Automatyzacja i AI w małej firmie: kompletny przewodnik 2026](https://logicmorrow.pl/blog/automatyzacja-ai-w-malej-firmie.html): Główny przewodnik (hub): od czego zacząć, ile to kosztuje i jaki daje zwrot z inwestycji.
+- [Jak zautomatyzować procesy w firmie: krok po kroku](https://logicmorrow.pl/blog/jak-zautomatyzowac-procesy-w-firmie.html): 7 sygnałów, że proces warto zautomatyzować, i 6 kroków od mapy procesu po wdrożenie.
+- [n8n vs Make dla firmy](https://logicmorrow.pl/blog/n8n-vs-make-dla-firmy.html): Make, n8n czy własna automatyzacja: porównanie kosztów, kontroli danych i prosty wybór dla małej firmy.
+- [Co to jest agent AI dla firmy](https://logicmorrow.pl/blog/co-to-jest-agent-ai-dla-firmy.html): Prosta definicja, czym agent różni się od chatbota, jak działa i kiedy opłaca się go wdrożyć w MŚP.
+- [Agent AI vs chatbot](https://logicmorrow.pl/blog/agent-ai-vs-chatbot.html): Czym się różnią, porównanie autonomii, integracji i kosztu oraz kiedy wystarczy chatbot, a kiedy potrzebny agent.
+- [Wirtualny pracownik AI: 7 zadań, które przejmie w firmie](https://logicmorrow.pl/blog/wirtualny-pracownik-ai.html): 7 konkretnych zadań, które agent AI realnie przejmuje w małej i średniej firmie.
+- [AI Act a RODO w firmie: obowiązki MŚP w 2026](https://logicmorrow.pl/blog/ai-act-rodo-w-firmie.html): Kategorie ryzyka, terminy 2025–2027 i praktyczna checklista zgodności przy wdrażaniu AI.
+
 ## Dla kogo
 
 Firmy do 35 pracowników, działające ponad rok, które obsługują rosnącą liczbę zamówień, klientów i danych starymi metodami. Dobrze dopasowane branże: produkcja, usługi dla firm, handel, budownictwo i instalatorzy, logistyka. Nie pracujemy z mikrofirmami 1–4 osób ani nie robimy prostych stron-wizytówek czy sklepów internetowych.
