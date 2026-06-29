@@ -27,6 +27,7 @@ Jesteśmy małym zespołem, nie korporacją. Oznacza to mniej etapów, bezpośre
 - [Agent AI vs chatbot](https://logicmorrow.pl/blog/agent-ai-vs-chatbot.html): Czym się różnią, porównanie autonomii, integracji i kosztu oraz kiedy wystarczy chatbot, a kiedy potrzebny agent.
 - [Wirtualny pracownik AI: 7 zadań, które przejmie w firmie](https://logicmorrow.pl/blog/wirtualny-pracownik-ai.html): 7 konkretnych zadań, które agent AI realnie przejmuje w małej i średniej firmie.
 - [AI Act a RODO w firmie: obowiązki MŚP w 2026](https://logicmorrow.pl/blog/ai-act-rodo-w-firmie.html): Kategorie ryzyka, terminy 2025–2027 i praktyczna checklista zgodności przy wdrażaniu AI.
+- [Aplikacja dedykowana vs SaaS vs Excel](https://logicmorrow.pl/blog/aplikacja-dedykowana-vs-saas.html): Uczciwe porównanie kosztu, dopasowania i własności danych oraz kiedy wybrać gotowy system, a kiedy własną aplikację.
 
 ## Dla kogo
 
