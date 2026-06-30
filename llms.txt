@@ -28,6 +28,7 @@ Jesteśmy małym zespołem, nie korporacją. Oznacza to mniej etapów, bezpośre
 - [Wirtualny pracownik AI: 7 zadań, które przejmie w firmie](https://logicmorrow.pl/blog/wirtualny-pracownik-ai.html): 7 konkretnych zadań, które agent AI realnie przejmuje w małej i średniej firmie.
 - [AI Act a RODO w firmie: obowiązki MŚP w 2026](https://logicmorrow.pl/blog/ai-act-rodo-w-firmie.html): Kategorie ryzyka, terminy 2025–2027 i praktyczna checklista zgodności przy wdrażaniu AI.
 - [Aplikacja dedykowana vs SaaS vs Excel](https://logicmorrow.pl/blog/aplikacja-dedykowana-vs-saas.html): Uczciwe porównanie kosztu, dopasowania i własności danych oraz kiedy wybrać gotowy system, a kiedy własną aplikację.
+- [Ile kosztuje aplikacja webowa dla firmy](https://logicmorrow.pl/blog/ile-kosztuje-aplikacja-webowa-dla-firmy.html): Od czego zależy cena dedykowanej aplikacji, orientacyjne widełki z praktyki i jak obniżyć koszt przez MVP i podział na etapy.
 
 ## Dla kogo
 
