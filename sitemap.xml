@@ -39,9 +39,15 @@
   <!-- Blog -->
   <url>
     <loc>https://logicmorrow.pl/blog/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/automatyzacja-w-firmie-produkcyjnej.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://logicmorrow.pl/blog/ile-kosztuje-automatyzacja-procesow.html</loc>

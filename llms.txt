@@ -30,6 +30,7 @@ Jesteśmy małym zespołem, nie korporacją. Oznacza to mniej etapów, bezpośre
 - [Aplikacja dedykowana vs SaaS vs Excel](https://logicmorrow.pl/blog/aplikacja-dedykowana-vs-saas.html): Uczciwe porównanie kosztu, dopasowania i własności danych oraz kiedy wybrać gotowy system, a kiedy własną aplikację.
 - [Ile kosztuje aplikacja webowa dla firmy](https://logicmorrow.pl/blog/ile-kosztuje-aplikacja-webowa-dla-firmy.html): Od czego zależy cena dedykowanej aplikacji, orientacyjne widełki z praktyki i jak obniżyć koszt przez MVP i podział na etapy.
 - [Ile kosztuje automatyzacja procesów i jak policzyć ROI](https://logicmorrow.pl/blog/ile-kosztuje-automatyzacja-procesow.html): Składniki kosztu, widełki dla MŚP i prosty wzór na zwrot z inwestycji z przykładem liczbowym.
+- [Automatyzacja w firmie produkcyjnej: od czego zacząć](https://logicmorrow.pl/blog/automatyzacja-w-firmie-produkcyjnej.html): W małej produkcji czas zjada obieg zamówień, dokumentów i raportów; które procesy automatyzować najpierw i ile można odzyskać.
 
 ## Dla kogo
 
