@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>Czy AI jest zgodne z RODO – checklista dla firmy | LogicMorrow</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="description" content="Czy AI jest zgodne z RODO? Praktyczna checklista pytań kontrolnych dla MŚP: podstawa prawna, minimalizacja danych, umowa powierzenia. Umów konsultację.">
+    <meta name="robots" content="index,follow">
+
+    <!-- SEO: Canonical + Open Graph + Twitter Card -->
+    <link rel="canonical" href="https://logicmorrow.pl/blog/czy-ai-jest-zgodne-z-rodo.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://logicmorrow.pl/blog/czy-ai-jest-zgodne-z-rodo.html">
+    <meta property="og:title" content="Czy AI jest zgodne z RODO – checklista dla firmy">
+    <meta property="og:description" content="Checklista pytań kontrolnych RODO przed użyciem AI: podstawa prawna, minimalizacja, umowa powierzenia, nadzór człowieka.">
+    <meta property="og:image" content="https://logicmorrow.pl/assets/images/blog/czy-ai-jest-zgodne-z-rodo/czy-ai-jest-zgodne-z-rodo-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Czy AI jest zgodne z RODO – checklista dla firmy od LogicMorrow">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="LogicMorrow">
+    <meta property="article:published_time" content="2026-07-03">
+    <meta property="article:modified_time" content="2026-07-03">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Czy AI jest zgodne z RODO – checklista dla firmy">
+    <meta name="twitter:description" content="Checklista pytań kontrolnych RODO przed użyciem AI: podstawa prawna, minimalizacja, umowa powierzenia, nadzór człowieka.">
+    <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/blog/czy-ai-jest-zgodne-z-rodo/czy-ai-jest-zgodne-z-rodo-og.png">
+    <meta name="twitter:image:alt" content="Czy AI jest zgodne z RODO – checklista dla firmy od LogicMorrow">
+
+    <!-- ═══════════════════════════════════════════════════════
+         COOKIE CONSENT + GOOGLE CONSENT MODE V2
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 2000
+        });
+    </script>
+
+    <!-- [2] Pre-inicjalizacja consent dla powracających użytkowników -->
+    <script>
+        (function () {
+            try {
+                var raw = document.cookie.split(';').reduce(function (acc, c) {
+                    var p = c.trim().split('=');
+                    return p[0] === 'cc_cookie' ? decodeURIComponent(p.slice(1).join('=')) : acc;
+                }, null);
+                if (raw) {
+                    var cats = JSON.parse(raw).categories || [];
+                    var analytics = cats.indexOf('analytics') >= 0 ? 'granted' : 'denied';
+                    var marketing = cats.indexOf('marketing') >= 0 ? 'granted' : 'denied';
+                    gtag('consent', 'update', {
+                        'analytics_storage': analytics,
+                        'ad_storage': marketing,
+                        'ad_user_data': marketing,
+                        'ad_personalization': marketing
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- [3] Google Tag Manager -->
+    <script>(function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T8KFFQZN');</script>
+
+    <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
+
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
+    <style>
+        :root {
+            --cc-btn-primary-bg: #2563eb;
+            --cc-btn-primary-hover-bg: #1d4ed8;
+            --cc-btn-primary-text: #fff;
+            --cc-btn-secondary-bg: #f1f5f9;
+            --cc-btn-secondary-hover-bg: #e2e8f0;
+            --cc-btn-secondary-text: #475569;
+            --cc-toggle-on-bg: #2563eb;
+            --cc-link-color: #2563eb;
+            --cc-btn-border-radius: 0.75rem;
+            --cc-overlay-bg: rgba(0, 0, 0, 0.55);
+        }
+        #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
+        #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+    </style>
+
+    <!-- Schema: Article + FAQPage + BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Czy AI jest zgodne z RODO – checklista dla firmy",
+          "description": "Czy AI jest zgodne z RODO? Praktyczna checklista pytań kontrolnych dla MŚP: podstawa prawna, minimalizacja danych, umowa powierzenia, nadzór człowieka.",
+          "inLanguage": "pl",
+          "datePublished": "2026-07-03",
+          "dateModified": "2026-07-03",
+          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://logicmorrow.pl/blog/czy-ai-jest-zgodne-z-rodo.html" },
+          "image": "https://logicmorrow.pl/assets/images/blog/czy-ai-jest-zgodne-z-rodo/czy-ai-jest-zgodne-z-rodo-og.png",
+          "author": {
+            "@type": "Person",
+            "name": "Mateusz Olesiuk",
+            "jobTitle": "Założyciel",
+            "url": "https://logicmorrow.pl/",
+            "worksFor": { "@type": "Organization", "name": "LogicMorrow" }
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "LogicMorrow",
+            "url": "https://logicmorrow.pl/",
+            "logo": { "@type": "ImageObject", "url": "https://logicmorrow.pl/assets/images/logo.svg" }
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czy AI jest zgodne z RODO?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Tak, AI może być zgodne z RODO, jeśli przetwarzanie danych osobowych ma podstawę prawną, jest ograniczone do niezbędnego minimum, dane pozostają pod kontrolą firmy, a osoby, których dotyczą, są poinformowane. Zgodność zależy od sposobu użycia narzędzia, a nie od samej technologii." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy mogę wkleić dane klienta do ChatGPT?",
+              "acceptedAnswer": { "@type": "Answer", "text": "To zależy od planu i ustawień narzędzia. W wielu darmowych wersjach wprowadzone treści mogą być wykorzystywane do trenowania modelu i opuszczają kontrolę firmy, co bywa naruszeniem RODO. Bezpieczniej jest używać środowiska kontrolowanego, z umową powierzenia i wyłączonym uczeniem na danych firmy." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy potrzebuję zgody klienta, by przetwarzać jego dane przez AI?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Zgoda to tylko jedna z podstaw prawnych z art. 6 RODO. Często wystarczającą podstawą jest wykonanie umowy lub prawnie uzasadniony interes. Kluczowe jest świadome przypisanie konkretnej podstawy przed rozpoczęciem przetwarzania, a nie automatyczne zbieranie zgód na wszelki wypadek." }
+            },
+            {
+              "@type": "Question",
+              "name": "Co to jest umowa powierzenia i kiedy jej potrzebuję?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Umowa powierzenia (art. 28 RODO) reguluje, jak zewnętrzny dostawca przetwarza dane osobowe w Twoim imieniu. Potrzebujesz jej, gdy dane osobowe trafiają do dostawcy narzędzia AI lub usługi chmurowej. Określa ona zakres, cel i zabezpieczenia przetwarzania oraz odpowiedzialność stron." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy minimalizacja danych dotyczy też narzędzi AI?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Tak, zasada minimalizacji z RODO obowiązuje niezależnie od technologii. Do narzędzia AI należy podawać wyłącznie dane niezbędne do osiągnięcia celu. Wprowadzanie nadmiarowych danych, bo model lepiej działa, jest naruszeniem zasady minimalizacji i zwiększa ryzyko incydentu." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy AI może samodzielnie podejmować decyzje o klientach?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Art. 22 RODO ogranicza w pełni zautomatyzowane decyzje wywołujące skutki prawne lub podobnie istotne. Przy takich rozstrzygnięciach osoba ma prawo do interwencji człowieka i wyjaśnienia decyzji. W praktyce MŚP bezpieczniej jest, by AI wspierała człowieka, a ostateczne rozstrzygnięcie należało do pracownika." }
+            },
+            {
+              "@type": "Question",
+              "name": "Od czego zacząć sprawdzanie zgodności AI z RODO?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Zacznij od pytania, czy narzędzie przetwarza dane osobowe i jaka jest podstawa prawna. Następnie sprawdź, dokąd trafiają dane i czy masz umowę powierzenia z dostawcą. Te pierwsze kroki z checklisty pozwalają szybko wychwycić najpoważniejsze ryzyka, zanim sięgniesz po dalsze szczegóły." }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://logicmorrow.pl/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://logicmorrow.pl/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Czy AI jest zgodne z RODO – checklista dla firmy", "item": "https://logicmorrow.pl/blog/czy-ai-jest-zgodne-z-rodo.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="/css/base/variables.css">
+    <link rel="stylesheet" href="/css/base/reset.css">
+    <link rel="stylesheet" href="/css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/css/components/navbar.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/cookie-fab.css">
+    <link rel="stylesheet" href="/css/components/buttons.css">
+
+    <!-- Blog CSS -->
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8KFFQZN"
+    title="Google Tag Manager" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Globalny nagłówek -->
+    <div id="navbar-placeholder"></div>
+
+    <main id="main-content" class="post">
+
+        <article class="post-article">
+
+            <header class="post__header">
+                <nav class="post__breadcrumb" aria-label="Ścieżka okruszków">
+                    <a href="/">Strona główna</a> / <a href="/blog/">Blog</a> / Czy AI jest zgodne z RODO
+                </nav>
+                <span class="post__cat">Zgodność i prawo</span>
+                <h1 class="post__title">Czy AI jest zgodne z RODO – checklista dla firmy</h1>
+                <div class="post__meta">
+                    <span><strong>Mateusz Olesiuk</strong></span>
+                    <span class="dot" aria-hidden="true"></span>
+                    <time datetime="2026-07-03">3 lipca 2026</time>
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>8 min czytania</span>
+                </div>
+            </header>
+
+            <div class="post-prose">
+
+                <p>Krótka odpowiedź: <strong>tak, AI może być zgodne z RODO, pod warunkiem, że masz podstawę prawną do przetwarzania danych, ograniczasz je do niezbędnego minimum, wiesz, dokąd trafiają, i zachowujesz przejrzystość wobec osób, których dane dotyczą.</strong> Sama technologia nie jest ani „legalna”, ani „nielegalna”. Decyduje sposób, w jaki jej używasz. Pytanie „czy AI jest zgodne z RODO” sprowadza się więc do kilku konkretnych pytań kontrolnych o Twój proces, nie o samo narzędzie. W LogicMorrow wdrażamy automatyzacje i agentów AI dla MŚP w całej Polsce i każde wdrożenie zaczynamy właśnie od tej checklisty, dlatego poniżej dzielimy się nią w całości.</p>
+
+                <blockquote>
+                    <p><strong>Disclaimer:</strong> Ten artykuł ma charakter edukacyjny i informacyjny. <strong>Nie stanowi porady prawnej.</strong> Stan prawny opisujemy na podstawie aktów źródłowych obowiązujących w 2026 roku. W indywidualnej sprawie skonsultuj się z prawnikiem specjalizującym się w ochronie danych osobowych i prawie nowych technologii.</p>
+                </blockquote>
+
+                <figure>
+                    <img src="/assets/images/blog/czy-ai-jest-zgodne-z-rodo/czy-ai-jest-zgodne-z-rodo-banner.webp" width="1200" height="340" loading="lazy" decoding="async" alt="AI a dane osobowe: czy AI jest zgodne z RODO zależy od sposobu przetwarzania danych, nie od samego narzędzia">
+                </figure>
+
+                <h2>Kiedy AI w ogóle podlega RODO</h2>
+                <p>RODO, czyli Rozporządzenie (UE) 2016/679, obowiązuje wtedy, gdy <strong>przetwarzane są dane osobowe</strong>, czyli wszelkie informacje o możliwej do zidentyfikowania osobie fizycznej. To kluczowy próg: jeśli Twoje narzędzie AI nie dotyka danych osobowych, RODO go nie obejmuje (choć może obejmować AI Act). W praktyce jednak granica jest cieńsza, niż się wydaje.</p>
+                <p>Dane osobowe to nie tylko imię, nazwisko i PESEL. To także adres e-mail, numer telefonu, adres IP, treść korespondencji z klientem, nagranie rozmowy czy zdjęcie. Jeśli wklejasz do modelu językowego e-mail od klienta, by wygenerować odpowiedź, przetwarzasz dane osobowe. Jeśli agent AI analizuje historię zamówień konkretnych kontrahentów, przetwarzasz dane osobowe. Jeśli chatbot na stronie zbiera imię i adres e-mail, przetwarzasz dane osobowe.</p>
+                <p>Wniosek dla MŚP jest prosty: <strong>większość firmowych zastosowań AI dotyka danych osobowych</strong>, więc RODO niemal zawsze wchodzi w grę. Pytanie nie brzmi „czy”, lecz „czy robimy to zgodnie”. I tu zaczyna się checklista.</p>
+
+                <h2>Checklista: czy moje wdrożenie AI jest zgodne z RODO</h2>
+                <p>Poniżej osiem pytań kontrolnych, które przechodzimy przed każdym wdrożeniem u klienta. Jeśli na wszystkie odpowiadasz świadomie i twierdząco, jesteś na dobrej drodze do zgodności. Każde „nie wiem” to sygnał do zatrzymania się.</p>
+                <figure>
+                    <img src="/assets/images/blog/czy-ai-jest-zgodne-z-rodo/czy-ai-jest-zgodne-z-rodo-checklista.webp" width="900" height="980" loading="lazy" decoding="async" alt="Checklista pytań kontrolnych RODO przed użyciem AI, osiem pytań: dane osobowe, podstawa prawna, minimalizacja, gdzie trafiają dane, umowa powierzenia, przejrzystość, decyzje automatyczne, nadzór człowieka">
+                </figure>
+                <ul>
+                    <li><strong>Czy przetwarzasz dane osobowe?</strong> Ustal, czy narzędzie w ogóle dotyka danych identyfikujących osoby (klientów, kontrahentów, pracowników). Jeśli tak, RODO obowiązuje w całości.</li>
+                    <li><strong>Jaka jest podstawa prawna?</strong> Każde przetwarzanie wymaga jednej z podstaw z art. 6 RODO: zgoda, wykonanie umowy, prawnie uzasadniony interes, obowiązek prawny. „Bo to wygodne” nie jest podstawą prawną.</li>
+                    <li><strong>Czy minimalizujesz dane?</strong> Podaj narzędziu tylko dane niezbędne do celu. Nie wrzucaj całej bazy klientów, gdy wystarczy jeden rekord. Minimalizacja to wymóg RODO, nie dobra praktyka „na plus”.</li>
+                    <li><strong>Gdzie trafiają dane: model publiczny czy kontrolowany?</strong> Sprawdź, czy dane opuszczają Twoją kontrolę i czy nie są wykorzystywane do trenowania cudzego modelu. To najczęstsze źródło naruszeń.</li>
+                    <li><strong>Czy masz umowę powierzenia z dostawcą?</strong> Jeśli dane osobowe przetwarza zewnętrzny dostawca AI, jest on podmiotem przetwarzającym, potrzebujesz umowy powierzenia (art. 28 RODO).</li>
+                    <li><strong>Czy zapewniasz przejrzystość wobec osób?</strong> Klient lub pracownik powinien wiedzieć, że jego dane są przetwarzane i że może mieć kontakt z systemem automatycznym. To obowiązek informacyjny z art. 13–14 RODO.</li>
+                    <li><strong>Czy system podejmuje decyzje automatyczne (art. 22)?</strong> Jeśli AI samodzielnie rozstrzyga sprawy o istotnym skutku (np. odrzucenie wniosku), obowiązują szczególne wymogi i prawo do interwencji człowieka.</li>
+                    <li><strong>Czy jest nadzór człowieka?</strong> Zapewnij, że istotne rozstrzygnięcia może skontrolować i skorygować człowiek. Nadzór to bezpiecznik, który chroni i klienta, i firmę.</li>
+                </ul>
+                <p>Przejście tej listy zajmuje typowemu MŚP kilka godzin, a porządkuje sytuację na długo. To zarazem najlepszy moment, by zaprojektować wdrożenie od razu zgodnie z prawem od początku, zamiast łatać zgodność po fakcie.</p>
+
+                <h2>Najczęstsze naruszenie: dane klientów w publicznym modelu</h2>
+                <p>Z naszej praktyki wynika, że jedno naruszenie powraca częściej niż wszystkie inne razem wzięte: <strong>wklejanie danych osobowych klientów do publicznych, darmowych narzędzi AI</strong>. Pracownik chce szybciej napisać odpowiedź albo streścić umowę, więc kopiuje cały e-mail lub dokument do popularnego czatu w przeglądarce. Problem w tym, że w wielu darmowych planach wprowadzone treści mogą być wykorzystywane do dalszego trenowania modelu i trafiają poza kontrolę firmy.</p>
+                <p>To klasyczny przykład sytuacji, w której nie technologia jest niezgodna z RODO, lecz sposób jej użycia. To samo zadanie wykonane w środowisku kontrolowanym (z umową powierzenia, wyłączonym uczeniem na danych firmy i ograniczonym zakresem danych wejściowych) może być w pełni zgodne. Dlatego w temacie <a href="/rozwiazania.html">AI a dane osobowe w firmie</a> zawsze zaczynamy od pytania, dokąd te dane realnie trafiają, zanim w ogóle dobierzemy narzędzie.</p>
+                <p>Jeśli interesuje Cię szerszy obraz prawny, czyli jak RODO łączy się z nową regulacją technologii, opisaliśmy to w artykule <a href="/blog/ai-act-rodo-w-firmie.html">AI Act a RODO w firmie</a>. Tutaj skupiamy się na praktyce ochrony danych przy konkretnym wdrożeniu.</p>
+
+                <h2>Pytanie kontrolne: co zrobić w praktyce</h2>
+                <p>Checklistę najłatwiej zamienić w działanie, gdy każdemu pytaniu przypiszesz konkretny krok. Poniższa tabela porządkuje to, co w MŚP załatwia większość spraw związanych z RODO a sztuczną inteligencją.</p>
+                <div class="post-table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pytanie kontrolne</th>
+                                <th>Co zrobić w praktyce</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Czy przetwarzasz dane osobowe?</td>
+                                <td>Zinwentaryzuj, jakie dane trafiają do narzędzia AI i czyje</td>
+                            </tr>
+                            <tr>
+                                <td>Jaka podstawa prawna?</td>
+                                <td>Przypisz podstawę z art. 6 RODO przed uruchomieniem</td>
+                            </tr>
+                            <tr>
+                                <td>Czy minimalizujesz dane?</td>
+                                <td>Ogranicz dane wejściowe do niezbędnego minimum</td>
+                            </tr>
+                            <tr>
+                                <td>Gdzie trafiają dane?</td>
+                                <td>Wybierz środowisko kontrolowane, wyłącz uczenie na danych firmy</td>
+                            </tr>
+                            <tr>
+                                <td>Umowa powierzenia z dostawcą?</td>
+                                <td>Podpisz umowę powierzenia (art. 28) z każdym dostawcą AI</td>
+                            </tr>
+                            <tr>
+                                <td>Przejrzystość wobec osób?</td>
+                                <td>Uzupełnij obowiązek informacyjny i politykę prywatności</td>
+                            </tr>
+                            <tr>
+                                <td>Decyzje automatyczne (art. 22)?</td>
+                                <td>Zapewnij prawo do interwencji i wyjaśnienia decyzji</td>
+                            </tr>
+                            <tr>
+                                <td>Nadzór człowieka?</td>
+                                <td>Wprowadź człowieka „w pętli” przy istotnych rozstrzygnięciach</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Tabela odpowiada na pytanie, które słyszymy najczęściej: „dobrze, wiem czego wymaga RODO, ale co konkretnie mam zrobić jutro rano”. Te osiem kroków to właśnie to.</p>
+
+                <h2>Schemat decyzyjny: czy mogę użyć tych danych w AI</h2>
+                <p>Gdy zespół ma wątpliwość przy konkretnym zadaniu, najszybciej rozstrzyga ją prosty schemat decyzyjny. Pytasz po kolei: czy w grze są dane osobowe, czy masz podstawę prawną i dokąd dane trafiają. Jeśli na którymkolwiek etapie odpowiedź jest niepokojąca, zatrzymujesz się, zanim dane opuszczą firmę.</p>
+                <figure>
+                    <img src="/assets/images/blog/czy-ai-jest-zgodne-z-rodo/czy-ai-jest-zgodne-z-rodo-decyzja.webp" width="1040" height="520" loading="lazy" decoding="async" alt="Schemat decyzyjny: czy mogę użyć tych danych w AI, dane osobowe? podstawa prawna? gdzie trafiają dane? prowadzą do OK lub STOP">
+                </figure>
+                <p>Ten sposób myślenia warto wbudować w codzienne nawyki zespołu. Nie chodzi o to, by przy każdym zadaniu czytać rozporządzenie, lecz by mieć odruch zadania trzech pytań, zanim wrażliwa treść trafi do narzędzia. To najtańsza forma ochrony danych, jaką znamy, i działa niezależnie od tego, jakiego narzędzia AI używacie.</p>
+
+                <h2>Jak projektujemy wdrożenia zgodne z prawem od początku</h2>
+                <p>Naszym zdaniem zgodność z RODO nie powinna być dodatkiem doklejanym po wdrożeniu, lecz właściwością samego projektu. Dlatego wdrożenia automatyzacji i agentów AI projektujemy tak, by minimalizacja danych, kontrola nad tym, dokąd trafiają, oraz nadzór człowieka były wbudowane od pierwszego dnia. To właśnie znaczy zgodność wbudowana od początku: wynika z samej budowy systemu, a nie z dyscypliny pojedynczego pracownika.</p>
+                <p>W praktyce oznacza to, że <a href="/agenci.html">agenta AI do obsługi klientów lub ofertowania</a> budujemy z ograniczonym zakresem danych wejściowych, w środowisku, w którym wiadomo, gdzie dane są przechowywane, i z jasną informacją dla odbiorcy, że rozmawia z systemem. Wdrażamy w 2–4 tygodnie, z bezpośrednim kontaktem przez cały projekt, bez korporacyjnej biurokracji, za to z porządkiem od strony ochrony danych. Zgodność z RODO to jeden z elementów szerszej układanki, a pełny obraz wdrażania technologii w MŚP zebraliśmy w przewodniku <a href="/blog/automatyzacja-ai-w-malej-firmie.html">automatyzacja i AI w małej firmie</a>.</p>
+                <p>Jeśli chcesz sprawdzić, czy Twoje obecne lub planowane użycie AI jest zgodne z RODO, <a href="/konsultacja.html">umów bezpłatną konsultację</a>, przejdziemy razem przez tę checklistę na Twoim konkretnym przypadku.</p>
+
+                <h2>Źródła i akty prawne</h2>
+                <ul>
+                    <li><strong>Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO/GDPR)</strong>: reguluje ochronę osób fizycznych w związku z przetwarzaniem danych osobowych; w szczególności art. 6 (podstawy prawne), art. 13–14 (obowiązek informacyjny), art. 22 (decyzje zautomatyzowane), art. 28 (powierzenie przetwarzania).</li>
+                    <li><strong>Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2024/1689 (AI Act)</strong>: reguluje samą technologię sztucznej inteligencji, uzupełniając RODO o klasyfikację ryzyka i obowiązki przejrzystości.</li>
+                    <li><strong>Wytyczne i komunikaty UODO (Urząd Ochrony Danych Osobowych)</strong>: krajowe źródło interpretacji RODO w Polsce, w tym w kontekście narzędzi opartych na sztucznej inteligencji.</li>
+                </ul>
+
+                <h2>FAQ: najczęstsze pytania o AI a dane osobowe</h2>
+
+                <h3>Czy AI jest zgodne z RODO?</h3>
+                <p>Tak, AI może być zgodne z RODO, jeśli przetwarzanie danych osobowych ma podstawę prawną, jest ograniczone do niezbędnego minimum, dane pozostają pod kontrolą firmy, a osoby, których dotyczą, są poinformowane. Zgodność zależy od sposobu użycia narzędzia, a nie od samej technologii.</p>
+
+                <h3>Czy mogę wkleić dane klienta do ChatGPT?</h3>
+                <p>To zależy od planu i ustawień narzędzia. W wielu darmowych wersjach wprowadzone treści mogą być wykorzystywane do trenowania modelu i opuszczają kontrolę firmy, co bywa naruszeniem RODO. Bezpieczniej jest używać środowiska kontrolowanego, z umową powierzenia i wyłączonym uczeniem na danych firmy.</p>
+
+                <h3>Czy potrzebuję zgody klienta, by przetwarzać jego dane przez AI?</h3>
+                <p>Zgoda to tylko jedna z podstaw prawnych z art. 6 RODO. Często wystarczającą podstawą jest wykonanie umowy lub prawnie uzasadniony interes. Kluczowe jest świadome przypisanie konkretnej podstawy przed rozpoczęciem przetwarzania, a nie automatyczne zbieranie zgód na wszelki wypadek.</p>
+
+                <h3>Co to jest umowa powierzenia i kiedy jej potrzebuję?</h3>
+                <p>Umowa powierzenia (art. 28 RODO) reguluje, jak zewnętrzny dostawca przetwarza dane osobowe w Twoim imieniu. Potrzebujesz jej, gdy dane osobowe trafiają do dostawcy narzędzia AI lub usługi chmurowej. Określa ona zakres, cel i zabezpieczenia przetwarzania oraz odpowiedzialność stron.</p>
+
+                <h3>Czy minimalizacja danych dotyczy też narzędzi AI?</h3>
+                <p>Tak, zasada minimalizacji z RODO obowiązuje niezależnie od technologii. Do narzędzia AI należy podawać wyłącznie dane niezbędne do osiągnięcia celu. Wprowadzanie nadmiarowych danych, bo model lepiej działa, jest naruszeniem zasady minimalizacji i zwiększa ryzyko incydentu.</p>
+
+                <h3>Czy AI może samodzielnie podejmować decyzje o klientach?</h3>
+                <p>Art. 22 RODO ogranicza w pełni zautomatyzowane decyzje wywołujące skutki prawne lub podobnie istotne. Przy takich rozstrzygnięciach osoba ma prawo do interwencji człowieka i wyjaśnienia decyzji. W praktyce MŚP bezpieczniej jest, by AI wspierała człowieka, a ostateczne rozstrzygnięcie należało do pracownika.</p>
+
+                <h3>Od czego zacząć sprawdzanie zgodności AI z RODO?</h3>
+                <p>Zacznij od pytania, czy narzędzie przetwarza dane osobowe i jaka jest podstawa prawna. Następnie sprawdź, dokąd trafiają dane i czy masz umowę powierzenia z dostawcą. Te pierwsze kroki z checklisty pozwalają szybko wychwycić najpoważniejsze ryzyka, zanim sięgniesz po dalsze szczegóły.</p>
+
+            </div>
+
+            <!-- Autor -->
+            <aside class="post-author">
+                <div class="post-author__avatar" aria-hidden="true">MO</div>
+                <div>
+                    <div class="post-author__name">Mateusz Olesiuk</div>
+                    <div class="post-author__role">Założyciel LogicMorrow. Razem z zespołem wdrażamy automatyzacje, agentów AI i dedykowane aplikacje dla małych i średnich firm w Polsce.</div>
+                </div>
+            </aside>
+
+            <!-- CTA końcowe -->
+            <section class="post-cta">
+                <h2>Sprawdź, czy Twoje AI jest zgodne z RODO</h2>
+                <p>Przejdziemy razem przez tę checklistę na Twoim konkretnym przypadku i powiemy szczerze, gdzie realnie jest ryzyko, a gdzie nie ma się czym martwić.</p>
+                <a href="/konsultacja.html" class="btn btn--primary btn--lg">Umów bezpłatną konsultację</a>
+            </section>
+
+        </article>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script defer src="/js/loader.js"></script>
+    <script defer src="/js/navbar.js"></script>
+    <script defer src="/js/animations.js"></script>
+
+    <!-- [6] Cookie Consent – inicjalizacja -->
+    <script defer src="/js/cookie-consent.js"></script>
+
+</body>
+</html>
