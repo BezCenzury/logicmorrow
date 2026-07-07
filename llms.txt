@@ -33,6 +33,7 @@ Jesteśmy małym zespołem, nie korporacją. Oznacza to mniej etapów, bezpośre
 - [Automatyzacja w firmie produkcyjnej: od czego zacząć](https://logicmorrow.pl/blog/automatyzacja-w-firmie-produkcyjnej.html): W małej produkcji czas zjada obieg zamówień, dokumentów i raportów; które procesy automatyzować najpierw i ile można odzyskać.
 - [Czy AI jest zgodne z RODO: checklista dla firmy](https://logicmorrow.pl/blog/czy-ai-jest-zgodne-z-rodo.html): Praktyczna checklista pytań kontrolnych: podstawa prawna, minimalizacja danych, umowa powierzenia, nadzór człowieka.
 - [Rejestr systemów AI: obowiązek czy dobra praktyka w firmie](https://logicmorrow.pl/blog/rejestr-systemow-ai-obowiazek.html): Kto musi prowadzić rejestr systemów AI, jak założyć go krok po kroku i jakie pola powinien zawierać, z gotowym szablonem.
+- [Stany magazynowe nie zgadzają się z Excelem](https://logicmorrow.pl/blog/stany-magazynowe-sie-nie-zgadzaja.html): Przyczyny rozbieżności w magazynie i 4 kroki do dokładnych stanów bez ciężkiego WMS: dedykowana aplikacja magazynowa dla małej firmy.
 
 ## Dla kogo
 
