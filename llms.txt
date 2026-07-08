@@ -34,6 +34,7 @@ Jesteśmy małym zespołem, nie korporacją. Oznacza to mniej etapów, bezpośre
 - [Czy AI jest zgodne z RODO: checklista dla firmy](https://logicmorrow.pl/blog/czy-ai-jest-zgodne-z-rodo.html): Praktyczna checklista pytań kontrolnych: podstawa prawna, minimalizacja danych, umowa powierzenia, nadzór człowieka.
 - [Rejestr systemów AI: obowiązek czy dobra praktyka w firmie](https://logicmorrow.pl/blog/rejestr-systemow-ai-obowiazek.html): Kto musi prowadzić rejestr systemów AI, jak założyć go krok po kroku i jakie pola powinien zawierać, z gotowym szablonem.
 - [Stany magazynowe nie zgadzają się z Excelem](https://logicmorrow.pl/blog/stany-magazynowe-sie-nie-zgadzaja.html): Przyczyny rozbieżności w magazynie i 4 kroki do dokładnych stanów bez ciężkiego WMS: dedykowana aplikacja magazynowa dla małej firmy.
+- [Jak kontrolować braki materiałowe w firmie](https://logicmorrow.pl/blog/braki-materialowe-zamowienia-do-dostawcow.html): Punkty ponownego zamówienia i automatyczne alerty do dostawców zamiast zamawiania z pamięci. Koniec przestojów przez brak materiału.
 
 ## Dla kogo
 
