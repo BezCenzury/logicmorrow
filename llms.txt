@@ -37,6 +37,7 @@ Jesteśmy małym zespołem, nie korporacją. Oznacza to mniej etapów, bezpośre
 - [Jak kontrolować braki materiałowe w firmie](https://logicmorrow.pl/blog/braki-materialowe-zamowienia-do-dostawcow.html): Punkty ponownego zamówienia i automatyczne alerty do dostawców zamiast zamawiania z pamięci. Koniec przestojów przez brak materiału.
 - [Excel nie zgadza się między działami](https://logicmorrow.pl/blog/excel-nie-zgadza-sie-miedzy-dzialami.html): Jak wyjść z chaosu plików final_final_v3 i zbudować jedno źródło prawdy, do którego patrzą wszystkie działy firmy.
 - [Koniec ręcznego przepisywania danych między systemami](https://logicmorrow.pl/blog/koniec-recznego-przepisywania-danych.html): Jak przez integrację systemów sprawić, by dane wędrowały same, zamiast codziennego przeklejania z systemu A do B.
+- [Planowanie produkcji w Excelu przestaje wystarczać](https://logicmorrow.pl/blog/planowanie-produkcji-w-excelu-koniec.html): Kiedy arkusz do harmonogramu produkcji zawodzi i jak dedykowana aplikacja porządkuje kolejność, obłożenie maszyn i alerty kolizji.
 
 ## Dla kogo
 
