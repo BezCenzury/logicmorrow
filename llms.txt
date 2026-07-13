@@ -36,6 +36,7 @@ Jesteśmy małym zespołem, nie korporacją. Oznacza to mniej etapów, bezpośre
 - [Stany magazynowe nie zgadzają się z Excelem](https://logicmorrow.pl/blog/stany-magazynowe-sie-nie-zgadzaja.html): Przyczyny rozbieżności w magazynie i 4 kroki do dokładnych stanów bez ciężkiego WMS: dedykowana aplikacja magazynowa dla małej firmy.
 - [Jak kontrolować braki materiałowe w firmie](https://logicmorrow.pl/blog/braki-materialowe-zamowienia-do-dostawcow.html): Punkty ponownego zamówienia i automatyczne alerty do dostawców zamiast zamawiania z pamięci. Koniec przestojów przez brak materiału.
 - [Excel nie zgadza się między działami](https://logicmorrow.pl/blog/excel-nie-zgadza-sie-miedzy-dzialami.html): Jak wyjść z chaosu plików final_final_v3 i zbudować jedno źródło prawdy, do którego patrzą wszystkie działy firmy.
+- [Koniec ręcznego przepisywania danych między systemami](https://logicmorrow.pl/blog/koniec-recznego-przepisywania-danych.html): Jak przez integrację systemów sprawić, by dane wędrowały same, zamiast codziennego przeklejania z systemu A do B.
 
 ## Dla kogo
 
