@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>Przypomnienia o terminach umów i przeglądów w firmie – koniec „wygasło nam…” | LogicMorrow</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="description" content="Umowa przedłużyła się sama, wygasł przegląd albo certyfikat? Pokazujemy, jak ustawić automat, który pilnuje dat i wysyła alerty z wyprzedzeniem, bez kar.">
+    <meta name="robots" content="index,follow">
+
+    <!-- SEO: Canonical + Open Graph + Twitter Card -->
+    <link rel="canonical" href="https://logicmorrow.pl/blog/przypomnienia-o-terminach-firma.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://logicmorrow.pl/blog/przypomnienia-o-terminach-firma.html">
+    <meta property="og:title" content="Przypomnienia o terminach umów i przeglądów w firmie">
+    <meta property="og:description" content="Jak ustawić automat, który pilnuje dat umów, przeglądów i certyfikatów oraz wysyła alerty z wyprzedzeniem na e-mail i SMS.">
+    <meta property="og:image" content="https://logicmorrow.pl/assets/images/blog/przypomnienia-o-terminach-firma/przypomnienia-o-terminach-firma-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Przypomnienia o terminach umów i przeglądów w firmie: przewodnik LogicMorrow">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="LogicMorrow">
+    <meta property="article:published_time" content="2026-07-23">
+    <meta property="article:modified_time" content="2026-07-23">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Przypomnienia o terminach umów i przeglądów w firmie">
+    <meta name="twitter:description" content="Jak ustawić automat, który pilnuje dat umów, przeglądów i certyfikatów oraz wysyła alerty z wyprzedzeniem na e-mail i SMS.">
+    <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/blog/przypomnienia-o-terminach-firma/przypomnienia-o-terminach-firma-og.png">
+    <meta name="twitter:image:alt" content="Przypomnienia o terminach umów i przeglądów w firmie: przewodnik LogicMorrow">
+
+    <!-- ═══════════════════════════════════════════════════════
+         COOKIE CONSENT + GOOGLE CONSENT MODE V2
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 2000
+        });
+    </script>
+
+    <!-- [2] Pre-inicjalizacja consent dla powracających użytkowników -->
+    <script>
+        (function () {
+            try {
+                var raw = document.cookie.split(';').reduce(function (acc, c) {
+                    var p = c.trim().split('=');
+                    return p[0] === 'cc_cookie' ? decodeURIComponent(p.slice(1).join('=')) : acc;
+                }, null);
+                if (raw) {
+                    var cats = JSON.parse(raw).categories || [];
+                    var analytics = cats.indexOf('analytics') >= 0 ? 'granted' : 'denied';
+                    var marketing = cats.indexOf('marketing') >= 0 ? 'granted' : 'denied';
+                    gtag('consent', 'update', {
+                        'analytics_storage': analytics,
+                        'ad_storage': marketing,
+                        'ad_user_data': marketing,
+                        'ad_personalization': marketing
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- [3] Google Tag Manager -->
+    <script>(function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T8KFFQZN');</script>
+
+    <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
+
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
+    <style>
+        :root {
+            --cc-btn-primary-bg: #2563eb;
+            --cc-btn-primary-hover-bg: #1d4ed8;
+            --cc-btn-primary-text: #fff;
+            --cc-btn-secondary-bg: #f1f5f9;
+            --cc-btn-secondary-hover-bg: #e2e8f0;
+            --cc-btn-secondary-text: #475569;
+            --cc-toggle-on-bg: #2563eb;
+            --cc-link-color: #2563eb;
+            --cc-btn-border-radius: 0.75rem;
+            --cc-overlay-bg: rgba(0, 0, 0, 0.55);
+        }
+        #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
+        #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+    </style>
+
+    <!-- Schema: Article + HowTo + FAQPage + BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Przypomnienia o terminach umów i przeglądów w firmie – koniec „wygasło nam…”",
+          "description": "Jak ustawić automat, który pilnuje dat umów, przeglądów i certyfikatów oraz wysyła alerty z wyprzedzeniem na mail i SMS.",
+          "inLanguage": "pl",
+          "datePublished": "2026-07-23",
+          "dateModified": "2026-07-23",
+          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://logicmorrow.pl/blog/przypomnienia-o-terminach-firma.html" },
+          "image": "https://logicmorrow.pl/assets/images/blog/przypomnienia-o-terminach-firma/przypomnienia-o-terminach-firma-og.png",
+          "author": {
+            "@type": "Person",
+            "name": "Mateusz Olesiuk",
+            "jobTitle": "Założyciel",
+            "url": "https://logicmorrow.pl/",
+            "worksFor": { "@type": "Organization", "name": "LogicMorrow" }
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "LogicMorrow",
+            "url": "https://logicmorrow.pl/",
+            "logo": { "@type": "ImageObject", "url": "https://logicmorrow.pl/assets/images/logo.svg" }
+          }
+        },
+        {
+          "@type": "HowTo",
+          "name": "Jak ustawić automat pilnujący terminów w firmie",
+          "description": "Cztery kroki budowy automatu, który pilnuje dat umów i przeglądów oraz wysyła alerty z wyprzedzeniem i eskaluje, gdy nikt nie reaguje.",
+          "inLanguage": "pl",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Rejestr terminów w jednym miejscu",
+              "text": "Zbierz wszystkie ważne daty w jeden kalendarz terminów firmowych: umowy i okresy wypowiedzenia, przeglądy, certyfikaty, ubezpieczenia, terminy zgłoszeń. To jedno źródło prawdy o terminach."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Reguły wyprzedzenia",
+              "text": "Do każdego terminu ustaw, z jakim wyprzedzeniem chcesz o nim wiedzieć: np. umowę na 60 i 30 dni przed końcem, przegląd na dwa tygodnie wcześniej. Reguły ustawiasz raz, a system stosuje je konsekwentnie."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Automatyczne powiadomienia",
+              "text": "Gdy zbliża się termin, automat sam wysyła przypomnienia do właściwych osób na e-mail, a przy krytycznych sprawach także SMS. Alert trafia do osoby odpowiedzialnej za dany obszar."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 4,
+              "name": "Eskalacja, gdy nikt nie reaguje",
+              "text": "Jeśli na przypomnienie nikt nie zareaguje, automat ponawia alert i eskaluje go wyżej, np. do właściciela, aby ważny termin nie przepadł z powodu jednego przeoczonego maila."
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Jak pilnować terminów umów i przeglądów w firmie, żeby nic nie przepadło?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Najskuteczniej jest zebrać wszystkie ważne daty w jeden rejestr i oprzeć przypominanie na automacie, a nie na ludzkiej pamięci. Do każdego terminu ustawia się wyprzedzenie (np. 60 i 30 dni przed końcem umowy), a system sam wysyła powiadomienia i eskaluje sprawę, jeśli nikt nie zareaguje. Dzięki temu informacja nie zależy od tego, czy konkretna osoba akurat pamięta." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy kalendarz Google nie wystarczy do pilnowania terminów?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Kalendarz Google bywa lepszy niż nic, ale ma słabości: przypomnienie widzi tylko jego właściciel, łatwo je odklikać bez reakcji, a gdy ta osoba odchodzi, wiedza o terminach znika razem z kontem. Brakuje też eskalacji: nikt nie ponowi alertu, gdy pierwszy przejdzie bokiem. Dedykowany automat pilnuje dat niezależnie od jednej osoby i nie odpuszcza, dopóki ktoś nie zareaguje." }
+            },
+            {
+              "@type": "Question",
+              "name": "Na jakie kanały automat wysyła przypomnienia?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Zwykle na e-mail, a przy krytycznych terminach dodatkowo na SMS, żeby zwiększyć szansę, że alert dotrze na czas. Powiadomienie trafia do osoby odpowiedzialnej za dany obszar, a nie tylko do jednej skrzynki. Kanały i odbiorców ustawiamy pod Twoją firmę: inaczej dla umów, inaczej dla przeglądów technicznych." }
+            },
+            {
+              "@type": "Question",
+              "name": "Co to jest eskalacja i dlaczego jest ważna?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Eskalacja to ponowienie i podniesienie alertu wyżej, gdy na pierwsze przypomnienie nikt nie zareagował. To ten element odróżnia skuteczny automat od zwykłego kalendarza: w kalendarzu nieodklikane przypomnienie po prostu znika, a przy eskalacji sprawa wraca i trafia do właściciela. Dzięki temu ważny termin nie przepadnie z powodu jednego przeoczonego maila." }
+            },
+            {
+              "@type": "Question",
+              "name": "Jakie terminy najczęściej warto automatyzować w pierwszej kolejności?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Zaczynamy od tych, których przegapienie kosztuje najwięcej: umów z automatycznym przedłużeniem, przeglądów technicznych, certyfikatów i uprawnień oraz ubezpieczeń. To obszary, gdzie jeden przegapiony termin oznacza realną karę, przestój albo utracony kontrakt. Resztę terminów dokłada się później, gdy rejestr już działa." }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://logicmorrow.pl/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://logicmorrow.pl/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Przypomnienia o terminach umów i przeglądów w firmie", "item": "https://logicmorrow.pl/blog/przypomnienia-o-terminach-firma.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="/css/base/variables.css">
+    <link rel="stylesheet" href="/css/base/reset.css">
+    <link rel="stylesheet" href="/css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/css/components/navbar.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/cookie-fab.css">
+    <link rel="stylesheet" href="/css/components/buttons.css">
+
+    <!-- Blog CSS -->
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8KFFQZN"
+    title="Google Tag Manager" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Globalny nagłówek -->
+    <div id="navbar-placeholder"></div>
+
+    <main id="main-content" class="post">
+
+        <article class="post-article">
+
+            <header class="post__header">
+                <nav class="post__breadcrumb" aria-label="Ścieżka okruszków">
+                    <a href="/">Strona główna</a> / <a href="/blog/">Blog</a> / Przypomnienia o terminach umów i przeglądów w firmie
+                </nav>
+                <span class="post__cat">Automatyzacja procesów</span>
+                <h1 class="post__title">Przypomnienia o terminach umów i przeglądów w firmie – koniec „wygasło nam…”</h1>
+                <div class="post__meta">
+                    <span><strong>Mateusz Olesiuk</strong></span>
+                    <span class="dot" aria-hidden="true"></span>
+                    <time datetime="2026-07-23">23 lipca 2026</time>
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>7 min czytania</span>
+                </div>
+            </header>
+
+            <div class="post-prose">
+
+                <p>Jest takie zdanie, które w firmie zawsze pada za późno: „wygasło nam…”. Umowa najmu, która przedłużyła się automatycznie na kolejny rok, bo nikt nie wypowiedział jej w terminie. Przegląd techniczny albo ubezpieczenie, o którym przypomniała dopiero kontrola. Certyfikat, którego brak wyszedł na jaw przy przetargu. Każda z tych sytuacji ma wspólny mianownik: <strong>termin był znany, ale nikt go nie przypilnował na czas</strong>. W LogicMorrow wdrażamy automatyzacje dla firm w całej Polsce i pilnowanie dat to jeden z tych procesów, które najłatwiej oddać maszynie: komputer nigdy nie zapomina, a człowiek zawsze może mieć gorszy tydzień. Ten artykuł pokazuje, jak ustawić skuteczne <strong>przypomnienia o terminach umów i przeglądów w firmie</strong>.</p>
+
+                <figure>
+                    <img src="/assets/images/blog/przypomnienia-o-terminach-firma/przypomnienia-o-terminach-firma-banner.webp" width="1200" height="340" loading="lazy" decoding="async" alt="Automat pilnujący terminów wysyła alerty z wyprzedzeniem, zanim umowa lub przegląd wygaśnie">
+                </figure>
+
+                <h2>Dlaczego terminy w głowie i w kalendarzu Google zawodzą</h2>
+                <p>Większość małych firm „pilnuje” terminów na trzy sposoby: pamięcią właściciela, kalendarzem jednej osoby albo arkuszem, do którego nikt nie zagląda. Każdy z nich ma tę samą wadę: zależy od tego, czy konkretny człowiek akurat pamięta. Wystarczy urlop, zmiana pracownika albo natłok pracy i termin przechodzi bokiem.</p>
+
+                <p>Kalendarz Google bywa lepszy niż nic, ale i on ma słabości: przypomnienie widzi tylko jego właściciel, łatwo je „odklikać” bez reakcji, a gdy ta osoba odchodzi z firmy, cała wiedza o terminach znika razem z jej kontem. Do tego dochodzi brak wyprzedzenia: powiadomienie „dziś kończy się umowa” jest bezużyteczne, jeśli wypowiedzenie trzeba było złożyć miesiąc wcześniej.</p>
+
+                <p>Najczęstsze i najbardziej kosztowne skutki, które widzimy w firmach:</p>
+
+                <ul>
+                    <li><strong>Automatyczne przedłużenie umowy</strong>, której nikt nie chciał kontynuować: płacenie za kolejny okres.</li>
+                    <li><strong>Wygasły przegląd, certyfikat lub ubezpieczenie</strong>: kara, wstrzymana praca albo utracony kontrakt.</li>
+                    <li><strong>Przegapiony termin płatności lub zgłoszenia</strong>: odsetki i niepotrzebny stres.</li>
+                </ul>
+
+                <p>To nie jest kwestia niedbalstwa. To kwestia oparcia ważnych dat na ludzkiej pamięci zamiast na systemie, który przypomni z wyprzedzeniem i nie odpuści, dopóki ktoś nie zareaguje.</p>
+
+                <h2>Jak działa automat pilnujący terminów: 4 kroki</h2>
+                <p>Rozwiązanie jest zaskakująco proste. Zamiast trzymać terminy w głowie, budujemy <strong>wirtualnego pracownika</strong>, który przejmuje jedno zadanie: pilnuje dat i sam się odzywa, zanim będzie za późno. Sprowadza się to do czterech kroków.</p>
+
+                <figure>
+                    <img src="/assets/images/blog/przypomnienia-o-terminach-firma/przypomnienia-o-terminach-firma-kroki.webp" width="1040" height="520" loading="lazy" decoding="async" alt="Cztery kroki automatu pilnującego terminów: rejestr, reguły wyprzedzenia, powiadomienia, eskalacja">
+                </figure>
+
+                <h3>Krok 1: Rejestr terminów w jednym miejscu</h3>
+                <p>Najpierw zbieramy wszystkie ważne daty w jeden <strong>kalendarz terminów firmowych</strong>: umowy i ich okresy wypowiedzenia, przeglądy, certyfikaty, ubezpieczenia, terminy zgłoszeń. To jest fundament: dopóki daty są rozproszone po segregatorach i skrzynkach, żaden automat nie ma czego pilnować. Rejestr staje się jednym źródłem prawdy o terminach.</p>
+
+                <h3>Krok 2: Reguły wyprzedzenia</h3>
+                <p>Do każdego terminu ustawiamy, z jakim wyprzedzeniem chcesz o nim wiedzieć. Umowę z miesięcznym okresem wypowiedzenia warto przypomnieć na 60 i 30 dni przed końcem, a przegląd na dwa tygodnie wcześniej. Reguły ustawiasz raz, a system stosuje je konsekwentnie do wszystkich pozycji. To właśnie wyprzedzenie zamienia bezużyteczny alert „dziś” w realną szansę na reakcję.</p>
+
+                <h3>Krok 3: Automatyczne powiadomienia</h3>
+                <p>Gdy zbliża się termin, automat sam wysyła <strong>automatyczne przypomnienia deadline</strong> do właściwych osób: na e-mail, a przy krytycznych sprawach także SMS. Powiadomienie trafia nie tylko do jednej osoby, ale do tej, która faktycznie odpowiada za dany obszar, więc informacja nie ginie razem z czyjąś skrzynką.</p>
+
+                <h3>Krok 4: Eskalacja, gdy nikt nie reaguje</h3>
+                <p>Najważniejszy element, którego brakuje w zwykłym kalendarzu. Jeśli na przypomnienie nikt nie zareaguje, sprawa nie zostaje „odklikana” i zapomniana: automat ponawia alert i eskaluje go wyżej, np. do właściciela. Dzięki temu ważny termin nie przepadnie tylko dlatego, że jedna osoba przeoczyła maila.</p>
+
+                <h2>Co warto pilnować w ten sposób: typowe terminy</h2>
+                <p>Automat pilnujący dat sprawdza się wszędzie tam, gdzie przekroczenie terminu kosztuje. Oto obszary, od których najczęściej zaczynamy:</p>
+
+                <div class="post-table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Obszar</th>
+                                <th>Przykładowe terminy</th>
+                                <th>Ryzyko przy przegapieniu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Umowy</strong></td>
+                                <td>najem, leasing, abonamenty, umowy z dostawcami</td>
+                                <td>automatyczne przedłużenie, niechciane koszty</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Przeglądy i serwisy</strong></td>
+                                <td>przeglądy maszyn, pojazdów, instalacji</td>
+                                <td>przestój, kara, utrata gwarancji</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Certyfikaty i uprawnienia</strong></td>
+                                <td>certyfikaty jakości, uprawnienia pracowników</td>
+                                <td>brak dopuszczenia do pracy lub przetargu</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ubezpieczenia</strong></td>
+                                <td>polisy majątkowe, OC działalności</td>
+                                <td>luka w ochronie w najgorszym momencie</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Obowiązki formalne</strong></td>
+                                <td>sprawozdania, zgłoszenia, opłaty cykliczne</td>
+                                <td>odsetki, kary administracyjne</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Taki automat to klasyczny przykład <strong>pilnowania terminów w firmie</strong> oddanego maszynie, jednego z zadań, które opisujemy szerzej w tekście o <a href="/blog/wirtualny-pracownik-ai.html">wirtualnym pracowniku AI</a>. Jak wpina się to w szerszą automatyzację, pokazujemy w przewodniku <a href="/blog/jak-zautomatyzowac-procesy-w-firmie.html">jak zautomatyzować procesy w firmie</a>.</p>
+
+                <h2>Przykład z naszej praktyki: zero „wygasło nam…”</h2>
+                <p>W jednym z wdrożeń firma prowadziła kilkadziesiąt umów i przeglądów, a jedyną ochroną była pamięć właściciela i notatki w kilku miejscach. Raz zdarzyło się kosztowne automatyczne przedłużenie umowy, której nikt nie chciał, i to był moment, w którym postanowili to uporządkować. Zbudowaliśmy prosty rejestr terminów z regułami wyprzedzenia, automatycznymi powiadomieniami i eskalacją.</p>
+
+                <p>Efekt, jaki typowo widzimy w takich wdrożeniach: znika kategoria zdarzeń „wygasło nam…”, bo o każdym terminie firma dowiaduje się z zapasem, a nie po fakcie. Uniknięte kary i niechciane przedłużenia potrafią zwrócić koszt wdrożenia po jednym–dwóch takich zdarzeniach, a spokój właściciela, że „coś przejdzie bokiem”, jest trudny do wycenienia. Więcej o tym, kiedy taka automatyzacja się opłaca, piszemy w przewodniku <a href="/blog/automatyzacja-ai-w-malej-firmie.html">automatyzacja i AI w małej firmie</a>.</p>
+
+                <h2>Od czego zacząć u siebie</h2>
+                <p>Zacznij od jednej godziny i kartki papieru: wypisz terminy, których przegapienie kosztowałoby Cię najwięcej, czyli umowy z automatycznym przedłużeniem, przeglądy, certyfikaty, polisy. Już samo ich zebranie w jednym miejscu pokazuje skalę i to, gdzie ryzyko jest największe.</p>
+
+                <p>Kolejny krok to zamiana tej listy w automat, który sam się odzywa z wyprzedzeniem i eskaluje, gdy nikt nie reaguje. Takie <a href="/automatyzacje.html">automatyzacje procesów w firmie</a> projektujemy pod konkretny zestaw terminów i osób odpowiedzialnych, a nie według gotowego schematu. Chcesz mieć pewność, że żaden ważny termin już Ci nie przejdzie bokiem? <a href="/konsultacja.html">Umów bezpłatną konsultację</a>: przejdziemy przez Twoje terminy na konkretach i pokażemy, jak mógłby wyglądać automat pilnujący dat u Ciebie.</p>
+
+                <h2>FAQ: najczęstsze pytania o pilnowanie terminów w firmie</h2>
+
+                <h3>Jak pilnować terminów umów i przeglądów w firmie, żeby nic nie przepadło?</h3>
+                <p>Najskuteczniej jest zebrać wszystkie ważne daty w jeden rejestr i oprzeć przypominanie na automacie, a nie na ludzkiej pamięci. Do każdego terminu ustawia się wyprzedzenie (np. 60 i 30 dni przed końcem umowy), a system sam wysyła powiadomienia i eskaluje sprawę, jeśli nikt nie zareaguje. Dzięki temu informacja nie zależy od tego, czy konkretna osoba akurat pamięta.</p>
+
+                <h3>Czy kalendarz Google nie wystarczy do pilnowania terminów?</h3>
+                <p>Kalendarz Google bywa lepszy niż nic, ale ma słabości: przypomnienie widzi tylko jego właściciel, łatwo je odklikać bez reakcji, a gdy ta osoba odchodzi, wiedza o terminach znika razem z kontem. Brakuje też eskalacji: nikt nie ponowi alertu, gdy pierwszy przejdzie bokiem. Dedykowany automat pilnuje dat niezależnie od jednej osoby i nie odpuszcza, dopóki ktoś nie zareaguje.</p>
+
+                <h3>Na jakie kanały automat wysyła przypomnienia?</h3>
+                <p>Zwykle na e-mail, a przy krytycznych terminach dodatkowo na SMS, żeby zwiększyć szansę, że alert dotrze na czas. Powiadomienie trafia do osoby odpowiedzialnej za dany obszar, a nie tylko do jednej skrzynki. Kanały i odbiorców ustawiamy pod Twoją firmę: inaczej dla umów, inaczej dla przeglądów technicznych.</p>
+
+                <h3>Co to jest eskalacja i dlaczego jest ważna?</h3>
+                <p>Eskalacja to ponowienie i podniesienie alertu wyżej, gdy na pierwsze przypomnienie nikt nie zareagował. To ten element odróżnia skuteczny automat od zwykłego kalendarza: w kalendarzu nieodklikane przypomnienie po prostu znika, a przy eskalacji sprawa wraca i trafia do właściciela. Dzięki temu ważny termin nie przepadnie z powodu jednego przeoczonego maila.</p>
+
+                <h3>Jakie terminy najczęściej warto automatyzować w pierwszej kolejności?</h3>
+                <p>Zaczynamy od tych, których przegapienie kosztuje najwięcej: umów z automatycznym przedłużeniem, przeglądów technicznych, certyfikatów i uprawnień oraz ubezpieczeń. To obszary, gdzie jeden przegapiony termin oznacza realną karę, przestój albo utracony kontrakt. Resztę terminów dokłada się później, gdy rejestr już działa.</p>
+
+            </div>
+
+            <!-- Autor -->
+            <aside class="post-author">
+                <div class="post-author__avatar" aria-hidden="true">MO</div>
+                <div>
+                    <div class="post-author__name">Mateusz Olesiuk</div>
+                    <div class="post-author__role">Założyciel LogicMorrow – wdraża automatyzacje i dedykowane aplikacje dla małych i średnich firm w Polsce.</div>
+                </div>
+            </aside>
+
+            <!-- CTA końcowe -->
+            <section class="post-cta">
+                <h2>Które terminy pilnujesz dziś tylko pamięcią?</h2>
+                <p>Przejdziemy przez Twoje terminy na konkretach i pokażemy, jak mógłby wyglądać automat, który sam ich pilnuje.</p>
+                <a href="/konsultacja.html" class="btn btn--primary btn--lg">Umów bezpłatną konsultację</a>
+            </section>
+
+        </article>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script defer src="/js/loader.js"></script>
+    <script defer src="/js/navbar.js"></script>
+    <script defer src="/js/animations.js"></script>
+
+    <!-- [6] Cookie Consent – inicjalizacja -->
+    <script defer src="/js/cookie-consent.js"></script>
+
+</body>
+</html>

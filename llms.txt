@@ -38,6 +38,16 @@ Jesteśmy małym zespołem, nie korporacją. Oznacza to mniej etapów, bezpośre
 - [Excel nie zgadza się między działami](https://logicmorrow.pl/blog/excel-nie-zgadza-sie-miedzy-dzialami.html): Jak wyjść z chaosu plików final_final_v3 i zbudować jedno źródło prawdy, do którego patrzą wszystkie działy firmy.
 - [Koniec ręcznego przepisywania danych między systemami](https://logicmorrow.pl/blog/koniec-recznego-przepisywania-danych.html): Jak przez integrację systemów sprawić, by dane wędrowały same, zamiast codziennego przeklejania z systemu A do B.
 - [Planowanie produkcji w Excelu przestaje wystarczać](https://logicmorrow.pl/blog/planowanie-produkcji-w-excelu-koniec.html): Kiedy arkusz do harmonogramu produkcji zawodzi i jak dedykowana aplikacja porządkuje kolejność, obłożenie maszyn i alerty kolizji.
+- [Śledzenie postępu zleceń produkcyjnych](https://logicmorrow.pl/blog/sledzenie-postepu-zlecen-produkcyjnych.html): Jak tablica statusów zleceń łączy halę z biurem i daje odpowiedź, na jakim etapie jest zlecenie, bez telefonów na produkcję.
+- [Koordynacja wysyłek i dostaw w firmie](https://logicmorrow.pl/blog/koordynacja-wysylek-i-dostaw.html): Kalendarz wysyłek z automatycznymi powiadomieniami dla klienta i kierowcy zamiast maili i karteczek. Mniej pomyłek adresowych i reklamacji.
+- [Giną zamówienia w mailach](https://logicmorrow.pl/blog/zamowienia-gina-w-mailach.html): Dlaczego zamówienia znikają w skrzynce i jak wdrożyć jeden punkt wejścia, rejestr i powiadomienia, żeby nic nie umykało.
+- [Szybsze przygotowanie oferty i wyceny](https://logicmorrow.pl/blog/szybsze-przygotowanie-oferty-wyceny.html): Jak ujednolicić cennik, ustawić reguły wyceny i generować ofertę jednym kliknięciem, zanim klient odejdzie do konkurencji.
+- [Status zamówienia dla klienta bez sklepu](https://logicmorrow.pl/blog/status-zamowienia-dla-klienta.html): Jak dać klientowi wgląd w status własnego procesu (przyjęte, w realizacji, gotowe) i przestać odbierać telefony o etap zamówienia.
+- [Powtarzające się pytania klientów](https://logicmorrow.pl/blog/powtarzajace-sie-pytania-klientow.html): Jak zebrać najczęstsze pytania, zbudować bazę wiedzy i uruchomić agenta AI, który odpowiada automatycznie i eskaluje trudne sprawy do człowieka.
+- [Zgłoszenia i reklamacje klientów pod kontrolą](https://logicmorrow.pl/blog/zgloszenia-i-reklamacje-klientow.html): Jeden rejestr zgłoszeń z automatycznym przydziałem, statusami i przypomnieniami o terminach, dopasowany do procesu firmy, nie ciężki help desk.
+- [Automatyczne przypomnienia o zaległych płatnościach](https://logicmorrow.pl/blog/przypomnienia-o-zaleglych-platnosciach.html): Jak połączyć system faktur z kontem bankowym firmy, automatycznie wykrywać opóźnienia i wysyłać uprzejme przypomnienia klientom.
+- [Przypomnienia o terminach umów i przeglądów](https://logicmorrow.pl/blog/przypomnienia-o-terminach-firma.html): Jak ustawić automat, który pilnuje dat umów, przeglądów i certyfikatów oraz wysyła alerty z wyprzedzeniem na e-mail i SMS.
+- [Wnioski urlopowe w małej firmie bez chaosu](https://logicmorrow.pl/blog/wnioski-urlopowe-bez-chaosu.html): Jak ułożyć obieg wniosków urlopowych z akceptacją, automatycznym saldem i kalendarzem zespołu, bez maili i Excela.
 
 ## Dla kogo
 

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content Security Policy – przy zmianie webhooka n8n lub dodaniu tagow w GTM dopisz domeny -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://n8n.logicmorrow.pl https://www.facebook.com; frame-src https://www.youtube-nocookie.com https://www.googletagmanager.com https://td.doubleclick.net https://www.facebook.com; base-uri 'self'; object-src 'none'">
+    <title>Jak informować klienta o statusie zamówienia w firmie B2B | LogicMorrow</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo-mark.svg">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="description" content="Klient co chwilę pyta, na jakim etapie jest zamówienie? Zobacz, jak wdrożyć panel statusu i automatyczne powiadomienia w firmie usługowej i produkcyjnej, bez sklepu.">
+    <meta name="robots" content="index,follow">
+
+    <!-- SEO: Canonical + Open Graph + Twitter Card -->
+    <link rel="canonical" href="https://logicmorrow.pl/blog/status-zamowienia-dla-klienta.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://logicmorrow.pl/blog/status-zamowienia-dla-klienta.html">
+    <meta property="og:title" content="Jak informować klienta o statusie zamówienia – panel B2B bez sklepu">
+    <meta property="og:description" content="Jak dać klientowi wgląd w status własnego procesu (przyjęte → w realizacji → gotowe) i przestać odbierać telefony „na jakim etapie jest zamówienie”.">
+    <meta property="og:image" content="https://logicmorrow.pl/assets/images/blog/status-zamowienia-dla-klienta/status-zamowienia-dla-klienta-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Status zamówienia dla klienta B2B: panel i automatyczne powiadomienia bez sklepu internetowego">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="LogicMorrow">
+    <meta property="article:published_time" content="2026-07-19">
+    <meta property="article:modified_time" content="2026-07-19">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jak informować klienta o statusie zamówienia – panel B2B bez sklepu">
+    <meta name="twitter:description" content="Jak dać klientowi wgląd w status własnego procesu (przyjęte → w realizacji → gotowe) i przestać odbierać telefony „na jakim etapie jest zamówienie”.">
+    <meta name="twitter:image" content="https://logicmorrow.pl/assets/images/blog/status-zamowienia-dla-klienta/status-zamowienia-dla-klienta-og.png">
+    <meta name="twitter:image:alt" content="Status zamówienia dla klienta B2B: panel i automatyczne powiadomienia bez sklepu internetowego">
+
+    <!-- ═══════════════════════════════════════════════════════
+         COOKIE CONSENT + GOOGLE CONSENT MODE V2
+         ═══════════════════════════════════════════════════════ -->
+
+    <!-- [1] Google Consent Mode V2 – domyślne zgody (MUST BE FIRST) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 2000
+        });
+    </script>
+
+    <!-- [2] Pre-inicjalizacja consent dla powracających użytkowników -->
+    <script>
+        (function () {
+            try {
+                var raw = document.cookie.split(';').reduce(function (acc, c) {
+                    var p = c.trim().split('=');
+                    return p[0] === 'cc_cookie' ? decodeURIComponent(p.slice(1).join('=')) : acc;
+                }, null);
+                if (raw) {
+                    var cats = JSON.parse(raw).categories || [];
+                    var analytics = cats.indexOf('analytics') >= 0 ? 'granted' : 'denied';
+                    var marketing = cats.indexOf('marketing') >= 0 ? 'granted' : 'denied';
+                    gtag('consent', 'update', {
+                        'analytics_storage': analytics,
+                        'ad_storage': marketing,
+                        'ad_user_data': marketing,
+                        'ad_personalization': marketing
+                    });
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- [3] Google Tag Manager -->
+    <script>(function(w,d,s,l,i){
+        w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T8KFFQZN');</script>
+
+    <!-- [4] Cookie Consent Library (orestbida/cookieconsent v3.0.1) -->
+    <link rel="stylesheet" href="/css/vendor/cookieconsent.css">
+    <script src="/js/vendor/cookieconsent.umd.js"></script>
+
+    <!-- [5] Cookie Consent – kolory brand LogicMorrow -->
+    <style>
+        :root {
+            --cc-btn-primary-bg: #2563eb;
+            --cc-btn-primary-hover-bg: #1d4ed8;
+            --cc-btn-primary-text: #fff;
+            --cc-btn-secondary-bg: #f1f5f9;
+            --cc-btn-secondary-hover-bg: #e2e8f0;
+            --cc-btn-secondary-text: #475569;
+            --cc-toggle-on-bg: #2563eb;
+            --cc-link-color: #2563eb;
+            --cc-btn-border-radius: 0.75rem;
+            --cc-overlay-bg: rgba(0, 0, 0, 0.55);
+        }
+        #cc-main .cm--box { max-width: 33vw; min-width: 420px; }
+        @media (max-width: 640px) {
+            #cc-main .cm--box { max-width: 100%; min-width: unset; width: 100%; }
+        }
+        #cc-main .cm .cm__btns .cm-btn { padding: 0.85rem 1.5rem; font-size: 1rem; }
+    </style>
+
+    <!-- Schema: Article + FAQPage + BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": "Jak informować klienta o statusie zamówienia – bez sklepu i śledzenia paczek",
+          "description": "Jak dać klientowi wgląd w status własnego procesu (przyjęte → w realizacji → gotowe) i przestać odbierać telefony na jakim etapie jest zamówienia.",
+          "inLanguage": "pl",
+          "datePublished": "2026-07-19",
+          "dateModified": "2026-07-19",
+          "mainEntityOfPage": { "@type": "WebPage", "@id": "https://logicmorrow.pl/blog/status-zamowienia-dla-klienta.html" },
+          "image": "https://logicmorrow.pl/assets/images/blog/status-zamowienia-dla-klienta/status-zamowienia-dla-klienta-og.png",
+          "author": {
+            "@type": "Person",
+            "name": "Mateusz Olesiuk",
+            "jobTitle": "Założyciel",
+            "url": "https://logicmorrow.pl/",
+            "worksFor": { "@type": "Organization", "name": "LogicMorrow" }
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "LogicMorrow",
+            "url": "https://logicmorrow.pl/",
+            "logo": { "@type": "ImageObject", "url": "https://logicmorrow.pl/assets/images/logo.svg" }
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Jak informować klienta o statusie zamówienia w firmie usługowej lub produkcyjnej?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Najprościej przez automatyczne powiadomienia mail lub SMS przy każdej zmianie etapu Twojego procesu (przyjęte, w realizacji, gotowe). Kolejny poziom to indywidualny link ze zawsze aktualnym statusem, a najbardziej rozbudowany to stały panel klienta z historią wszystkich zamówień. Statusy powinny odzwierciedlać Twój proces, a nie tracking kuriera." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czym panel statusu B2B różni się od śledzenia paczki w sklepie?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Śledzenie paczki dotyczy przesyłki u kuriera po wysyłce z magazynu. Panel B2B pokazuje etap Twojego własnego procesu realizacji: od przyjęcia zlecenia po gotowość do odbioru. Etapy są specyficzne dla firmy usługowej lub produkcyjnej, dlatego gotowe pluginy sklepowe zwykle tu nie pasują." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy potrzebuję sklepu internetowego, żeby dać klientowi status zamówienia?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Nie. Panel statusu jest niezależny od sklepu: działa dla zamówień składanych mailem, telefonicznie czy przez formularz. Wystarczy, że etapy realizacji są odzwierciedlone w systemie, a powiadomienia i status aktualizują się na ich podstawie automatycznie." }
+            },
+            {
+              "@type": "Question",
+              "name": "Jak status zamówienia zmniejsza liczbę telefonów do firmy?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Klient dzwoni, bo cisza go niepokoi. Gdy dostaje powiadomienie przy każdej zmianie etapu albo ma link ze zawsze aktualnym statusem, znika powód do telefonu: informacja dociera do niego, zanim zdąży się zaniepokoić. W praktyce liczba pytań gdzie moje zamówienie wyraźnie spada." }
+            },
+            {
+              "@type": "Question",
+              "name": "Ile trwa wdrożenie panelu statusu zamówienia?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Z naszej praktyki od 2 do 4 tygodni, zależnie od wybranego poziomu i liczby integracji. Zwykle zaczynamy od automatycznych powiadomień, bo dają najszybszy efekt przy najmniejszym nakładzie, a panel klienta dokładamy później, gdy pojawia się taka potrzeba." }
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://logicmorrow.pl/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://logicmorrow.pl/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Jak informować klienta o statusie zamówienia", "item": "https://logicmorrow.pl/blog/status-zamowienia-dla-klienta.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="/css/base/variables.css">
+    <link rel="stylesheet" href="/css/base/reset.css">
+    <link rel="stylesheet" href="/css/base/typography.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/css/components/navbar.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/cookie-fab.css">
+    <link rel="stylesheet" href="/css/components/buttons.css">
+
+    <!-- Blog CSS -->
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8KFFQZN"
+    title="Google Tag Manager" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Globalny nagłówek -->
+    <div id="navbar-placeholder"></div>
+
+    <main id="main-content" class="post">
+
+        <article class="post-article">
+
+            <header class="post__header">
+                <nav class="post__breadcrumb" aria-label="Ścieżka okruszków">
+                    <a href="/">Strona główna</a> / <a href="/blog/">Blog</a> / Jak informować klienta o statusie zamówienia
+                </nav>
+                <span class="post__cat">Dedykowane aplikacje</span>
+                <h1 class="post__title">Jak informować klienta o statusie zamówienia – bez sklepu i śledzenia paczek</h1>
+                <div class="post__meta">
+                    <span><strong>Mateusz Olesiuk</strong></span>
+                    <span class="dot" aria-hidden="true"></span>
+                    <time datetime="2026-07-19">19 lipca 2026</time>
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>7 min czytania</span>
+                </div>
+            </header>
+
+            <div class="post-prose">
+
+                <p>Jeśli słyszysz zdanie „Dzień dobry, chciałem tylko dopytać, na jakim etapie jest moje zamówienie” kilka razy dziennie, wiesz, ile taki telefon kosztuje. Handlowiec przerywa pracę, sprawdza w mailach albo w systemie, oddzwania, a za godzinę dzwoni kolejny klient z tym samym pytaniem. To nie jest problem złej woli klienta: on po prostu <strong>nie ma jak sprawdzić statusu zamówienia sam</strong>. W LogicMorrow wdrażamy dedykowane panele i automatyzacje dla firm usługowych i produkcyjnych, dlatego pokażemy Ci, <strong>jak informować klienta o statusie zamówienia</strong> tak, żeby przestał dzwonić, a Ty odzyskał spokój i czas zespołu.</p>
+
+                <figure>
+                    <img src="/assets/images/blog/status-zamowienia-dla-klienta/status-zamowienia-dla-klienta-banner.webp" width="1200" height="340" loading="lazy" decoding="async" alt="Klient sprawdza status własnego zamówienia w panelu zamiast dzwonić do firmy">
+                </figure>
+
+                <h2>To nie jest śledzenie paczki. To wgląd w Twój proces</h2>
+                <p>Zacznijmy od rozróżnienia, bo tu najłatwiej o nieporozumienie. Kiedy szukasz w sieci „status zamówienia”, trafiasz głównie na sklepy internetowe i firmy kurierskie: numer przesyłki, mapka, „paczka w doręczeniu”. To rozwiązanie dla e-commerce, które sprzedaje gotowe produkty z magazynu i przekazuje je kurierowi.</p>
+                <p>W firmie usługowej albo produkcyjnej sytuacja jest inna. Klient nie śledzi paczki. Chce wiedzieć, <strong>na jakim etapie Twojego procesu jest jego zlecenie</strong>: czy zamówienie zostało przyjęte, czy trafiło do realizacji, czy jest już gotowe do odbioru lub wysyłki. Tych etapów nie da się kupić w gotowym pluginie do sklepu, bo są specyficzne dla Twojej firmy. Dlatego zamiast trackingu kuriera potrzebujesz <strong>panelu statusu, który odzwierciedla Twój własny proces</strong>, i to jest zupełnie inne zadanie niż to, co proponuje typowy SaaS e-commerce.</p>
+
+                <h2>Dlaczego klienci dzwonią „na jakim etapie jest zamówienie”</h2>
+                <p>Klient dzwoni nie dlatego, że jest niecierpliwy, tylko dlatego, że <strong>cisza go niepokoi</strong>. Złożył zamówienie, dostał w najlepszym razie jednego maila z potwierdzeniem i potem nie wie nic. Nie wie, czy ktoś się tym zajął, czy termin jest zagrożony, czy powinien się przygotować na odbiór. W tej niepewności telefon to jedyne narzędzie, jakie ma.</p>
+                <p>Dla Twojej firmy każdy taki telefon to ukryty koszt. Po pierwsze: przerwana praca handlowca, który musi porzucić bieżące zadanie i szukać informacji. Po drugie: ryzyko, że odpowie z pamięci lub nieaktualnie. Po trzecie: wrażenie, że firma „nie panuje nad zamówieniami”, nawet jeśli realnie wszystko idzie zgodnie z planem. Paradoks polega na tym, że proces może działać świetnie, a klient i tak jest zdenerwowany, bo po prostu o tym nie wie.</p>
+                <p>Warto tu zaznaczyć różnicę wobec problemu, który opisaliśmy osobno: gdy <a href="/blog/zamowienia-gina-w-mailach.html">zamówienia giną w mailach</a>, chodzi o wewnętrzny bałagan i gubienie zleceń. Tutaj zamówienie jest realizowane poprawnie: brakuje tylko <strong>komunikacji statusu na zewnątrz, do klienta</strong>.</p>
+
+                <h2>Jak dać klientowi status zamówienia: trzy poziomy</h2>
+                <p>Nie każda firma potrzebuje od razu rozbudowanego panelu. W naszej praktyce sprawdzają się trzy poziomy dojrzałości: możesz wejść na dowolny i rozwijać go później.</p>
+
+                <figure>
+                    <img src="/assets/images/blog/status-zamowienia-dla-klienta/status-zamowienia-dla-klienta-poziomy.webp" width="1040" height="520" loading="lazy" decoding="async" alt="Trzy poziomy informowania o statusie: automatyczne powiadomienia, link do statusu, panel klienta">
+                </figure>
+
+                <ul>
+                    <li><strong>Poziom 1: automatyczne powiadomienia.</strong> Klient dostaje wiadomość mailem lub SMS-em przy każdej zmianie etapu: „przyjęte”, „w realizacji”, „gotowe do odbioru”. Nie musi nic sprawdzać: informacja sama do niego przychodzi. To najprostszy krok i zwykle od niego zaczynamy.</li>
+                    <li><strong>Poziom 2: indywidualny link do statusu.</strong> Do każdego zamówienia klient dostaje link, pod którym w każdej chwili widzi aktualny etap swojego zlecenia. Bez logowania, bez konta: jedno kliknięcie i wie, co się dzieje.</li>
+                    <li><strong>Poziom 3: panel klienta.</strong> Stały panel, w którym klient widzi wszystkie swoje zamówienia, ich statusy, terminy i historię. Sprawdza się tam, gdzie klienci zamawiają regularnie i chcą mieć jedno miejsce z pełnym obrazem współpracy.</li>
+                </ul>
+
+                <p>Kluczowe jest to, że statusy w każdym z tych wariantów odzwierciedlają <strong>Twój proces</strong>, a aktualizują się automatycznie, na podstawie tego, co dzieje się w systemie. Klient nie dostaje pustej obietnicy, tylko realny obraz sytuacji, a Ty nie musisz niczego wysyłać ręcznie.</p>
+
+                <h2>Co zyskujesz, gdy klient sam widzi status</h2>
+                <p>Efekt jest odczuwalny po obu stronach. Klient przestaje dzwonić, bo dostaje informację, zanim zdąży się zaniepokoić, a jeśli chce sprawdzić, robi to sam w kilka sekund. Zespół odzyskuje czas, który wcześniej szedł na odbieranie tych samych pytań i szukanie odpowiedzi w mailach.</p>
+                <p>Jest jeszcze efekt trudniejszy do zmierzenia, ale realny: <strong>firma wygląda na poukładaną</strong>. Klient, który na bieżąco wie, co się dzieje z jego zamówieniem, ufa bardziej i chętniej wraca. Przejrzystość statusu to jeden z najtańszych sposobów, żeby podnieść jakość obsługi bez zatrudniania kolejnej osoby. To także naturalny element szerszego porządkowania firmy, które opisaliśmy w przewodniku <a href="/blog/automatyzacja-ai-w-malej-firmie.html">automatyzacja i AI w małej firmie</a>.</p>
+
+                <h2>Dedykowany panel czy gotowy SaaS? Kiedy warto zbudować własny</h2>
+                <p>Gotowe narzędzia do statusów są projektowane pod sklepy i tracking przesyłek: świetnie sprawdzają się w e-commerce, ale słabo w firmie, która ma własne, nietypowe etapy realizacji. Próba dopasowania takiego SaaS-a często kończy się tym, że proces trzeba wykrzywić pod narzędzie, a i tak brakuje w nim tego, co u Ciebie najważniejsze.</p>
+                <p>Dedykowany panel działa odwrotnie: to narzędzie dopasowuje się do Twoich etapów, integruje z systemem, którego już używasz, i pokazuje klientowi dokładnie to, co ma widzieć, ani mniej, ani więcej. Koszt takiego rozwiązania bywa mniejszy, niż się spodziewasz, zwłaszcza gdy zaczynasz od poziomu powiadomień; rozkładamy to na czynniki pierwsze we wpisie <a href="/blog/ile-kosztuje-aplikacja-webowa-dla-firmy.html">ile kosztuje aplikacja webowa dla firmy</a>. Jeśli chcesz zobaczyć, jak taki <a href="/aplikacje.html">panel statusu zamówienia</a> mógłby wyglądać u Ciebie, projektujemy go zawsze wokół realnego procesu.</p>
+
+                <h2>Przykład wdrożenia z naszej praktyki</h2>
+                <p>W jednej z firm produkcyjnych, z którymi pracowaliśmy, klienci dzwonili po status kilkanaście razy dziennie. Każdy telefon wyrywał kogoś z pracy i kończył się szukaniem informacji w kilku miejscach. Zbudowaliśmy prosty mechanizm: przy każdej zmianie etapu w systemie klient dostawał automatyczne powiadomienie, a do zamówienia dołączony był link ze zawsze aktualnym statusem.</p>
+                <p>Efekt, jaki typowo widzimy w takich wdrożeniach: <strong>liczba telefonów „gdzie moje zamówienie” spada wyraźnie</strong>, bo klient dostaje odpowiedź, zanim zdąży sięgnąć po słuchawkę. Zespół nie odpisuje już w kółko na to samo, a klienci, mimo że dokładnie ten sam proces trwa tyle samo, oceniają obsługę wyżej, bo wreszcie wiedzą, co się dzieje.</p>
+
+                <h2>Jak wdrażamy komunikację statusu w LogicMorrow</h2>
+                <p>Naszym zdaniem dobra informacja o statusie zaczyna się od zmapowania realnych etapów, przez które przechodzi zamówienie w Twojej firmie, a nie od narzucania gotowych „koszyk / wysłane / dostarczone”. Dlatego wdrożenie otwieramy krótką analizą procesu i ustaleniem, które etapy klient powinien widzieć, a które zostają wewnętrzne.</p>
+                <p>Pracujemy z małymi i średnimi firmami w całej Polsce, zdalnie. Wdrożenie zajmuje zwykle od 2 do 4 tygodni, w małym zespole i z bezpośrednim kontaktem przez cały projekt. Jeśli masz dość odbierania telefonów „na jakim etapie jest zamówienie”, <a href="/konsultacja.html">umów bezpłatną konsultację</a>, pokażemy na Twoim procesie, od którego poziomu warto zacząć.</p>
+
+                <h2>FAQ: najczęstsze pytania o status zamówienia dla klienta</h2>
+
+                <h3>Jak informować klienta o statusie zamówienia w firmie usługowej lub produkcyjnej?</h3>
+                <p>Najprościej przez automatyczne powiadomienia mail lub SMS przy każdej zmianie etapu Twojego procesu (przyjęte, w realizacji, gotowe). Kolejny poziom to indywidualny link ze zawsze aktualnym statusem, a najbardziej rozbudowany to stały panel klienta z historią wszystkich zamówień. Statusy powinny odzwierciedlać Twój proces, a nie tracking kuriera.</p>
+
+                <h3>Czym panel statusu B2B różni się od śledzenia paczki w sklepie?</h3>
+                <p>Śledzenie paczki dotyczy przesyłki u kuriera po wysyłce z magazynu. Panel B2B pokazuje etap Twojego własnego procesu realizacji: od przyjęcia zlecenia po gotowość do odbioru. Etapy są specyficzne dla firmy usługowej lub produkcyjnej, dlatego gotowe pluginy sklepowe zwykle tu nie pasują.</p>
+
+                <h3>Czy potrzebuję sklepu internetowego, żeby dać klientowi status zamówienia?</h3>
+                <p>Nie. Panel statusu jest niezależny od sklepu: działa dla zamówień składanych mailem, telefonicznie czy przez formularz. Wystarczy, że etapy realizacji są odzwierciedlone w systemie, a powiadomienia i status aktualizują się na ich podstawie automatycznie.</p>
+
+                <h3>Jak status zamówienia zmniejsza liczbę telefonów do firmy?</h3>
+                <p>Klient dzwoni, bo cisza go niepokoi. Gdy dostaje powiadomienie przy każdej zmianie etapu albo ma link ze zawsze aktualnym statusem, znika powód do telefonu: informacja dociera do niego, zanim zdąży się zaniepokoić. W praktyce liczba pytań gdzie moje zamówienie wyraźnie spada.</p>
+
+                <h3>Ile trwa wdrożenie panelu statusu zamówienia?</h3>
+                <p>Z naszej praktyki od 2 do 4 tygodni, zależnie od wybranego poziomu i liczby integracji. Zwykle zaczynamy od automatycznych powiadomień, bo dają najszybszy efekt przy najmniejszym nakładzie, a panel klienta dokładamy później, gdy pojawia się taka potrzeba.</p>
+
+            </div>
+
+            <!-- Autor -->
+            <aside class="post-author">
+                <div class="post-author__avatar" aria-hidden="true">MO</div>
+                <div>
+                    <div class="post-author__name">Mateusz Olesiuk</div>
+                    <div class="post-author__role">Założyciel LogicMorrow. Wdraża automatyzacje i dedykowane aplikacje dla małych i średnich firm w Polsce.</div>
+                </div>
+            </aside>
+
+            <!-- CTA końcowe -->
+            <section class="post-cta">
+                <h2>Przestań odbierać telefony o status zamówienia</h2>
+                <p>Pokażemy na Twoim procesie, od którego poziomu warto zacząć: powiadomień, linku do statusu czy pełnego panelu klienta.</p>
+                <a href="/konsultacja.html" class="btn btn--primary btn--lg">Umów bezpłatną konsultację</a>
+            </section>
+
+        </article>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script defer src="/js/loader.js"></script>
+    <script defer src="/js/navbar.js"></script>
+    <script defer src="/js/animations.js"></script>
+
+    <!-- [6] Cookie Consent – inicjalizacja -->
+    <script defer src="/js/cookie-consent.js"></script>
+
+</body>
+</html>

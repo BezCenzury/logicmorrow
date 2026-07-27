@@ -39,9 +39,69 @@
   <!-- Blog -->
   <url>
     <loc>https://logicmorrow.pl/blog/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/wnioski-urlopowe-bez-chaosu.html</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/przypomnienia-o-terminach-firma.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/przypomnienia-o-zaleglych-platnosciach.html</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/zgloszenia-i-reklamacje-klientow.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/powtarzajace-sie-pytania-klientow.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/status-zamowienia-dla-klienta.html</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/szybsze-przygotowanie-oferty-wyceny.html</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/zamowienia-gina-w-mailach.html</loc>
+    <lastmod>2026-07-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/koordynacja-wysylek-i-dostaw.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://logicmorrow.pl/blog/sledzenie-postepu-zlecen-produkcyjnych.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://logicmorrow.pl/blog/planowanie-produkcji-w-excelu-koniec.html</loc>
